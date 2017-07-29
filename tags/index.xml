@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on francojc ⟲</title>
-    <link>/tags/</link>
+    <link>https://francojc.github.io/tags/</link>
     <description>Recent content in Tags on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,137 +12,137 @@
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
-      <link>/tags/academic/</link>
+      <link>https://francojc.github.io/tags/academic/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/academic/</guid>
+      <guid>https://francojc.github.io/tags/academic/</guid>
       <description>&lt;p&gt;Here is a list of all the content that has been tagged as &lt;em&gt;academic&lt;/em&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Activ Es</title>
-      <link>/tags/activ-es/</link>
+      <link>https://francojc.github.io/tags/activ-es/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/activ-es/</guid>
+      <guid>https://francojc.github.io/tags/activ-es/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apache</title>
-      <link>/tags/apache/</link>
+      <link>https://francojc.github.io/tags/apache/</link>
       <pubDate>Tue, 09 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/apache/</guid>
+      <guid>https://francojc.github.io/tags/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Census</title>
-      <link>/tags/census/</link>
+      <link>https://francojc.github.io/tags/census/</link>
       <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/census/</guid>
+      <guid>https://francojc.github.io/tags/census/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Constraint Grammars</title>
-      <link>/tags/constraint-grammars/</link>
+      <link>https://francojc.github.io/tags/constraint-grammars/</link>
       <pubDate>Fri, 09 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/constraint-grammars/</guid>
+      <guid>https://francojc.github.io/tags/constraint-grammars/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Corpora</title>
-      <link>/tags/corpora/</link>
+      <link>https://francojc.github.io/tags/corpora/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/corpora/</guid>
+      <guid>https://francojc.github.io/tags/corpora/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Corpus Development</title>
-      <link>/tags/corpus-development/</link>
+      <link>https://francojc.github.io/tags/corpus-development/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/corpus-development/</guid>
+      <guid>https://francojc.github.io/tags/corpus-development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Corpus Linguistics</title>
-      <link>/tags/corpus-linguistics/</link>
+      <link>https://francojc.github.io/tags/corpus-linguistics/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/corpus-linguistics/</guid>
+      <guid>https://francojc.github.io/tags/corpus-linguistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Database</title>
-      <link>/tags/database/</link>
+      <link>https://francojc.github.io/tags/database/</link>
       <pubDate>Fri, 26 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/database/</guid>
+      <guid>https://francojc.github.io/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dslr</title>
-      <link>/tags/dslr/</link>
+      <link>https://francojc.github.io/tags/dslr/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/dslr/</guid>
+      <guid>https://francojc.github.io/tags/dslr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fish</title>
-      <link>/tags/fish/</link>
+      <link>https://francojc.github.io/tags/fish/</link>
       <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/fish/</guid>
+      <guid>https://francojc.github.io/tags/fish/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggplot2</title>
-      <link>/tags/ggplot2/</link>
+      <link>https://francojc.github.io/tags/ggplot2/</link>
       <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ggplot2/</guid>
+      <guid>https://francojc.github.io/tags/ggplot2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexbin</title>
-      <link>/tags/hexbin/</link>
+      <link>https://francojc.github.io/tags/hexbin/</link>
       <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hexbin/</guid>
+      <guid>https://francojc.github.io/tags/hexbin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Homebrew</title>
-      <link>/tags/homebrew/</link>
+      <link>https://francojc.github.io/tags/homebrew/</link>
       <pubDate>Fri, 09 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>/tags/homebrew/</guid>
+      <guid>https://francojc.github.io/tags/homebrew/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Keywords</title>
-      <link>/tags/keywords/</link>
+      <link>https://francojc.github.io/tags/keywords/</link>
       <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/keywords/</guid>
+      <guid>https://francojc.github.io/tags/keywords/</guid>
       <description></description>
     </item>
     
