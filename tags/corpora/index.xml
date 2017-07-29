@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Corpora on francojc ⟲</title>
+    <link>/tags/corpora/</link>
+    <description>Recent content in Corpora on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/corpora/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ACTIV-ES</title>
+      <link>/project/activ-es/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/activ-es/</guid>
+      <description>&lt;p&gt;ACTIV-ES is a comparable Spanish corpus comprised of tv/film dialogue from Argentine, Mexican and Spanish productions. Titles for each of these three countries were seeded from the Internet Movie Database, subtitle data for the hearing impaired was provided by Opensubtitles.org and was post-processed to correct/remove subtitle, OCR and diacritic artifacts and annotated for part-of-speech.&lt;/p&gt;
+
+&lt;p&gt;The data is available in two main formats: 1) running text for each document and 2) 1:5 gram aggregate files. Each format includes a plain text and part-of-speech annotated version. Document names reflect the &lt;code&gt;language code&lt;/code&gt;, &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;year&lt;/code&gt;, &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, &lt;code&gt;genre&lt;/code&gt; (first genre listed in the IMDb), and &lt;code&gt;IMDb ID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more information about the development and evaluation of these resources and to cite this work refer to:&lt;/p&gt;
+
+&lt;p&gt;Francom, J., Hulden, M. and Ussishkin, A.. (2014) &lt;a href=&#34;https://www.academia.edu/6962707/ACTIV-ES_a_comparable_cross-dialect_corpus_of_everyday_Spanish_from_Argentina_Mexico_and_Spain&#34; target=&#34;_blank&#34;&gt;ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain.&lt;/a&gt; In Proceedings of the Ninth Annual Language Resources and Evaluation Conference, Reykjavik, Iceland. European Language Resources Association (ELRA).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

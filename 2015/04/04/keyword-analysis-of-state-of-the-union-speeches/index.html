@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="author" content="Jerid Francom">
+  <meta name="description" content="Associate Professor of Spanish and Linguistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/">
+
+  
+
+  <title>Keyword analysis of State of the Union Speeches | francojc ⟲</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">francojc ⟲</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://wfu.academia.edu/francom/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/vitae.pdf">
+            
+            <span>Vitae</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Keyword analysis of State of the Union Speeches</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2015-04-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sat, Apr 4, 2015
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/tm">tm</a
+    >, 
+    
+    <a href="/tags/wordcloud">wordcloud</a
+    >, 
+    
+    <a href="/tags/rfr">rfr</a
+    >, 
+    
+    <a href="/tags/keywords">keywords</a
+    >, 
+    
+    <a href="/tags/text-analysis">text analysis</a
+    >, 
+    
+    <a href="/tags/magrittr">magrittr</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Keyword%20analysis%20of%20State%20of%20the%20Union%20Speeches&amp;url=%2f2015%2f04%2f04%2fkeyword-analysis-of-state-of-the-union-speeches%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Keyword%20analysis%20of%20State%20of%20the%20Union%20Speeches&amp;body=%2f2015%2f04%2f04%2fkeyword-analysis-of-state-of-the-union-speeches%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Not long ago I gave an <a href="http://dh.humanitiesinstitute.wfu.edu/2015/02/20/dh-kitchen-introduction-to-data-mining-and-text-analysis-materials/">introduction to text analysis and data mining</a> for the Wake Forest University community. In that tutorial I demonstrated how to do a basic keyword analysis on “State of the Union” speeches from 1947 to present using the freeware <a href="http://www.laurenceanthony.net/software/antconc/">AntConc</a>. Although AntConc is a fantastic resource, it’s not my go-to approach for doing text analysis. In this post I will re-create the analysis using R: reading, exploring, and cleaning data as well as the main keyword analysis and corresponding visualizations.</p>
+<p>The first step is to read in the <code>sotu</code> text files <a href="http://francojc.github.io/web-scraping-with-rvest/">we scraped from the web</a>.</p>
+<pre class="r"><code>library(tm)
+library(dplyr)
+
+# `read.corpus` function
+read.corpus &lt;- function(directory, pattern = &quot;&quot;, to.lower = TRUE) {
+  corpus &lt;- DirSource(directory = directory, pattern = pattern) %&gt;%
+    VCorpus # Read files and create `VCorpus` object
+  if(to.lower == TRUE) corpus &lt;- # Lowercase text
+    tm_map(corpus, 
+           content_transformer(tolower))
+  return(corpus)
+}</code></pre>
+<p>In this code chunk we use the <code>tm</code> package to read in files in a specific directory whose file names match a certain pattern, then lowercase the text. Since we want to create corpora from file names matching <code>republican</code> on the one hand and <code>democrat</code> on the other, I chose to create a function as not to be too redundant with the code. Inside the function <code>read.corpus()</code>, we use the <code>tm::DirSource()</code> function to point R to the directory where the <code>sotu</code> texts are listed and then takes a <code>pattern</code> to match file names. This result is handed off to <code>VCorpus()</code> which creates a <code>tm</code> package <code>VCorpus</code> object.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> I then include an option to lowercase the text. In this case we will want our text lowercased, so I’ve set it to the default in the function (<code>to.lower = TRUE</code>), but that’s not always the case.</p>
+<p>Now apply the function to get the Republican and Democrat texts and confirm that we’ve got <code>VCorpus</code> objects.</p>
+<pre class="r"><code>rep.corpus.raw &lt;- read.corpus(directory = &quot;data/SOTU/&quot;, pattern = &quot;republican&quot;)
+  class(rep.corpus.raw)</code></pre>
+<pre><code>## [1] &quot;VCorpus&quot; &quot;Corpus&quot;</code></pre>
+<pre class="r"><code>dem.corpus.raw &lt;- read.corpus(directory = &quot;data/SOTU/&quot;, pattern = &quot;democrat&quot;)
+  class(rep.corpus.raw)</code></pre>
+<pre><code>## [1] &quot;VCorpus&quot; &quot;Corpus&quot;</code></pre>
+<p>Let’s do a quick inspection of the results. It’s good to know a few functions for exploring <code>VCorpus</code> objects.</p>
+<pre class="r"><code>rep.corpus.raw %&gt;% 
+  print() # an overview of the object</code></pre>
+<pre><code>## &lt;&lt;VCorpus&gt;&gt;
+## Metadata:  corpus specific: 0, document level (indexed): 0
+## Content:  documents: 34</code></pre>
+<pre class="r"><code>rep.corpus.raw %&gt;%
+  meta(tag = &quot;id&quot;) %&gt;% # a list of the file names in the corpus
+  unlist()</code></pre>
+<pre><code>##   republican-1954.txt   republican-1955.txt   republican-1956.txt 
+## &quot;republican-1954.txt&quot; &quot;republican-1955.txt&quot; &quot;republican-1956.txt&quot; 
+##   republican-1957.txt   republican-1958.txt   republican-1959.txt 
+## &quot;republican-1957.txt&quot; &quot;republican-1958.txt&quot; &quot;republican-1959.txt&quot; 
+##   republican-1960.txt   republican-1970.txt   republican-1971.txt 
+## &quot;republican-1960.txt&quot; &quot;republican-1970.txt&quot; &quot;republican-1971.txt&quot; 
+##   republican-1972.txt   republican-1974.txt   republican-1975.txt 
+## &quot;republican-1972.txt&quot; &quot;republican-1974.txt&quot; &quot;republican-1975.txt&quot; 
+##   republican-1976.txt   republican-1977.txt   republican-1981.txt 
+## &quot;republican-1976.txt&quot; &quot;republican-1977.txt&quot; &quot;republican-1981.txt&quot; 
+##   republican-1982.txt   republican-1983.txt   republican-1984.txt 
+## &quot;republican-1982.txt&quot; &quot;republican-1983.txt&quot; &quot;republican-1984.txt&quot; 
+##   republican-1985.txt   republican-1986.txt   republican-1987.txt 
+## &quot;republican-1985.txt&quot; &quot;republican-1986.txt&quot; &quot;republican-1987.txt&quot; 
+##   republican-1988.txt   republican-1989.txt   republican-1990.txt 
+## &quot;republican-1988.txt&quot; &quot;republican-1989.txt&quot; &quot;republican-1990.txt&quot; 
+##   republican-1991.txt   republican-1992.txt   republican-2001.txt 
+## &quot;republican-1991.txt&quot; &quot;republican-1992.txt&quot; &quot;republican-2001.txt&quot; 
+##   republican-2002.txt   republican-2003.txt   republican-2004.txt 
+## &quot;republican-2002.txt&quot; &quot;republican-2003.txt&quot; &quot;republican-2004.txt&quot; 
+##   republican-2005.txt   republican-2006.txt   republican-2007.txt 
+## &quot;republican-2005.txt&quot; &quot;republican-2006.txt&quot; &quot;republican-2007.txt&quot; 
+##   republican-2008.txt 
+## &quot;republican-2008.txt&quot;</code></pre>
+<p>So <code>print()</code> provides us a basic overview of the number of documents in the corpus. <code>meta()</code> with the <code>tag</code> set to <code>&quot;id&quot;</code> returns the file names themselves. This is good here to verify that we’ve in fact captured the appropriate texts in each corpus. <code>content(rep.corpus.raw)</code> will return all of the text in the corpus. Go ahead and try it at home –I’ll save some screen real estate and skip this command.</p>
+<p>In a keyword analysis we will be working with, well, words, and their frequencies so let’s make a first pass at creating a word frequency list.</p>
+<pre class="r"><code>create.wordlist &lt;- function(corpus, create_df = FALSE) {
+  wordlist &lt;- corpus %&gt;% 
+    DocumentTermMatrix() %&gt;% 
+    as.matrix() %&gt;% 
+    colSums()
+  if(create_df == TRUE) wordlist &lt;- wordlist %&gt;%
+    data.frame(words = names(.), freq = ., row.names = NULL)
+  return(wordlist)
+}</code></pre>
+<p>Again, I turn to creating a function because we want to reduce redundancy. This function, <code>create.wordlist()</code>, takes a <code>VCorpus</code> object (corpus) as an argument and provides an option to output the wordlist as a <code>data.frame</code> (create_df). The <code>corpus</code> is passed to <code>tm::DocumentTermMatrix()</code> which is another <code>tm</code> object, but one that holds the corpora in matrix form. It’s worth taking a look at a simplified example to give you an idea what we are dealing with.</p>
+<pre class="r"><code>documents &lt;- c(&quot;this is a sentence&quot;, &quot;here is another one&quot;, &quot;now another&quot;)
+dtm &lt;- VectorSource(x = documents) %&gt;%
+  VCorpus %&gt;%
+  DocumentTermMatrix</code></pre>
+<p>So the three character vectors in <code>documents</code> is read into <code>VCorpus</code> format and then sent to <code>DocumentTermMatrix</code>. The result in <code>dtm</code> can be <code>inspect</code>ed:</p>
+<pre class="r"><code>dtm %&gt;%
+  inspect</code></pre>
+<pre><code>## &lt;&lt;DocumentTermMatrix (documents: 3, terms: 6)&gt;&gt;
+## Non-/sparse entries: 7/11
+## Sparsity           : 61%
+## Maximal term length: 8
+## Weighting          : term frequency (tf)
+## Sample             :
+##     Terms
+## Docs another here now one sentence this
+##    1       0    0   0   0        1    1
+##    2       1    1   0   1        0    0
+##    3       1    0   1   0        0    0</code></pre>
+<p>So looking at the bottom portion, the <code>DocumentTermMatrix</code> contains a matrix where rows correspond to each of the character vectors in <code>documents</code> and the columns each of the unique words. This matrix summarizes the word frequency and dispersion contained in our text documents.</p>
+<p>Returning to the <code>creat.wordlist()</code> function from above, we then remove some of the extra bells and whistles in the <code>DocumentTermMatrix</code> with <code>as.matrix()</code> –giving us just the matrix that we are interested in. Summing the columns for each word (<code>colSums()</code>) gives us the word frequencies. Again I include an option to change the output to another data type, in this case a tabular, excel-like format – a.k.a. the <code>data.frame</code>.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>Run the <code>create.wordlist()</code> function, check the class, and find out how many (unique) words are in each of our corpora.</p>
+<pre class="r"><code>rep.wordlist &lt;- create.wordlist(corpus = rep.corpus.raw, create_df = TRUE)
+  class(rep.wordlist)</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>  nrow(rep.wordlist)</code></pre>
+<pre><code>## [1] 18752</code></pre>
+<pre class="r"><code>dem.wordlist &lt;- create.wordlist(corpus = dem.corpus.raw, create_df = TRUE)
+  class(dem.wordlist)</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>  nrow(dem.wordlist)</code></pre>
+<pre><code>## [1] 19818</code></pre>
+<p>I fun way to visualize a word frequency list is via <a href="https://en.wikipedia.org/wiki/Tag_cloud">word clouds</a>. Conveniently, there’s an R package for that, appropriately named <code>wordcloud</code>.</p>
+<pre class="r"><code>library(wordcloud)
+wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)</code></pre>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-1.png" width="672" /></p>
+<pre class="r"><code>wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)</code></pre>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-2.png" width="672" /></p>
+<p><code>wordcloud::wordcloud()</code> takes the words and their frequencies, minimally. But you can also specify a number of other parameters to modify the content and format of the word cloud. Here I’ve limited the output to the top 50 words.</p>
+<p>Not what you expected? It’s real easy to overlook the fact that the most frequent words in a given language are often the least interesting, from a content standpoint. These words are often closed-class words (determiners, prepositions, conjunctions, etc.) and contrast to open-class words (nouns, verbs, adjectives) that are usually more interesting –especially for us at the moment. So we are going to want to filter them. But how do you know what words to filter? Enter “stopword lists”: pre-compiled lists of the kinds of words we are looking to eliminate.</p>
+<p>That’s area we need to address. Other standard filters include removing punctuation, numerals, and extra whitespace. In addition, on inspecting the word frequency lists it appears that there are certain words enclosed inside brackets <code>[]</code> and parenthesis <code>()</code> that should be deleted as well given they correspond, by and large, to meta discourse not the content of the speeches. See below<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>:</p>
+<pre class="r"><code>rep.wordlist$words %&gt;%
+  grep(pattern = &quot;[\\(\\[\\]+&quot;, x = ., value = TRUE)</code></pre>
+<pre><code>##  [1] &quot;(\&quot;cds\&quot;)&quot;                    &quot;($14.7&quot;                      
+##  [3] &quot;(1)&quot;                          &quot;(1980)&quot;                      
+##  [5] &quot;(2)&quot;                          &quot;(3)&quot;                         
+##  [7] &quot;(4)&quot;                          &quot;(5)&quot;                         
+##  [9] &quot;(6.9%&quot;                        &quot;(asean)&quot;                     
+## [11] &quot;(at&quot;                          &quot;(cdbg)&quot;                      
+## [13] &quot;(ceta).&quot;                      &quot;(chap)&quot;                      
+## [15] &quot;(eeoc)&quot;                       &quot;(fao),&quot;                      
+## [17] &quot;(infce),&quot;                     &quot;(nhsc)&quot;                      
+## [19] &quot;(ofccp)&quot;                      &quot;(the&quot;                        
+## [21] &quot;(tip)&quot;                        &quot;(udag)&quot;                      
+## [23] &quot;(wic)&quot;                        &quot;[$.5&quot;                        
+## [25] &quot;[$]1.1&quot;                       &quot;[50,000]&quot;                    
+## [27] &quot;[act]&quot;                        &quot;[africa],&quot;                   
+## [29] &quot;[applause]&quot;                   &quot;[applause]third,&quot;            
+## [31] &quot;[arkansas],&quot;                  &quot;[as]&quot;                        
+## [33] &quot;[at&quot;                          &quot;[delivered&quot;                  
+## [35] &quot;[former&quot;                      &quot;[full]&quot;                      
+## [37] &quot;[in&quot;                          &quot;[iowa],&quot;                     
+## [39] &quot;[it]&quot;                         &quot;[last]&quot;                      
+## [41] &quot;[laughter]&quot;                   &quot;[laughter]—and&quot;              
+## [43] &quot;[laughter]—but&quot;               &quot;[laughter].&quot;                 
+## [45] &quot;[licensing]&quot;                  &quot;[moment&quot;                     
+## [47] &quot;[national&quot;                    &quot;[of]&quot;                        
+## [49] &quot;[oil]&quot;                        &quot;[read&quot;                       
+## [51] &quot;[south&quot;                       &quot;[the]&quot;                       
+## [53] &quot;[un]&quot;                         &quot;[washington]&quot;                
+## [55] &quot;401(k)&quot;                       &quot;8(a)&quot;                        
+## [57] &quot;crisis—[laughter]—&quot;           &quot;last--maybe--[laughter]--but&quot;</code></pre>
+<p>Let’s clean up the corpus. Removing bracket/ parenthetical words, stopwords, punctuation, numerals, and whitespace. The <code>tm</code> package includes the <code>tm_map()</code> function that provides many easy-to-implement ways to transform the corpus content.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
+<pre class="r"><code>clean.corpus &lt;- function(corpus) {
+  # Clean a `tm` corpus #
+  # Substitution function for to simplify `tm_map`
+  my.sub &lt;- content_transformer( 
+    function(x, pattern, replacement) 
+      gsub(pattern, replacement, x))
+  
+  corpus %&gt;%
+    tm_map(my.sub, &quot;\\[\\w+\\]&quot;, &quot;&quot;) %&gt;% # ex.`[applause]` 
+    tm_map(my.sub, &quot;\\(\\w+\\)&quot;, &quot;&quot;) %&gt;% # ex. `(tip)`
+    tm_map(removeWords, stopwords(&quot;english&quot;)) %&gt;% # english stopwords
+    tm_map(removePunctuation, preserve_intra_word_dashes = TRUE) %&gt;% # keep `low-income`
+    tm_map(removeNumbers) %&gt;% # numerals
+    tm_map(stripWhitespace) # clean up any trailing whitespace
+}</code></pre>
+<p>Now apply the filters and clean this corpus up!</p>
+<pre class="r"><code>rep.corpus &lt;- clean.corpus(corpus = rep.corpus.raw)
+dem.corpus &lt;- clean.corpus(corpus = dem.corpus.raw)</code></pre>
+<p>Returning to our word clouds. We need to create new wordlists from the cleaned data and then visualize the results.</p>
+<pre class="r"><code>rep.wordlist &lt;- create.wordlist(corpus = rep.corpus, create_df = TRUE)
+dem.wordlist &lt;- create.wordlist(corpus = dem.corpus, create_df = TRUE)
+
+wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)</code></pre>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-1.png" width="672" /></p>
+<pre class="r"><code>wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)</code></pre>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-2.png" width="672" /></p>
+<p>Alright, now we are in a position to do some comparing. Looking at the word clouds we can see obvious similarities and differences. The size of the text, however, can be misleading here: text between each word cloud is not on the same scale. That is, it’s hard to know how these frequencies/text sizes really match up between the corpora. To identify those words that are most/ least indicative of each corpus (when compared to the other corpus) we want to compare the relative frequency of words in the <code>rep.corpus</code> with the relative frequencies in the <code>dem.corpus</code>. Using the ratio of <code>rep.corpus</code>/ <code>dem.corpus</code> we will find that words with highest values tend to be more indicative of the <code>rep.corpus</code> and lowest values more indicative of the <code>dem.corpus</code>. This calculation is known as a Relative Frequency Ratio <span class="citation">(Damerau 1993)</span>.</p>
+<pre class="r"><code>rfr.calc &lt;- function(wordlist.a, wordlist.b, create_df = FALSE) {
+  # Calculate Relative Frequency Ratio #
+  # Words in wordlist.b, not in wordlist.a
+  wordlist.a[setdiff(names(wordlist.b), names(wordlist.a))] &lt;- 0 # Fill missing words
+  # Words in wordlist.a, not in wordlist.b
+  wordlist.b[setdiff(names(wordlist.a), names(wordlist.b))] &lt;- 0 # Fill missing words
+  
+  vocabulary &lt;- wordlist.a %&gt;% names # get complete vocabulary listing
+  
+  a.ratios &lt;- wordlist.a/sum(wordlist.a) # ratios for wordlist a
+  b.ratios &lt;- wordlist.b/sum(wordlist.b) # ratios for wordlist b
+  
+  # wordlist.a ratio/ wordlist.b ratio (with +1 smoothing)
+  rfr &lt;- log((a.ratios[vocabulary] + 1) / (b.ratios[vocabulary] + 1))
+  
+  # Coerce to a `data.frame`
+  if(create_df == TRUE) rfr &lt;- rfr %&gt;%
+    data.frame(Words = names(.), 
+               Scores = ., 
+               row.names = NULL, 
+               stringsAsFactors = FALSE) %&gt;%
+    arrange(Scores)
+  return(rfr)
+}</code></pre>
+<p>The function <code>rfr()</code> implements the Relative Frequency Ratio calculation with a couple practical additions. First, each wordlist will contain words that do not occur in the other. Since this will lead to undefined ratios, a single value is added to each ratio calculation (+1 smoothing). Furthermore, I’ve taken the <code>log()</code> of this ratio to provide a more appeasing visual distribution (see below). The results are optionally returned as a <code>data.frame</code>.</p>
+<p>First, we need to create wordlists from our cleaned-up corpora. Then run the <code>rfr()</code> function.</p>
+<pre class="r"><code>rep.wordlist &lt;- create.wordlist(corpus = rep.corpus)
+dem.wordlist &lt;- create.wordlist(corpus = dem.corpus)
+
+rfr_df &lt;- rfr.calc(wordlist.a = rep.wordlist, 
+                   wordlist.b = dem.wordlist, 
+                   create_df = TRUE)</code></pre>
+<p>Let’s look at the first lines of <code>rfr_df</code>.</p>
+<pre class="r"><code>rfr_df %&gt;%
+  head</code></pre>
+<pre><code>##   Words       Scores
+## 1  will -0.002114276
+## 2  year -0.001789069
+## 3  work -0.001753218
+## 4 every -0.001132713
+## 5  jobs -0.001065103
+## 6  know -0.001061382</code></pre>
+<p>Looks good. Let’s take the top 25 and the bottom 25 and add Party labels to get ready to visually summarize these top results.</p>
+<pre class="r"><code># Get highest and lowest scores (i.e. Republican/ Democrat)
+rep.dem_df &lt;- rbind(head(rfr_df, 25), tail(rfr_df, 25))
+rep.dem_df$Party &lt;- ifelse(test = (rep.dem_df$Scores &gt; 0), 
+                           yes = &quot;Republicans&quot;, 
+                           no = &quot;Democrats&quot;)</code></pre>
+<p><code>rbind()</code> takes the <code>head()</code>, or top 25 and the <code>tail()</code> or bottom 25 and binds them by row. Since we know that the point at which the ratio is equal, that is, Republican words and Democrat words have the same relative frequency is 1 and <code>log(1)</code> is 0, then values 0 and above are republican-indicative otherwise democrat-indicative. The <code>ifelse()</code> statement tests this and applies the Party labels accordingly.</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(rep.dem_df, aes(x = reorder(Words, Scores), y = Scores, color = Party)) + 
+  geom_point() +
+  theme_gray() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  xlab(&quot;Terms&quot;) + ylab(&quot;Relative Frequency Ratio (log)&quot;) + ggtitle(&quot;Top 50 most indicative terms&quot;) +
+  theme(legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/rfr-visual-1.png" width="960" /></p>
+<p>Very cool. One more step that would really complement this analysis would be to do a concordance on terms of interest to see particular words in context. Below is a more complex function that is a first stab at doing just that.</p>
+<pre class="r"><code>concordance &lt;- function(texts, pattern, margin = 30, n = 0) {
+  # A script to create a concordance listing for character vectors #
+  pattern &lt;- tolower(pattern) # lowercase
+  concordance &lt;- lapply(tolower(texts), function(i) { # loop over lowercased texts
+    str_locate_all(string = i, # find all indices for pattern matches
+                   pattern = pattern) %&gt;%
+      sapply(function(j) { # loop over index pairs (start/ end)
+        str_sub(string = i, 
+                start = as.integer(j[, &#39;start&#39;])-margin, # extract the pattern
+                end = as.integer(j[, &#39;end&#39;])+margin) %&gt;% # with margins
+          str_replace_all(pattern = pattern, # replace pattern with padded pattern
+                          replacement = str_pad(string = pattern, 
+                                                width = nchar(pattern)+4, 
+                                                side = &quot;both&quot;,
+                                                pad = &quot; &quot;))
+      }) %&gt;%
+      unlist # clean up output
+  }) %&gt;% 
+    unlist %&gt;% # clean up output
+    as.vector  # clean up output
+  if(n &gt; 0) concordance &lt;- concordance[1:n]
+  return(concordance)
+}</code></pre>
+<p>So to explore the word “federal” in the <code>rep.corpus</code> we run:</p>
+<pre class="r"><code>concordance(texts = content(rep.corpus.raw), pattern = &quot;federal&quot;, margin = 35, n = 5)</code></pre>
+<pre><code>## [1] &quot;tion in the armed forces and other   federal   activities is on the way out. we h&quot;
+## [2] &quot;oyees have been separated from the   federal   government. our national security &quot;
+## [3] &quot;pecial employment standards of the   federal   government i turn now to a matter &quot;
+## [4] &quot;e government. it recognizes that a   federal   budget should be a stabilizing fac&quot;
+## [5] &quot;ons for some crops and apply rigid   federal   controls over the use of the diver&quot;</code></pre>
+<p>And there you have it a re-creation of the analysis using AntConc, this time using R.</p>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references">
+<div id="ref-Damerau:1993">
+<p>Damerau, F J. 1993. “Generating and evaluating domain-oriented multi-word terms from texts.” <em>Information Processing &amp; Management</em> 29 (4): 433–47.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The handing off portion uses the <code>%&gt;%</code> syntax from the <code>magrittr</code> package (loaded through the <code>dplyr</code> package here).<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Passing, or ‘piping’ output using the <code>%&gt;%</code> syntax assumes that the first argument of the next function will take the output of the previous. If that is not the case, then the <code>.</code> operator can be used to specify where insert the input.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expressions</a> are used for pattern matching<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>One twist is the <code>my.sub()</code> function I wrote to simplify adding custom transformations to <code>tm_map()</code>.<a href="#fnref4">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/2015/03/01/web-scraping-with-rvest-in-r/"><span
+      aria-hidden="true">&larr;</span> Web scraping with `rvest` in R</a></li>
+    
+
+    
+    <li class="next"><a href="/2015/08/12/creating-hexbin-plots/">Creating hexbin plots <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Jerid Francom &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

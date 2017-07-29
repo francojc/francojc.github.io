@@ -1,0 +1,162 @@
+---
+title: Generating annotated text in Shiny
+author: Jerid Francom
+date: '2015-08-15'
+slug: generating-annotated-text-in-shiny
+summary: 'Documentation of a method to generate annotated text from a text classification algorithm in Shiny.'
+categories:
+  - R
+  - Shiny
+tags:
+  - text classification
+---
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+library(EBImage)
+```
+
+I've been working on a Shiny web app to visualize the results from a text classification algorithm. Specifically, the app aims to classify a particular document in Spanish as either approximating the usage from one of three Spanish subvarieties: Argentine, Mexican, and Peninsular. 
+
+In addition to an overall classification, and returning the corresponding probability score, I also want to be able to see how the individual features in the text contribute to the classification. After applying the classification algorithm to a loaded document, the feature probabilities look something like this:
+
+```{r feature-probs-table, echo=FALSE}
+load(file = "data/text-classification-results.Rdata")
+knitr::kable(results$feature.probs[, 1:10])
+```
+
+My first whack at a visualization of these feature probabilities was to create a function `markup.text(results = , document = )` to take the words in the document and match them with their corresponding feature scores and use theses scores to apply a color gradient in HTML markup from most and least indicative of the assigned class. 
+
+Example HTML output for one word:
+
+    <span style = "background-color: rgb(74,255,000);">chavo</span>
+
+Words in the document but not in the model are left unmarked.
+
+Here are the results we are looking for:
+
+<span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(209,255,000);">trata</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">un</span> <span style = "background-color: rgb(74,255,000);">chavo</span> <span style = "background-color: rgb(255,255,255);">que</span> <span style = "background-color: rgb(255,214,000);">pasa</span> <span style = "background-color: rgb(255,255,255);">a</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,236,000);">casa</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">su</span> <span style = "background-color: rgb(255,222,000);">novia</span> <span style = "background-color: rgb(255,255,255);">a</span> <span style = "background-color: rgb(255,255,000);">recogerla</span>   .        <span style = "background-color: rgb(255,255,255);">su</span> <span style = "background-color: rgb(255,255,000);">suegro</span> <span style = "background-color: rgb(255,255,255);">lo</span> <span style = "background-color: rgb(229,255,000);">recibe</span> <span style = "background-color: rgb(255,255,255);">muy</span> <span style = "background-color: rgb(248,255,000);">contento</span>   .        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(74,255,000);">chavo</span> <span style = "background-color: rgb(255,255,255);">está</span> <span style = "background-color: rgb(252,255,000);">vestido</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">smokin</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,206,000);">chica</span> <span style = "background-color: rgb(255,255,255);">lo</span> <span style = "background-color: rgb(192,255,000);">saluda</span>   ,        <span style = "background-color: rgb(255,255,255);">también</span> <span style = "background-color: rgb(255,255,255);">con</span> <span style = "background-color: rgb(255,255,255);">un</span> <span style = "background-color: rgb(252,255,000);">vestido</span> <span style = "background-color: rgb(250,255,000);">azul</span> <span style = "background-color: rgb(255,255,255);">muy</span> <span style = "background-color: rgb(255,232,000);">elegante</span>   ,        <span style = "background-color: rgb(255,255,255);">pero</span> <span style = "background-color: rgb(255,255,255);">le</span> <span style = "background-color: rgb(255,250,000);">indica</span> <span style = "background-color: rgb(255,255,255);">que</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,255,000);">espere</span> <span style = "background-color: rgb(255,255,255);">porque</span> <span style = "background-color: rgb(255,255,000);">va</span> <span style = "background-color: rgb(255,255,255);">a</span> <span style = "background-color: rgb(255,228,000);">terminar</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(165,255,000);">arreglarse</span>   .        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,222,000);">novia</span> <span style = "background-color: rgb(249,255,000);">saca</span> <span style = "background-color: rgb(255,255,255);">una</span> <span style = "background-color: rgb(255,255,000);">pequeña</span> <span style = "background-color: rgb(255,255,255);">licorera</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,234,000);">metal</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,255,000);">da</span> <span style = "background-color: rgb(255,255,255);">al</span> <span style = "background-color: rgb(255,242,000);">novio</span>   ,        <span style = "background-color: rgb(255,255,255);">quien</span> <span style = "background-color: rgb(255,255,255);">lo</span> <span style = "background-color: rgb(255,255,000);">mira</span> <span style = "background-color: rgb(61,255,000);">extrañado</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">le</span> <span style = "background-color: rgb(241,255,000);">dice</span> <span style = "background-color: rgb(255,255,255);">con</span> <span style = "background-color: rgb(255,255,000);">señas</span> <span style = "background-color: rgb(255,255,255);">que</span> <span style = "background-color: rgb(255,255,255);">no</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(239,255,000);">quiere</span> <span style = "background-color: rgb(255,254,000);">aceptar</span>   .        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(218,255,000);">insiste</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(187,255,000);">mete</span> <span style = "background-color: rgb(255,255,255);">en</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(226,255,000);">bolsa</span> <span style = "background-color: rgb(255,255,255);">del</span> <span style = "background-color: rgb(255,254,000);">saco</span> <span style = "background-color: rgb(255,255,255);">del</span> <span style = "background-color: rgb(255,242,000);">novio</span>   .        <span style = "background-color: rgb(255,255,000);">ahora</span>   ,        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(249,255,000);">saca</span> <span style = "background-color: rgb(255,255,255);">un</span> <span style = "background-color: rgb(255,255,000);">enorme</span> <span style = "background-color: rgb(255,255,255);">churro</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(255,255,255);">lo</span> <span style = "background-color: rgb(120,255,000);">ofrece</span>   ,        <span style = "background-color: rgb(255,255,255);">como</span> <span style = "background-color: rgb(146,255,000);">diciéndole</span>        "   <span style = "background-color: rgb(13,255,000);">ándale</span>   ,        <span style = "background-color: rgb(199,255,000);">aprovecha</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">una</span> <span style = "background-color: rgb(255,255,000);">vez</span>   "          .        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(74,255,000);">chavo</span>   ,        <span style = "background-color: rgb(255,255,255);">con</span> <span style = "background-color: rgb(255,255,255);">una</span> <span style = "background-color: rgb(255,255,000);">sonrisa</span> <span style = "background-color: rgb(255,214,000);">nerviosa</span>   ,        <span style = "background-color: rgb(255,255,000);">nuevamente</span> <span style = "background-color: rgb(255,255,255);">le</span> <span style = "background-color: rgb(241,255,000);">dice</span> <span style = "background-color: rgb(255,255,255);">que</span> <span style = "background-color: rgb(255,255,255);">no</span>   ,        <span style = "background-color: rgb(255,255,255);">pero</span> <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(187,255,000);">mete</span> <span style = "background-color: rgb(255,255,255);">también</span> <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(185,255,000);">cigarro</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">mariguana</span> <span style = "background-color: rgb(255,255,255);">en</span> <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,254,000);">saco</span> <span style = "background-color: rgb(255,255,255);">del</span> <span style = "background-color: rgb(74,255,000);">chavo</span>   .        <span style = "background-color: rgb(248,255,000);">finalmente</span>   ,        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(249,255,000);">saca</span> <span style = "background-color: rgb(255,255,255);">un</span> <span style = "background-color: rgb(255,255,255);">preservativo</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(255,255,255);">lo</span> <span style = "background-color: rgb(120,255,000);">ofrece</span> <span style = "background-color: rgb(255,255,255);">al</span> <span style = "background-color: rgb(255,242,000);">novio</span>   ,        <span style = "background-color: rgb(255,255,255);">quien</span> <span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(174,255,000);">resiste</span>   ,        <span style = "background-color: rgb(255,255,255);">pero</span> <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(255,236,000);">hace</span> <span style = "background-color: rgb(255,255,255);">un</span> <span style = "background-color: rgb(255,255,000);">gesto</span> <span style = "background-color: rgb(255,255,255);">como</span> <span style = "background-color: rgb(255,242,000);">diciendo</span>        "   <span style = "background-color: rgb(255,255,255);">más</span> <span style = "background-color: rgb(255,255,000);">vale</span> <span style = "background-color: rgb(243,255,000);">prevenir</span> <span style = "background-color: rgb(255,255,255);">que</span> <span style = "background-color: rgb(243,255,000);">lamentar</span>   "          .        <span style = "background-color: rgb(255,255,255);">cuando</span> <span style = "background-color: rgb(255,255,000);">baja</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,222,000);">novia</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(192,255,000);">saluda</span> <span style = "background-color: rgb(255,255,255);">al</span> <span style = "background-color: rgb(74,255,000);">chavo</span>   ,        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(245,255,000);">inmediato</span> <span style = "background-color: rgb(187,255,000);">mete</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,255,255);">mano</span> <span style = "background-color: rgb(255,255,255);">al</span> <span style = "background-color: rgb(255,254,000);">saco</span> <span style = "background-color: rgb(255,255,255);">del</span> <span style = "background-color: rgb(255,242,000);">novio</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">le</span> <span style = "background-color: rgb(255,229,000);">enseña</span> <span style = "background-color: rgb(255,255,255);">a</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(93,255,000);">chava</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,255,255);">licorera</span>   ,        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,255);">churro</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">mariguana</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,255);">preservativo</span>   .        <span style = "background-color: rgb(255,255,255);">ella</span> <span style = "background-color: rgb(255,249,000);">queda</span> <span style = "background-color: rgb(255,255,255);">muy</span> <span style = "background-color: rgb(255,255,255);">asombrada</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(188,255,000);">enoja</span> <span style = "background-color: rgb(255,255,255);">con</span> <span style = "background-color: rgb(255,255,255);">su</span> <span style = "background-color: rgb(255,242,000);">novio</span>   .        <span style = "background-color: rgb(255,255,255);">por</span> <span style = "background-color: rgb(255,255,000);">supuesto</span>   ,        <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(74,255,000);">chavo</span> <span style = "background-color: rgb(209,255,000);">trata</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(253,255,000);">explicar</span>   ,        <span style = "background-color: rgb(255,255,255);">pero</span> <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(255,255,000);">papá</span> <span style = "background-color: rgb(255,255,255);">lo</span> <span style = "background-color: rgb(255,255,000);">corre</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(245,255,000);">inmediato</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,236,000);">casa</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(238,255,000);">manda</span> <span style = "background-color: rgb(255,255,255);">a</span> <span style = "background-color: rgb(255,255,255);">la</span> <span style = "background-color: rgb(255,206,000);">chica</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(132,255,000);">regreso</span> <span style = "background-color: rgb(255,255,255);">a</span> <span style = "background-color: rgb(255,255,255);">su</span> <span style = "background-color: rgb(30,255,000);">recámara</span>   ,        <span style = "background-color: rgb(255,255,255);">con</span> <span style = "background-color: rgb(255,255,255);">un</span> <span style = "background-color: rgb(255,255,000);">gesto</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,255,255);">regaño</span>   ,        <span style = "background-color: rgb(255,255,255);">como</span> <span style = "background-color: rgb(255,242,000);">diciendo</span>        "          ¡   <span style = "background-color: rgb(255,255,000);">mira</span> <span style = "background-color: rgb(255,255,255);">con</span> <span style = "background-color: rgb(255,255,255);">qué</span> <span style = "background-color: rgb(238,255,000);">clase</span> <span style = "background-color: rgb(255,255,255);">de</span> <span style = "background-color: rgb(255,220,000);">personas</span> <span style = "background-color: rgb(255,255,000);">sales</span>   !          "          .        <span style = "background-color: rgb(255,255,255);">ella</span> <span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(255,255,000);">sube</span> <span style = "background-color: rgb(255,255,255);">muy</span> <span style = "background-color: rgb(255,255,000);">triste</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(199,255,000);">enojada</span> <span style = "background-color: rgb(255,255,255);">y</span> <span style = "background-color: rgb(255,255,255);">el</span> <span style = "background-color: rgb(181,255,000);">señor</span> <span style = "background-color: rgb(255,255,255);">se</span> <span style = "background-color: rgb(255,249,000);">queda</span> <span style = "background-color: rgb(255,255,255);">muy</span> <span style = "background-color: rgb(248,255,000);">contento</span>   ,        <span style = "background-color: rgb(255,248,000);">haciendo</span> <span style = "background-color: rgb(255,255,255);">un</span> <span style = "background-color: rgb(255,255,000);">gesto</span> <span style = "background-color: rgb(255,255,255);">de</span>        "          ¡   <span style = "background-color: rgb(255,255,000);">victoria</span>   ,        <span style = "background-color: rgb(255,255,255);">lo</span> <span style = "background-color: rgb(255,255,000);">conseguí</span>   !          "          .  
+
+How did I get here:
+
+1. Prep the original document for comparison with the model by creating a text vector with lowercased words and isolated punctuation.
+
+*Original document*
+
+    Llega un chico vestido muy elegante como que va a un baile de graduación o algo así. Llega a la casa de su novia, o amiga, y el papá de la chica lo recibe. Antes de que baje la chica por las escaleras el señor, papá de la chica, le da una botellita de alcohol, un gallo y un condón. El chico está muy apenado y el papá hace gestos de como “no te preocupes, soy bien buena onda, conmigo no hay pedo” y le pone todas las cosas en el bolsillo. En ese instante baja la hija ya vestida para ir al baile y antes de irse el papá los para y le revisa los bolsillos al chico y encuentra todo lo que él le había puesto. Hace un pancho y corre al chico de su casa y le dice a su hija que se regrese a su cuarto.
+
+```{r clean-document, eval=FALSE}
+# Prep document
+clean.document <- document %>%
+        tolower %>%
+        gsub(pattern = '([[:punct:]])', replacement = " \\1 ", x = .) %>%
+        strsplit(split = " ") %>%
+        unlist
+```
+
+2. From the MNB results file, find information about the class selected and the scores for all classes. Take the feature probability scores and calculate the difference between the next closest class and the class selected to create a more telling relative score. When a feature probability matches for all classes, this feature is not in the model. When a relative score equals the median score it is marked as an OOV (out-of-vocabulary) item.
+
+```{r classes, eval=FALSE}
+# Get information on classes
+class <- results$classification # class selected
+num.classes <- nrow(results$feature.probs) # Get the number of classes
+
+# Retrieve scores for given class
+oov.score <- round(100/num.classes, 2) # Get the out-of-vocabulary score (uniform prob.)
+class.scores <- results$feature.probs[rownames(results$feature.probs) == class, ] # Scores for class selected
+median.scores <- results$feature.probs %>% apply(2, median) # Find median score from all classes
+median.scores[median.scores == oov.score] <- NA # Mark OOV items
+scores <- class.scores - median.scores # Get the relative difference between selected class and next nearest class
+```
+
+3. Now, a loop runs through and compares the words in the model with the words of the text. When a word appears in the text that is in the model, an RGB number is assigned on a gradient from green to red corresponding to most and least indicative of the word for the class selected. Words not in the model are not included in the gradient. HTML markup is added to the words using the RGB specifications.
+
+```{r rgb-assignment, eval=FALSE}
+# Sequence through the document marking up words based on conditional probs
+tagged.document <- character() # init `tagged.document`
+for(i in seq(clean.document)) {
+        if(clean.document[i] %in% names(scores)) { # Find 'words' and add markup
+                score <- scores[names(scores) == clean.document[i]][1]
+                if (is.na(score)) {
+                        rgb <- paste0("255,255,255") # white
+                } else if (score >= 0) {
+                        x <- round(abs(((score/100)*255)-255), 0) # relative score
+                        rgb <- paste0(x, ",255,000")
+                } else {
+                        x <- round(abs(((score/100)*255)+255), 0) # relative score
+                        rgb <- paste0("255,", x, ",000")
+                }
+                tagged.document <-
+                        c(tagged.document,
+                          paste0('<span style = "background-color: rgb(',
+                                 rgb,
+                                 ');">',
+                                 clean.document[i],
+                                 '</span>'))
+        } else { # other units, leave them alone
+                tagged.document <- c(tagged.document, paste(" ", clean.document[i], " "))
+        }
+}
+```
+
+
+4. Finally the resulting vector is flattend, and returned as a single character vector.
+
+```{r results, eval=FALSE}
+# Return `tagged.text` as running text
+tagged.document %>% paste(collapse = "", sep = "")
+return(tagged.document)
+```
+
+
+Returning to the Shiny application, in the `server.R` script a reactive input `renderUI({})` pulls the data from an uploaded file and pullls the results from the text classification algorithm on this data. These two pieces of data are fed to the `markup.text()` function above and the results are exported as output to the `text1` variable as HTML.
+
+```{r server-return-html, eval=FALSE}
+output$text1 <- renderUI({
+                data <- dataInput()
+                results <- dataResults()
+
+                if (is.null(input$file))
+                        return(NULL)
+                HTML(markup.text(results = results,
+                            document = data))
+        })
+```
+
+
+In the `ui.R` script, the output `text1` information is returned within the body within a `box()` element using the `htmlOutput()` function. 
+
+{{% alert note %}}
+Here you can also see the `infoBoxOutput()` functions that return the overall probability scores for all classes.
+{{% /alert %}}
+
+```{r box, eval=FALSE}
+body <- dashboardBody(
+        tabItems(
+                tabItem(tabName = "text",
+                        fluidRow(
+                                infoBoxOutput("classification1"),
+                                infoBoxOutput("classification2"),
+                                infoBoxOutput("classification3")
+                        ),
+                        fluidRow(
+                                box(width = 12,
+                                    valstatus = "primary",
+                                    solidHeader = TRUE,
+                                    title = "Classification results",
+                                    htmlOutput("text1", inline = TRUE),
+                                    footer = textOutput("model"))
+                        )
+                )
+        )
+)
+```
+
+The results look like this.
+
+```{r app-image, echo=FALSE}
+img <- readImage("images/app.png")
+display(img)
+```
+
+The next step is to try to make each feature a link to a keyword-in-context interface showing the usage of this linguistic item in context.
+

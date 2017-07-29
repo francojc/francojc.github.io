@@ -1,0 +1,55 @@
+---
+title: Creating hexbin plots
+author: Jerid Francom
+date: '2015-08-12'
+slug: creating-hexbin-plots
+summary: 'A look at creating hexbin plots with the `hexbin` package and `ggplot2`.'
+categories:
+  - R
+tags:
+  - plot
+  - hexbin
+  - ggplot2
+  - stat_sum
+---
+
+I was just browsing the web today and stumbled on [an overview of data visualization in R](http://www.analyticsvidhya.com/blog/2015/07/guide-data-visualization-r/). As I was scrolling the page something caught my eye: a hexbin plot. I had never heard of such a plot before. 
+
+To create a hexbin plot in base R with `plot()` you need to install the `hexbin` package.
+
+```{r install-hexbin, eval=FALSE}
+install.packages("hexbin")
+```
+
+Then you can load the library and create your hexbin object setting `x` and `y`. 
+
+```{r base-plot}
+library(hexbin) # load the hexbin lib
+library(ggplot2) # for now just to get the `diamonds` dataset
+a <- hexbin(x = diamonds$carat, y = diamonds$price) # create a hexbin object
+plot(a) # plot
+```
+
+What a great way to visualize bivariate frequency data and avoid overplotting issues. Then, I thought: does `ggplot2` have a geom for that?
+
+It turns out it's a stat. But, yes, yes it does. In this case you will not need to install/ load the `hexbin` package. Just apply `stat_binhex()` to your plot.
+
+```{r ggplot2-plot}
+ggplot(diamonds, aes(x = carat, y = price)) + # create plot
+  stat_binhex() # apply stat
+```
+
+In both the `plot` and `ggplot2` approaches you can tweak the bin size to adjust the desired granularity of the plot.
+
+```{r plots-binsize}
+a <- hexbin(x = diamonds$carat, y = diamonds$price, xbins = 10)
+plot(a)
+ggplot(diamonds, aes(x = carat, y = price)) + 
+  stat_binhex(bins = 10) 
+```
+
+And since I was poking around on the [ggplot2 documentation](http://docs.ggplot2.org/current/index.html) I also discovered another stat to use to avoid overplotting. This time when working with two categorical variables: `stat_sum()`.
+
+```{r ggplot2-stat-sum}
+ggplot(diamonds, aes(x = cut, y = clarity)) + stat_sum(aes(group = 1))
+```

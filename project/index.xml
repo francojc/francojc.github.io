@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on francojc ⟲</title>
+    <link>/project/</link>
+    <description>Recent content in Projects on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/project/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ACTIV-ES</title>
+      <link>/project/activ-es/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/activ-es/</guid>
+      <description>&lt;p&gt;ACTIV-ES is a comparable Spanish corpus comprised of tv/film dialogue from Argentine, Mexican and Spanish productions. Titles for each of these three countries were seeded from the Internet Movie Database, subtitle data for the hearing impaired was provided by Opensubtitles.org and was post-processed to correct/remove subtitle, OCR and diacritic artifacts and annotated for part-of-speech.&lt;/p&gt;
+
+&lt;p&gt;The data is available in two main formats: 1) running text for each document and 2) 1:5 gram aggregate files. Each format includes a plain text and part-of-speech annotated version. Document names reflect the &lt;code&gt;language code&lt;/code&gt;, &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;year&lt;/code&gt;, &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, &lt;code&gt;genre&lt;/code&gt; (first genre listed in the IMDb), and &lt;code&gt;IMDb ID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more information about the development and evaluation of these resources and to cite this work refer to:&lt;/p&gt;
+
+&lt;p&gt;Francom, J., Hulden, M. and Ussishkin, A.. (2014) &lt;a href=&#34;https://www.academia.edu/6962707/ACTIV-ES_a_comparable_cross-dialect_corpus_of_everyday_Spanish_from_Argentina_Mexico_and_Spain&#34; target=&#34;_blank&#34;&gt;ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain.&lt;/a&gt; In Proceedings of the Ninth Annual Language Resources and Evaluation Conference, Reykjavik, Iceland. European Language Resources Association (ELRA).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Science for Language Research</title>
+      <link>/project/dslr/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/dslr/</guid>
+      <description>
+
+&lt;h1 id=&#34;aim&#34;&gt;Aim&lt;/h1&gt;
+
+&lt;p&gt;In recent years there has been a growing buzz around the term &amp;lsquo;Data Science&amp;rsquo;, and related terms, data analytics, data mining, &lt;em&gt;etc&lt;/em&gt;. In a nutshell data science is the process by which an investigator leverages statistical methods and computational power to uncover insight from large datasets. Driven in large part by the increase in computing power available to the average individual and the increasing amount of electronic data that is now available through the internet, interest in data science has expanded to virtually all fields in academia and areas in the public sector. Data scientists are in high demand and this trend is expected to continue into the foreseeable future, which means that undergraduate and post-graduate students will be increasingly seeking out resources and training in the area.&lt;/p&gt;
+
+&lt;p&gt;This book is an introduction to the fundamental concepts and practical programming skills from Data Science that are increasingly employed in a variety of language-centered fields and sub-fields. It is geared towards advanced undergraduates and graduate students of linguistics and related fields. As quantitative research skills are quickly becoming a core aspect of many language programs, this textbook aims to provide a fundamental understanding of theoretical concepts, programming skills, and statistical methods for doing quantitative linguistic analysis. Currently no textbook integrates these components (theoretical concepts, programming skills, and statistical methods) into one resource. The goal, then, is to integrate these principles into one textbook and to teach core concepts and methods from key language science fields, corpus and computational linguistics, through hands-on application of core concepts through R programming. Through these skills we will explore topics/ and replicate previous research in a variety of areas in language research (psycholinguistics, sociolinguistics, translation studies, &lt;em&gt;etc.&lt;/em&gt;) using common methods and authentic data sources.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

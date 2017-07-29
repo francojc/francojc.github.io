@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dslr on francojc ⟲</title>
+    <link>/tags/dslr/</link>
+    <description>Recent content in Dslr on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/dslr/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Data Science for Language Research</title>
+      <link>/project/dslr/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/dslr/</guid>
+      <description>
+
+&lt;h1 id=&#34;aim&#34;&gt;Aim&lt;/h1&gt;
+
+&lt;p&gt;In recent years there has been a growing buzz around the term &amp;lsquo;Data Science&amp;rsquo;, and related terms, data analytics, data mining, &lt;em&gt;etc&lt;/em&gt;. In a nutshell data science is the process by which an investigator leverages statistical methods and computational power to uncover insight from large datasets. Driven in large part by the increase in computing power available to the average individual and the increasing amount of electronic data that is now available through the internet, interest in data science has expanded to virtually all fields in academia and areas in the public sector. Data scientists are in high demand and this trend is expected to continue into the foreseeable future, which means that undergraduate and post-graduate students will be increasingly seeking out resources and training in the area.&lt;/p&gt;
+
+&lt;p&gt;This book is an introduction to the fundamental concepts and practical programming skills from Data Science that are increasingly employed in a variety of language-centered fields and sub-fields. It is geared towards advanced undergraduates and graduate students of linguistics and related fields. As quantitative research skills are quickly becoming a core aspect of many language programs, this textbook aims to provide a fundamental understanding of theoretical concepts, programming skills, and statistical methods for doing quantitative linguistic analysis. Currently no textbook integrates these components (theoretical concepts, programming skills, and statistical methods) into one resource. The goal, then, is to integrate these principles into one textbook and to teach core concepts and methods from key language science fields, corpus and computational linguistics, through hands-on application of core concepts through R programming. Through these skills we will explore topics/ and replicate previous research in a variety of areas in language research (psycholinguistics, sociolinguistics, translation studies, &lt;em&gt;etc.&lt;/em&gt;) using common methods and authentic data sources.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

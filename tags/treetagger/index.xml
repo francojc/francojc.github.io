@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Treetagger on francojc ⟲</title>
+    <link>/tags/treetagger/</link>
+    <description>Recent content in Treetagger on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Sun, 11 Sep 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/treetagger/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Install graphical interface for TreeTagger on Windows</title>
+      <link>/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</link>
+      <pubDate>Sun, 11 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s a slimmed down step-by-step instruction list on how to install the &lt;a href=&#34;http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/&#34; target=&#34;_blank&#34;&gt;TreeTagger&lt;/a&gt; &lt;a href=&#34;http://www.smo.uhi.ac.uk/~oduibhin/oideasra/interfaces/winttinterface.htm&#34; target=&#34;_blank&#34;&gt;graphical interface&lt;/a&gt; on a Windows machine.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download the &lt;a href=&#34;ftp://ftp.ims.uni-stuttgart.de/pub/corpora/tree-tagger-windows-3.2.zip&#34; target=&#34;_blank&#34;&gt;Tree-Tagger software for Windows&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Unzip this file into your &lt;code&gt;C:\Program files\&lt;/code&gt; directory. Using WinZip, make sure you have the &amp;ldquo;Use folder names&amp;rdquo; box ticked and extract all files.&lt;/li&gt;
+&lt;li&gt;Download the &lt;a href=&#34;http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/DecisionTreeTagger.html&#34; target=&#34;_blank&#34;&gt;parameter file(s)&lt;/a&gt; that you need and extract them into the subdirectory &lt;code&gt;C:\Program Files\TreeTagger\lib&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Download and drop the graphical interface executable files (&lt;a href=&#34;http://www.smo.uhi.ac.uk/~oduibhin/oideasra/interfaces/wintreetagger.exe&#34; target=&#34;_blank&#34;&gt;tagger&lt;/a&gt; and &lt;a href=&#34;http://www.smo.uhi.ac.uk/~oduibhin/oideasra/interfaces/wintraintreetagger.exe&#34; target=&#34;_blank&#34;&gt;training&lt;/a&gt; programs&lt;/a&gt;) in the &lt;code&gt;C:\Program Files\TreeTagger\bin&lt;/code&gt; subdirectory.&lt;/li&gt;
+&lt;li&gt;Then make a shortcut to the desktop by right-clicking on the tagger and/or training programs and selecting create shortcut. Drag that shortcut to the desktop.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You should now be able to launch TreeTagger from the desktop.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

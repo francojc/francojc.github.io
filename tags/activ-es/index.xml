@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activ Es on francojc ⟲</title>
+    <link>/tags/activ-es/</link>
+    <description>Recent content in Activ Es on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/activ-es/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ACTIV-ES</title>
+      <link>/project/activ-es/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/activ-es/</guid>
+      <description>&lt;p&gt;ACTIV-ES is a comparable Spanish corpus comprised of tv/film dialogue from Argentine, Mexican and Spanish productions. Titles for each of these three countries were seeded from the Internet Movie Database, subtitle data for the hearing impaired was provided by Opensubtitles.org and was post-processed to correct/remove subtitle, OCR and diacritic artifacts and annotated for part-of-speech.&lt;/p&gt;
+
+&lt;p&gt;The data is available in two main formats: 1) running text for each document and 2) 1:5 gram aggregate files. Each format includes a plain text and part-of-speech annotated version. Document names reflect the &lt;code&gt;language code&lt;/code&gt;, &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;year&lt;/code&gt;, &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, &lt;code&gt;genre&lt;/code&gt; (first genre listed in the IMDb), and &lt;code&gt;IMDb ID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more information about the development and evaluation of these resources and to cite this work refer to:&lt;/p&gt;
+
+&lt;p&gt;Francom, J., Hulden, M. and Ussishkin, A.. (2014) &lt;a href=&#34;https://www.academia.edu/6962707/ACTIV-ES_a_comparable_cross-dialect_corpus_of_everyday_Spanish_from_Argentina_Mexico_and_Spain&#34; target=&#34;_blank&#34;&gt;ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain.&lt;/a&gt; In Proceedings of the Ninth Annual Language Resources and Evaluation Conference, Reykjavik, Iceland. European Language Resources Association (ELRA).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain</title>
+      <link>/2014/05/24/activ-es-a-comparable-cross-dialect-corpus-of-everyday-spanish-from-argentina-mexico-and-spain/</link>
+      <pubDate>Sat, 24 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/2014/05/24/activ-es-a-comparable-cross-dialect-corpus-of-everyday-spanish-from-argentina-mexico-and-spain/</guid>
+      <description>&lt;p&gt;The first release of the ACTIV-ES Spanish dialect corpus based on TV/film transcripts is now available on &lt;a href=&#34;https://github.com/francojc/activ-es&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It includes 3,460,172 total tokens (Argentina: 1,103,039 Mexico: 976,192 Spain: 1,380,941) and comes in running text and word list (1:5 gram) formats. Each format has both a plain text and part-of-speech tagged version.&lt;/p&gt;
+
+&lt;p&gt;For more information about the development and evaluation of this resource you can download our paper &amp;ldquo;&lt;a href=&#34;https://www.academia.edu/6962707/ACTIV-ES_a_comparable_cross-dialect_corpus_of_everyday_Spanish_from_Argentina_Mexico_and_Spain&#34; target=&#34;_blank&#34;&gt;ACTIV-ES: a comparable cross-dialect corpus of everday Spanish from Argentina, Mexico, and Spain&lt;/a&gt;&amp;rdquo; at the &lt;a href=&#34;http://lrec2014.lrec-conf.org/en/&#34; target=&#34;_blank&#34;&gt;Ninth Annual Language Resources and Evaluation Conference (LREC 2014)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Below is a visualization of the current language distribution (version 0.1) by time, country, size, and genre.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/activ-es.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

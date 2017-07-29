@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="author" content="Jerid Francom">
+  <meta name="description" content="Associate Professor of Spanish and Linguistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/2015/08/15/generating-annotated-text-in-shiny/">
+
+  
+
+  <title>Generating annotated text in Shiny | francojc ⟲</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">francojc ⟲</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="https://wfu.academia.edu/francom/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/vitae.pdf">
+            
+            <span>Vitae</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Generating annotated text in Shiny</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2015-08-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sat, Aug 15, 2015
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/shiny">Shiny</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/text-classification">text classification</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Generating%20annotated%20text%20in%20Shiny&amp;url=%2f2015%2f08%2f15%2fgenerating-annotated-text-in-shiny%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Generating%20annotated%20text%20in%20Shiny&amp;body=%2f2015%2f08%2f15%2fgenerating-annotated-text-in-shiny%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>I’ve been working on a Shiny web app to visualize the results from a text classification algorithm. Specifically, the app aims to classify a particular document in Spanish as either approximating the usage from one of three Spanish subvarieties: Argentine, Mexican, and Peninsular.</p>
+<p>In addition to an overall classification, and returning the corresponding probability score, I also want to be able to see how the individual features in the text contribute to the classification. After applying the classification algorithm to a loaded document, the feature probabilities look something like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">aceptar</th>
+<th align="right">ahora</th>
+<th align="right">ándale</th>
+<th align="right">aprovecha</th>
+<th align="right">arreglarse</th>
+<th align="right">azul</th>
+<th align="right">baja</th>
+<th align="right">bolsa</th>
+<th align="right">casa</th>
+<th align="right">casa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Argentina</td>
+<td align="right">41.87</td>
+<td align="right">30.06</td>
+<td align="right">0.47</td>
+<td align="right">22.27</td>
+<td align="right">28.41</td>
+<td align="right">34.04</td>
+<td align="right">27.77</td>
+<td align="right">27.94</td>
+<td align="right">34.90</td>
+<td align="right">34.90</td>
+</tr>
+<tr class="even">
+<td>Mexico</td>
+<td align="right">28.80</td>
+<td align="right">34.36</td>
+<td align="right">97.16</td>
+<td align="right">49.92</td>
+<td align="right">63.70</td>
+<td align="right">36.01</td>
+<td align="right">33.92</td>
+<td align="right">41.75</td>
+<td align="right">27.38</td>
+<td align="right">27.38</td>
+</tr>
+<tr class="odd">
+<td>Spain</td>
+<td align="right">29.32</td>
+<td align="right">35.58</td>
+<td align="right">2.37</td>
+<td align="right">27.81</td>
+<td align="right">7.89</td>
+<td align="right">29.95</td>
+<td align="right">38.31</td>
+<td align="right">30.31</td>
+<td align="right">37.72</td>
+<td align="right">37.72</td>
+</tr>
+</tbody>
+</table>
+<p>My first whack at a visualization of these feature probabilities was to create a function <code>markup.text(results = , document = )</code> to take the words in the document and match them with their corresponding feature scores and use theses scores to apply a color gradient in HTML markup from most and least indicative of the assigned class.</p>
+<p>Example HTML output for one word:</p>
+<pre><code>&lt;span style = &quot;background-color: rgb(74,255,000);&quot;&gt;chavo&lt;/span&gt;</code></pre>
+<p>Words in the document but not in the model are left unmarked.</p>
+<p>Here are the results we are looking for:</p>
+<p><span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(209,255,000);">trata</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">un</span> <span style="background-color: rgb(74,255,000);">chavo</span> <span style="background-color: rgb(255,255,255);">que</span> <span style="background-color: rgb(255,214,000);">pasa</span> <span style="background-color: rgb(255,255,255);">a</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,236,000);">casa</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">su</span> <span style="background-color: rgb(255,222,000);">novia</span> <span style="background-color: rgb(255,255,255);">a</span> <span style="background-color: rgb(255,255,000);">recogerla</span> . <span style="background-color: rgb(255,255,255);">su</span> <span style="background-color: rgb(255,255,000);">suegro</span> <span style="background-color: rgb(255,255,255);">lo</span> <span style="background-color: rgb(229,255,000);">recibe</span> <span style="background-color: rgb(255,255,255);">muy</span> <span style="background-color: rgb(248,255,000);">contento</span> . <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(74,255,000);">chavo</span> <span style="background-color: rgb(255,255,255);">está</span> <span style="background-color: rgb(252,255,000);">vestido</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">smokin</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,206,000);">chica</span> <span style="background-color: rgb(255,255,255);">lo</span> <span style="background-color: rgb(192,255,000);">saluda</span> , <span style="background-color: rgb(255,255,255);">también</span> <span style="background-color: rgb(255,255,255);">con</span> <span style="background-color: rgb(255,255,255);">un</span> <span style="background-color: rgb(252,255,000);">vestido</span> <span style="background-color: rgb(250,255,000);">azul</span> <span style="background-color: rgb(255,255,255);">muy</span> <span style="background-color: rgb(255,232,000);">elegante</span> , <span style="background-color: rgb(255,255,255);">pero</span> <span style="background-color: rgb(255,255,255);">le</span> <span style="background-color: rgb(255,250,000);">indica</span> <span style="background-color: rgb(255,255,255);">que</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,255,000);">espere</span> <span style="background-color: rgb(255,255,255);">porque</span> <span style="background-color: rgb(255,255,000);">va</span> <span style="background-color: rgb(255,255,255);">a</span> <span style="background-color: rgb(255,228,000);">terminar</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(165,255,000);">arreglarse</span> . <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,222,000);">novia</span> <span style="background-color: rgb(249,255,000);">saca</span> <span style="background-color: rgb(255,255,255);">una</span> <span style="background-color: rgb(255,255,000);">pequeña</span> <span style="background-color: rgb(255,255,255);">licorera</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,234,000);">metal</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,255,000);">da</span> <span style="background-color: rgb(255,255,255);">al</span> <span style="background-color: rgb(255,242,000);">novio</span> , <span style="background-color: rgb(255,255,255);">quien</span> <span style="background-color: rgb(255,255,255);">lo</span> <span style="background-color: rgb(255,255,000);">mira</span> <span style="background-color: rgb(61,255,000);">extrañado</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">le</span> <span style="background-color: rgb(241,255,000);">dice</span> <span style="background-color: rgb(255,255,255);">con</span> <span style="background-color: rgb(255,255,000);">señas</span> <span style="background-color: rgb(255,255,255);">que</span> <span style="background-color: rgb(255,255,255);">no</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(239,255,000);">quiere</span> <span style="background-color: rgb(255,254,000);">aceptar</span> . <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(218,255,000);">insiste</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(187,255,000);">mete</span> <span style="background-color: rgb(255,255,255);">en</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(226,255,000);">bolsa</span> <span style="background-color: rgb(255,255,255);">del</span> <span style="background-color: rgb(255,254,000);">saco</span> <span style="background-color: rgb(255,255,255);">del</span> <span style="background-color: rgb(255,242,000);">novio</span> . <span style="background-color: rgb(255,255,000);">ahora</span> , <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(249,255,000);">saca</span> <span style="background-color: rgb(255,255,255);">un</span> <span style="background-color: rgb(255,255,000);">enorme</span> <span style="background-color: rgb(255,255,255);">churro</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(255,255,255);">lo</span> <span style="background-color: rgb(120,255,000);">ofrece</span> , <span style="background-color: rgb(255,255,255);">como</span> <span style="background-color: rgb(146,255,000);">diciéndole</span> &quot; <span style="background-color: rgb(13,255,000);">ándale</span> , <span style="background-color: rgb(199,255,000);">aprovecha</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">una</span> <span style="background-color: rgb(255,255,000);">vez</span> &quot; . <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(74,255,000);">chavo</span> , <span style="background-color: rgb(255,255,255);">con</span> <span style="background-color: rgb(255,255,255);">una</span> <span style="background-color: rgb(255,255,000);">sonrisa</span> <span style="background-color: rgb(255,214,000);">nerviosa</span> , <span style="background-color: rgb(255,255,000);">nuevamente</span> <span style="background-color: rgb(255,255,255);">le</span> <span style="background-color: rgb(241,255,000);">dice</span> <span style="background-color: rgb(255,255,255);">que</span> <span style="background-color: rgb(255,255,255);">no</span> , <span style="background-color: rgb(255,255,255);">pero</span> <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(187,255,000);">mete</span> <span style="background-color: rgb(255,255,255);">también</span> <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(185,255,000);">cigarro</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">mariguana</span> <span style="background-color: rgb(255,255,255);">en</span> <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,254,000);">saco</span> <span style="background-color: rgb(255,255,255);">del</span> <span style="background-color: rgb(74,255,000);">chavo</span> . <span style="background-color: rgb(248,255,000);">finalmente</span> , <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(249,255,000);">saca</span> <span style="background-color: rgb(255,255,255);">un</span> <span style="background-color: rgb(255,255,255);">preservativo</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(255,255,255);">lo</span> <span style="background-color: rgb(120,255,000);">ofrece</span> <span style="background-color: rgb(255,255,255);">al</span> <span style="background-color: rgb(255,242,000);">novio</span> , <span style="background-color: rgb(255,255,255);">quien</span> <span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(174,255,000);">resiste</span> , <span style="background-color: rgb(255,255,255);">pero</span> <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(255,236,000);">hace</span> <span style="background-color: rgb(255,255,255);">un</span> <span style="background-color: rgb(255,255,000);">gesto</span> <span style="background-color: rgb(255,255,255);">como</span> <span style="background-color: rgb(255,242,000);">diciendo</span> &quot; <span style="background-color: rgb(255,255,255);">más</span> <span style="background-color: rgb(255,255,000);">vale</span> <span style="background-color: rgb(243,255,000);">prevenir</span> <span style="background-color: rgb(255,255,255);">que</span> <span style="background-color: rgb(243,255,000);">lamentar</span> &quot; . <span style="background-color: rgb(255,255,255);">cuando</span> <span style="background-color: rgb(255,255,000);">baja</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,222,000);">novia</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(192,255,000);">saluda</span> <span style="background-color: rgb(255,255,255);">al</span> <span style="background-color: rgb(74,255,000);">chavo</span> , <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(245,255,000);">inmediato</span> <span style="background-color: rgb(187,255,000);">mete</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,255,255);">mano</span> <span style="background-color: rgb(255,255,255);">al</span> <span style="background-color: rgb(255,254,000);">saco</span> <span style="background-color: rgb(255,255,255);">del</span> <span style="background-color: rgb(255,242,000);">novio</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">le</span> <span style="background-color: rgb(255,229,000);">enseña</span> <span style="background-color: rgb(255,255,255);">a</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(93,255,000);">chava</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,255,255);">licorera</span> , <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,255);">churro</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">mariguana</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,255);">preservativo</span> . <span style="background-color: rgb(255,255,255);">ella</span> <span style="background-color: rgb(255,249,000);">queda</span> <span style="background-color: rgb(255,255,255);">muy</span> <span style="background-color: rgb(255,255,255);">asombrada</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(188,255,000);">enoja</span> <span style="background-color: rgb(255,255,255);">con</span> <span style="background-color: rgb(255,255,255);">su</span> <span style="background-color: rgb(255,242,000);">novio</span> . <span style="background-color: rgb(255,255,255);">por</span> <span style="background-color: rgb(255,255,000);">supuesto</span> , <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(74,255,000);">chavo</span> <span style="background-color: rgb(209,255,000);">trata</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(253,255,000);">explicar</span> , <span style="background-color: rgb(255,255,255);">pero</span> <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(255,255,000);">papá</span> <span style="background-color: rgb(255,255,255);">lo</span> <span style="background-color: rgb(255,255,000);">corre</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(245,255,000);">inmediato</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,236,000);">casa</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(238,255,000);">manda</span> <span style="background-color: rgb(255,255,255);">a</span> <span style="background-color: rgb(255,255,255);">la</span> <span style="background-color: rgb(255,206,000);">chica</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(132,255,000);">regreso</span> <span style="background-color: rgb(255,255,255);">a</span> <span style="background-color: rgb(255,255,255);">su</span> <span style="background-color: rgb(30,255,000);">recámara</span> , <span style="background-color: rgb(255,255,255);">con</span> <span style="background-color: rgb(255,255,255);">un</span> <span style="background-color: rgb(255,255,000);">gesto</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,255,255);">regaño</span> , <span style="background-color: rgb(255,255,255);">como</span> <span style="background-color: rgb(255,242,000);">diciendo</span> &quot; ¡ <span style="background-color: rgb(255,255,000);">mira</span> <span style="background-color: rgb(255,255,255);">con</span> <span style="background-color: rgb(255,255,255);">qué</span> <span style="background-color: rgb(238,255,000);">clase</span> <span style="background-color: rgb(255,255,255);">de</span> <span style="background-color: rgb(255,220,000);">personas</span> <span style="background-color: rgb(255,255,000);">sales</span> ! &quot; . <span style="background-color: rgb(255,255,255);">ella</span> <span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(255,255,000);">sube</span> <span style="background-color: rgb(255,255,255);">muy</span> <span style="background-color: rgb(255,255,000);">triste</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(199,255,000);">enojada</span> <span style="background-color: rgb(255,255,255);">y</span> <span style="background-color: rgb(255,255,255);">el</span> <span style="background-color: rgb(181,255,000);">señor</span> <span style="background-color: rgb(255,255,255);">se</span> <span style="background-color: rgb(255,249,000);">queda</span> <span style="background-color: rgb(255,255,255);">muy</span> <span style="background-color: rgb(248,255,000);">contento</span> , <span style="background-color: rgb(255,248,000);">haciendo</span> <span style="background-color: rgb(255,255,255);">un</span> <span style="background-color: rgb(255,255,000);">gesto</span> <span style="background-color: rgb(255,255,255);">de</span> &quot; ¡ <span style="background-color: rgb(255,255,000);">victoria</span> , <span style="background-color: rgb(255,255,255);">lo</span> <span style="background-color: rgb(255,255,000);">conseguí</span> ! &quot; .</p>
+<p>How did I get here:</p>
+<ol style="list-style-type: decimal">
+<li>Prep the original document for comparison with the model by creating a text vector with lowercased words and isolated punctuation.</li>
+</ol>
+<p><em>Original document</em></p>
+<pre><code>Llega un chico vestido muy elegante como que va a un baile de graduación o algo así. Llega a la casa de su novia, o amiga, y el papá de la chica lo recibe. Antes de que baje la chica por las escaleras el señor, papá de la chica, le da una botellita de alcohol, un gallo y un condón. El chico está muy apenado y el papá hace gestos de como “no te preocupes, soy bien buena onda, conmigo no hay pedo” y le pone todas las cosas en el bolsillo. En ese instante baja la hija ya vestida para ir al baile y antes de irse el papá los para y le revisa los bolsillos al chico y encuentra todo lo que él le había puesto. Hace un pancho y corre al chico de su casa y le dice a su hija que se regrese a su cuarto.</code></pre>
+<pre class="r"><code># Prep document
+clean.document &lt;- document %&gt;%
+        tolower %&gt;%
+        gsub(pattern = &#39;([[:punct:]])&#39;, replacement = &quot; \\1 &quot;, x = .) %&gt;%
+        strsplit(split = &quot; &quot;) %&gt;%
+        unlist</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>From the MNB results file, find information about the class selected and the scores for all classes. Take the feature probability scores and calculate the difference between the next closest class and the class selected to create a more telling relative score. When a feature probability matches for all classes, this feature is not in the model. When a relative score equals the median score it is marked as an OOV (out-of-vocabulary) item.</li>
+</ol>
+<pre class="r"><code># Get information on classes
+class &lt;- results$classification # class selected
+num.classes &lt;- nrow(results$feature.probs) # Get the number of classes
+
+# Retrieve scores for given class
+oov.score &lt;- round(100/num.classes, 2) # Get the out-of-vocabulary score (uniform prob.)
+class.scores &lt;- results$feature.probs[rownames(results$feature.probs) == class, ] # Scores for class selected
+median.scores &lt;- results$feature.probs %&gt;% apply(2, median) # Find median score from all classes
+median.scores[median.scores == oov.score] &lt;- NA # Mark OOV items
+scores &lt;- class.scores - median.scores # Get the relative difference between selected class and next nearest class</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Now, a loop runs through and compares the words in the model with the words of the text. When a word appears in the text that is in the model, an RGB number is assigned on a gradient from green to red corresponding to most and least indicative of the word for the class selected. Words not in the model are not included in the gradient. HTML markup is added to the words using the RGB specifications.</li>
+</ol>
+<pre class="r"><code># Sequence through the document marking up words based on conditional probs
+tagged.document &lt;- character() # init `tagged.document`
+for(i in seq(clean.document)) {
+        if(clean.document[i] %in% names(scores)) { # Find &#39;words&#39; and add markup
+                score &lt;- scores[names(scores) == clean.document[i]][1]
+                if (is.na(score)) {
+                        rgb &lt;- paste0(&quot;255,255,255&quot;) # white
+                } else if (score &gt;= 0) {
+                        x &lt;- round(abs(((score/100)*255)-255), 0) # relative score
+                        rgb &lt;- paste0(x, &quot;,255,000&quot;)
+                } else {
+                        x &lt;- round(abs(((score/100)*255)+255), 0) # relative score
+                        rgb &lt;- paste0(&quot;255,&quot;, x, &quot;,000&quot;)
+                }
+                tagged.document &lt;-
+                        c(tagged.document,
+                          paste0(&#39;&lt;span style = &quot;background-color: rgb(&#39;,
+                                 rgb,
+                                 &#39;);&quot;&gt;&#39;,
+                                 clean.document[i],
+                                 &#39;&lt;/span&gt;&#39;))
+        } else { # other units, leave them alone
+                tagged.document &lt;- c(tagged.document, paste(&quot; &quot;, clean.document[i], &quot; &quot;))
+        }
+}</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Finally the resulting vector is flattend, and returned as a single character vector.</li>
+</ol>
+<pre class="r"><code># Return `tagged.text` as running text
+tagged.document %&gt;% paste(collapse = &quot;&quot;, sep = &quot;&quot;)
+return(tagged.document)</code></pre>
+<p>Returning to the Shiny application, in the <code>server.R</code> script a reactive input <code>renderUI({})</code> pulls the data from an uploaded file and pullls the results from the text classification algorithm on this data. These two pieces of data are fed to the <code>markup.text()</code> function above and the results are exported as output to the <code>text1</code> variable as HTML.</p>
+<pre class="r"><code>output$text1 &lt;- renderUI({
+                data &lt;- dataInput()
+                results &lt;- dataResults()
+
+                if (is.null(input$file))
+                        return(NULL)
+                HTML(markup.text(results = results,
+                            document = data))
+        })</code></pre>
+<p>In the <code>ui.R</code> script, the output <code>text1</code> information is returned within the body within a <code>box()</code> element using the <code>htmlOutput()</code> function.</p>
+<div class="alert alert-note">
+  <p>Here you can also see the <code>infoBoxOutput()</code> functions that return the overall probability scores for all classes.</p>
+
+</div>
+
+<pre class="r"><code>body &lt;- dashboardBody(
+        tabItems(
+                tabItem(tabName = &quot;text&quot;,
+                        fluidRow(
+                                infoBoxOutput(&quot;classification1&quot;),
+                                infoBoxOutput(&quot;classification2&quot;),
+                                infoBoxOutput(&quot;classification3&quot;)
+                        ),
+                        fluidRow(
+                                box(width = 12,
+                                    valstatus = &quot;primary&quot;,
+                                    solidHeader = TRUE,
+                                    title = &quot;Classification results&quot;,
+                                    htmlOutput(&quot;text1&quot;, inline = TRUE),
+                                    footer = textOutput(&quot;model&quot;))
+                        )
+                )
+        )
+)</code></pre>
+<p>The results look like this.</p>
+<p><img src="/post/2015-08-15-generating-annotated-text-in-shiny_files/figure-html/app-image-1.png" width="672" /></p>
+<p>The next step is to try to make each feature a link to a keyword-in-context interface showing the usage of this linguistic item in context.</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/2015/08/12/creating-hexbin-plots/"><span
+      aria-hidden="true">&larr;</span> Creating hexbin plots</a></li>
+    
+
+    
+    <li class="next"><a href="/2016/02/06/mapping-us-census-data/">Mapping US Census data <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Jerid Francom &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

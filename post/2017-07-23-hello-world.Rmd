@@ -1,0 +1,30 @@
+---
+title: Hello world!
+author: Jerid Francom
+date: '2017-07-23'
+slug: hello-world
+summary: 'This is the first post in the `academic` theme for Hugo.'
+categories:
+  - R
+tags:
+  - R Markdown
+draft: false
+---
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(DT) # for dynamic tables
+```
+
+This is the first post in the `academic` theme for Hugo. The scaffolding was created using the `Addin` menu dropdown and selecting `New Post`. This dialogue will provide the appropriate fields to set up a post or page. By default the subdirectory for posts is `post`. In the `academic` theme, other subdirectories are available for pages with particular content and content-specific attributes.
+
+Here's a bit of code to show the `highlight_style` used here `github`. 
+
+```{r}
+x <- 1:10
+paste("Number", x)
+```
+
+## Updating YAML metadata
+
+You can, of course, update the YAML frontmatter directly, but for `categories` and `tags` you can use `blogdown` through the `Addin` menu to scan previously used categories and tags. To get this functionality select `Update Metadata` from the menu. 

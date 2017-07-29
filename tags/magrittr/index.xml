@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Magrittr on francojc ⟲</title>
+    <link>/tags/magrittr/</link>
+    <description>Recent content in Magrittr on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Sat, 04 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/magrittr/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Keyword analysis of State of the Union Speeches</title>
+      <link>/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</link>
+      <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</guid>
+      <description>&lt;p&gt;Not long ago I gave an &lt;a href=&#34;http://dh.humanitiesinstitute.wfu.edu/2015/02/20/dh-kitchen-introduction-to-data-mining-and-text-analysis-materials/&#34;&gt;introduction to text analysis and data mining&lt;/a&gt; for the Wake Forest University community. In that tutorial I demonstrated how to do a basic keyword analysis on “State of the Union” speeches from 1947 to present using the freeware &lt;a href=&#34;http://www.laurenceanthony.net/software/antconc/&#34;&gt;AntConc&lt;/a&gt;. Although AntConc is a fantastic resource, it’s not my go-to approach for doing text analysis. In this post I will re-create the analysis using R: reading, exploring, and cleaning data as well as the main keyword analysis and corresponding visualizations.&lt;/p&gt;
+&lt;p&gt;The first step is to read in the &lt;code&gt;sotu&lt;/code&gt; text files &lt;a href=&#34;http://francojc.github.io/web-scraping-with-rvest/&#34;&gt;we scraped from the web&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tm)
+library(dplyr)
+
+# `read.corpus` function
+read.corpus &amp;lt;- function(directory, pattern = &amp;quot;&amp;quot;, to.lower = TRUE) {
+  corpus &amp;lt;- DirSource(directory = directory, pattern = pattern) %&amp;gt;%
+    VCorpus # Read files and create `VCorpus` object
+  if(to.lower == TRUE) corpus &amp;lt;- # Lowercase text
+    tm_map(corpus, 
+           content_transformer(tolower))
+  return(corpus)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this code chunk we use the &lt;code&gt;tm&lt;/code&gt; package to read in files in a specific directory whose file names match a certain pattern, then lowercase the text. Since we want to create corpora from file names matching &lt;code&gt;republican&lt;/code&gt; on the one hand and &lt;code&gt;democrat&lt;/code&gt; on the other, I chose to create a function as not to be too redundant with the code. Inside the function &lt;code&gt;read.corpus()&lt;/code&gt;, we use the &lt;code&gt;tm::DirSource()&lt;/code&gt; function to point R to the directory where the &lt;code&gt;sotu&lt;/code&gt; texts are listed and then takes a &lt;code&gt;pattern&lt;/code&gt; to match file names. This result is handed off to &lt;code&gt;VCorpus()&lt;/code&gt; which creates a &lt;code&gt;tm&lt;/code&gt; package &lt;code&gt;VCorpus&lt;/code&gt; object.&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; I then include an option to lowercase the text. In this case we will want our text lowercased, so I’ve set it to the default in the function (&lt;code&gt;to.lower = TRUE&lt;/code&gt;), but that’s not always the case.&lt;/p&gt;
+&lt;p&gt;Now apply the function to get the Republican and Democrat texts and confirm that we’ve got &lt;code&gt;VCorpus&lt;/code&gt; objects.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.corpus.raw &amp;lt;- read.corpus(directory = &amp;quot;data/SOTU/&amp;quot;, pattern = &amp;quot;republican&amp;quot;)
+  class(rep.corpus.raw)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;VCorpus&amp;quot; &amp;quot;Corpus&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dem.corpus.raw &amp;lt;- read.corpus(directory = &amp;quot;data/SOTU/&amp;quot;, pattern = &amp;quot;democrat&amp;quot;)
+  class(rep.corpus.raw)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;VCorpus&amp;quot; &amp;quot;Corpus&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s do a quick inspection of the results. It’s good to know a few functions for exploring &lt;code&gt;VCorpus&lt;/code&gt; objects.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.corpus.raw %&amp;gt;% 
+  print() # an overview of the object&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;&amp;lt;VCorpus&amp;gt;&amp;gt;
+## Metadata:  corpus specific: 0, document level (indexed): 0
+## Content:  documents: 34&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.corpus.raw %&amp;gt;%
+  meta(tag = &amp;quot;id&amp;quot;) %&amp;gt;% # a list of the file names in the corpus
+  unlist()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   republican-1954.txt   republican-1955.txt   republican-1956.txt 
+## &amp;quot;republican-1954.txt&amp;quot; &amp;quot;republican-1955.txt&amp;quot; &amp;quot;republican-1956.txt&amp;quot; 
+##   republican-1957.txt   republican-1958.txt   republican-1959.txt 
+## &amp;quot;republican-1957.txt&amp;quot; &amp;quot;republican-1958.txt&amp;quot; &amp;quot;republican-1959.txt&amp;quot; 
+##   republican-1960.txt   republican-1970.txt   republican-1971.txt 
+## &amp;quot;republican-1960.txt&amp;quot; &amp;quot;republican-1970.txt&amp;quot; &amp;quot;republican-1971.txt&amp;quot; 
+##   republican-1972.txt   republican-1974.txt   republican-1975.txt 
+## &amp;quot;republican-1972.txt&amp;quot; &amp;quot;republican-1974.txt&amp;quot; &amp;quot;republican-1975.txt&amp;quot; 
+##   republican-1976.txt   republican-1977.txt   republican-1981.txt 
+## &amp;quot;republican-1976.txt&amp;quot; &amp;quot;republican-1977.txt&amp;quot; &amp;quot;republican-1981.txt&amp;quot; 
+##   republican-1982.txt   republican-1983.txt   republican-1984.txt 
+## &amp;quot;republican-1982.txt&amp;quot; &amp;quot;republican-1983.txt&amp;quot; &amp;quot;republican-1984.txt&amp;quot; 
+##   republican-1985.txt   republican-1986.txt   republican-1987.txt 
+## &amp;quot;republican-1985.txt&amp;quot; &amp;quot;republican-1986.txt&amp;quot; &amp;quot;republican-1987.txt&amp;quot; 
+##   republican-1988.txt   republican-1989.txt   republican-1990.txt 
+## &amp;quot;republican-1988.txt&amp;quot; &amp;quot;republican-1989.txt&amp;quot; &amp;quot;republican-1990.txt&amp;quot; 
+##   republican-1991.txt   republican-1992.txt   republican-2001.txt 
+## &amp;quot;republican-1991.txt&amp;quot; &amp;quot;republican-1992.txt&amp;quot; &amp;quot;republican-2001.txt&amp;quot; 
+##   republican-2002.txt   republican-2003.txt   republican-2004.txt 
+## &amp;quot;republican-2002.txt&amp;quot; &amp;quot;republican-2003.txt&amp;quot; &amp;quot;republican-2004.txt&amp;quot; 
+##   republican-2005.txt   republican-2006.txt   republican-2007.txt 
+## &amp;quot;republican-2005.txt&amp;quot; &amp;quot;republican-2006.txt&amp;quot; &amp;quot;republican-2007.txt&amp;quot; 
+##   republican-2008.txt 
+## &amp;quot;republican-2008.txt&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So &lt;code&gt;print()&lt;/code&gt; provides us a basic overview of the number of documents in the corpus. &lt;code&gt;meta()&lt;/code&gt; with the &lt;code&gt;tag&lt;/code&gt; set to &lt;code&gt;&amp;quot;id&amp;quot;&lt;/code&gt; returns the file names themselves. This is good here to verify that we’ve in fact captured the appropriate texts in each corpus. &lt;code&gt;content(rep.corpus.raw)&lt;/code&gt; will return all of the text in the corpus. Go ahead and try it at home –I’ll save some screen real estate and skip this command.&lt;/p&gt;
+&lt;p&gt;In a keyword analysis we will be working with, well, words, and their frequencies so let’s make a first pass at creating a word frequency list.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;create.wordlist &amp;lt;- function(corpus, create_df = FALSE) {
+  wordlist &amp;lt;- corpus %&amp;gt;% 
+    DocumentTermMatrix() %&amp;gt;% 
+    as.matrix() %&amp;gt;% 
+    colSums()
+  if(create_df == TRUE) wordlist &amp;lt;- wordlist %&amp;gt;%
+    data.frame(words = names(.), freq = ., row.names = NULL)
+  return(wordlist)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, I turn to creating a function because we want to reduce redundancy. This function, &lt;code&gt;create.wordlist()&lt;/code&gt;, takes a &lt;code&gt;VCorpus&lt;/code&gt; object (corpus) as an argument and provides an option to output the wordlist as a &lt;code&gt;data.frame&lt;/code&gt; (create_df). The &lt;code&gt;corpus&lt;/code&gt; is passed to &lt;code&gt;tm::DocumentTermMatrix()&lt;/code&gt; which is another &lt;code&gt;tm&lt;/code&gt; object, but one that holds the corpora in matrix form. It’s worth taking a look at a simplified example to give you an idea what we are dealing with.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;documents &amp;lt;- c(&amp;quot;this is a sentence&amp;quot;, &amp;quot;here is another one&amp;quot;, &amp;quot;now another&amp;quot;)
+dtm &amp;lt;- VectorSource(x = documents) %&amp;gt;%
+  VCorpus %&amp;gt;%
+  DocumentTermMatrix&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So the three character vectors in &lt;code&gt;documents&lt;/code&gt; is read into &lt;code&gt;VCorpus&lt;/code&gt; format and then sent to &lt;code&gt;DocumentTermMatrix&lt;/code&gt;. The result in &lt;code&gt;dtm&lt;/code&gt; can be &lt;code&gt;inspect&lt;/code&gt;ed:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dtm %&amp;gt;%
+  inspect&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;&amp;lt;DocumentTermMatrix (documents: 3, terms: 6)&amp;gt;&amp;gt;
+## Non-/sparse entries: 7/11
+## Sparsity           : 61%
+## Maximal term length: 8
+## Weighting          : term frequency (tf)
+## Sample             :
+##     Terms
+## Docs another here now one sentence this
+##    1       0    0   0   0        1    1
+##    2       1    1   0   1        0    0
+##    3       1    0   1   0        0    0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So looking at the bottom portion, the &lt;code&gt;DocumentTermMatrix&lt;/code&gt; contains a matrix where rows correspond to each of the character vectors in &lt;code&gt;documents&lt;/code&gt; and the columns each of the unique words. This matrix summarizes the word frequency and dispersion contained in our text documents.&lt;/p&gt;
+&lt;p&gt;Returning to the &lt;code&gt;creat.wordlist()&lt;/code&gt; function from above, we then remove some of the extra bells and whistles in the &lt;code&gt;DocumentTermMatrix&lt;/code&gt; with &lt;code&gt;as.matrix()&lt;/code&gt; –giving us just the matrix that we are interested in. Summing the columns for each word (&lt;code&gt;colSums()&lt;/code&gt;) gives us the word frequencies. Again I include an option to change the output to another data type, in this case a tabular, excel-like format – a.k.a. the &lt;code&gt;data.frame&lt;/code&gt;.&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Run the &lt;code&gt;create.wordlist()&lt;/code&gt; function, check the class, and find out how many (unique) words are in each of our corpora.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.wordlist &amp;lt;- create.wordlist(corpus = rep.corpus.raw, create_df = TRUE)
+  class(rep.wordlist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;data.frame&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;  nrow(rep.wordlist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 18752&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dem.wordlist &amp;lt;- create.wordlist(corpus = dem.corpus.raw, create_df = TRUE)
+  class(dem.wordlist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;data.frame&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;  nrow(dem.wordlist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 19818&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I fun way to visualize a word frequency list is via &lt;a href=&#34;https://en.wikipedia.org/wiki/Tag_cloud&#34;&gt;word clouds&lt;/a&gt;. Conveniently, there’s an R package for that, appropriately named &lt;code&gt;wordcloud&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(wordcloud)
+wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wordcloud::wordcloud()&lt;/code&gt; takes the words and their frequencies, minimally. But you can also specify a number of other parameters to modify the content and format of the word cloud. Here I’ve limited the output to the top 50 words.&lt;/p&gt;
+&lt;p&gt;Not what you expected? It’s real easy to overlook the fact that the most frequent words in a given language are often the least interesting, from a content standpoint. These words are often closed-class words (determiners, prepositions, conjunctions, etc.) and contrast to open-class words (nouns, verbs, adjectives) that are usually more interesting –especially for us at the moment. So we are going to want to filter them. But how do you know what words to filter? Enter “stopword lists”: pre-compiled lists of the kinds of words we are looking to eliminate.&lt;/p&gt;
+&lt;p&gt;That’s area we need to address. Other standard filters include removing punctuation, numerals, and extra whitespace. In addition, on inspecting the word frequency lists it appears that there are certain words enclosed inside brackets &lt;code&gt;[]&lt;/code&gt; and parenthesis &lt;code&gt;()&lt;/code&gt; that should be deleted as well given they correspond, by and large, to meta discourse not the content of the speeches. See below&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.wordlist$words %&amp;gt;%
+  grep(pattern = &amp;quot;[\\(\\[\\]+&amp;quot;, x = ., value = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;(\&amp;quot;cds\&amp;quot;)&amp;quot;                    &amp;quot;($14.7&amp;quot;                      
+##  [3] &amp;quot;(1)&amp;quot;                          &amp;quot;(1980)&amp;quot;                      
+##  [5] &amp;quot;(2)&amp;quot;                          &amp;quot;(3)&amp;quot;                         
+##  [7] &amp;quot;(4)&amp;quot;                          &amp;quot;(5)&amp;quot;                         
+##  [9] &amp;quot;(6.9%&amp;quot;                        &amp;quot;(asean)&amp;quot;                     
+## [11] &amp;quot;(at&amp;quot;                          &amp;quot;(cdbg)&amp;quot;                      
+## [13] &amp;quot;(ceta).&amp;quot;                      &amp;quot;(chap)&amp;quot;                      
+## [15] &amp;quot;(eeoc)&amp;quot;                       &amp;quot;(fao),&amp;quot;                      
+## [17] &amp;quot;(infce),&amp;quot;                     &amp;quot;(nhsc)&amp;quot;                      
+## [19] &amp;quot;(ofccp)&amp;quot;                      &amp;quot;(the&amp;quot;                        
+## [21] &amp;quot;(tip)&amp;quot;                        &amp;quot;(udag)&amp;quot;                      
+## [23] &amp;quot;(wic)&amp;quot;                        &amp;quot;[$.5&amp;quot;                        
+## [25] &amp;quot;[$]1.1&amp;quot;                       &amp;quot;[50,000]&amp;quot;                    
+## [27] &amp;quot;[act]&amp;quot;                        &amp;quot;[africa],&amp;quot;                   
+## [29] &amp;quot;[applause]&amp;quot;                   &amp;quot;[applause]third,&amp;quot;            
+## [31] &amp;quot;[arkansas],&amp;quot;                  &amp;quot;[as]&amp;quot;                        
+## [33] &amp;quot;[at&amp;quot;                          &amp;quot;[delivered&amp;quot;                  
+## [35] &amp;quot;[former&amp;quot;                      &amp;quot;[full]&amp;quot;                      
+## [37] &amp;quot;[in&amp;quot;                          &amp;quot;[iowa],&amp;quot;                     
+## [39] &amp;quot;[it]&amp;quot;                         &amp;quot;[last]&amp;quot;                      
+## [41] &amp;quot;[laughter]&amp;quot;                   &amp;quot;[laughter]—and&amp;quot;              
+## [43] &amp;quot;[laughter]—but&amp;quot;               &amp;quot;[laughter].&amp;quot;                 
+## [45] &amp;quot;[licensing]&amp;quot;                  &amp;quot;[moment&amp;quot;                     
+## [47] &amp;quot;[national&amp;quot;                    &amp;quot;[of]&amp;quot;                        
+## [49] &amp;quot;[oil]&amp;quot;                        &amp;quot;[read&amp;quot;                       
+## [51] &amp;quot;[south&amp;quot;                       &amp;quot;[the]&amp;quot;                       
+## [53] &amp;quot;[un]&amp;quot;                         &amp;quot;[washington]&amp;quot;                
+## [55] &amp;quot;401(k)&amp;quot;                       &amp;quot;8(a)&amp;quot;                        
+## [57] &amp;quot;crisis—[laughter]—&amp;quot;           &amp;quot;last--maybe--[laughter]--but&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s clean up the corpus. Removing bracket/ parenthetical words, stopwords, punctuation, numerals, and whitespace. The &lt;code&gt;tm&lt;/code&gt; package includes the &lt;code&gt;tm_map()&lt;/code&gt; function that provides many easy-to-implement ways to transform the corpus content.&lt;a href=&#34;#fn4&#34; class=&#34;footnoteRef&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;clean.corpus &amp;lt;- function(corpus) {
+  # Clean a `tm` corpus #
+  # Substitution function for to simplify `tm_map`
+  my.sub &amp;lt;- content_transformer( 
+    function(x, pattern, replacement) 
+      gsub(pattern, replacement, x))
+  
+  corpus %&amp;gt;%
+    tm_map(my.sub, &amp;quot;\\[\\w+\\]&amp;quot;, &amp;quot;&amp;quot;) %&amp;gt;% # ex.`[applause]` 
+    tm_map(my.sub, &amp;quot;\\(\\w+\\)&amp;quot;, &amp;quot;&amp;quot;) %&amp;gt;% # ex. `(tip)`
+    tm_map(removeWords, stopwords(&amp;quot;english&amp;quot;)) %&amp;gt;% # english stopwords
+    tm_map(removePunctuation, preserve_intra_word_dashes = TRUE) %&amp;gt;% # keep `low-income`
+    tm_map(removeNumbers) %&amp;gt;% # numerals
+    tm_map(stripWhitespace) # clean up any trailing whitespace
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now apply the filters and clean this corpus up!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.corpus &amp;lt;- clean.corpus(corpus = rep.corpus.raw)
+dem.corpus &amp;lt;- clean.corpus(corpus = dem.corpus.raw)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Returning to our word clouds. We need to create new wordlists from the cleaned data and then visualize the results.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.wordlist &amp;lt;- create.wordlist(corpus = rep.corpus, create_df = TRUE)
+dem.wordlist &amp;lt;- create.wordlist(corpus = dem.corpus, create_df = TRUE)
+
+wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Alright, now we are in a position to do some comparing. Looking at the word clouds we can see obvious similarities and differences. The size of the text, however, can be misleading here: text between each word cloud is not on the same scale. That is, it’s hard to know how these frequencies/text sizes really match up between the corpora. To identify those words that are most/ least indicative of each corpus (when compared to the other corpus) we want to compare the relative frequency of words in the &lt;code&gt;rep.corpus&lt;/code&gt; with the relative frequencies in the &lt;code&gt;dem.corpus&lt;/code&gt;. Using the ratio of &lt;code&gt;rep.corpus&lt;/code&gt;/ &lt;code&gt;dem.corpus&lt;/code&gt; we will find that words with highest values tend to be more indicative of the &lt;code&gt;rep.corpus&lt;/code&gt; and lowest values more indicative of the &lt;code&gt;dem.corpus&lt;/code&gt;. This calculation is known as a Relative Frequency Ratio &lt;span class=&#34;citation&#34;&gt;(Damerau 1993)&lt;/span&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rfr.calc &amp;lt;- function(wordlist.a, wordlist.b, create_df = FALSE) {
+  # Calculate Relative Frequency Ratio #
+  # Words in wordlist.b, not in wordlist.a
+  wordlist.a[setdiff(names(wordlist.b), names(wordlist.a))] &amp;lt;- 0 # Fill missing words
+  # Words in wordlist.a, not in wordlist.b
+  wordlist.b[setdiff(names(wordlist.a), names(wordlist.b))] &amp;lt;- 0 # Fill missing words
+  
+  vocabulary &amp;lt;- wordlist.a %&amp;gt;% names # get complete vocabulary listing
+  
+  a.ratios &amp;lt;- wordlist.a/sum(wordlist.a) # ratios for wordlist a
+  b.ratios &amp;lt;- wordlist.b/sum(wordlist.b) # ratios for wordlist b
+  
+  # wordlist.a ratio/ wordlist.b ratio (with +1 smoothing)
+  rfr &amp;lt;- log((a.ratios[vocabulary] + 1) / (b.ratios[vocabulary] + 1))
+  
+  # Coerce to a `data.frame`
+  if(create_df == TRUE) rfr &amp;lt;- rfr %&amp;gt;%
+    data.frame(Words = names(.), 
+               Scores = ., 
+               row.names = NULL, 
+               stringsAsFactors = FALSE) %&amp;gt;%
+    arrange(Scores)
+  return(rfr)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The function &lt;code&gt;rfr()&lt;/code&gt; implements the Relative Frequency Ratio calculation with a couple practical additions. First, each wordlist will contain words that do not occur in the other. Since this will lead to undefined ratios, a single value is added to each ratio calculation (+1 smoothing). Furthermore, I’ve taken the &lt;code&gt;log()&lt;/code&gt; of this ratio to provide a more appeasing visual distribution (see below). The results are optionally returned as a &lt;code&gt;data.frame&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;First, we need to create wordlists from our cleaned-up corpora. Then run the &lt;code&gt;rfr()&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep.wordlist &amp;lt;- create.wordlist(corpus = rep.corpus)
+dem.wordlist &amp;lt;- create.wordlist(corpus = dem.corpus)
+
+rfr_df &amp;lt;- rfr.calc(wordlist.a = rep.wordlist, 
+                   wordlist.b = dem.wordlist, 
+                   create_df = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s look at the first lines of &lt;code&gt;rfr_df&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rfr_df %&amp;gt;%
+  head&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Words       Scores
+## 1  will -0.002114276
+## 2  year -0.001789069
+## 3  work -0.001753218
+## 4 every -0.001132713
+## 5  jobs -0.001065103
+## 6  know -0.001061382&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Looks good. Let’s take the top 25 and the bottom 25 and add Party labels to get ready to visually summarize these top results.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Get highest and lowest scores (i.e. Republican/ Democrat)
+rep.dem_df &amp;lt;- rbind(head(rfr_df, 25), tail(rfr_df, 25))
+rep.dem_df$Party &amp;lt;- ifelse(test = (rep.dem_df$Scores &amp;gt; 0), 
+                           yes = &amp;quot;Republicans&amp;quot;, 
+                           no = &amp;quot;Democrats&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;rbind()&lt;/code&gt; takes the &lt;code&gt;head()&lt;/code&gt;, or top 25 and the &lt;code&gt;tail()&lt;/code&gt; or bottom 25 and binds them by row. Since we know that the point at which the ratio is equal, that is, Republican words and Democrat words have the same relative frequency is 1 and &lt;code&gt;log(1)&lt;/code&gt; is 0, then values 0 and above are republican-indicative otherwise democrat-indicative. The &lt;code&gt;ifelse()&lt;/code&gt; statement tests this and applies the Party labels accordingly.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+ggplot(rep.dem_df, aes(x = reorder(Words, Scores), y = Scores, color = Party)) + 
+  geom_point() +
+  theme_gray() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  xlab(&amp;quot;Terms&amp;quot;) + ylab(&amp;quot;Relative Frequency Ratio (log)&amp;quot;) + ggtitle(&amp;quot;Top 50 most indicative terms&amp;quot;) +
+  theme(legend.position = &amp;quot;bottom&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/rfr-visual-1.png&#34; width=&#34;960&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Very cool. One more step that would really complement this analysis would be to do a concordance on terms of interest to see particular words in context. Below is a more complex function that is a first stab at doing just that.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;concordance &amp;lt;- function(texts, pattern, margin = 30, n = 0) {
+  # A script to create a concordance listing for character vectors #
+  pattern &amp;lt;- tolower(pattern) # lowercase
+  concordance &amp;lt;- lapply(tolower(texts), function(i) { # loop over lowercased texts
+    str_locate_all(string = i, # find all indices for pattern matches
+                   pattern = pattern) %&amp;gt;%
+      sapply(function(j) { # loop over index pairs (start/ end)
+        str_sub(string = i, 
+                start = as.integer(j[, &amp;#39;start&amp;#39;])-margin, # extract the pattern
+                end = as.integer(j[, &amp;#39;end&amp;#39;])+margin) %&amp;gt;% # with margins
+          str_replace_all(pattern = pattern, # replace pattern with padded pattern
+                          replacement = str_pad(string = pattern, 
+                                                width = nchar(pattern)+4, 
+                                                side = &amp;quot;both&amp;quot;,
+                                                pad = &amp;quot; &amp;quot;))
+      }) %&amp;gt;%
+      unlist # clean up output
+  }) %&amp;gt;% 
+    unlist %&amp;gt;% # clean up output
+    as.vector  # clean up output
+  if(n &amp;gt; 0) concordance &amp;lt;- concordance[1:n]
+  return(concordance)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So to explore the word “federal” in the &lt;code&gt;rep.corpus&lt;/code&gt; we run:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;concordance(texts = content(rep.corpus.raw), pattern = &amp;quot;federal&amp;quot;, margin = 35, n = 5)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;tion in the armed forces and other   federal   activities is on the way out. we h&amp;quot;
+## [2] &amp;quot;oyees have been separated from the   federal   government. our national security &amp;quot;
+## [3] &amp;quot;pecial employment standards of the   federal   government i turn now to a matter &amp;quot;
+## [4] &amp;quot;e government. it recognizes that a   federal   budget should be a stabilizing fac&amp;quot;
+## [5] &amp;quot;ons for some crops and apply rigid   federal   controls over the use of the diver&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And there you have it a re-creation of the analysis using AntConc, this time using R.&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-Damerau:1993&#34;&gt;
+&lt;p&gt;Damerau, F J. 1993. “Generating and evaluating domain-oriented multi-word terms from texts.” &lt;em&gt;Information Processing &amp;amp; Management&lt;/em&gt; 29 (4): 433–47.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;The handing off portion uses the &lt;code&gt;%&amp;gt;%&lt;/code&gt; syntax from the &lt;code&gt;magrittr&lt;/code&gt; package (loaded through the &lt;code&gt;dplyr&lt;/code&gt; package here).&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;Passing, or ‘piping’ output using the &lt;code&gt;%&amp;gt;%&lt;/code&gt; syntax assumes that the first argument of the next function will take the output of the previous. If that is not the case, then the &lt;code&gt;.&lt;/code&gt; operator can be used to specify where insert the input.&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Regular_expression&#34;&gt;Regular expressions&lt;/a&gt; are used for pattern matching&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;One twist is the &lt;code&gt;my.sub()&lt;/code&gt; function I wrote to simplify adding custom transformations to &lt;code&gt;tm_map()&lt;/code&gt;.&lt;a href=&#34;#fnref4&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
