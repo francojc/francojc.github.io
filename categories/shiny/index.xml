@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shiny on francojc ⟲</title>
-    <link>https://francojc.github.io/categories/shiny/</link>
+    <link>/categories/shiny/</link>
     <description>Recent content in Shiny on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Generating annotated text in Shiny</title>
-      <link>https://francojc.github.io/2015/08/15/generating-annotated-text-in-shiny/</link>
+      <link>/2015/08/15/generating-annotated-text-in-shiny/</link>
       <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2015/08/15/generating-annotated-text-in-shiny/</guid>
+      <guid>/2015/08/15/generating-annotated-text-in-shiny/</guid>
       <description>&lt;p&gt;I’ve been working on a Shiny web app to visualize the results from a text classification algorithm. Specifically, the app aims to classify a particular document in Spanish as either approximating the usage from one of three Spanish subvarieties: Argentine, Mexican, and Peninsular.&lt;/p&gt;
 &lt;p&gt;In addition to an overall classification, and returning the corresponding probability score, I also want to be able to see how the individual features in the text contribute to the classification. After applying the classification algorithm to a loaded document, the feature probabilities look something like this:&lt;/p&gt;
 &lt;table&gt;
@@ -177,7 +177,7 @@ return(tagged.document)&lt;/code&gt;&lt;/pre&gt;
         )
 )&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The results look like this.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-08-15-generating-annotated-text-in-shiny_files/figure-html/app-image-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-08-15-generating-annotated-text-in-shiny_files/figure-html/app-image-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The next step is to try to make each feature a link to a keyword-in-context interface showing the usage of this linguistic item in context.&lt;/p&gt;
 </description>
     </item>
