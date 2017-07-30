@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on francojc ⟲</title>
-    <link>/tags/r/</link>
+    <link>https://francojc.github.io/tags/r/</link>
     <description>Recent content in R on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Data Science for Language Research</title>
-      <link>/project/dslr/</link>
+      <link>https://francojc.github.io/project/dslr/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/dslr/</guid>
+      <guid>https://francojc.github.io/project/dslr/</guid>
       <description>
 
 &lt;h1 id=&#34;aim&#34;&gt;Aim&lt;/h1&gt;

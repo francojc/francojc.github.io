@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Treetagger on francojc ⟲</title>
-    <link>/tags/treetagger/</link>
+    <link>https://francojc.github.io/tags/treetagger/</link>
     <description>Recent content in Treetagger on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Install graphical interface for TreeTagger on Windows</title>
-      <link>/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</link>
+      <link>https://francojc.github.io/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</link>
       <pubDate>Sun, 11 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</guid>
+      <guid>https://francojc.github.io/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</guid>
       <description>&lt;p&gt;Here&amp;rsquo;s a slimmed down step-by-step instruction list on how to install the &lt;a href=&#34;http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/&#34; target=&#34;_blank&#34;&gt;TreeTagger&lt;/a&gt; &lt;a href=&#34;http://www.smo.uhi.ac.uk/~oduibhin/oideasra/interfaces/winttinterface.htm&#34; target=&#34;_blank&#34;&gt;graphical interface&lt;/a&gt; on a Windows machine.&lt;/p&gt;
 
 &lt;ol&gt;

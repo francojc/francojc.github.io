@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fish on francojc ⟲</title>
-    <link>/categories/fish/</link>
+    <link>https://francojc.github.io/categories/fish/</link>
     <description>Recent content in Fish on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Selecting and copying a random subset of files in the Fish shell</title>
-      <link>/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</link>
+      <link>https://francojc.github.io/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</link>
       <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</guid>
+      <guid>https://francojc.github.io/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently switched from &lt;a href=&#34;https://www.gnu.org/software/bash/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;bash&lt;/code&gt;&lt;/a&gt; to &lt;a href=&#34;http://fishshell.com&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;fish&lt;/code&gt;&lt;/a&gt; for my shell in UNIX. In this Note-to-self I want to document copying a random sample of files that fit certain characteristics to another directory using fish. Specifically, I select 200 files from the &lt;a href=&#34;https://github.com/francojc/activ-es&#34; target=&#34;_blank&#34;&gt;ACTIV-ES corpus&lt;/a&gt; from years 2000-present and copy them to a new directory.&lt;/p&gt;
 
 &lt;p&gt;The files look like this:&lt;/p&gt;
