@@ -1,10 +1,31 @@
+/*************************************************
+ *  Core
+ **************************************************/
 
-/* Navigation bar configuration */
+html {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: rgba(0,0,0,0.8);
+  line-height: 1.65;
+}
+@media screen and (min-width: 58em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/*************************************************
+ *  Navigation
+ **************************************************/
+
 nav#navbar-main li {
   font-size: 20px; /* JCF: increased from default 16px */
 }
 
-/* Article duration configuration */
+/*************************************************
+ *  Metadata
+ **************************************************/
+ 
 .article-duration {
   margin-top: 12px;
   float: right;
@@ -16,7 +37,10 @@ nav#navbar-main li {
   color: #fff
 }
 
-/* Article img and video box */
+/*************************************************
+ *  Images and video
+ **************************************************/
+ 
 .article-style img,
 .article-style video {
   box-shadow: 1px 1px 0px #FFFFFF, -1px -1px 0px #FFFFFF, 1px -1px 0px #FFFFFF, -1px 1px 0px #FFFFFF;
@@ -26,4 +50,36 @@ nav#navbar-main li {
   margin-bottom: 60px;
   padding-left: 0;
   padding-right: 0;
+}
+
+/*************************************************
+ *  Tables
+ **************************************************/
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+/*************************************************
+ *  Figures
+ **************************************************/
+.caption {
+  color: #7a7a7a;
+  font-size: 0.90rem;
+}
+
+/*************************************************
+ *  Code
+ **************************************************/
+
+pre,
+code {
+  font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
+  font-size: 0.90rem;
+}
+pre {
+  background: #fff;
 }
