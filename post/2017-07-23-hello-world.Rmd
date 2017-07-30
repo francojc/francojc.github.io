@@ -8,7 +8,6 @@ categories:
   - R
 tags:
   - R Markdown
-draft: false
 ---
 
 ```{r setup, echo=FALSE, message=FALSE, warning=FALSE}

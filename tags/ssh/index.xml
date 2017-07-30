@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on francojc ⟲</title>
-    <link>/tags/ssh/</link>
+    <link>https://francojc.github.io/tags/ssh/</link>
     <description>Recent content in Ssh on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Create an SSH tunnel for a remote MySQL database</title>
-      <link>/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</link>
+      <link>https://francojc.github.io/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</link>
       <pubDate>Fri, 26 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</guid>
+      <guid>https://francojc.github.io/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</guid>
       <description>&lt;p&gt;his isn&amp;rsquo;t that hard to find out on the Internets, but I want to document a couple tips that I find useful once you create an SSH Tunnel to your remote MySQL database. After you create the tunnel, you will be able to interact with the database as if it were on your local machine, which simplifies running SQL scripts.&lt;/p&gt;
 
 &lt;ol&gt;
