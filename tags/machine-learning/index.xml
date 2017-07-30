@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/machine-learning/</link>
+    <link>/tags/machine-learning/</link>
     <description>Recent content in Machine Learning on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Data Science for Language Research</title>
-      <link>https://francojc.github.io/project/dslr/</link>
+      <link>/project/dslr/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/project/dslr/</guid>
+      <guid>/project/dslr/</guid>
       <description>
 
 &lt;h1 id=&#34;aim&#34;&gt;Aim&lt;/h1&gt;
