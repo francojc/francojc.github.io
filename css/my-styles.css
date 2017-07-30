@@ -1,5 +1,5 @@
 
-
+/* Navigation bar configuration */
 nav#navbar-main li {
   font-size: 20px; /* JCF: increased from default 16px */
 }
@@ -14,4 +14,16 @@ nav#navbar-main li {
   border-radius: 3px;
   background: #b5c6ce;
   color: #fff
+}
+
+/* Article img and video box */
+.article-style img,
+.article-style video {
+  box-shadow: 1px 1px 0px #FFFFFF, -1px -1px 0px #FFFFFF, 1px -1px 0px #FFFFFF, -1px 1px 0px #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding-left: 0;
+  padding-right: 0;
 }
