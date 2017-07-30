@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R Markdown on francojc ⟲</title>
-    <link>/tags/r-markdown/</link>
+    <link>https://francojc.github.io/tags/r-markdown/</link>
     <description>Recent content in R Markdown on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Hello world!</title>
-      <link>/2017/07/23/hello-world/</link>
+      <link>https://francojc.github.io/2017/07/23/hello-world/</link>
       <pubDate>Sun, 23 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/07/23/hello-world/</guid>
+      <guid>https://francojc.github.io/2017/07/23/hello-world/</guid>
       <description>&lt;p&gt;This is the first post in the &lt;code&gt;academic&lt;/code&gt; theme for Hugo. The scaffolding was created using the &lt;code&gt;Addin&lt;/code&gt; menu dropdown and selecting &lt;code&gt;New Post&lt;/code&gt;. This dialogue will provide the appropriate fields to set up a post or page. By default the subdirectory for posts is &lt;code&gt;post&lt;/code&gt;. In the &lt;code&gt;academic&lt;/code&gt; theme, other subdirectories are available for pages with particular content and content-specific attributes.&lt;/p&gt;
 &lt;p&gt;Here’s a bit of code to show the &lt;code&gt;highlight_style&lt;/code&gt; used here &lt;code&gt;github&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:10
