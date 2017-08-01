@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/jekyll/</link>
+    <description>Recent content in Jekyll on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Fri, 19 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/jekyll/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Publishing Rmarkdown to Wordpress or Jekyll</title>
+      <link>https://francojc.github.io/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</link>
+      <pubDate>Fri, 19 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</guid>
+      <description>&lt;div id=&#34;publish-to-wordpress&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Publish to Wordpress&lt;/h2&gt;
+&lt;p&gt;When I first starting looking into matters, I was using a Wordpress site hosted on &lt;a href=&#34;http://wordpress.com&#34;&gt;Wordpress.com&lt;/a&gt;. I did some research on how to &lt;code&gt;knit&lt;/code&gt; and send an &lt;code&gt;.Rmd&lt;/code&gt; file to Wordpress with all images going along for the ride. I found &lt;a href=&#34;http://yihui.name/knitr/demo/wordpress/&#34;&gt;Yuhui Xie’s documentation on the official Knitr page&lt;/a&gt; which was very helpful and some &lt;a href=&#34;https://github.com/yihui/knitr-examples/blob/master/010-upload.Rmd&#34;&gt;documentation on uploading images&lt;/a&gt; to &lt;a href=&#34;http://imgur.com&#34;&gt;imgur.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This approach requires the &lt;code&gt;knitr&lt;/code&gt;, &lt;code&gt;markdown&lt;/code&gt; and &lt;code&gt;RWordpress&lt;/code&gt; packages. First we set up some options in &lt;code&gt;knitr&lt;/code&gt; to adjust the figure sizes and upload them to imgur.com.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(knitr)
+# Set figure dimensions
+opts_chunk$set(fig.width=5, fig.height=5)
+# Set figures to upload to imgur.com
+opts_knit$set(upload.fun = imgur_upload, base.url = NULL) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next let’s get to &lt;code&gt;knit&lt;/code&gt;in’. The &lt;code&gt;knit()&lt;/code&gt; function will create a&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rmd.file &amp;lt;- &amp;quot;yourfile.Rmd&amp;quot;
+# Knit the .Rmd file
+knit(rmd.file)
+# Set up input/ output files
+markdown.file &amp;lt;- gsub(pattern = &amp;quot;Rmd$&amp;quot;, replacement = &amp;quot;md&amp;quot;, x = rmd.file)
+html.file &amp;lt;- gsub(pattern = &amp;quot;md$&amp;quot;, replacement = &amp;quot;_pub.html&amp;quot;, x = markdown.file)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we’ll load the &lt;code&gt;markdown&lt;/code&gt; package and convert the &lt;code&gt;.md&lt;/code&gt; file we knitted earlier to an &lt;code&gt;.html&lt;/code&gt;. Using the &lt;code&gt;fragment.only&lt;/code&gt; parameter we can drop the YAML info that is part of the Rmarkdown file.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(markdown)
+# Removes &amp;#39;yaml&amp;#39; information
+markdownToHTML(file = markdown.file, output = html.file, fragment.only = TRUE) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All that’s left is to set up your Wordpress site’s credentials and then send the post. Note that the parameter &lt;code&gt;publish = FALSE&lt;/code&gt; in the &lt;code&gt;newPost()&lt;/code&gt; function means that the post will be added as a draft. This is helpful if you want to preview the post and add tags and categories before publishing.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(RWordpress)
+# Set your WP username, password, and your site URL
+options(WordpressLogin = c(your.username = &amp;#39;your.password&amp;#39;), 
+        WordpressURL = &amp;#39;https://your-wordpress-site.com/xmlrpc.php&amp;#39;)
+# Create a line-by-line text vector
+text = paste(readLines(html.file), collapse = &amp;quot;\n&amp;quot;)
+# Send to Worpdress
+newPost(list(description = text, title = &amp;quot;Your post&amp;#39;s title!&amp;quot;), publish = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I put together a command-line script that you can find &lt;a href=&#34;https://github.com/francojc/exploRations/tree/master/Publishing&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;publish-to-jekyll-and-host-on-github&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Publish to Jekyll and host on GitHub&lt;/h2&gt;
+&lt;div id=&#34;setting-up-your-site&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Setting up your site&lt;/h3&gt;
+&lt;p&gt;After poking around on the web I was intrigued by the &lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; publishing framework and hosting on &lt;a href=&#34;https://help.github.com/articles/using-jekyll-with-pages/&#34;&gt;GitHub&lt;/a&gt;. After some reading and browsing around other Jekyll sites on GitHub, I decided to fork the &lt;a href=&#34;https://mademistakes.com/articles/minimal-mistakes-jekyll-theme/&#34;&gt;&lt;code&gt;minimal-mistakes&lt;/code&gt;&lt;/a&gt; Jekyll theme by Michael Rose.&lt;/p&gt;
+&lt;p&gt;You could find any number of themes on the web that have the main configurations already set up. Michael Rose has a &lt;a href=&#34;https://mademistakes.com/work/jekyll-themes/&#34;&gt;few&lt;/a&gt;, but you can also find good basic themes using &lt;a href=&#34;http://jekyllbootstrap.com&#34;&gt;Jekyll-bootstrap&lt;/a&gt;. If you go this way you’ll have a similar set of steps to get up and running.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; a GitHub account, &lt;code&gt;Ruby&lt;/code&gt; and &lt;code&gt;RubyGems&lt;/code&gt; installed, and a *nix system with git installed.&lt;/p&gt;
+&lt;p&gt;On Github:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find a Jekyll theme to work with on GitHub and fork it&lt;/li&gt;
+&lt;li&gt;Edit the settings of this forked repository changing the repository name to &lt;code&gt;gitusername.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On your local system:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fire up Terminal&lt;/li&gt;
+&lt;li&gt;Make sure you have &lt;code&gt;git&lt;/code&gt; installed/ updated.&lt;/li&gt;
+&lt;li&gt;Clone your new repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git clone https://github.com/francojc/francojc.github.io.git&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now you will have the remote repository mirrored on your local system. If you’d like to be able to develop locally you’ll need to install Jekyll (and dependencies).&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;gem install bundler&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can now preview the site locally by running:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;jekyll build
+jekyll serve&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then you should be able to view your site at &lt;a href=&#34;http://localhost:4000/&#34; class=&#34;uri&#34;&gt;http://localhost:4000/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After you’re feeling pretty great about getting a site up in no time, it’s time to personalize your site. To understand how this works I’ve copied/adapted the scaffolding schema from the &lt;code&gt;minimal-mistakes&lt;/code&gt; theme as an example.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;minimal-mistakes/
+├── _config.yml
+├── _data/
+|    ├── navigation.yml
+├── _includes/
+|    ├── _author-bio.html        # bio stuff layout. pulls optional owner data from 
+|    ├── _browser-upgrade.html   # prompt to install a modern browser for &amp;lt; IE9
+|    ├── _disqus_comments.html   # Disqus comments script
+|    ├── _footer.html            # site footer
+|    ├── _head.html              # site head
+|    ├── _navigation.html        # site top navigation
+|    ├── _open-graph.html        # Twitter Cards and Open Graph meta data
+|    └── _scripts.html           # site scripts
+├── _layouts/
+|    ├── home.html               # homepage layout
+|    ├── page.html               # page layout
+|    ├── post-index.html         # post index layout
+|    └── post.html               # single post layout
+├── _posts/                      # MarkDown formatted posts
+├── _sass/                       # Sass stylesheets
+├── _templates/                  # used by Octopress to define YAML variables for new posts/pages
+├── about/                       # sample about page
+├── assets/
+|    ├── css/                    # compiled stylesheets
+|    ├── fonts/                  # webfonts
+|    ├── js/
+|    |   ├── _main.js            # main JavaScript file, plugin settings, etc
+|    |   ├── plugins/            # scripts and jQuery plugins to combine with _main.js
+|    |   ├── scripts.min.js      # concatenated and minified _main.js + plugin scripts
+|    |   └── vendor/             # vendor scripts to leave alone and load as is
+|    └── less/
+├── images/                      # images for posts and pages
+├── 404.md                       # 404 page
+├── feed.xml                     # Atom feed template
+├── index.md                     # sample homepage. lists 5 latest posts 
+├── posts/                       # sample post index page. lists all posts in reverse chronology
+└── theme-setup/                 # theme setup page. safe to remove&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Key areas to focus on in this scaffolding are the &lt;code&gt;_config.yml&lt;/code&gt; and &lt;code&gt;_data/navigation.yml&lt;/code&gt; files and the &lt;code&gt;_posts&lt;/code&gt; and &lt;code&gt;images&lt;/code&gt; directories. The &lt;code&gt;_config.yml&lt;/code&gt; file is where you make site-level configuration changes. The &lt;code&gt;_data/navigation.yml&lt;/code&gt; is where you set up your navigation. And the &lt;code&gt;_posts&lt;/code&gt; and &lt;code&gt;images&lt;/code&gt; directories is where your markdown files and images will be added.&lt;/p&gt;
+&lt;p&gt;Let’s do a quick test. Create a markdown file with the &lt;code&gt;.md&lt;/code&gt; extension (manually or via &lt;code&gt;knitr&lt;/code&gt;). Then rename that file with the format &lt;code&gt;2014-12-19-my-filename.md&lt;/code&gt;. Before we copy the file into the &lt;code&gt;_posts&lt;/code&gt; directory, we need to prepend some meta information (aka “Front matter”) to the file:&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;---
+layout: post
+title: &amp;quot;My first post&amp;quot;
+---
+
+# My first post
+
+This sure is fun...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Go ahead and move the &lt;code&gt;2014-12-19-my-filename.md&lt;/code&gt; file into &lt;code&gt;_posts/&lt;/code&gt;. Then return to the terminal and run:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;jekyll serve&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview, ooh’s and aah’s.&lt;/p&gt;
+&lt;p&gt;To create pages, edit the navigation, and other changes I will refer you to the &lt;a href=&#34;https://mmistakes.github.io/minimal-mistakes/theme-setup/#site-setup&#34;&gt;&lt;code&gt;minimal-mistakes&lt;/code&gt; documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;publishing&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Publishing&lt;/h3&gt;
+&lt;p&gt;Now we want to be able to convert a &lt;code&gt;.Rmd&lt;/code&gt; document to a &lt;code&gt;.md&lt;/code&gt; document and then prepare the figure paths to look for our figures in the &lt;code&gt;images&lt;/code&gt; directory in our &lt;code&gt;Jekyll&lt;/code&gt; site. I found a nice base function that uses &lt;code&gt;knitr&lt;/code&gt; and knitr options to do just that at &lt;a href=&#34;https://jfisher-usgs.github.io/r/2012/07/03/knitr-jekyll/&#34;&gt;jfisher-usgs&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(knitr)
+my.jekyll.site &amp;lt;- &amp;quot;gitusername.github.io&amp;quot;
+KnitPost &amp;lt;- function(input, base.url = my.jekyll.site) {
+  opts_knit$set(base.url = base.url)
+  fig.path &amp;lt;- paste0(&amp;quot;images/&amp;quot;, sub(&amp;quot;.Rmd$&amp;quot;, &amp;quot;&amp;quot;, basename(input)), &amp;quot;/&amp;quot;)
+  opts_chunk$set(fig.path = fig.path)
+  opts_chunk$set(fig.cap = &amp;quot;center&amp;quot;)
+  render_jekyll()
+  knit(input, envir = parent.frame())
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And then we can run it&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;KnitPost(&amp;quot;2014-12-19-my-filename.Rmd&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You’re &lt;code&gt;.Rmd&lt;/code&gt; will have been converted to a &lt;code&gt;.md&lt;/code&gt; file with the appropriate code syntax, and if you have figures in your &lt;code&gt;.Rmd&lt;/code&gt; then they will be found in the &lt;code&gt;images/my-filename/&lt;/code&gt; directory. Now drop the &lt;code&gt;my-filename&lt;/code&gt; directory (containing the figure images) into the &lt;code&gt;images/&lt;/code&gt; directory and move the &lt;code&gt;my-filename.md&lt;/code&gt; file to the &lt;code&gt;_posts&lt;/code&gt; directory in the Jekyll site.&lt;/p&gt;
+&lt;p&gt;You can preview your work with &lt;code&gt;jekyll serve&lt;/code&gt; but the images will not render until they are uploaded to our &lt;code&gt;gitusername.github.io&lt;/code&gt; site. So let’s do that.&lt;/p&gt;
+&lt;p&gt;Open Terminal and run:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git add --all
+git commit -m &amp;quot;Initial configuration and post&amp;quot;
+git push&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now you can visit your GitHub site and marvel at your work.&lt;/p&gt;
+&lt;p&gt;Again, I put together a command-line script to make it easier to run this script. You can find it &lt;a href=&#34;https://github.com/francojc/exploRations/tree/master/Publishing&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
