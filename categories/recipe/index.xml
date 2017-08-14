@@ -7,8 +7,401 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Jerid Francom</copyright>
-    <lastBuildDate>Thu, 03 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Aug 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/recipe/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting started with R and RStudio</title>
+      <link>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</link>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</guid>
+      <description>&lt;div id=&#34;why-r&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Why R?&lt;/h2&gt;
+&lt;p&gt;The R programming language is free software developed with an eye towards statistical computing and data visualization that has has taken off in popularity over the last decade and is now finds itself among the most used programming languages, in &lt;a href=&#34;http://spectrum.ieee.org/computing/software/the-2017-top-programming-languages&#34;&gt;general&lt;/a&gt; and is often the &lt;a href=&#34;https://medium.com/@MarutiTech/which-are-the-popular-languages-for-data-science-8e67fb5ef1ff&#34;&gt;go-to language for data science&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So what’s all the fuss about? Among the things that you will come to love about R, you will be hard pressed to find a more active community surrounding a programming language.&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; The size and activity of this community means that R stays free, the software improves, and almost anything you are looking to do in your analysis has a user-developed ‘package’ &lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; that facilitates getting any analysis done at various stages in the process. Packages are contributed code from R users that encapsulate a particular and cohesive set of ‘functions’, or sub-tasks; but we will get more into this later in this post and in detail later in the series. &lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The number of R packages grows quickly everyday and now applies to many more tasks that just statistics. To get a sense of this activity you can take a look at an interactive display of current downloads from the R package repository (or store) called &lt;a href=&#34;https://cloud.r-project.org/&#34;&gt;CRAN&lt;/a&gt; that lives on the R Project website.&lt;/p&gt;
+&lt;iframe src=&#34;https://gallery.shinyapps.io/087-crandash/?showcase=0&#34; width=&#34;100%&#34; height=&#34;600&#34;&gt;
+&lt;/iframe&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;This display, by the way, was created with an R package called &lt;a href=&#34;http://shiny.rstudio.com/&#34;&gt;Shiny&lt;/a&gt;. We’ll get to building interactive websites (like this one) and documents later on in the series.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;R, then, is a widely used open source programming language with a thriving community base that is among the best languages to do the robust and sophisticated analyses that are required for data science. This is an exciting time to be an R programmer and a data scientist, so let’s get started!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;downloading-and-installing-r&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Downloading and installing R&lt;/h2&gt;
+&lt;p&gt;The beginning, of course, is downloading and installing the software. Follow this link to the R Project website: &lt;a href=&#34;https://www.r-project.org/&#34;&gt;Download R&lt;/a&gt;. This is the home of the R programming language. There are many resources you can find here including a current list of available R packages, resources for getting help (we will see soon, however, that RStudio will have these built right into its user interface), and other various other resources. For now click on the ‘Download R’ link as seen in Figure &lt;a href=&#34;#fig:r-install-1&#34;&gt;1&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-install-1&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-install-1-1.png&#34; alt=&#34;R Project main page&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: R Project main page
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The list of sites here are ‘mirrors’, or alternative servers all over the world where the software is available. Any of these links will do the job, so let’s just select the first mirror ‘&lt;a href=&#34;https://cloud.r-project.org/&#34; class=&#34;uri&#34;&gt;https://cloud.r-project.org/&lt;/a&gt;’ for simplicity sake.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-install-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-install-2-1.png&#34; alt=&#34;Available mirror sites to download R&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Available mirror sites to download R
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Next select your operating system. I am working on a Mac so I will select the ‘OS X’ option.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-install-3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-install-3-1.png&#34; alt=&#34;Operating system selection&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 3: Operating system selection
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;You will now need to scroll down the page a bit and find the link to most recent version of R. The current version at publication is &lt;code&gt;R-3.4.1.pkg&lt;/code&gt;. Download the &lt;code&gt;.pkg&lt;/code&gt; file to your hard drive.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-install-4&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-install-4-1.png&#34; alt=&#34;Download the most recent `.pkg` file&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 4: Download the most recent &lt;code&gt;.pkg&lt;/code&gt; file
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;You can download the &lt;code&gt;.pkg&lt;/code&gt; file to any folder on your hard drive. After running this installation file, accept the prompt to move this file to the trash. You will not need it again.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Once it is on your hard drive, open the file by double-clicking it and follow the default installation instructions.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-install-5&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-install-5-1.png&#34; alt=&#34;Run the `.pkg` file to install R on your machine.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 5: Run the &lt;code&gt;.pkg&lt;/code&gt; file to install R on your machine.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;To see what get’s installed on your machine you can click the ‘Customize’ link and see the the various pieces of software that are bundled with the &lt;code&gt;.pkg&lt;/code&gt; installer. Go ahead and do that and take a look.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-install-6&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-install-6-1.png&#34; alt=&#34;View the default software installed with the R `.pkg` installer.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 6: View the default software installed with the R &lt;code&gt;.pkg&lt;/code&gt; installer.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Now you can see the list of software. Let’s focus on two items in the list, seen in Figure &lt;a href=&#34;#fig:r-install-7&#34;&gt;7&lt;/a&gt;. First, you will see the R Framework, which is R itself. Among the other items we see the ‘R GUI’ in the list. This is a basic application interface to R. We’ll take a quick look at that application in the next section to begin our understanding of how to access R through applications and more robust IDEs.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-install-7&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-install-7-1.png&#34; alt=&#34;List of software installed on your machine as part of the installation process.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 7: List of software installed on your machine as part of the installation process.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;We won’t spend much time working with the R Application GUI in our series, and quickly move to using RStudio to interface R, but it’s worth knowing that it’s there and it will help us make a point about the distinction between R, the framework, and interfaces to R like this GUI and RStudio. Go ahead and finish the installation and move to the next section.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;working-with-the-r-console-in-the-default-r-application-gui&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Working with the R console in the default R Application GUI&lt;/h2&gt;
+&lt;p&gt;Before we get to downloading and working with the RStudio IDE, let’s take a quick look at an alternative way of connecting to R: the R Application GUI. The R Application GUI is installed with together with R itself as mentioned in the previous section. Opening that software we can get our first glimpse at the R console and will run our first line of code.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-gui-1&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-gui-1-1.png&#34; alt=&#34;A view of the default R Application GUI.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 8: A view of the default R Application GUI.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The console is where we run R interactively. That is to say that the software interprets our code on a line by line basis as we go; a sort of call and response method. The prompt is the line where the computer is ready waiting for the user to enter code to be sent off to the interpreter. Let’s show you what this looks like in action with the most simple of all code; adding &lt;code&gt;1 + 1&lt;/code&gt;. So at the prompt type exactly that, then hit enter/ return and see what happens.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-gui-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/r-gui-2-1.png&#34; alt=&#34;Running `1 + 1` at the prompt in the R Application.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 9: Running &lt;code&gt;1 + 1&lt;/code&gt; at the prompt in the R Application.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Admittedly this is not the kind of stuff that will lead you to a romance with R! But it’s our first step and now we know what the console is, what a prompt is, and what an interactive session is.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;why-rstudio&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Why RStudio?&lt;/h2&gt;
+&lt;p&gt;So to be clear, R is not an application. It is a programming language that resides deep on your computer. The R Application GUI is merely an interface to that language. The small bit of code we ran on through the console here is a direct link to the interpreter that talks to R itself. This is an important concept as you will see as we turn to working with a more powerful interface to R, RStudio. RStudio will provide a console interface to R as well as host of other extremely helpful features into our GUI experience to write code offline in the form of scripts, manage our scripts and other data resources, view data and plots, get help, and much, much more that will make working with R more efficient.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;downloading-and-installing-rstudio&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Downloading and installing RStudio&lt;/h2&gt;
+&lt;p&gt;To download RStudio, we navigate to the &lt;a href=&#34;https://www.rstudio.com/&#34;&gt;RStudio website’s homepage&lt;/a&gt;. Scroll down a bit and you will see the ‘Download’ button for RStudio.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-install-1&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-install-1-1.png&#34; alt=&#34;RStudio homepage.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 10: RStudio homepage.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Follow the ‘Download’ button. On this page you will be presented with various versions of the RStudio software. We want the ‘RStudio Desktop - Open source license’ version. Scroll down to the bottom of this table showing the various options you get with the other versions and click the big green ‘Download’ button.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-install-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-install-2-1.png&#34; alt=&#34;List of R Studio versions.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 11: List of R Studio versions.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Now select the installer that matches your operating system.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-install-3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-install-3-1.png&#34; alt=&#34;List of R Studio installers for various operating systems.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 12: List of R Studio installers for various operating systems.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Again, download this file to any place on your hard drive that you desire. Double-click this file on your computer and follow the instructions to add the application to your machine.&lt;/p&gt;
+&lt;p&gt;That’s it. You now have the most current version of R and RStudio on your machine. We’re ready to get familiar with the features of RStudio.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;getting-to-know-rstudio&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Getting to know RStudio&lt;/h2&gt;
+&lt;p&gt;Open RStudio. You will see an interface similar to the one below in Figure &lt;a href=&#34;#fig:rstudio-1&#34;&gt;13&lt;/a&gt;. Of course the aesthetics will vary depending on the operating system you are on but there may be other small differences in the tabs in each of the panes. As you work with RStudio you may add new functionality to facilitate certain tasks.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-1&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-1-1.png&#34; alt=&#34;First look at RStudio.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 13: First look at RStudio.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- Keep the description brief, as real understanding will come as we work on pratical applications of programming in R.  --&gt;
+&lt;div id=&#34;rstudio-panes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;RStudio Panes&lt;/h3&gt;
+&lt;p&gt;The layout of RStudio includes four main ‘panes’: Console, Editor, Files, and the Environment panes. You already are familiar with the idea of the console, seen here in Figure &lt;a href=&#34;#fig:rstudio-2&#34;&gt;14&lt;/a&gt;. Remember that this is the area that is a direct line between the IDE and the R interpreter. When RStudio is first launched, it will start an R session and this has the effect of reporting some details about the version of R that you are running and the operating system that it is running on.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-2-1.png&#34; alt=&#34;RStudio &amp;quot;Console&amp;quot; pane.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 14: RStudio “Console” pane.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The next logical pane to introduce is the Editor pane, seen in Figure &lt;a href=&#34;#fig:rstudio-3&#34;&gt;15&lt;/a&gt;. Whereas commands written in the console are run on a line by line basis interactively, the Editor will be a useful space for us to view, edit, and write R scripts, as well as other files. Scripts are simply files that contain a series of R commands that we can then run together at once, instead of line by line as we do in the console. This will be the main way we leverage the power of R; by create scripts that run through a data analysis workflow we can then save these scripts as files to run at a future point, continue to develop, revise, and even share them.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-3-1.png&#34; alt=&#34;RStudio &amp;quot;Editor&amp;quot; pane.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 15: RStudio “Editor” pane.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The Files pane has various tabs associated with it. When the ‘Files’ tab is selected we will see files and folders (aka directories) on our machine. As we begin working with R in the next section, we will begin to see how this tab will be extremely useful to see, edit, and delete our scripts, data files, and other associated project files without having to browse our system through as we would normally. There is also a set default tabs: ‘Plots’, ‘Packages’, and ‘Help’ in this pane. Plots will show and export any plots we create during our R session. The Packages tab allows us to manage packages either downloading or installing them. And the Help tab is where we access information about R in general, or particular packages, or functions. You will find that Help is really a godsend as very few R programmers can write code for a project from A to Z without refreshing their memory or exploring documentation on the usage of packages and functions.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-4&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-4-1.png&#34; alt=&#34;RStudio &amp;quot;Files&amp;quot; pane.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 16: RStudio “Files” pane.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The last of the four panes is the Environment pane. It includes a set of tabs as well. The main two are ‘Environment’ and ‘History’. The Environment tab allows us to see variables and objects that we create during our session. We haven’t discussed either of these concepts, but rest assured we will get there soon and you will understand how helpful this tab is to efficient R programming. History is just that; a history of the commands that have been sent to the R interpreter. These commands can come from our interactive session in the console or through running a series of commands in a script.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:rstudio-5&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/rstudio-5-1.png&#34; alt=&#34;RStudio &amp;quot;Environment&amp;quot; pane.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 17: RStudio “Environment” pane.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;So there you have it a brief overview of RStudio panes and tabs. Together these tools will provide us ample resources for just about everything you will ever need to do data analysis with R. In the next section we will begin to see how we can leverage these resources in a basic R session.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;It’s worth noting that RStudio is highly customizable; panes can be customized in appearance, placement, and tabs available. But for now we will leave the default layout to maintain a consistent format throughout this series. If you do want to experiment with the look and feel of RStudio, you can peruse the options through the ‘Tools &amp;gt; Global Options’ in the application dropdown menu at the top of your screen.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div id=&#34;r-sessions-in-rstudio&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;R sessions in RStudio&lt;/h3&gt;
+&lt;p&gt;To get a basic feel for working with R and RStudio let’s run through a basic example that will highlight each of the main panes and tabs that we covered in the previous section.&lt;/p&gt;
+&lt;p&gt;To get started let’s run the same code we ran before in the R Application GUI console but now in the RStudio console. Type the following code in the Console and hit Enter on your keyboard.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;1 + 1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On hitting Enter, the code is sent to the R interpreter which responds with the result; &lt;code&gt;2&lt;/code&gt;. For now ignore the &lt;code&gt;[1]&lt;/code&gt; that prefixes the line where the result is displayed.&lt;/p&gt;
+&lt;p&gt;Now let’s run three separate lines of code in the Console in sequence. Take care to enter this and all subsequent code input correctly computers do not tolerate typos. Remember you’re the brains here, the computer is the brawn!&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Quick tip: You can add the assignment operator &lt;code&gt;&amp;lt;-&lt;/code&gt; via a keyboard shortcut by hitting &lt;code&gt;option + -&lt;/code&gt; (Mac) and &lt;code&gt;alt + -&lt;/code&gt; (PC).&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 1:26&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;y &amp;lt;- letters&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;paste(x, &amp;quot;-&amp;quot;, y)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You will notice that the first two commands did not return anything. This is because we sent the results from each of these commands to the variables &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;, respectively. A variable is a data container that is named. This container, or variable, holds the result in memory and gives us access to the result when we use the variable name later on. As you will soon see, you will inevitably create a number of variables in any given data analysis. There are two ways to see a listing of variables you have created. The first can be done in the Console by typing the function &lt;code&gt;ls()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ls()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;x&amp;quot; &amp;quot;y&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The second is to browse to the Environment pane under the Environment tab. You will see that the Environment tab provides much more information that just the names of the variables in memory. It also indicates the type of each variable, its dimensions (in this case length as we are working with vectors), its memory size, and a summary of the values contained within.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-1&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-1-1.png&#34; alt=&#34;Viewing variables in the Environment tab.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 18: Viewing variables in the Environment tab.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;In the third command we make use of the variables &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;: pasting (with the built-in, or ‘base R’, function &lt;code&gt;paste()&lt;/code&gt;) the results from &lt;code&gt;x&lt;/code&gt; (a series of numbers from 1 to 26) and &lt;code&gt;y&lt;/code&gt; (the letters of the alphabet) together with a hyphen as a separator.&lt;/p&gt;
+&lt;p&gt;If that was the result we were looking for then great. Job done. Imagine, however, that we wanted the result to return contiguous ‘number-hyphen-letter’ strings, like &lt;code&gt;1-a&lt;/code&gt;. Is that possible? Yes, it is. But don’t take my word for it, let’s find out using RStudio’s Help resources. Again, there are two ways to do this. The first is by inputting the code &lt;code&gt;?paste&lt;/code&gt; in the Console.&lt;/p&gt;
+&lt;p&gt;By appending the &lt;code&gt;?&lt;/code&gt; operator to a function, package, or dataset name the Help tab in the Files pane is opened to the R documentation page.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-2-1.png&#34; alt=&#34;Viewing R documentation in the Help tab.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 19: Viewing R documentation in the Help tab.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The second approach is to manually browse to the Help tab and search for the function &lt;code&gt;paste&lt;/code&gt;. Either works, you might find yourself alternating between the two.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;In some cases you might not remember the name of the function, package, or dataset that you want to find documentation for. For a more general search you can use the &lt;code&gt;??&lt;/code&gt; operator instead of the &lt;code&gt;?&lt;/code&gt;. Or as an alternative use the search function in the Help tab.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Back to our code. The R documentation shows that &lt;code&gt;paste()&lt;/code&gt; can take an optional sub-command, or argument, that will allow us to choose how our paste variables are separated. With this knowledge in hand we can update our code. We will use the argument &lt;code&gt;sep = &amp;quot;&amp;quot;&lt;/code&gt; to remove white space between the concatenated elements like so:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;paste(x, &amp;quot;-&amp;quot;, y, sep = &amp;quot;&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;1-a&amp;quot;  &amp;quot;2-b&amp;quot;  &amp;quot;3-c&amp;quot;  &amp;quot;4-d&amp;quot;  &amp;quot;5-e&amp;quot;  &amp;quot;6-f&amp;quot;  &amp;quot;7-g&amp;quot;  &amp;quot;8-h&amp;quot;  &amp;quot;9-i&amp;quot;  &amp;quot;10-j&amp;quot;
+## [11] &amp;quot;11-k&amp;quot; &amp;quot;12-l&amp;quot; &amp;quot;13-m&amp;quot; &amp;quot;14-n&amp;quot; &amp;quot;15-o&amp;quot; &amp;quot;16-p&amp;quot; &amp;quot;17-q&amp;quot; &amp;quot;18-r&amp;quot; &amp;quot;19-s&amp;quot; &amp;quot;20-t&amp;quot;
+## [21] &amp;quot;21-u&amp;quot; &amp;quot;22-v&amp;quot; &amp;quot;23-w&amp;quot; &amp;quot;24-x&amp;quot; &amp;quot;25-y&amp;quot; &amp;quot;26-z&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With time you will become more accustomed to reading and making sense of the R documentation. For now, however, it is sufficient to have learned how and where to access this documentation.&lt;/p&gt;
+&lt;p&gt;The previous code we have run is short and simple. Working with the Console is great for this type of quick and dirty exploring, or doing some introspection of variables using &lt;code&gt;ls()&lt;/code&gt; or the help operator &lt;code&gt;?&lt;/code&gt; to view the R help documentation. However, data analysis will involve many more lines of code and using the Console directly will become cumbersome. A more convenient way to write code is to use the Editor pane.&lt;/p&gt;
+&lt;p&gt;Let’s run through a more involved and practical example of creating a basic word frequency analysis. Before we get to the code below, let me introduce you to installing and managing R packages. As we have seen a couple times now there is a Console-based method and an GUI-based method. This time I will start with the GUI method as it is very convenient and tends to be the method most use. First step is to open the Packages tab in the Files pane, seen below.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-3-1.png&#34; alt=&#34;The Packages tab.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 20: The Packages tab.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;You will see a list of the R packages that are already installed on your machine. The base installation of R comes with a default set so you will already see some packages listed. However, you may not see all of the packages that appear in Figure &lt;a href=&#34;#fig:R-basic-3&#34;&gt;20&lt;/a&gt; if you have not already manually installed new packages (for example the &lt;code&gt;acs&lt;/code&gt; package for accessing US Census data).&lt;/p&gt;
+&lt;p&gt;Let’s install a few packages we need for the upcoming code: &lt;code&gt;dplyr&lt;/code&gt;, &lt;code&gt;ggplot2&lt;/code&gt;, and &lt;code&gt;tidytext&lt;/code&gt;. Installing packages with the Packages tab is easy. First, click on the ‘Install’ button within the tab.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-4&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-4-1.png&#34; alt=&#34;The packages installation dialogue box.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 21: The packages installation dialogue box.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Type the names &lt;code&gt;dplyr&lt;/code&gt;, &lt;code&gt;ggplot2&lt;/code&gt;, and &lt;code&gt;tidytext&lt;/code&gt; into the ‘Packages’ field leaving the other default configuration fields. You will notice as you type the package names, RStudio will pattern match the name which can be helpful to make sure you type the names correctly. Once you have the names entered, click the ‘Install’ button. At this point RStudio will run the installation code for these packages. As they install there will be quite a bit of output, some of it in red font, in the Console. When the installation is complete the prompt &lt;code&gt;&amp;gt;&lt;/code&gt; at the Console will appear; ready to take another command.&lt;/p&gt;
+&lt;p&gt;The Console approach leverages the function &lt;code&gt;install.packages()&lt;/code&gt;. To find out more about how to use this function, I encourage you to look at the R documentation using &lt;code&gt;?install.packages&lt;/code&gt;. I will leave this as an exercise for you to complete. Now back to our example code that we will enter in the Editor pane.&lt;/p&gt;
+&lt;p&gt;Copy and paste the following code into the Editor pane.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr) # data manipulation
+library(ggplot2) # package for generating a word frequency plot
+library(tidytext) # package for doing a word frequency analysis
+
+text &amp;lt;- c(&amp;quot;The Fulton County Grand Jury said Friday an investigation of Atlanta&amp;#39;s recent primary election produced no evidence that any irregularities took place.&amp;quot;,
+&amp;quot;The jury further said in term-end presentments that the City Executive Committee, which had over-all charge of the election, deserves the praise and thanks of the City of Atlanta for the manner in which the election was conducted.&amp;quot;,
+&amp;quot;The September-*october term jury had been charged by Fulton Superior Court Judge Durwood Pye to investigate reports of possible irregularities in the hard-fought primary which was won by Mayor-nominate Ivan Allen Jr..&amp;quot;,
+&amp;quot;Only a relative handful of such reports was received, the jury said, considering the widespread interest in the election, the number of voters and the size of this city.&amp;quot;) # first 4 lines from the Brown Corpus
+
+text_df &amp;lt;- data.frame(line = 1:4, text = text) # create a tabular dataset with the columns `line` and `text`
+
+text.word.freq &amp;lt;- unnest_tokens(tbl = text_df, input = text, output = words) %&amp;gt;% # tokenize `text` into `words`
+  count(words, sort = TRUE) %&amp;gt;% # count `words` and sort them
+  head(10) # return only the first ten lines in the dataset
+
+ggplot(data = text.word.freq, aes(x = reorder(words, desc(n)), y = n)) + geom_bar(stat = &amp;quot;identity&amp;quot;) + labs(x = &amp;quot;Words&amp;quot;, y = &amp;quot;Count&amp;quot;, title = &amp;quot;Word frequency plot&amp;quot;) # plot the `words` on the x-axis and the count `n` on the y-axis using a bar plot ordered by `n`&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your code should look something similar to what you see in Figure &lt;a href=&#34;#fig:R-basic-5&#34;&gt;22&lt;/a&gt;. Note that I have resized the Editor pane to view most of the code.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-5&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-5-1.png&#34; alt=&#34;Code for a basic word frequency analysis in the Editor pane.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 22: Code for a basic word frequency analysis in the Editor pane.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;We can run the code in the Editor pane either line by line or as a complete script. Running code line by line can be useful when you are composing a script and want to test the results incrementally. To do this you move your cursor to the line you would like to run and then simply hit the keystroke &lt;code&gt;command + enter&lt;/code&gt; (Mac) or &lt;code&gt;ctrl + enter&lt;/code&gt; (PC). Run line 1 and see what happens!&lt;/p&gt;
+&lt;p&gt;Line 1 loads the &lt;code&gt;dplyr&lt;/code&gt; package from our package library with the command &lt;code&gt;library(dplyr)&lt;/code&gt;. If you resize the Console pane you will see that the command was run and resulted in some details about the package printed to the Console. We also notice that the cursor has moved to the next line in the Editor pane, ready for us to run this line.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-6&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-6-1.png&#34; alt=&#34;Running the first line of our basic word frequency analysis.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 23: Running the first line of our basic word frequency analysis.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;In this script I’ve also added comments to each line of code describing what each command does in our script. Any time R finds a &lt;code&gt;#&lt;/code&gt; symbol it ignores everything to the right on the same line. We can then use plain language to annotate our code. Using commenting is a key best practice for coding in any programming language as it will make your code more legible to other users as well as the future you who might come back to this code sometime down the road to realize you have forgotten what your code does!&lt;/p&gt;
+&lt;p&gt;Returning to running our code from the Editor, we can also run multiple lines, or even the entire script from the Editor pane in a similar fashion by selecting multiple lines, or all the lines and using the previous keystroke (&lt;code&gt;command + enter&lt;/code&gt;, or &lt;code&gt;ctrl + enter&lt;/code&gt;). RStudio provides a button ‘Run’ that can be used to run a script line by line or the ‘Source’ button to run the entire script.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-7&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-7-1.png&#34; alt=&#34;Running the entire script using the RStudio tool Source.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 24: Running the entire script using the RStudio tool Source.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Go ahead and run the entire script now with by clicking ‘Source’. The script will be automatically sent line by line sequentially to the Console. The results of this script generate a word frequency plot for the first four lines from the well-known &lt;a href=&#34;https://en.wikipedia.org/wiki/Brown_Corpus&#34;&gt;Brown Corpus&lt;/a&gt;. The Plots tab in the Files pane will automatically open revealing our plot.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-8&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-8-1.png&#34; alt=&#34;Resulting plot from our basic word frequency analysis script.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 25: Resulting plot from our basic word frequency analysis script.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;There are many other options for running code from the Editor pane using keyboard shortcuts. Explore the ‘Code &amp;gt; Run region’ dropdown from the RStudio menu bar for more information.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div id=&#34;saving-our-work&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Saving our work&lt;/h3&gt;
+&lt;p&gt;At this point we may want to save the code to our hard drive to make sure we don’t lose our work, or to move on and write some other code. To save this R script navigate to the RStudio tool menu ‘File &amp;gt; Save’ or hit the keyboard shortcut &lt;code&gt;command + s&lt;/code&gt; (Mac) or &lt;code&gt;ctrl + s&lt;/code&gt; (PC). The next step is to choose where to save this file. Select a directory for this file to live. For now you can choose any directory you feel fit. As we move forward in this series and in more involved projects that you will work on, however, it’s best to do some organizational planning upfront to set up your main project directory, sub-directories, and so on so that it is clear where to save each type of file. This topic will be covered in an upcoming Recipe post dealing with project management using the RStudio ‘Projects’ feature.&lt;/p&gt;
+&lt;p&gt;For testing purposes, let’s save the file within the current working directory inside a directory we will create named &lt;code&gt;getting_started/&lt;/code&gt;. What is the working directory? Well, it is the place that RStudio regards as “Home base” on your hard drive. To find out what this is, enter the function &lt;code&gt;getwd()&lt;/code&gt; at the console. R will return a path to the current working directory. On my machine the path is &lt;code&gt;/Users/francojc/Documents/Recipes&lt;/code&gt;. This notation is describes the hierarchical scheme of directories. My current working directory, then is the &lt;code&gt;Recipes/&lt;/code&gt; directory which is located inside the &lt;code&gt;Documents/&lt;/code&gt; directory which itself is located within my home directory &lt;code&gt;francojc/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Let’s go ahead and open the ‘File &amp;gt; Save’ tool RStudio menu and name our file &lt;code&gt;basic_frequency_analysis.R&lt;/code&gt;. The use of &lt;code&gt;_&lt;/code&gt; here is to avoid white space in file and directory names. This is good practice as working with paths in programming can be complicated by white space in some environments. So it’s good practice to avoid white space. There are various styles that are employed in programming, &lt;a href=&#34;https://en.wikipedia.org/wiki/Programming_style&#34;&gt;generally&lt;/a&gt;, and in &lt;a href=&#34;http://adv-r.had.co.nz/Style.html&#34;&gt;R programming specifically&lt;/a&gt;. Just like commenting code, as mentioned previously, adopting accepted style guidelines can increase your code’s legibility for you and those who may work with code you share.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-9&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-9-1.png&#34; alt=&#34;&amp;quot;Save&amp;quot; dialogue in RStudio.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 26: “Save” dialogue in RStudio.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Once we have saved our file in our working directory, it will now appear in the Files tab in RStudio. From this tab you can move, rename, and delete files as well as create, rename, and delete directories as well. It’s also worth pointing out that the path to our working directory is visible in this Files tab between the working directory listing and the button toolbar. This is a nice feature to see where the files and directories live on your machine without resorting to the OS file explorer.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-10&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-10-1.png&#34; alt=&#34;Viewing files in the Files tab.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 27: Viewing files in the Files tab.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Let’s create our &lt;code&gt;getting_started/&lt;/code&gt; directory inside of our working directory to house this file. Click the ‘New Folder’ button inside the Files tab and name the new directory. It will now appear in our listing. To move our file inside of this directory we can use the OS to manually move the file, but RStudio again provides tools to do this. Select the checkbox beside the file &lt;code&gt;basic_frequency_analysis.R&lt;/code&gt;, then select ‘Move…’ from the ‘More’ dropdown menu.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-11&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-11-1.png&#34; alt=&#34;Moving a file to a new directory in the Files tab.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 28: Moving a file to a new directory in the Files tab.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;After you make the move, RStudio will quickly ask you if you want to close the &lt;code&gt;basic_frequency_analysis.R&lt;/code&gt; script as it no longer exists. It does exist, just not in the same location as before. This underscores the importance of paths in programming and programming tools like RStudio. It is therefore of utmost importance to be aware of the paths to files and directories. Luckily, RStudio provides us ample ways to monitor the paths to working files and directories!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;closing-an-r-session&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Closing an R session&lt;/h3&gt;
+&lt;p&gt;At this point let’s say it’s time to close our session and quit RStudio. You can do this by simply navigating to the RStudio tool menu ‘File &amp;gt; Quit session…’. You will be presented with a dialogue box to save the workspace or not.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-12&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-12-1.png&#34; alt=&#34;Quiting an R session.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 29: Quiting an R session.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;We can choose not to save the workspace and our files will be preserved (as long as they have been previously saved to the hard disk). What we lose, however, are the variables and history that RStudio has in memory at the current moment in our session. If you want to begin your next session with these variables and history loaded from the get-go, then we will want to save the workspace. Let’s choose to save the workspace to see this in action. After quitting RStudio, restart the application. Because we had chosen to save the workspace we now have our variables and history in this new R session. You can view them in the Environment pane. If you navigate to the working directory in the Files tab in the Files tab you will also see a couple new files have been added to our files and directory list: &lt;code&gt;.RData&lt;/code&gt; and &lt;code&gt;.Rhistory&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:R-basic-13&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;https://francojc.github.io/post/2017-08-14-getting-started-with-r-and-rstudio_files/figure-html/R-basic-13-1.png&#34; alt=&#34;Workspace files `.RData` and `.Rhistory`.&#34; width=&#34;100%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 30: Workspace files &lt;code&gt;.RData&lt;/code&gt; and &lt;code&gt;.Rhistory&lt;/code&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;When you restart another session, R will look for these files and load them into the workspace for you to pick up and continue using. If you choose to quit an R session without saving the workspace these files will not be created, or in the case they already exist from a previous workspace session, will not be overwritten and the earlier variables and history will be loaded.&lt;/p&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;p&gt;If you browse the working directory of a session with your operating system’s file explorer you may not see these files listed. Do not be alarmed. By default an operating system hides all files that start with &lt;code&gt;.&lt;/code&gt; as a convenience to user. There are many of these types of files hanging around your OS. They often contain application-specific configuration information which usually do not require direct editing.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;round-up&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Round up&lt;/h2&gt;
+&lt;p&gt;We have covered a lot of ground in this post. You should now have a working understanding of how R and RStudio are related and the various panes that are available to develop code and manage your workspace. We have also scratched the surface on some topics that will be covered in more depth in future posts including variables, paths, and workspace and project management, to name a few. The next post in the Recipe series ‘Project management for scalable data analysis’ will deal with many of these topics as we set the foundation for working with more complex and realistic analyses.&lt;/p&gt;
+&lt;!-- Ideas for next posts:
+
+* Foundations for an R project; Setting up an R project, working with and understanding files, directories, and paths
+- Create an R project
+- Project scaffolding for scalable data analysis
+  * Directory structure
+  * Supporting files and documentation
+  * Using a pipeline script
+- Files and file types
+  * Files and file extensions
+  * Plain text
+  * Delimited files
+  * Markup files
+  * .RData files
+- Project backups, versioning, and sharing
+  * git and Github
+
+* Introduction to statistical thinking
+- What is data?
+  * Observations
+- Informational types
+  * The nature of observation
+  * Measurements
+- Relationships
+  * Establishing connections between observations
+  * Is a connection reliable?
+- Comparisons
+  * Generalizing relationships between data collections with similar but unique observationsz
+
+* Quantitative language research: why does it matter?
+- Gains made across the board in quantitative research
+- Approaching language research as a quantitative science
+- Frequency matters (cognitive rationale for quantitative research)
+- Case studies
+
+
+--&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Follow this link to &lt;a href=&#34;http://rapporter.net/custom/R-activity/#score/6&#34;&gt;see estimated figures of the number of R users around the world&lt;/a&gt;&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;Think of Steve Jobs’ famous sound bite: ‘There’s an app for that’, just replace ‘app’ with ‘package’ in the case of R.&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;Don’t fret over some of the terminology here, we will come back to these terms later on with detailed description and examples.&lt;a href=&#34;#fnref3&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Introducing the Recipe series</title>

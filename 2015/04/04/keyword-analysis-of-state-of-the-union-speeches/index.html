@@ -264,7 +264,7 @@
 
     <div class="article-style" itemprop="articleBody">
       <p>Not long ago I gave an <a href="http://dh.humanitiesinstitute.wfu.edu/2015/02/20/dh-kitchen-introduction-to-data-mining-and-text-analysis-materials/">introduction to text analysis and data mining</a> for the Wake Forest University community. In that tutorial I demonstrated how to do a basic keyword analysis on “State of the Union” speeches from 1947 to present using the freeware <a href="http://www.laurenceanthony.net/software/antconc/">AntConc</a>. Although AntConc is a fantastic resource, it’s not my go-to approach for doing text analysis. In this post I will re-create the analysis using R: reading, exploring, and cleaning data as well as the main keyword analysis and corresponding visualizations.</p>
-<p>The first step is to read in the <code>sotu</code> text files <a href="http://francojc.github.io/web-scraping-with-rvest/">we scraped from the web</a>.</p>
+<p>The first step is to read in the <code>sotu</code> text files <a href="http://francojc.github.io/2015/03/01/web-scraping-with-rvest-in-r/">we scraped from the web</a>.</p>
 <pre class="r"><code>library(tm)
 library(dplyr)
 
@@ -364,9 +364,9 @@ dtm &lt;- VectorSource(x = documents) %&gt;%
 <p>I fun way to visualize a word frequency list is via <a href="https://en.wikipedia.org/wiki/Tag_cloud">word clouds</a>. Conveniently, there’s an R package for that, appropriately named <code>wordcloud</code>.</p>
 <pre class="r"><code>library(wordcloud)
 wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)</code></pre>
-<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-1.png" width="672" /></p>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-1.png" width="100%" /></p>
 <pre class="r"><code>wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)</code></pre>
-<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-2.png" width="672" /></p>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-2.png" width="100%" /></p>
 <p><code>wordcloud::wordcloud()</code> takes the words and their frequencies, minimally. But you can also specify a number of other parameters to modify the content and format of the word cloud. Here I’ve limited the output to the top 50 words.</p>
 <p>Not what you expected? It’s real easy to overlook the fact that the most frequent words in a given language are often the least interesting, from a content standpoint. These words are often closed-class words (determiners, prepositions, conjunctions, etc.) and contrast to open-class words (nouns, verbs, adjectives) that are usually more interesting –especially for us at the moment. So we are going to want to filter them. But how do you know what words to filter? Enter “stopword lists”: pre-compiled lists of the kinds of words we are looking to eliminate.</p>
 <p>That’s area we need to address. Other standard filters include removing punctuation, numerals, and extra whitespace. In addition, on inspecting the word frequency lists it appears that there are certain words enclosed inside brackets <code>[]</code> and parenthesis <code>()</code> that should be deleted as well given they correspond, by and large, to meta discourse not the content of the speeches. See below<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>:</p>
@@ -425,9 +425,9 @@ dem.corpus &lt;- clean.corpus(corpus = dem.corpus.raw)</code></pre>
 dem.wordlist &lt;- create.wordlist(corpus = dem.corpus, create_df = TRUE)
 
 wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)</code></pre>
-<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-1.png" width="672" /></p>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-1.png" width="100%" /></p>
 <pre class="r"><code>wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)</code></pre>
-<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-2.png" width="672" /></p>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-2.png" width="100%" /></p>
 <p>Alright, now we are in a position to do some comparing. Looking at the word clouds we can see obvious similarities and differences. The size of the text, however, can be misleading here: text between each word cloud is not on the same scale. That is, it’s hard to know how these frequencies/text sizes really match up between the corpora. To identify those words that are most/ least indicative of each corpus (when compared to the other corpus) we want to compare the relative frequency of words in the <code>rep.corpus</code> with the relative frequencies in the <code>dem.corpus</code>. Using the ratio of <code>rep.corpus</code>/ <code>dem.corpus</code> we will find that words with highest values tend to be more indicative of the <code>rep.corpus</code> and lowest values more indicative of the <code>dem.corpus</code>. This calculation is known as a Relative Frequency Ratio <span class="citation">(Damerau 1993)</span>.</p>
 <pre class="r"><code>rfr.calc &lt;- function(wordlist.a, wordlist.b, create_df = FALSE) {
   # Calculate Relative Frequency Ratio #
@@ -485,7 +485,7 @@ ggplot(rep.dem_df, aes(x = reorder(Words, Scores), y = Scores, color = Party)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   xlab(&quot;Terms&quot;) + ylab(&quot;Relative Frequency Ratio (log)&quot;) + ggtitle(&quot;Top 50 most indicative terms&quot;) +
   theme(legend.position = &quot;bottom&quot;)</code></pre>
-<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/rfr-visual-1.png" width="960" /></p>
+<p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/rfr-visual-1.png" width="100%" /></p>
 <p>Very cool. One more step that would really complement this analysis would be to do a concordance on terms of interest to see particular words in context. Below is a more complex function that is a first stab at doing just that.</p>
 <pre class="r"><code>concordance &lt;- function(texts, pattern, margin = 30, n = 0) {
   # A script to create a concordance listing for character vectors #
