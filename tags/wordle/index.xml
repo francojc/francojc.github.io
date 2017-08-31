@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordle on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/wordle/</link>
+    <link>/tags/wordle/</link>
     <description>Recent content in Wordle on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,13 +12,13 @@
     
     <item>
       <title>Word clouds with Wordle</title>
-      <link>https://francojc.github.io/2011/08/03/word-clouds-with-wordle/</link>
+      <link>/2011/08/03/word-clouds-with-wordle/</link>
       <pubDate>Wed, 03 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2011/08/03/word-clouds-with-wordle/</guid>
+      <guid>/2011/08/03/word-clouds-with-wordle/</guid>
       <description>&lt;p&gt;While searching for &lt;a href=&#34;http://www.r-bloggers.com/abstract-word-clouds-using-r&#34;&gt;code examples in R for creating word clouds&lt;/a&gt;, I stumbled across this neat tool to create on-the-fly word clouds. &lt;a href=&#34;http://www.wordle.net/&#34;&gt;Wordle&lt;/a&gt; provides a clean and basic interface to creating your own wordle or browsing others made on the site.&lt;/p&gt;
 &lt;p&gt;Here’s a cloud I created based on the Mexican film &lt;a href=&#34;http://www.imdb.com/title/tt0245574/&#34;&gt;Y tu mamá también&lt;/a&gt; from 2001.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2011-08-03-word-clouds-with-wordle_files/figure-html/setup-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2011-08-03-word-clouds-with-wordle_files/figure-html/setup-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;You can create your own wordle &lt;a href=&#34;http://www.wordle.net/create&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>

@@ -47,13 +47,13 @@
     
   
 
-  <link rel="alternate" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
-  <link rel="feed" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://francojc.github.io/2016/02/06/mapping-us-census-data/">
+  <link rel="canonical" href="/2016/02/06/mapping-us-census-data/">
 
   
 
@@ -231,14 +231,14 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Mapping%20US%20Census%20data&amp;url=https%3a%2f%2ffrancojc.github.io%2f2016%2f02%2f06%2fmapping-us-census-data%2f"
+         href="https://twitter.com/intent/tweet?text=Mapping%20US%20Census%20data&amp;url=%2f2016%2f02%2f06%2fmapping-us-census-data%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Mapping%20US%20Census%20data&amp;body=https%3a%2f%2ffrancojc.github.io%2f2016%2f02%2f06%2fmapping-us-census-data%2f">
+         href="mailto:?subject=Mapping%20US%20Census%20data&amp;body=%2f2016%2f02%2f06%2fmapping-us-census-data%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -275,10 +275,10 @@ pima.tract &lt;- UScensus2010::county(name = &quot;pima&quot;, state = &quot;ari
 <p>The resulting data in <code>pima.tract</code> is a SpatialPolygonsDataFrame grouping demographic data and polygon coordinates by tract id.</p>
 <p>A map can be generated in various ways. First, base R’s <code>plot()</code> function will produce a quick and dirty view of the tracts for Pima county.</p>
 <pre class="r"><code>plot(pima.tract)</code></pre>
-<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/plot-pima-1.png" width="672" /></p>
+<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/plot-pima-1.png" width="100%" /></p>
 <p><code>UScensus2010</code> also provides various plotting functions. Of these the <code>choropleth.ssplot()</code> function is an easy way to generate a choropleth. Using the defaults, the “Total population” (P0010001) variable is used to fill the tracts. <a href="http://www.socialexplorer.com/data/C2010/metadata/?ds=SF1">For more information on demographic variables</a></p>
 <pre class="r"><code>choropleth.spplot(pima.tract)</code></pre>
-<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/choropleth-ssplot-1.png" width="672" /></p>
+<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/choropleth-ssplot-1.png" width="100%" /></p>
 <p>If you are like me, I am more comfortable working with <code>ggplot2</code>. To work with this data, however, it needs to be converted to a data.frame using the <del><code>fortify()</code></del>UPDATED: 2016-03-08 <code>tidy()</code> function from the <code>broom</code> package. Below is a function that carries out the conversion from <code>sp</code> object to <code>data.frame</code> object.</p>
 <p><em>Thanks to <a href="http://www.urbanchildinstitute.org/about-us/contributors#Andy-Bush">Andy Bush</a> for the heads up on switching to <code>tidy()</code> before <code>fortify()</code> depreciates.</em></p>
 <pre class="r"><code>sp2df &lt;- function(data) {
@@ -296,11 +296,11 @@ p &lt;- ggplot(pima.tract.df, aes(x = long, y = lat, group = group)) +
   theme(legend.position = &quot;bottom&quot;) +
   labs(fill = &quot;Total population&quot;)
 p</code></pre>
-<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/pima-ggplot-1.png" width="672" /></p>
+<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/pima-ggplot-1.png" width="100%" /></p>
 <p>The county plot is extremely dense around the area of interest –the Tucson metropolitain area. With <code>ggplot2</code> we can subset this plot with <code>coord_map()</code>. But to use this we are going to need the coordinates for the bounding box. I found <a href="http://boundingbox.klokantech.com">a great site</a> which provides a easy-peasy interface for doing just such a thing.</p>
-<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/bbox-img-1.png" width="672" /></p>
+<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/bbox-img-1.png" width="100%" /></p>
 <pre class="r"><code>p + coord_map(xlim=-c(111.2, 110.7), ylim=c(32.1, 32.5))</code></pre>
-<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/tucson-ggplot-1.png" width="672" /></p>
+<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/tucson-ggplot-1.png" width="100%" /></p>
 <p>There is an extensive amount of demographic information that is available in the <code>sp</code> object that <code>county()</code> creates. But there is much more information available on the <a href="http://factfinder.census.gov/faces/nav/jsf/pages/download_center.xhtml">American FactFinder</a> site. I am working with a project which aims to look at language use information so I selected the tract information for Pima county on from the American Community Survey (ACS) program’s 2014 5-year estimates and downloaded the “AGE BY LANGUAGE SPOKEN AT HOME FOR THE POPULATION 5 YEARS AND OVER” (B16007) data.</p>
 <p>The second row of the csv file contains helpful descriptions of the variables, but I dropped it before loading it into my R session.</p>
 <pre class="r"><code>library(readr)
@@ -331,7 +331,7 @@ speakers.total &lt;- pima.data$HD01_VD01</code></pre>
             ylim=c(32.1, 32.5)) + 
   theme(legend.position = &quot;bottom&quot;)
 p</code></pre>
-<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/spanish-choro-1.png" width="672" /></p>
+<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/spanish-choro-1.png" width="100%" /></p>
 <p>Getting a bit more fancy we can overlay this plot on a roadmap generated by Google.</p>
 <pre class="r"><code>library(ggmap)
 pima &lt;- get_map(location = geocode(location = &quot;tucson&quot;), 
@@ -349,7 +349,7 @@ p.roadmap &lt;- ggmap(pima) +
             ylim=c(32.1, 32.5)) + 
   theme(legend.position = &quot;none&quot;)
 p.roadmap</code></pre>
-<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/spanish-choro-google-1.png" width="672" /></p>
+<p><img src="/post/2016-02-06-mapping-us-census-data_files/figure-html/spanish-choro-google-1.png" width="100%" /></p>
 <p>In the next post I will incorporate data from Twitter and step up the plots using <code>plotly</code>.</p>
 <div class="footnotes">
 <hr />
@@ -367,12 +367,12 @@ p.roadmap</code></pre>
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://francojc.github.io/2015/08/15/generating-annotated-text-in-shiny/"><span
+    <li class="previous"><a href="/2015/08/15/generating-annotated-text-in-shiny/"><span
       aria-hidden="true">&larr;</span> Generating annotated text in Shiny</a></li>
     
 
     
-    <li class="next"><a href="https://francojc.github.io/2016/03/08/mapping-us-census-data-and-adding-twitter-posts/">Mapping US Census data and adding Twitter posts <span
+    <li class="next"><a href="/2016/03/08/mapping-us-census-data-and-adding-twitter-posts/">Mapping US Census data and adding Twitter posts <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>

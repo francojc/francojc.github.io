@@ -47,13 +47,13 @@
     
   
 
-  <link rel="alternate" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
-  <link rel="feed" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://francojc.github.io/2014/12/17/access-twitter-posts-by-country/">
+  <link rel="canonical" href="/2014/12/17/access-twitter-posts-by-country/">
 
   
 
@@ -228,14 +228,14 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Access%20Twitter%20posts%20by%20country&amp;url=https%3a%2f%2ffrancojc.github.io%2f2014%2f12%2f17%2faccess-twitter-posts-by-country%2f"
+         href="https://twitter.com/intent/tweet?text=Access%20Twitter%20posts%20by%20country&amp;url=%2f2014%2f12%2f17%2faccess-twitter-posts-by-country%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Access%20Twitter%20posts%20by%20country&amp;body=https%3a%2f%2ffrancojc.github.io%2f2014%2f12%2f17%2faccess-twitter-posts-by-country%2f">
+         href="mailto:?subject=Access%20Twitter%20posts%20by%20country&amp;body=%2f2014%2f12%2f17%2faccess-twitter-posts-by-country%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -252,7 +252,7 @@
 <p>Some other packages you will need include: <code>plyr</code>, <code>data.table</code></p>
 <p><strong>Twitter API authenication</strong></p>
 <p>Before we get started on the R side, we’ll need to set up a Twitter application. First, log in to your <a href="https://dev.twitter.com">Twitter developer account</a> (or create one). Then you’ll follow the link ‘<a href="https://apps.twitter.com/">Manage Your Apps</a>’ and select ‘Create New App’.</p>
-<p><img src="/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/create-application-1.png" width="672" /></p>
+<p><img src="/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/create-application-1.png" width="100%" /></p>
 <p>Fill out the form and then scroll down and accept the Developer Agreement. Then you will be able to select your app’s name and grab your <code>API Key</code> and <code>API Secret</code> under the ‘Keys and Access Tokens’ tab. Add these credentials, the request, access, and authorize urls, and a path to a file to store the resulting authentication information. The <code>oauth.file</code> object is not strictly necessary, but it means that you will not need to perform the upcoming API handshake every time you want to interface with Twitter.</p>
 <pre class="r"><code>api.key &lt;- my.api.key # your consumer key
 api.secret &lt;- my.api.secret # your consumer secret
@@ -316,7 +316,7 @@ p &lt;- ggplot(world.map, aes(x = long, y = lat, group = group)) +
 p + geom_point(data = world.tweets, # plot tweet origin points
                aes(x = lon, y = lat, color = lang, group = 1), 
                alpha = 1/2) + theme(legend.position = &quot;none&quot;)</code></pre>
-<p><img src="/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/visualize-world-1.png" width="672" /></p>
+<p><img src="/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/visualize-world-1.png" width="100%" /></p>
 <p>I’ve added color to the plot to indicate the languages (according to Twitter) that are in the data.</p>
 <p>In order to filter these tweets from around the world by country we need to get spatial polygon data for the country(ies) of interest. In this example, we’ll use the US data found on the <a href="http://www.gadm.org">GADM</a> website. Various formats are available, but for our purposes we’ll take the convenient route and select the <code>.RData</code> file. You will be presented with various level files which correspond to rough to fine-grained detail. We’ll select the Level 0 data.</p>
 <pre class="r"><code># Download SpatialPolygonsDataFrame in .RData format
@@ -341,7 +341,7 @@ usa.tweets &lt;- join(usa.tweets, world.tweets)</code></pre>
 <pre class="r"><code>p + geom_point(data = usa.tweets, # plot tweet origin points
                aes(x = lon, y = lat, color = lang, group = 1), 
                alpha = 1/2) + theme(legend.position = &quot;none&quot;)</code></pre>
-<p><img src="/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/usa-tweet-map-1.png" width="672" /></p>
+<p><img src="/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/usa-tweet-map-1.png" width="100%" /></p>
 <p>So there you go. We’ve downloaded Twitter posts via the official API, wrote that data to disk, read in the data from disk, and clipped coordinates not falling within the United States.</p>
 
     </div>
@@ -353,12 +353,12 @@ usa.tweets &lt;- join(usa.tweets, world.tweets)</code></pre>
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://francojc.github.io/2014/05/24/activ-es-a-comparable-cross-dialect-corpus-of-everyday-spanish-from-argentina-mexico-and-spain/"><span
+    <li class="previous"><a href="/2014/05/24/activ-es-a-comparable-cross-dialect-corpus-of-everyday-spanish-from-argentina-mexico-and-spain/"><span
       aria-hidden="true">&larr;</span> ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain</a></li>
     
 
     
-    <li class="next"><a href="https://francojc.github.io/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/">Publishing Rmarkdown to Wordpress or Jekyll <span
+    <li class="next"><a href="/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/">Publishing Rmarkdown to Wordpress or Jekyll <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>

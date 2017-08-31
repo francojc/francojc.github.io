@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tm on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/tm/</link>
+    <link>/tags/tm/</link>
     <description>Recent content in Tm on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Keyword analysis of State of the Union Speeches</title>
-      <link>https://francojc.github.io/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</link>
+      <link>/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</link>
       <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</guid>
+      <guid>/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</guid>
       <description>&lt;p&gt;Not long ago I gave an &lt;a href=&#34;http://dh.humanitiesinstitute.wfu.edu/2015/02/20/dh-kitchen-introduction-to-data-mining-and-text-analysis-materials/&#34;&gt;introduction to text analysis and data mining&lt;/a&gt; for the Wake Forest University community. In that tutorial I demonstrated how to do a basic keyword analysis on “State of the Union” speeches from 1947 to present using the freeware &lt;a href=&#34;http://www.laurenceanthony.net/software/antconc/&#34;&gt;AntConc&lt;/a&gt;. Although AntConc is a fantastic resource, it’s not my go-to approach for doing text analysis. In this post I will re-create the analysis using R: reading, exploring, and cleaning data as well as the main keyword analysis and corresponding visualizations.&lt;/p&gt;
 &lt;p&gt;The first step is to read in the &lt;code&gt;sotu&lt;/code&gt; text files &lt;a href=&#34;http://francojc.github.io/2015/03/01/web-scraping-with-rvest-in-r/&#34;&gt;we scraped from the web&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tm)
@@ -117,9 +117,9 @@ dtm &amp;lt;- VectorSource(x = documents) %&amp;gt;%
 &lt;p&gt;I fun way to visualize a word frequency list is via &lt;a href=&#34;https://en.wikipedia.org/wiki/Tag_cloud&#34;&gt;word clouds&lt;/a&gt;. Conveniently, there’s an R package for that, appropriately named &lt;code&gt;wordcloud&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(wordcloud)
 wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-2.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-raw-2.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;wordcloud::wordcloud()&lt;/code&gt; takes the words and their frequencies, minimally. But you can also specify a number of other parameters to modify the content and format of the word cloud. Here I’ve limited the output to the top 50 words.&lt;/p&gt;
 &lt;p&gt;Not what you expected? It’s real easy to overlook the fact that the most frequent words in a given language are often the least interesting, from a content standpoint. These words are often closed-class words (determiners, prepositions, conjunctions, etc.) and contrast to open-class words (nouns, verbs, adjectives) that are usually more interesting –especially for us at the moment. So we are going to want to filter them. But how do you know what words to filter? Enter “stopword lists”: pre-compiled lists of the kinds of words we are looking to eliminate.&lt;/p&gt;
 &lt;p&gt;That’s area we need to address. Other standard filters include removing punctuation, numerals, and extra whitespace. In addition, on inspecting the word frequency lists it appears that there are certain words enclosed inside brackets &lt;code&gt;[]&lt;/code&gt; and parenthesis &lt;code&gt;()&lt;/code&gt; that should be deleted as well given they correspond, by and large, to meta discourse not the content of the speeches. See below&lt;a href=&#34;#fn3&#34; class=&#34;footnoteRef&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
@@ -178,9 +178,9 @@ dem.corpus &amp;lt;- clean.corpus(corpus = dem.corpus.raw)&lt;/code&gt;&lt;/pre&
 dem.wordlist &amp;lt;- create.wordlist(corpus = dem.corpus, create_df = TRUE)
 
 wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-2.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-2.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Alright, now we are in a position to do some comparing. Looking at the word clouds we can see obvious similarities and differences. The size of the text, however, can be misleading here: text between each word cloud is not on the same scale. That is, it’s hard to know how these frequencies/text sizes really match up between the corpora. To identify those words that are most/ least indicative of each corpus (when compared to the other corpus) we want to compare the relative frequency of words in the &lt;code&gt;rep.corpus&lt;/code&gt; with the relative frequencies in the &lt;code&gt;dem.corpus&lt;/code&gt;. Using the ratio of &lt;code&gt;rep.corpus&lt;/code&gt;/ &lt;code&gt;dem.corpus&lt;/code&gt; we will find that words with highest values tend to be more indicative of the &lt;code&gt;rep.corpus&lt;/code&gt; and lowest values more indicative of the &lt;code&gt;dem.corpus&lt;/code&gt;. This calculation is known as a Relative Frequency Ratio &lt;span class=&#34;citation&#34;&gt;(Damerau 1993)&lt;/span&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rfr.calc &amp;lt;- function(wordlist.a, wordlist.b, create_df = FALSE) {
   # Calculate Relative Frequency Ratio #
@@ -238,7 +238,7 @@ ggplot(rep.dem_df, aes(x = reorder(Words, Scores), y = Scores, color = Party)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   xlab(&amp;quot;Terms&amp;quot;) + ylab(&amp;quot;Relative Frequency Ratio (log)&amp;quot;) + ggtitle(&amp;quot;Top 50 most indicative terms&amp;quot;) +
   theme(legend.position = &amp;quot;bottom&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/rfr-visual-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/rfr-visual-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Very cool. One more step that would really complement this analysis would be to do a concordance on terms of interest to see particular words in context. Below is a more complex function that is a first stab at doing just that.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;concordance &amp;lt;- function(texts, pattern, margin = 30, n = 0) {
   # A script to create a concordance listing for character vectors #

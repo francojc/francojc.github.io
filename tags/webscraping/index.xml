@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webscraping on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/webscraping/</link>
+    <link>/tags/webscraping/</link>
     <description>Recent content in Webscraping on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,20 +12,20 @@
     
     <item>
       <title>Web scraping with `rvest` in R</title>
-      <link>https://francojc.github.io/2015/03/01/web-scraping-with-rvest-in-r/</link>
+      <link>/2015/03/01/web-scraping-with-rvest-in-r/</link>
       <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2015/03/01/web-scraping-with-rvest-in-r/</guid>
+      <guid>/2015/03/01/web-scraping-with-rvest-in-r/</guid>
       <description>&lt;p&gt;In this ExploRation, I will demonstrate how to scrape text data from the web with R. This particular example aims to collect a series of State of the Union (SOTU) speeches [1947-present] from &lt;a href=&#34;http://www.presidency.ucsb.edu/&#34; class=&#34;uri&#34;&gt;http://www.presidency.ucsb.edu/&lt;/a&gt; and write the plain-text contents to disc. The bulk of the work will be done with the recently released &lt;a href=&#34;http://cran.r-project.org/web/packages/rvest/index.html&#34;&gt;&lt;code&gt;rvest&lt;/code&gt;&lt;/a&gt; package. The scripting will also employ the &lt;a href=&#34;http://cran.r-project.org/web/packages/magrittr/index.html&#34;&gt;&lt;code&gt;magrittr&lt;/code&gt;&lt;/a&gt; package for writing legible code.&lt;/p&gt;
 &lt;p&gt;To get started first we identify the sub-page &lt;a href=&#34;http://www.presidency.ucsb.edu/sou.php&#34;&gt;../sou.php&lt;/a&gt; that contains the links of interest.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-03-01-web-scraping-with-rvest-in-r_files/figure-html/page-image-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-03-01-web-scraping-with-rvest-in-r_files/figure-html/page-image-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This page contains links to pages in which all of the SOTU addresses. To load that page into R, as a parsed html object we use &lt;code&gt;rvest&lt;/code&gt;’s &lt;code&gt;read_html()&lt;/code&gt; function.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rvest)
 # Load the page
 main.page &amp;lt;- read_html(x = &amp;quot;http://www.presidency.ucsb.edu/sou.php&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once we have the page, the next step is to identify how to isolate the links that we are interested in from other links on the page. The documentation for the package refers to &lt;a href=&#34;http://selectorgadget.com&#34;&gt;&lt;code&gt;Selectorgadget&lt;/code&gt;&lt;/a&gt; a bookmarklet for your browser that allows you to point-and-click your way to identifying either the CSS or XPATH need to get the target html objects.&lt;/p&gt;
 &lt;p&gt;Activating Selectorgadget, you then click on the html object you want and then see what becomes highlighted. In most cases this will highlight more objects that you want, so then you click again on the object(s) you do not want to isolate. In our case, clicking first the “2013” link in the SOTU listing and then the “Florida 2000” link leaves us with the right objects selected.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-03-01-web-scraping-with-rvest-in-r_files/figure-html/selector-image-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-03-01-web-scraping-with-rvest-in-r_files/figure-html/selector-image-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Now we can return to R, and use the CSS selector ‘.ver12 a’ to get our links. The &lt;code&gt;html_nodes()&lt;/code&gt; function gets use the elements we want, but they come html-warts and all. For the URLs we use the &lt;code&gt;html_attr()&lt;/code&gt; function and specify that we want the part contained under &lt;code&gt;href&lt;/code&gt; (ex. &lt;code&gt;&amp;lt;a href=&amp;quot;http://www.presidency.ucsb.edu/ws/index.php?pid=29431&amp;quot;&amp;gt;1790&amp;lt;/a&amp;gt;&lt;/code&gt;). The same basic process is applied to get the link text, but instead we use the &lt;code&gt;html_text()&lt;/code&gt; function to get the ‘1790’ part of the previous URL example. Then we combine the results into a data.frame &lt;code&gt;sotu&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Get link URLs
 urls &amp;lt;- main.page %&amp;gt;% # feed `main.page` to the next step
@@ -104,7 +104,7 @@ dir(path = &amp;quot;data/SOTU/&amp;quot;, full.names = TRUE)&lt;/code&gt;&lt;/p
 ## [65] &amp;quot;data/SOTU//republican-2005.txt&amp;quot; &amp;quot;data/SOTU//republican-2006.txt&amp;quot;
 ## [67] &amp;quot;data/SOTU//republican-2007.txt&amp;quot; &amp;quot;data/SOTU//republican-2008.txt&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;A note is in order on isolating the text on each SOTU page. Selectorgadget is really handy, but in my experience it isn’t fool proof. If you cannot get the highlighting to work, you will need to open up the html page source and do some sleuthing. In Safari on OSX, you will need to enable “Show Develop in menu bar” and then you can choose “Show Web Inspector”. Perusing the html structure you need to use some trial and error to find the CSS selector(s) that work. After some poking around, &lt;code&gt;.displaytext&lt;/code&gt; turns out to do the trick.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-03-01-web-scraping-with-rvest-in-r_files/figure-html/web-inspector-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-03-01-web-scraping-with-rvest-in-r_files/figure-html/web-inspector-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

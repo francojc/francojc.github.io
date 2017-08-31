@@ -47,13 +47,13 @@
     
   
 
-  <link rel="alternate" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
-  <link rel="feed" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://francojc.github.io/2015/08/12/creating-hexbin-plots/">
+  <link rel="canonical" href="/2015/08/12/creating-hexbin-plots/">
 
   
 
@@ -237,14 +237,14 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Creating%20hexbin%20plots&amp;url=https%3a%2f%2ffrancojc.github.io%2f2015%2f08%2f12%2fcreating-hexbin-plots%2f"
+         href="https://twitter.com/intent/tweet?text=Creating%20hexbin%20plots&amp;url=%2f2015%2f08%2f12%2fcreating-hexbin-plots%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Creating%20hexbin%20plots&amp;body=https%3a%2f%2ffrancojc.github.io%2f2015%2f08%2f12%2fcreating-hexbin-plots%2f">
+         href="mailto:?subject=Creating%20hexbin%20plots&amp;body=%2f2015%2f08%2f12%2fcreating-hexbin-plots%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -265,22 +265,22 @@
 library(ggplot2) # for now just to get the `diamonds` dataset
 a &lt;- hexbin(x = diamonds$carat, y = diamonds$price) # create a hexbin object
 plot(a) # plot</code></pre>
-<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/base-plot-1.png" width="672" /></p>
+<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/base-plot-1.png" width="100%" /></p>
 <p>What a great way to visualize bivariate frequency data and avoid overplotting issues. Then, I thought: does <code>ggplot2</code> have a geom for that?</p>
 <p>It turns out it’s a stat. But, yes, yes it does. In this case you will not need to install/ load the <code>hexbin</code> package. Just apply <code>stat_binhex()</code> to your plot.</p>
 <pre class="r"><code>ggplot(diamonds, aes(x = carat, y = price)) + # create plot
   stat_binhex() # apply stat</code></pre>
-<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-plot-1.png" width="672" /></p>
+<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-plot-1.png" width="100%" /></p>
 <p>In both the <code>plot</code> and <code>ggplot2</code> approaches you can tweak the bin size to adjust the desired granularity of the plot.</p>
 <pre class="r"><code>a &lt;- hexbin(x = diamonds$carat, y = diamonds$price, xbins = 10)
 plot(a)</code></pre>
-<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-1.png" width="672" /></p>
+<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-1.png" width="100%" /></p>
 <pre class="r"><code>ggplot(diamonds, aes(x = carat, y = price)) + 
   stat_binhex(bins = 10) </code></pre>
-<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-2.png" width="672" /></p>
+<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-2.png" width="100%" /></p>
 <p>And since I was poking around on the <a href="http://docs.ggplot2.org/current/index.html">ggplot2 documentation</a> I also discovered another stat to use to avoid overplotting. This time when working with two categorical variables: <code>stat_sum()</code>.</p>
 <pre class="r"><code>ggplot(diamonds, aes(x = cut, y = clarity)) + stat_sum(aes(group = 1))</code></pre>
-<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-stat-sum-1.png" width="672" /></p>
+<p><img src="/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-stat-sum-1.png" width="100%" /></p>
 
     </div>
   </div>
@@ -291,12 +291,12 @@ plot(a)</code></pre>
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://francojc.github.io/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/"><span
+    <li class="previous"><a href="/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/"><span
       aria-hidden="true">&larr;</span> Keyword analysis of State of the Union Speeches</a></li>
     
 
     
-    <li class="next"><a href="https://francojc.github.io/2015/08/15/generating-annotated-text-in-shiny/">Generating annotated text in Shiny <span
+    <li class="next"><a href="/2015/08/15/generating-annotated-text-in-shiny/">Generating annotated text in Shiny <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
