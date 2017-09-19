@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</loc>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</loc>
       <lastmod>2017-08-31T00:00:00+00:00</lastmod>
     </url>
@@ -310,6 +319,16 @@
     
     <url>
     
+      <loc>https://francojc.github.io/tags/data/</loc>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/tags/database/</loc>
       <lastmod>2011-08-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -460,6 +479,16 @@
     
     <url>
     
+      <loc>https://francojc.github.io/tags/models/</loc>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/categories/mysql/</loc>
       <lastmod>2011-08-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -530,7 +559,7 @@
     <url>
     
       <loc>https://francojc.github.io/categories/r/</loc>
-      <lastmod>2017-08-31T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -560,7 +589,7 @@
     <url>
     
       <loc>https://francojc.github.io/categories/recipe/</loc>
-      <lastmod>2017-08-31T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -671,6 +700,16 @@
     
       <loc>https://francojc.github.io/tags/stat_sum/</loc>
       <lastmod>2015-08-12T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/statistics/</loc>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
