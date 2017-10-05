@@ -16,14 +16,7 @@
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</guid>
-      <description>&lt;!-- TODOs:
-
-- standardize usage of italics and bold for terms
-- check links
-- ...
-
---&gt;
-&lt;p&gt;Before we begin working on the specifics of our data project, it is important to have a clear understanding of some of the basic concepts that need to be in place to guide our work. In this post I will cover some of these topics including the importance of identifying a research question, how different statistical approaches relate to different types of research, and understanding data from a sampling and organizational standpoint. I will also provide some examples of linking research questions with variables in a toy dataset as we begin to discuss how to approach data analysis, primarily through visualization techniques.&lt;/p&gt;
+      <description>&lt;p&gt;Before we begin working on the specifics of our data project, it is important to have a clear understanding of some of the basic concepts that need to be in place to guide our work. In this post I will cover some of these topics including the importance of identifying a research question, how different statistical approaches relate to different types of research, and understanding data from a sampling and organizational standpoint. I will also provide some examples of linking research questions with variables in a toy dataset as we begin to discuss how to approach data analysis, primarily through visualization techniques.&lt;/p&gt;
 &lt;div id=&#34;research-aims&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Research aims&lt;/h2&gt;
 &lt;!-- TODO: pepper in examples of the types of questions and methods one might find --&gt;
@@ -87,7 +80,7 @@ Tags: Científicos, Isaac Asimov, Robótica, Gente, Tecnología, Informática, C
 
 La primera reflexión abarcadora sobre la coexistencia entre los robots y los humanos no fue obra de un científico de la computación ni de un filósofo ético, sino de un novelista. Isaac Asimov formuló las tres “leyes de la robótica” que deberían incorporarse en la programación de cualquier autómata lo bastante avanzado como para suponer un peligro: “No dañar a los humanos, obedecerles salvo conflicto con lo anterior y autoprotegerse salvo conflicto con todo lo anterior”. Las tres leyes de Asimov configuran una propuesta sólida y autoconsistente, y cuentan con apoyo entre la comunidad de la inteligencia artificial, que reconoce, por ejemplo, que cualquier sistema autónomo funcional debe ser capaz de autoprotegerse.
 ...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As raw data this format is fine, but to gain insight from this data, we will need to explicitly organize the attributes of our data that are key to our analysis. Our data should be in tabular, or ‘tidy’ format where each row is an observation, or &lt;strong&gt;case&lt;/strong&gt; and each column, or &lt;strong&gt;variable&lt;/strong&gt; is a list of attributes of the observation. Each cell, then, is a particular attribute of a particular observation, or &lt;strong&gt;data point&lt;/strong&gt;. Say our objective is to perform an exploratory analysis to evaluate the potential similarities and differences in word frequencies between genres. For this particular analysis we will want to extract and organize the title of each document (&lt;code&gt;doc_id&lt;/code&gt;), the genre it is from (&lt;code&gt;genre&lt;/code&gt;), and each word (&lt;code&gt;word&lt;/code&gt;) as a single, row, or observation, in our tidy dataset.&lt;/p&gt;
+&lt;p&gt;As raw data this format is fine, but to gain insight from this data, we will need to explicitly organize the attributes of our data that are key to our analysis. Our data should be in tabular, or &lt;a href=&#34;www.jstatsoft.org/v59/i10/paper&#34;&gt;‘tidy’ format&lt;/a&gt; where each row is an observation, or &lt;strong&gt;case&lt;/strong&gt; and each column, or &lt;strong&gt;variable&lt;/strong&gt; is a list of attributes of the observation. Each cell, then, is a particular attribute of a particular observation, or &lt;strong&gt;data point&lt;/strong&gt;. Say our objective is to perform an exploratory analysis to evaluate the potential similarities and differences in word frequencies between genres. For this particular analysis we will want to extract and organize the title of each document (&lt;code&gt;doc_id&lt;/code&gt;), the genre it is from (&lt;code&gt;genre&lt;/code&gt;), and each word (&lt;code&gt;word&lt;/code&gt;) as a single, row, or observation, in our tidy dataset.&lt;/p&gt;
 &lt;table&gt;
 &lt;caption&gt;&lt;span id=&#34;tab:spanish-works&#34;&gt;Table 1: &lt;/span&gt;Tidy dataset&lt;/caption&gt;
 &lt;thead&gt;
@@ -330,7 +323,7 @@ La primera reflexión abarcadora sobre la coexistencia entre los robots y los hu
 &lt;p&gt;The primary goal of a data analysis is to reduce the observed data to a human-interpretable summary that best approximates the nature of the phenomenon we are investigating. With well-sampled data in a tidy dataset in hand where observations and variables are explicitly related, identified for their informational value, and the dependent and/or independent variables are clear, we can now proceed to visualizing and applying the appropriate statistical tests to the data to come to some more concrete, actionable insight.&lt;/p&gt;
 &lt;div id=&#34;visualization&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Visualization&lt;/h3&gt;
-&lt;p&gt;Tt is always key to gain insight into the behavior of the data visually before jumping in to the statistical analysis. Using our research aim as our guide, we will choose the most appropriate visualization to use given the number and informational value of our target variables. To get a sense of how this looks, let’s work with an example dataset and pose different questions to the data with an eye towards seeing how various combinations of variables are visualized.&lt;/p&gt;
+&lt;p&gt;It is always key to gain insight into the behavior of the data visually before jumping in to the statistical analysis. Using our research aim as our guide, we will choose the most appropriate visualization to use given the number and informational value of our target variables. To get a sense of how this looks, let’s work with an example dataset and pose different questions to the data with an eye towards seeing how various combinations of variables are visualized.&lt;/p&gt;
 &lt;p&gt;The dataset we will use here is from the &lt;a href=&#34;http://talkbank.org/&#34;&gt;TalkBank repository&lt;/a&gt; which provides data from various language learning contexts.&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; The specific data we will use is the ‘narratives’ section of the &lt;a href=&#34;http://talkbank.org/access/SLABank/English/BELC.html&#34;&gt;BELC (Barcelona English Language Corpus)&lt;/a&gt; &lt;span class=&#34;citation&#34;&gt;(Muñoz 2006)&lt;/span&gt;. It is a corpus of writing samples from second language learners of English at different ages. Participants were given the task of writing for 15 minutes on the topic of “Me: my past, present and future”. Data was collected for many (but not all) participants up to four times over the course of seven years. The entire dataset includes 123 observations from 54 participants. Below I’ve included the first 10 observations from the dataset which reflects some data cleaning I’ve done so we start with a tidy dataset.&lt;/p&gt;
 &lt;table&gt;
 &lt;caption&gt;&lt;span id=&#34;tab:view-belc-dataset&#34;&gt;Table 3: &lt;/span&gt;BELC dataset for demonstration.&lt;/caption&gt;
@@ -657,7 +650,10 @@ Figure 10: Scatter plot visualizing the correlation between the continuous varia
 &lt;div id=&#34;round-up&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Round up&lt;/h2&gt;
 &lt;p&gt;In this post we covered some foundational topics for any data analysis project. Guiding the entire process is a clear research question. From there we can proceed to acquire data that is relevant and reliable on the phenomenon we hope to understand better, choose a statistical approach which matches our analysis goals, and organize our data into a format conducive for achieving these goals. Only at this point can we confidently move to analyzing our data, first beginning with appropriate visualization techniques to get a feel for the trends and then moving to performing the relevant statistical tests to provide confidence that the trends captured in our visualizations are in fact reliable.&lt;/p&gt;
-&lt;p&gt;There is still much left to discuss, in particular what statistical tests to apply to a given data analysis scenario and the assumptions behind statistical tests. We will address these topics later in the series when we have established a stronger and practical understanding of the preceding project steps and increase our proficiencey programming in R. The first step in this journey will be to learn about the specifics of acquiring data for language research; where to find it and how to obtain. We will also begin working directly with R code and introduce fundamental programming concepts of the language you will use throughout your project.&lt;/p&gt;
+&lt;p&gt;There is still much left to discuss, in particular what statistical tests to apply to a given data analysis scenario and the assumptions behind statistical tests. We will address these topics later in the series when we have established a stronger and practical understanding of the preceding project steps and increase our proficiency programming in R. The next steps in this journey will be to learn about data types and sources and the specifics of acquiring data for language research.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
 &lt;!-- OTHER APPROACHES TO THE TOPIC
 
 GRIES, Statistics for Linguists with R
@@ -767,9 +763,6 @@ Chapter 5: Some statistics for Corpus Linguistics
   - 1 DV, 2+ IV (mixed)
 
 --&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
 &lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
 &lt;div id=&#34;ref-Gries2013a&#34;&gt;
 &lt;p&gt;Gries, ST. 2013. &lt;em&gt;Statistics for Linguistics with R. A Practical Introduction&lt;/em&gt;. 2nd revise.&lt;/p&gt;

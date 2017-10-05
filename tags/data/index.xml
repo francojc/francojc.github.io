@@ -7,8 +7,279 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Jerid Francom</copyright>
-    <lastBuildDate>Fri, 15 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/data/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Data for language research -types and sources</title>
+      <link>https://francojc.github.io/2017/10/04/data-for-language-research-types-and-sources/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/10/04/data-for-language-research-types-and-sources/</guid>
+      <description>&lt;p&gt;In this Recipe you will learn about the types of data available for language research and where to find data. The goal, then, is to introduce you to the landscape of language data available and provide a general overview of the characteristics of language data from a variety of sources providing you with resources to begin your own quantitative investigations.&lt;/p&gt;
+&lt;div id=&#34;data-for-language-research&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data for language research&lt;/h2&gt;
+&lt;p&gt;Language research can include data from a variety of sources, linguistic and non-linguistic, that record observations about the world. A typical type of data used in quantitative language research is a &lt;strong&gt;corpus&lt;/strong&gt;. In short, a corpus is set of machine-readable texts that have been compiled with an eye towards linguistic research. All corpora are not created equal, however, in content and/or format. A corpus may aim to represent a wide swath of language behavior or very specific aspects. It can be language specific (English or French), target a particular modality (spoken or written), or approximate domains of language use (medicine, business, etc.). A corpus that aims to represent a language (including modalities, registers, and sub-domains), for example, is known as a &lt;em&gt;generalized corpus&lt;/em&gt;. Corpora that aim to capture a snapshot of a particular modality or sub-domain of language use are known as &lt;em&gt;specialized corpora&lt;/em&gt;. Each corpus will have an underlying target population and the sampling process will reflect the authors’ best attempt (given the conditions at the point the corpus was compiled) at representing the stated target population. Whether a corpus is generalized or specialized can become difficult to nail down between the extremes. As such, it is key to be clear about the scope of a particular corpus to be able to ascertain its potential applications and gauge the extent to which these applications entail the research goals of your particular project.&lt;/p&gt;
+&lt;p&gt;A corpus will often include various types of non-linguistic attributes, or &lt;em&gt;meta-data&lt;/em&gt;, as well. Ideally this will include information regarding the source(s) of the data, dates when it was acquired or published, and other author or speaker information. It may also include any number of other attributes that were identified as potentially important in order to appropriately document the target population. Again, it is key to match the available meta-data with the goals of your research. In some cases a corpus may be ideal in some aspects but not contain all the key information to address your research question. This may mean you will need to compile your own corpus if there are fundamental attributes missing. Before you consider compiling your own corpus, however, it is worth investigating the possibility of augmenting an available corpus to bring it inline with your particular goals. This may include adding new language sources, harnessing software for linguistic annotation (part-of-speech, syntactic structure, named entities, etc.), or linking available corpus meta-data to other resources, linguistic or non-linguistic.&lt;/p&gt;
+&lt;p&gt;Corpora come in various formats, the main three being: running text, structured documents, and databases. The format of a corpus is often influenced by characteristics of the data but may also reflect an author’s individual preferences as well. It is typical for corpora with few meta-data characteristics to take the form of running text. In corpora with more meta-data a header may be appended to the top of each running text document or the meta-data may be contained in a separate file with appropriate coding to coordinate meta-data attributes with each text in the corpus. When meta-data increases in complexity it is common to structure each corpus document more explicitly with a markup language such as XML (Extensible Markup Language) or organize relationships between language and meta-data attributes in a database. Although there has been a push towards standardization of corpus formats, most available resources display some degree of idiosyncrasy. Being able to parse the structure of a corpus is a skill that will develop with time. With more experience working with corpora you will become more adept at identifying how the data is stored and whether its content and format will serve the needs of your analysis.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sources-of-language-data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Sources of language data&lt;/h2&gt;
+&lt;p&gt;The most common source of data used in contemporary quantitative research is the internet. On the web an investigator can access corpora published for research purposes and language used in natural settings that can be coerced by the investigator into a corpus. Many organizations exist around the globe that provide access to corpora in browsable catalogs, or &lt;strong&gt;repositories&lt;/strong&gt;. There are repositories dedicated to language research, in general, such as the &lt;a href=&#34;https://www.ldc.upenn.edu/&#34;&gt;Language Data Consortium&lt;/a&gt; or for specific language domains, such as the language acquisition repository &lt;a href=&#34;http://talkbank.org/&#34;&gt;TalkBank&lt;/a&gt;. It is always advisable to start looking for the available language data in a repository. The advantage of beginning your data search in repositories is that a repository, especially those geared towards the linguistic community, will make identifying language corpora faster than through a general web search. Furthermore, repositories often require certain standards for corpus format and documentation for publication. A standardized resource many times will be easier to interpret and evaluate for its appropriateness for a particular research project.&lt;/p&gt;
+&lt;p&gt;In the table below I’ve compiled a list of some corpus repositories to help you get started.&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;&lt;span id=&#34;tab:scrape-pinboard-repositories&#34;&gt;Table 1: &lt;/span&gt;A list of some language corpora repositories.&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Resource&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://corpus.byu.edu/&#34;&gt;BYU corpora&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A repository of corpora that includes billions of words of data.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://corporafromtheweb.org/&#34;&gt;COW (COrpora from the Web)&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A collection of linguistically processed gigatoken web corpora&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://wortschatz.uni-leipzig.de/en/download/&#34;&gt;Leipzig Corpora Collection&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Corpora in different languages using the same format and comparable sources.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.ldc.upenn.edu/&#34;&gt;Linguistic Data Consortium&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Repository of language corpora&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.resourcebook.eu/searchll.php#&#34;&gt;LRE Map&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Repository of language resources collected during the submission process for the Language Resource and Evaluation Conference (LREC).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.nltk.org/nltk_data/&#34;&gt;NLTK language data&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Repository of corpora and language datasets included with the Python package NLTK.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://opus.lingfil.uu.se/&#34;&gt;OPUS - an open source parallel corpus&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Repository of translated texts from the web.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://talkbank.org/&#34;&gt;TalkBank&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Repository of language collections dealing with conversation, acquisition, multilingualism, and clinical contexts.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://corpus1.mpi.nl/ds/asv/?4&#34;&gt;The Language Archive&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Various corpora and language datasets&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://ota.ox.ac.uk/&#34;&gt;The Oxford Text Archive (OTA)&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A collection of thousands of texts in more than 25 different languages.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Repositories are by no means the only source of corpora on the web. Researchers from around the world provide access to corpora and other data sources on their own sites or through data sharing platforms. Corpora of various sizes and scopes will often be accessible on a dedicated homepage or appear on the homepage of a sponsoring institution. Finding these resources is a matter of doing a web search with the word ‘corpus’ and a list of desired attributes, including language, modality, register, etc. As part of a general movement towards reproducible more corpora are available on the web than ever before. Therefore data sharing platforms supporting reproducible research, such as &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;, &lt;a href=&#34;https://zenodo.org/&#34;&gt;Zenodo&lt;/a&gt;, &lt;a href=&#34;http://www.re3data.org/&#34;&gt;Re3data&lt;/a&gt;, etc., are a good place to look as well, if searching repositories and targeted web searches do not yield results.&lt;/p&gt;
+&lt;p&gt;In the table below you will find a list of corpus resources and datasets.&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;&lt;span id=&#34;tab:scrape-pinboard-corpora&#34;&gt;Table 2: &lt;/span&gt;Corpora and language datasets.&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Resource&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://storage.googleapis.com/books/ngrams/books/datasetsv2.html&#34;&gt;Google Ngram Viewer&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Google web corpus&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.cs.cmu.edu/~enron/&#34;&gt;Enron Email Dataset&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Enron email data from about 150 users, mostly senior management.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://cesa.arizona.edu/&#34;&gt;Corpus of Spanish in Southern Arizona&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Spanish varieties spoken in Arizona.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://opus.lingfil.uu.se/OpenSubtitles_v2.php&#34;&gt;OpenSubtitles2011&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A collection of documents from &lt;a href=&#34;http://www.opensubtitles.org/&#34; class=&#34;uri&#34;&gt;http://www.opensubtitles.org/&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.statmt.org/europarl/&#34;&gt;Europarl Parallel Corpus&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A parallel corpus based on the proceedings of the European Parliament&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.lllf.uam.es/~fmarcos/informes/corpus/coarginl.html&#34;&gt;Corpus Argentino&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Corpus of Argentine Spanish&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.ruscorpora.ru/en/&#34;&gt;Russian National Corpus&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A corpus of modern Russian language incorporating over 300 million words.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html&#34;&gt;Cornell Movie-Dialogs Corpus&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A corpus containing a large metadata-rich collection of fictional conversations extracted from raw movie scripts.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;It is important to note that there can be access and use restrictions for data from particular sources. Compiling, hosting, and maintaining corpus resources can be costly. To gain full access to data, some repositories and homepages of larger corpora require a fee to offset these costs. In other cases, resources may require individual license agreements to ensure that the data is not being used in ways it was not intended or to ensure potentially sensitive participant information will be treated appropriately. You can take a look at a &lt;a href=&#34;https://www.corpusdata.org/restrictions.asp&#34;&gt;license agreement for the BYU Corpora&lt;/a&gt; as an example. If you are a member of an academic institution and aim to conduct research for scholarly purposes licensing is often easily obtained. Fees, on the other hand, may present a more challenging obstacle. If you are an affiliate of an academic institution it is worth checking with your library to see if there are funds for acquiring licensing for you as an individual, a research group or lab or, for the institution.&lt;/p&gt;
+&lt;p&gt;If your corpus search ends in a dead-end, either because a suitable resource does not appear to exist or an existing resource is unattainable given licensing restrictions or fees, it may be time to compile your own corpus. Turning to machine readable texts on the internet is usually the logical first step to access language for a new corpus. Language texts may be found on sites as uploaded files, such as pdf or doc (Word) documents, or found displayed as the primary text of a site. Given the wide variety of documents uploaded and language behavior recorded daily on social media, news sites, blogs and the like, compiling a corpus has never been easier. Having said that, how the data is structured and how much data needs to be retrieved can pose practical obstacles to collecting data from the web, particularly if the approach is to acquire the data by hand instead of automating the task. Our approach here, however, will be to automate the process as much as possible whether that means leveraging R package interfaces to language data, converting hundreds of pdf documents to plain text, or scraping content from web documents.&lt;/p&gt;
+&lt;p&gt;The table below lists some R packages that serve to interface language data directly through R.&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;&lt;span id=&#34;tab:scrape-pinboard-apis&#34;&gt;Table 3: &lt;/span&gt;R Package interfaces to language corpora and datasets.&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Resource&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/ropensci/crminer&#34;&gt;crminer&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface focusing on getting the user full text via the Crossref search API.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://ropensci.org/tutorials/arxiv_tutorial.html&#34;&gt;aRxiv&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to query arXiv, a repository of electronic preprints for computer science, mathematics, physics, quantitative biology, quantitative finance, and statistics.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://ropensci.org/tutorials/internetarchive_tutorial.html&#34;&gt;internetarchive&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to query the Internet Archive.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/ropensci/dvn&#34;&gt;dvn&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to access to the Dataverse Network APIs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://ropensci.org/tutorials/gutenbergr_tutorial.html&#34;&gt;gutenbergr&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to download and process public domain works from the Project Gutenberg collection.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://ropensci.org/tutorials/fulltext_tutorial.html&#34;&gt;fulltext&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to query open access journals, such as PLOS.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/hrbrmstr/newsflash&#34;&gt;newsflash&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to query the Internet Archive and GDELT Television Explorer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/ropensci/oai&#34;&gt;oai&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to query any OAI-PMH repository, including Zenodo.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/ropensci/rfigshare&#34;&gt;rfigshare&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to query the data sharing platform FigShare.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Data for language research is not limited to (primary) text sources. Other sources may include processed data from previous research; word lists, linguistic features, etc.. Alone or in combination with text sources this data can be a rich and viable source of data for a research project.&lt;/p&gt;
+&lt;p&gt;Below I’ve included some processed language resources.&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;&lt;span id=&#34;tab:scrape-pinboard-experimental&#34;&gt;Table 4: &lt;/span&gt;Language data from previous research and meta-studies.&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Resource&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/ropensci/lingtypology&#34;&gt;lingtypology&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;R package interface to connect with the Glottolog database and provides additional functionality for linguistic mapping.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://elexicon.wustl.edu/WordStart.asp&#34;&gt;English Lexicon Project&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Access to a large set of lexical characteristics, along with behavioral data from visual lexical decision and naming studies.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://icon.shef.ac.uk/Moby/&#34;&gt;The Moby lexicon project&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Language wordlists and resources from the Moby project.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The list of data available for language research is constantly growing. I’ve document very few of the wide variety of resources. Below I’ve included attempts by others to provide a summary of the corpus data and language resources available.&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;&lt;span id=&#34;tab:scrape-pinboard-listing&#34;&gt;Table 5: &lt;/span&gt;Lists of corpus resources.&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Resource&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://uclouvain.be/en/research-institutes/ilc/cecl/learner-corpora-around-the-world.html&#34;&gt;Learner corpora around the world&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A listing of learner corpora around the world&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://makingnoiseandhearingthings.com/2017/09/20/where-can-you-find-language-data-on-the-web/&#34;&gt;Where can you find language data on the web?&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Listing of various corpora and language datasets.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://nlp.stanford.edu/links/statnlp.html#Corpora&#34;&gt;Stanford NLP corpora&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Listing of corpora and language resources aimed at the NLP community.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;round-up&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Round up&lt;/h2&gt;
+&lt;p&gt;In this post we have covered some of the basics on data for language research including types of data and sources to get you started on the path of identifying a viable source for your data analysis project. In the next post we will begin working directly with R code to access and acquire data through R. Along the way I will introduce fundamental programming concepts of the language you will use throughout your project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;!-- Topics:
+
+- natural and naturalistic
+modality, register (formal/ informal), 
+  - spoken (Callhome -LDC, ...)
+  - written (literature -gutenbergr, periodicals -LDC, blogs, social media -streamR, ...)
+  - other (tv/film closed captions -newsflash, Brysbaert/ ACTIV-ES, translation -OPEL?, ...)
+- elicited data
+  - essays (-BELC, )
+  - interviews (Santa Barbara Corpus)
+  - surveys (US Census -acs, Harvard Dialect Survey, Language attitude)
+  - experimental findings
+    - response times (MRC lexicon), eye-gaze, acceptability ratings, etc. 
+    
+- 
+
+
+- Types of data
+  - Uncurated
+  - Curated 
+- Sources of data
+    - Repositories
+    - Sources
+    - Web
+- Data formats
+  - Plain text
+    - .txt
+    - .csv/ .tsv
+    - .xml/ .json
+  - Other files
+    - .doc(x)
+    - .pdf
+  - Databases
+- How to acquire data
+    - Package interface (`gutenbergr`)
+    - API interface (`streamR`)
+    - Download, read (multiple files, w/ lapply and scan?
+    - Web scraping (`rvest`)
+--&gt;
+&lt;!-- ## Types of data --&gt;
+&lt;!-- In the last post we discussed what data is and the importance of data sampling and organization is for subsequent data analysis. We touched briefly on an example in which we were working with files which our language data was in running text format. Running text is one of the types of data that you will encounter when you look to obtain data to conduct research into the topic you are interested in knowing something more about. In this post we leared that text in this format needed to be organized into a format that was more conducive for statistical analysis. The aim, then, was to **curate** the **uncurated** data. Athough data is often talked about in terms of being curated or uncurated, it is important to understand that this is less a dicotomy and more of a continuum. Since each analysis has specific goals the primary data is always in need of some amount of curation to prepare the data in the particular ways necessary to faciliate the particular goals of the particular analysis.   --&gt;
+&lt;!-- ## Sources of data --&gt;
+&lt;!-- Having said that it is convenient to talk about curation in binary terms as it facilitates a discussion of the sources of data out there and to what degree the researcher needs to manipulate the data from particular sources to be able to conduct an analysis. When looking at the landscape of language data available, sources that have been prepared to some degree to facilitate analysis are often found in *repositories*. There are countless repositories that can be accessed on the web.  --&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-mcenery:2012&#34;&gt;
+&lt;p&gt;McEnery, Tony, and Andrew Hardie. 2012. &lt;em&gt;Corpus Linguistics: Method, Theory and Practice&lt;/em&gt;. Cambridge University Press. doi:&lt;a href=&#34;https://doi.org/10.1017/CBO9780511981395&#34;&gt;10.1017/CBO9780511981395&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Introduction to statistical thinking</title>
@@ -16,14 +287,7 @@
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</guid>
-      <description>&lt;!-- TODOs:
-
-- standardize usage of italics and bold for terms
-- check links
-- ...
-
---&gt;
-&lt;p&gt;Before we begin working on the specifics of our data project, it is important to have a clear understanding of some of the basic concepts that need to be in place to guide our work. In this post I will cover some of these topics including the importance of identifying a research question, how different statistical approaches relate to different types of research, and understanding data from a sampling and organizational standpoint. I will also provide some examples of linking research questions with variables in a toy dataset as we begin to discuss how to approach data analysis, primarily through visualization techniques.&lt;/p&gt;
+      <description>&lt;p&gt;Before we begin working on the specifics of our data project, it is important to have a clear understanding of some of the basic concepts that need to be in place to guide our work. In this post I will cover some of these topics including the importance of identifying a research question, how different statistical approaches relate to different types of research, and understanding data from a sampling and organizational standpoint. I will also provide some examples of linking research questions with variables in a toy dataset as we begin to discuss how to approach data analysis, primarily through visualization techniques.&lt;/p&gt;
 &lt;div id=&#34;research-aims&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Research aims&lt;/h2&gt;
 &lt;!-- TODO: pepper in examples of the types of questions and methods one might find --&gt;
@@ -87,7 +351,7 @@ Tags: Científicos, Isaac Asimov, Robótica, Gente, Tecnología, Informática, C
 
 La primera reflexión abarcadora sobre la coexistencia entre los robots y los humanos no fue obra de un científico de la computación ni de un filósofo ético, sino de un novelista. Isaac Asimov formuló las tres “leyes de la robótica” que deberían incorporarse en la programación de cualquier autómata lo bastante avanzado como para suponer un peligro: “No dañar a los humanos, obedecerles salvo conflicto con lo anterior y autoprotegerse salvo conflicto con todo lo anterior”. Las tres leyes de Asimov configuran una propuesta sólida y autoconsistente, y cuentan con apoyo entre la comunidad de la inteligencia artificial, que reconoce, por ejemplo, que cualquier sistema autónomo funcional debe ser capaz de autoprotegerse.
 ...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As raw data this format is fine, but to gain insight from this data, we will need to explicitly organize the attributes of our data that are key to our analysis. Our data should be in tabular, or ‘tidy’ format where each row is an observation, or &lt;strong&gt;case&lt;/strong&gt; and each column, or &lt;strong&gt;variable&lt;/strong&gt; is a list of attributes of the observation. Each cell, then, is a particular attribute of a particular observation, or &lt;strong&gt;data point&lt;/strong&gt;. Say our objective is to perform an exploratory analysis to evaluate the potential similarities and differences in word frequencies between genres. For this particular analysis we will want to extract and organize the title of each document (&lt;code&gt;doc_id&lt;/code&gt;), the genre it is from (&lt;code&gt;genre&lt;/code&gt;), and each word (&lt;code&gt;word&lt;/code&gt;) as a single, row, or observation, in our tidy dataset.&lt;/p&gt;
+&lt;p&gt;As raw data this format is fine, but to gain insight from this data, we will need to explicitly organize the attributes of our data that are key to our analysis. Our data should be in tabular, or &lt;a href=&#34;www.jstatsoft.org/v59/i10/paper&#34;&gt;‘tidy’ format&lt;/a&gt; where each row is an observation, or &lt;strong&gt;case&lt;/strong&gt; and each column, or &lt;strong&gt;variable&lt;/strong&gt; is a list of attributes of the observation. Each cell, then, is a particular attribute of a particular observation, or &lt;strong&gt;data point&lt;/strong&gt;. Say our objective is to perform an exploratory analysis to evaluate the potential similarities and differences in word frequencies between genres. For this particular analysis we will want to extract and organize the title of each document (&lt;code&gt;doc_id&lt;/code&gt;), the genre it is from (&lt;code&gt;genre&lt;/code&gt;), and each word (&lt;code&gt;word&lt;/code&gt;) as a single, row, or observation, in our tidy dataset.&lt;/p&gt;
 &lt;table&gt;
 &lt;caption&gt;&lt;span id=&#34;tab:spanish-works&#34;&gt;Table 1: &lt;/span&gt;Tidy dataset&lt;/caption&gt;
 &lt;thead&gt;
@@ -330,7 +594,7 @@ La primera reflexión abarcadora sobre la coexistencia entre los robots y los hu
 &lt;p&gt;The primary goal of a data analysis is to reduce the observed data to a human-interpretable summary that best approximates the nature of the phenomenon we are investigating. With well-sampled data in a tidy dataset in hand where observations and variables are explicitly related, identified for their informational value, and the dependent and/or independent variables are clear, we can now proceed to visualizing and applying the appropriate statistical tests to the data to come to some more concrete, actionable insight.&lt;/p&gt;
 &lt;div id=&#34;visualization&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Visualization&lt;/h3&gt;
-&lt;p&gt;Tt is always key to gain insight into the behavior of the data visually before jumping in to the statistical analysis. Using our research aim as our guide, we will choose the most appropriate visualization to use given the number and informational value of our target variables. To get a sense of how this looks, let’s work with an example dataset and pose different questions to the data with an eye towards seeing how various combinations of variables are visualized.&lt;/p&gt;
+&lt;p&gt;It is always key to gain insight into the behavior of the data visually before jumping in to the statistical analysis. Using our research aim as our guide, we will choose the most appropriate visualization to use given the number and informational value of our target variables. To get a sense of how this looks, let’s work with an example dataset and pose different questions to the data with an eye towards seeing how various combinations of variables are visualized.&lt;/p&gt;
 &lt;p&gt;The dataset we will use here is from the &lt;a href=&#34;http://talkbank.org/&#34;&gt;TalkBank repository&lt;/a&gt; which provides data from various language learning contexts.&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; The specific data we will use is the ‘narratives’ section of the &lt;a href=&#34;http://talkbank.org/access/SLABank/English/BELC.html&#34;&gt;BELC (Barcelona English Language Corpus)&lt;/a&gt; &lt;span class=&#34;citation&#34;&gt;(Muñoz 2006)&lt;/span&gt;. It is a corpus of writing samples from second language learners of English at different ages. Participants were given the task of writing for 15 minutes on the topic of “Me: my past, present and future”. Data was collected for many (but not all) participants up to four times over the course of seven years. The entire dataset includes 123 observations from 54 participants. Below I’ve included the first 10 observations from the dataset which reflects some data cleaning I’ve done so we start with a tidy dataset.&lt;/p&gt;
 &lt;table&gt;
 &lt;caption&gt;&lt;span id=&#34;tab:view-belc-dataset&#34;&gt;Table 3: &lt;/span&gt;BELC dataset for demonstration.&lt;/caption&gt;
@@ -657,7 +921,10 @@ Figure 10: Scatter plot visualizing the correlation between the continuous varia
 &lt;div id=&#34;round-up&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Round up&lt;/h2&gt;
 &lt;p&gt;In this post we covered some foundational topics for any data analysis project. Guiding the entire process is a clear research question. From there we can proceed to acquire data that is relevant and reliable on the phenomenon we hope to understand better, choose a statistical approach which matches our analysis goals, and organize our data into a format conducive for achieving these goals. Only at this point can we confidently move to analyzing our data, first beginning with appropriate visualization techniques to get a feel for the trends and then moving to performing the relevant statistical tests to provide confidence that the trends captured in our visualizations are in fact reliable.&lt;/p&gt;
-&lt;p&gt;There is still much left to discuss, in particular what statistical tests to apply to a given data analysis scenario and the assumptions behind statistical tests. We will address these topics later in the series when we have established a stronger and practical understanding of the preceding project steps and increase our proficiencey programming in R. The first step in this journey will be to learn about the specifics of acquiring data for language research; where to find it and how to obtain. We will also begin working directly with R code and introduce fundamental programming concepts of the language you will use throughout your project.&lt;/p&gt;
+&lt;p&gt;There is still much left to discuss, in particular what statistical tests to apply to a given data analysis scenario and the assumptions behind statistical tests. We will address these topics later in the series when we have established a stronger and practical understanding of the preceding project steps and increase our proficiency programming in R. The next steps in this journey will be to learn about data types and sources and the specifics of acquiring data for language research.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
 &lt;!-- OTHER APPROACHES TO THE TOPIC
 
 GRIES, Statistics for Linguists with R
@@ -767,9 +1034,6 @@ Chapter 5: Some statistics for Corpus Linguistics
   - 1 DV, 2+ IV (mixed)
 
 --&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
 &lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
 &lt;div id=&#34;ref-Gries2013a&#34;&gt;
 &lt;p&gt;Gries, ST. 2013. &lt;em&gt;Statistics for Linguistics with R. A Practical Introduction&lt;/em&gt;. 2nd revise.&lt;/p&gt;
