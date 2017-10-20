@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Corpora on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/corpora/</link>
+    <link>/tags/corpora/</link>
     <description>Recent content in Corpora on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Data for language research -types and sources</title>
-      <link>https://francojc.github.io/2017/10/04/data-for-language-research-types-and-sources/</link>
+      <link>/2017/10/04/data-for-language-research-types-and-sources/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2017/10/04/data-for-language-research-types-and-sources/</guid>
+      <guid>/2017/10/04/data-for-language-research-types-and-sources/</guid>
       <description>&lt;p&gt;In this Recipe you will learn about the types of data available for language research and where to find data. The goal, then, is to introduce you to the landscape of language data available and provide a general overview of the characteristics of language data from a variety of sources providing you with resources to begin your own quantitative investigations.&lt;/p&gt;
 &lt;div id=&#34;data-for-language-research&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Data for language research&lt;/h2&gt;
@@ -283,10 +283,10 @@ modality, register (formal/ informal),
     
     <item>
       <title>ACTIV-ES</title>
-      <link>https://francojc.github.io/project/activ-es/</link>
+      <link>/project/activ-es/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/project/activ-es/</guid>
+      <guid>/project/activ-es/</guid>
       <description>&lt;p&gt;ACTIV-ES is a comparable Spanish corpus comprised of tv/film dialogue from Argentine, Mexican and Spanish productions. Titles for each of these three countries were seeded from the Internet Movie Database, subtitle data for the hearing impaired was provided by Opensubtitles.org and was post-processed to correct/remove subtitle, OCR and diacritic artifacts and annotated for part-of-speech.&lt;/p&gt;
 
 &lt;p&gt;The data is available in two main formats: 1) running text for each document and 2) 1:5 gram aggregate files. Each format includes a plain text and part-of-speech annotated version. Document names reflect the &lt;code&gt;language code&lt;/code&gt;, &lt;code&gt;country&lt;/code&gt;, &lt;code&gt;year&lt;/code&gt;, &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, &lt;code&gt;genre&lt;/code&gt; (first genre listed in the IMDb), and &lt;code&gt;IMDb ID&lt;/code&gt;.&lt;/p&gt;

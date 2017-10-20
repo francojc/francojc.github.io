@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Models on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/models/</link>
+    <link>/tags/models/</link>
     <description>Recent content in Models on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Introduction to statistical thinking</title>
-      <link>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</link>
+      <link>/2017/09/15/introduction-to-statistical-thinking/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</guid>
+      <guid>/2017/09/15/introduction-to-statistical-thinking/</guid>
       <description>&lt;p&gt;Before we begin working on the specifics of our data project, it is important to have a clear understanding of some of the basic concepts that need to be in place to guide our work. In this post I will cover some of these topics including the importance of identifying a research question, how different statistical approaches relate to different types of research, and understanding data from a sampling and organizational standpoint. I will also provide some examples of linking research questions with variables in a toy dataset as we begin to discuss how to approach data analysis, primarily through visualization techniques.&lt;/p&gt;
 &lt;div id=&#34;research-aims&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Research aims&lt;/h2&gt;
@@ -421,7 +421,7 @@ female   male
     67     56 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A graphic display does not necessarily facilitate a better understanding, in such a simple case, but let’s graphically visualize this scenario anyway. The type of plot we want to use is a ‘bar plot’, which simply plots the dependent variable on the x-axis and the counts on the y-axis.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-cat&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-1.png&#34; alt=&#34;Bar plot of the categorical variable `sex`.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-1.png&#34; alt=&#34;Bar plot of the categorical variable `sex`.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 1: Bar plot of the categorical variable &lt;code&gt;sex&lt;/code&gt;.
 &lt;/p&gt;
@@ -438,14 +438,14 @@ sex       1  2  3  4
 &lt;p&gt;It’s more difficult to see the pattern here than in the basic single dependent variable scenario for two reasons: 1) as the number of independent variables and/or the levels within an independent variable increase, our ability to interpret the results decreases. 2) the relationship between &lt;code&gt;sex&lt;/code&gt; and &lt;code&gt;learner_group&lt;/code&gt; does not take into account that there are more female samples than males, and therefore the raw counts here can be misleading.&lt;/p&gt;
 &lt;p&gt;A graphic representation of this contrast will be a bit easier to interpret; although it is important to be aware that more variables and levels always leads to interpretability problems. The bar plot below reflects the raw counts from the cross-tabulation of the variables &lt;code&gt;sex&lt;/code&gt; and &lt;code&gt;learner_group&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-cat-ind-cat-graph&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-graph-1.png&#34; alt=&#34;Bar plot of the variable `sex` and `learner_group`.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-graph-1.png&#34; alt=&#34;Bar plot of the variable `sex` and `learner_group`.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 2: Bar plot of the variable &lt;code&gt;sex&lt;/code&gt; and &lt;code&gt;learner_group&lt;/code&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Adjusting the bar plot to account for the proportions of males to females in each group provides a clearer picture of the relationship between &lt;code&gt;sex&lt;/code&gt; and &lt;code&gt;learner_group&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-cat-ind-cat-graph-2&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-graph-2-1.png&#34; alt=&#34;Bar plot of the variable `sex` and `learner_group` proportionally scaled.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-graph-2-1.png&#34; alt=&#34;Bar plot of the variable `sex` and `learner_group` proportionally scaled.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 3: Bar plot of the variable &lt;code&gt;sex&lt;/code&gt; and &lt;code&gt;learner_group&lt;/code&gt; proportionally scaled.
 &lt;/p&gt;
@@ -570,7 +570,7 @@ learner_group low mid high
             4   2   3    0&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To graphically visualize three categorical variables we turn to a mosaic plot.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-cat-ind-cat-2-graph&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-2-graph-1.png&#34; alt=&#34;Mosaic plot contrasting the categorical variables `sex`, `learner_group`, and `token_bins`.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-2-graph-1.png&#34; alt=&#34;Mosaic plot contrasting the categorical variables `sex`, `learner_group`, and `token_bins`.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 4: Mosaic plot contrasting the categorical variables &lt;code&gt;sex&lt;/code&gt;, &lt;code&gt;learner_group&lt;/code&gt;, and &lt;code&gt;token_bins&lt;/code&gt;.
 &lt;/p&gt;
@@ -582,7 +582,7 @@ Figure 4: Mosaic plot contrasting the categorical variables &lt;code&gt;sex&lt;/
 &lt;/ol&gt;
 &lt;p&gt;Working with a single continuous dependent variable means that the only practical way to summarize the data is graphically –as textual visualization will be very verbose and by and large uninterpretable. Plotting a single continuous variable often takes the form of a histogram which summarizes the frequency of the values of the dependent variable. So from our dataset, we may want to know what the distribution of &lt;code&gt;token&lt;/code&gt; scores looks like. That is, are they normally distributed (‘bell-shaped’), or skewed to the left or right (more values in the low or high range), or some other type of distribution (i.e. bi-modal, etc.)?&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-con-graph&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-graph-1.png&#34; alt=&#34;Histogram (with and without a density line) for the continuous variable `tokens`.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-graph-1.png&#34; alt=&#34;Histogram (with and without a density line) for the continuous variable `tokens`.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 5: Histogram (with and without a density line) for the continuous variable &lt;code&gt;tokens&lt;/code&gt;.
 &lt;/p&gt;
@@ -596,7 +596,7 @@ Figure 5: Histogram (with and without a density line) for the continuous variabl
 57.14925 60.80357 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;or graphically with a box plot, in which we get a host of information about the distribution.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-con-ind-cat-graph&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-cat-graph-1.png&#34; alt=&#34;Box plot summarizing the contrast between `sex` and `tokens`.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-cat-graph-1.png&#34; alt=&#34;Box plot summarizing the contrast between `sex` and `tokens`.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 6: Box plot summarizing the contrast between &lt;code&gt;sex&lt;/code&gt; and &lt;code&gt;tokens&lt;/code&gt;.
 &lt;/p&gt;
@@ -607,21 +607,21 @@ Figure 6: Box plot summarizing the contrast between &lt;code&gt;sex&lt;/code&gt;
 &lt;/ol&gt;
 &lt;p&gt;The behavior of two continuous variables, one dependent and the other independent is represented using a scatter plot. The value for each variable for each observation is plotted as a coordinate pair. From this mapping we evaluate the relationship, or correlation, between the variables. Sticking with &lt;code&gt;tokens&lt;/code&gt; as our measure, let’s explore the extent to which &lt;code&gt;age&lt;/code&gt; conditions the number of tokens used by a participant.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-con-ind-con-graph&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens`.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens`.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 7: Scatter plot visualizing the correlation between the continuous variables &lt;code&gt;age&lt;/code&gt; and &lt;code&gt;tokens&lt;/code&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;From a visual inspection it appears that there is a slight effect for &lt;code&gt;age&lt;/code&gt; on &lt;code&gt;tokens&lt;/code&gt;, namely that the older the participant the more tokens they tend to use.&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; It is often helpful, and/ or necessary to add a trend line to the plot to help see the relationship more clearly. Note that the ribbon (in grey) surrounding the trend line is the ‘standard error’, or SE. The SE is a confidence interval suggesting that the trend line could have been drawn within any part of this space. You will note that a larger ribbon width corresponds with more variability. This is clearly the case for the tokens used by participants at age 14.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-con-ind-con-graph-2&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-2-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a trend line.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-2-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a trend line.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 8: Scatter plot visualizing the correlation between the continuous variables &lt;code&gt;age&lt;/code&gt; and &lt;code&gt;tokens&lt;/code&gt; with a trend line.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Another note on the trend line. The trend line drawn here is a non-linear, which is why you see the line is bendy. Often times when we are doing hypothesis testing we will be making the assumption that the relationship between two or more variables is linear, not non-linear. We can add a linear trend line to get a better understanding of the linear relationship between our variables.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-con-ind-con-graph-3&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-3-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a linear trend line.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-3-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a linear trend line.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 9: Scatter plot visualizing the correlation between the continuous variables &lt;code&gt;age&lt;/code&gt; and &lt;code&gt;tokens&lt;/code&gt; with a linear trend line.
 &lt;/p&gt;
@@ -629,7 +629,7 @@ Figure 9: Scatter plot visualizing the correlation between the continuous variab
 &lt;p&gt;Interpreting the linear representation we see there is an apparent trend for increasing values for &lt;code&gt;tokens&lt;/code&gt; as &lt;code&gt;age&lt;/code&gt; increases.&lt;/p&gt;
 &lt;p&gt;Say our aim was to understand the relationship between &lt;code&gt;age&lt;/code&gt; and &lt;code&gt;tokens&lt;/code&gt; as a potential function of &lt;code&gt;sex&lt;/code&gt;. We can incorporate &lt;code&gt;age&lt;/code&gt; as a categorical variable. The result provides us a scatter plot with two trend lines, one for each level of &lt;code&gt;sex&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:dep-con-ind-con-graph-4&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-4-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` by `sex` with a linear trend line.&#34; width=&#34;80%&#34; /&gt;
+&lt;img src=&#34;/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-4-1.png&#34; alt=&#34;Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` by `sex` with a linear trend line.&#34; width=&#34;80%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 10: Scatter plot visualizing the correlation between the continuous variables &lt;code&gt;age&lt;/code&gt; and &lt;code&gt;tokens&lt;/code&gt; by &lt;code&gt;sex&lt;/code&gt; with a linear trend line.
 &lt;/p&gt;

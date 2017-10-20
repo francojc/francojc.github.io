@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homebrew on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/homebrew/</link>
+    <link>/tags/homebrew/</link>
     <description>Recent content in Homebrew on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Install vislcg3 tools on Mac OS X</title>
-      <link>https://francojc.github.io/2011/09/09/install-vislcg3-tools-on-mac-os-x/</link>
+      <link>/2011/09/09/install-vislcg3-tools-on-mac-os-x/</link>
       <pubDate>Fri, 09 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2011/09/09/install-vislcg3-tools-on-mac-os-x/</guid>
+      <guid>/2011/09/09/install-vislcg3-tools-on-mac-os-x/</guid>
       <description>&lt;p&gt;Here are the instructions to install the &lt;a href=&#34;http://beta.visl.sdu.dk/cg3/chunked/index.html&#34; target=&#34;_blank&#34;&gt;vislcg3 constraint grammar&lt;/a&gt; on a Mac.&lt;/p&gt;
 
 &lt;ol&gt;
