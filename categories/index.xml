@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on francojc ⟲</title>
-    <link>/categories/</link>
+    <link>https://francojc.github.io/categories/</link>
     <description>Recent content in Categories on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,91 +11,91 @@
     
     <item>
       <title>Corpora</title>
-      <link>/categories/corpora/</link>
+      <link>https://francojc.github.io/categories/corpora/</link>
       <pubDate>Sat, 24 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/categories/corpora/</guid>
+      <guid>https://francojc.github.io/categories/corpora/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fish</title>
-      <link>/categories/fish/</link>
+      <link>https://francojc.github.io/categories/fish/</link>
       <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/categories/fish/</guid>
+      <guid>https://francojc.github.io/categories/fish/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mac Os X</title>
-      <link>/categories/mac-os-x/</link>
+      <link>https://francojc.github.io/categories/mac-os-x/</link>
       <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/categories/mac-os-x/</guid>
+      <guid>https://francojc.github.io/categories/mac-os-x/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>/categories/mysql/</link>
+      <link>https://francojc.github.io/categories/mysql/</link>
       <pubDate>Fri, 26 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>/categories/mysql/</guid>
+      <guid>https://francojc.github.io/categories/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>https://francojc.github.io/categories/r/</link>
       <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>https://francojc.github.io/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recipe</title>
-      <link>/categories/recipe/</link>
+      <link>https://francojc.github.io/categories/recipe/</link>
       <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/recipe/</guid>
+      <guid>https://francojc.github.io/categories/recipe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstudio Server</title>
-      <link>/categories/rstudio-server/</link>
+      <link>https://francojc.github.io/categories/rstudio-server/</link>
       <pubDate>Tue, 09 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>/categories/rstudio-server/</guid>
+      <guid>https://francojc.github.io/categories/rstudio-server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny</title>
-      <link>/categories/shiny/</link>
+      <link>https://francojc.github.io/categories/shiny/</link>
       <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>/categories/shiny/</guid>
+      <guid>https://francojc.github.io/categories/shiny/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unix</title>
-      <link>/categories/unix/</link>
+      <link>https://francojc.github.io/categories/unix/</link>
       <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/categories/unix/</guid>
+      <guid>https://francojc.github.io/categories/unix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>/categories/windows/</link>
+      <link>https://francojc.github.io/categories/windows/</link>
       <pubDate>Sun, 11 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>/categories/windows/</guid>
+      <guid>https://francojc.github.io/categories/windows/</guid>
       <description></description>
     </item>
     

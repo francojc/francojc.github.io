@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twitter on francojc ⟲</title>
-    <link>/tags/twitter/</link>
+    <link>https://francojc.github.io/tags/twitter/</link>
     <description>Recent content in Twitter on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,15 +12,15 @@
     
     <item>
       <title>Access Twitter posts by country</title>
-      <link>/2014/12/17/access-twitter-posts-by-country/</link>
+      <link>https://francojc.github.io/2014/12/17/access-twitter-posts-by-country/</link>
       <pubDate>Wed, 17 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/12/17/access-twitter-posts-by-country/</guid>
+      <guid>https://francojc.github.io/2014/12/17/access-twitter-posts-by-country/</guid>
       <description>&lt;p&gt;In this ExploRation I will cover how to retrieve and filter tweets from Twitter by country. The first step will be to create and connect to the Twitter API using the &lt;code&gt;twitteR&lt;/code&gt; and &lt;code&gt;ROAuth&lt;/code&gt; packages. If you don’t already have one you will also need to register for a Twitter developer account and then create an application. This will give you access to an API key and secret. With these packages and credentials, we then will use &lt;code&gt;streamR&lt;/code&gt; to download tweets. After retrieving the data, we will then proceed to filter those tweets that fall within the borders of a certain country with the &lt;code&gt;sp&lt;/code&gt; package.&lt;/p&gt;
 &lt;p&gt;Some other packages you will need include: &lt;code&gt;plyr&lt;/code&gt;, &lt;code&gt;data.table&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Twitter API authenication&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Before we get started on the R side, we’ll need to set up a Twitter application. First, log in to your &lt;a href=&#34;https://dev.twitter.com&#34;&gt;Twitter developer account&lt;/a&gt; (or create one). Then you’ll follow the link ‘&lt;a href=&#34;https://apps.twitter.com/&#34;&gt;Manage Your Apps&lt;/a&gt;’ and select ‘Create New App’.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/create-application-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/create-application-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Fill out the form and then scroll down and accept the Developer Agreement. Then you will be able to select your app’s name and grab your &lt;code&gt;API Key&lt;/code&gt; and &lt;code&gt;API Secret&lt;/code&gt; under the ‘Keys and Access Tokens’ tab. Add these credentials, the request, access, and authorize urls, and a path to a file to store the resulting authentication information. The &lt;code&gt;oauth.file&lt;/code&gt; object is not strictly necessary, but it means that you will not need to perform the upcoming API handshake every time you want to interface with Twitter.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;api.key &amp;lt;- my.api.key # your consumer key
 api.secret &amp;lt;- my.api.secret # your consumer secret
@@ -84,7 +84,7 @@ p &amp;lt;- ggplot(world.map, aes(x = long, y = lat, group = group)) +
 p + geom_point(data = world.tweets, # plot tweet origin points
                aes(x = lon, y = lat, color = lang, group = 1), 
                alpha = 1/2) + theme(legend.position = &amp;quot;none&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/visualize-world-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/visualize-world-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I’ve added color to the plot to indicate the languages (according to Twitter) that are in the data.&lt;/p&gt;
 &lt;p&gt;In order to filter these tweets from around the world by country we need to get spatial polygon data for the country(ies) of interest. In this example, we’ll use the US data found on the &lt;a href=&#34;http://www.gadm.org&#34;&gt;GADM&lt;/a&gt; website. Various formats are available, but for our purposes we’ll take the convenient route and select the &lt;code&gt;.RData&lt;/code&gt; file. You will be presented with various level files which correspond to rough to fine-grained detail. We’ll select the Level 0 data.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Download SpatialPolygonsDataFrame in .RData format
@@ -109,7 +109,7 @@ usa.tweets &amp;lt;- join(usa.tweets, world.tweets)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_point(data = usa.tweets, # plot tweet origin points
                aes(x = lon, y = lat, color = lang, group = 1), 
                alpha = 1/2) + theme(legend.position = &amp;quot;none&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/usa-tweet-map-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2014-12-17-access-twitter-posts-by-country_files/figure-html/usa-tweet-map-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So there you go. We’ve downloaded Twitter posts via the official API, wrote that data to disk, read in the data from disk, and clipped coordinates not falling within the United States.&lt;/p&gt;
 </description>
     </item>

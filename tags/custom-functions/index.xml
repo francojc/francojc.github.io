@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Custom Functions on francojc ⟲</title>
-    <link>/tags/custom-functions/</link>
+    <link>https://francojc.github.io/tags/custom-functions/</link>
     <description>Recent content in Custom Functions on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,12 +12,12 @@
     
     <item>
       <title>Acquiring data for language research (1/3): direct downloads</title>
-      <link>/2017/10/20/acquiring-data-for-language-research-direct-downloads/</link>
+      <link>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</link>
       <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/10/20/acquiring-data-for-language-research-direct-downloads/</guid>
-      <description>&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+      <guid>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</guid>
+      <description>&lt;link href=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;There are three main ways to acquire corpus data using R that I will introduce you to: &lt;strong&gt;direct download&lt;/strong&gt;, &lt;strong&gt;package interfaces&lt;/strong&gt;, and &lt;strong&gt;web scraping&lt;/strong&gt;. In this post we will start by directly downloading a corpus as it is the most straightforward process for the novice R programmer and incurs the least number of steps. Along the way I will introduce some key R coding concepts including control statements and custom functions.&lt;/p&gt;
