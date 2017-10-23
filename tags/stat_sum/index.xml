@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stat_sum on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/stat_sum/</link>
+    <link>/tags/stat_sum/</link>
     <description>Recent content in Stat_sum on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Creating hexbin plots</title>
-      <link>https://francojc.github.io/2015/08/12/creating-hexbin-plots/</link>
+      <link>/2015/08/12/creating-hexbin-plots/</link>
       <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2015/08/12/creating-hexbin-plots/</guid>
+      <guid>/2015/08/12/creating-hexbin-plots/</guid>
       <description>&lt;p&gt;I was just browsing the web today and stumbled on &lt;a href=&#34;http://www.analyticsvidhya.com/blog/2015/07/guide-data-visualization-r/&#34;&gt;an overview of data visualization in R&lt;/a&gt;. As I was scrolling the page something caught my eye: a hexbin plot. I had never heard of such a plot before.&lt;/p&gt;
 &lt;p&gt;To create a hexbin plot in base R with &lt;code&gt;plot()&lt;/code&gt; you need to install the &lt;code&gt;hexbin&lt;/code&gt; package.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;hexbin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -24,22 +24,22 @@
 library(ggplot2) # for now just to get the `diamonds` dataset
 a &amp;lt;- hexbin(x = diamonds$carat, y = diamonds$price) # create a hexbin object
 plot(a) # plot&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-08-12-creating-hexbin-plots_files/figure-html/base-plot-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-08-12-creating-hexbin-plots_files/figure-html/base-plot-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;What a great way to visualize bivariate frequency data and avoid overplotting issues. Then, I thought: does &lt;code&gt;ggplot2&lt;/code&gt; have a geom for that?&lt;/p&gt;
 &lt;p&gt;It turns out it’s a stat. But, yes, yes it does. In this case you will not need to install/ load the &lt;code&gt;hexbin&lt;/code&gt; package. Just apply &lt;code&gt;stat_binhex()&lt;/code&gt; to your plot.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(diamonds, aes(x = carat, y = price)) + # create plot
   stat_binhex() # apply stat&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-plot-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-plot-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;In both the &lt;code&gt;plot&lt;/code&gt; and &lt;code&gt;ggplot2&lt;/code&gt; approaches you can tweak the bin size to adjust the desired granularity of the plot.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- hexbin(x = diamonds$carat, y = diamonds$price, xbins = 10)
 plot(a)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(diamonds, aes(x = carat, y = price)) + 
   stat_binhex(bins = 10) &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-2.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-08-12-creating-hexbin-plots_files/figure-html/plots-binsize-2.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;And since I was poking around on the &lt;a href=&#34;http://docs.ggplot2.org/current/index.html&#34;&gt;ggplot2 documentation&lt;/a&gt; I also discovered another stat to use to avoid overplotting. This time when working with two categorical variables: &lt;code&gt;stat_sum()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(diamonds, aes(x = cut, y = clarity)) + stat_sum(aes(group = 1))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://francojc.github.io/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-stat-sum-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2015-08-12-creating-hexbin-plots_files/figure-html/ggplot2-stat-sum-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

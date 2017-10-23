@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reproducible Research on francojc ⟲</title>
-    <link>https://francojc.github.io/tags/reproducible-research/</link>
+    <link>/tags/reproducible-research/</link>
     <description>Recent content in Reproducible Research on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,12 +12,12 @@
     
     <item>
       <title>Acquiring data for language research (1/3): direct downloads</title>
-      <link>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</link>
+      <link>/2017/10/20/acquiring-data-for-language-research-direct-downloads/</link>
       <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</guid>
-      <description>&lt;link href=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+      <guid>/2017/10/20/acquiring-data-for-language-research-direct-downloads/</guid>
+      <description>&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;There are three main ways to acquire corpus data using R that I will introduce you to: &lt;strong&gt;direct download&lt;/strong&gt;, &lt;strong&gt;package interfaces&lt;/strong&gt;, and &lt;strong&gt;web scraping&lt;/strong&gt;. In this post we will start by directly downloading a corpus as it is the most straightforward process for the novice R programmer and incurs the least number of steps. Along the way I will introduce some key R coding concepts including control statements and custom functions.&lt;/p&gt;
@@ -258,10 +258,10 @@ system(command = &amp;quot;tree data/original/scs &amp;gt;&amp;gt; log/data_orig
     
     <item>
       <title>Project management for scalable data analysis</title>
-      <link>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</link>
+      <link>/2017/08/31/project-management-for-scalable-data-analysis/</link>
       <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</guid>
+      <guid>/2017/08/31/project-management-for-scalable-data-analysis/</guid>
       <description>&lt;div id=&#34;project-management&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Project management&lt;/h2&gt;
 &lt;p&gt;This post can really be seen as an extension of the last post &lt;a href=&#34;https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/&#34;&gt;Getting started with R and RStudio&lt;/a&gt; in that we will be getting to know some more advanced, but indispensable features of RStudio. These features, in combination with some organizational and programming strategies, will enable us to conduct efficient data analysis and set the stage for research is is both scalable and ready for sharing with either collaborators or the research community.&lt;/p&gt;
@@ -307,7 +307,7 @@ system(command = &amp;quot;tree data/original/scs &amp;gt;&amp;gt; log/data_orig
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;/usr/local/bin/git&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If a path is not returned, or you are on a PC, then you will need to download and install the software from the &lt;code&gt;git&lt;/code&gt; homepage. Follow this &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;link to the &lt;code&gt;git&lt;/code&gt; downloads page&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:git-install-1&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/git-install-1-1.png&#34; alt=&#34;Git downloads page.&#34; width=&#34;100%&#34; /&gt;
+&lt;img src=&#34;/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/git-install-1-1.png&#34; alt=&#34;Git downloads page.&#34; width=&#34;100%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 1: Git downloads page.
 &lt;/p&gt;
@@ -351,7 +351,7 @@ _pipeline.R data        functions   report&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As we have seen, RStudio provides a of host tools for facilitating work with R. A feature that makes working with the sometimes numerous data files, scripts, and other resources more manageable is the ‘R Project’ tool. In a nutshell, this RStudio tool allows us to select a directory where our project files live and effectively group these files and the work we do as a unit. At a basic level it simply helps manage individual projects more easily. As we move on to other posts in this series, and particularly when we discuss creating reproducible research, we will see that this feature will really prove its worth. For now, let’s make the project template an R project and turn to focus on the file and directory structure as it relates to doing efficient and reproducible data analysis in R.&lt;/p&gt;
 &lt;p&gt;To link our template to an R Project, start up R and select the ‘New Project…’ dialogue from the RStudio toolbar menu. You will be presented with various options as seen in Figure &lt;a href=&#34;#fig:r-project-1&#34;&gt;2&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-project-1&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-1-1.png&#34; alt=&#34;Options for creating an R Project in RStudio.&#34; width=&#34;400&#34; /&gt;
+&lt;img src=&#34;/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-1-1.png&#34; alt=&#34;Options for creating an R Project in RStudio.&#34; width=&#34;400&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 2: Options for creating an R Project in RStudio.
 &lt;/p&gt;
@@ -359,7 +359,7 @@ Figure 2: Options for creating an R Project in RStudio.
 &lt;p&gt;The first option is for starting a project from scratch. The last option is for cloning a project from a versioning repository like GitHub. With versioning software, like &lt;code&gt;git&lt;/code&gt;, on our machine, we can clone and create an R Project in one step. We will make use of this option in future posts now that we have a basic understand of &lt;code&gt;git&lt;/code&gt; and GitHub. For now, however, we want to link the project template we cloned manually using the command line, so select ‘Existing Directory’ from this menu.&lt;/p&gt;
 &lt;p&gt;Next navigate to the directory which we cloned either typing the path to the directory, or more conveniently using the ‘Browse’ button. Once we have selected the directory and create the R Project, RStudio will open a new session with our directories and files listed in the Files pane.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-project-2&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-2-1.png&#34; alt=&#34;View of the project template as an R Project.&#34; width=&#34;100%&#34; /&gt;
+&lt;img src=&#34;/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-2-1.png&#34; alt=&#34;View of the project template as an R Project.&#34; width=&#34;100%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 3: View of the project template as an R Project.
 &lt;/p&gt;
@@ -425,7 +425,7 @@ Figure 3: View of the project template as an R Project.
 rm(list = ls())&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The template shown here leverages code commenting to separate the script into meaningful tasks. The &lt;code&gt;ABOUT&lt;/code&gt; section is where you will provide an overview of the purpose of the script in your project, how to use it, who created it, and when it was created. The &lt;code&gt;SETUP&lt;/code&gt; section provides a space to load any required packages, source any required custom functions, and configure various other options. &lt;code&gt;RUN&lt;/code&gt; is where the bulk of your code will be entered. As it has been stated various times, commenting is a vital part of sound coding practices. It is often helpful not only to comment the particular line of code, which we do by adding the &lt;code&gt;#&lt;/code&gt; symbol to the immediate right of the code and then describe the task, but also to group coding sub-tasks in this section. RStudio provides a tool to create comment sections. You can use this tool by selecting ‘Code &amp;gt; Insert Section…’ or the keyboard shortcut &lt;code&gt;shift + command + R&lt;/code&gt; (Mac) or &lt;code&gt;shift + ctrl + R&lt;/code&gt; (PC). Either approach will trigger a dialogue box to enter the name of the section. Once you have entered the name it will then appear in the section listing, as seen in Figure &lt;a href=&#34;#fig:r-project-3&#34;&gt;4&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-project-3&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-3-1.png&#34; alt=&#34;View of the section listing in RStudio.&#34; width=&#34;100%&#34; /&gt;
+&lt;img src=&#34;/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-3-1.png&#34; alt=&#34;View of the section listing in RStudio.&#34; width=&#34;100%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 4: View of the section listing in RStudio.
 &lt;/p&gt;
@@ -474,7 +474,7 @@ Figure 4: View of the section listing in RStudio.
 &lt;p&gt;The new files appear in the &lt;code&gt;log/&lt;/code&gt; and &lt;code&gt;report/&lt;/code&gt; directories. The &lt;code&gt;session_info.txt&lt;/code&gt; file is our log of the session information. The &lt;code&gt;article.pdf&lt;/code&gt;, &lt;code&gt;slides.html&lt;/code&gt;, and &lt;code&gt;web.html&lt;/code&gt; files are the rendered versions of the RMarkdown templates. If you browse to the History tab in the Environment pane you will see that we have one line in our history –the code that ran the &lt;code&gt;_pipeline.R&lt;/code&gt; file. Let’s quit our R session now by closing RStudio. When prompted, choose ‘Save’ from the ‘Quit R session’ dialogue box. Now reopen our R project by either starting RStudio then choosing ‘File &amp;gt; Recent Projects’ in the RStudio toolbar or by navigating to the &lt;code&gt;recipes-project_template.Rproj&lt;/code&gt; file with your operating system’s file explorer and double-clicking it.&lt;/p&gt;
 &lt;p&gt;Choosing to save our project before closing RStudio has the effect of taking a snapshot of the current workspace. The files that were open on closing the session are returned to the workspace. Any variables we had in memory and the command history are also returned. The details of this snapshot are stored in the files you will now find at the root of our project directory: &lt;code&gt;.RData&lt;/code&gt; and &lt;code&gt;.Rhistory&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:r-project-4&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://francojc.github.io/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-4-1.png&#34; alt=&#34;View of the R project snapshot files `.RData` and `.Rhistory`.&#34; width=&#34;100%&#34; /&gt;
+&lt;img src=&#34;/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-4-1.png&#34; alt=&#34;View of the R project snapshot files `.RData` and `.Rhistory`.&#34; width=&#34;100%&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 5: View of the R project snapshot files &lt;code&gt;.RData&lt;/code&gt; and &lt;code&gt;.Rhistory&lt;/code&gt;.
 &lt;/p&gt;

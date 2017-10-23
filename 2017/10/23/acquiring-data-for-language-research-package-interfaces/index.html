@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.29" />
+  <meta name="author" content="Jerid Francom">
+  <meta name="description" content="Associate Professor of Spanish and Linguistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/my-styles.css">
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-57189160-2', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/2017/10/23/acquiring-data-for-language-research-package-interfaces/">
+
+  
+
+  <title>Acquiring data for language research (2/3): package interfaces | francojc ⟲</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">francojc ⟲</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="https://wfu.academia.edu/francom/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/vitae.pdf">
+            
+            <span>Vitae</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    
+    <span class="article-duration">15 min read</span>
+    
+    <h1 itemprop="name">Acquiring data for language research (2/3): package interfaces</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-10-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Mon, Oct 23, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/recipe">Recipe</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/api">API</a
+    >, 
+    
+    <a href="/tags/data">data</a
+    >, 
+    
+    <a href="/tags/database">database</a
+    >, 
+    
+    <a href="/tags/data-frames">data frames</a
+    >, 
+    
+    <a href="/tags/vectors">vectors</a
+    >, 
+    
+    <a href="/tags/vectorization">vectorization</a
+    >, 
+    
+    <a href="/tags/gutenbergr">gutenbergr</a
+    >, 
+    
+    <a href="/tags/tidyverse">tidyverse</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Acquiring%20data%20for%20language%20research%20%282%2f3%29%3a%20package%20interfaces&amp;url=%2f2017%2f10%2f23%2facquiring-data-for-language-research-package-interfaces%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Acquiring%20data%20for%20language%20research%20%282%2f3%29%3a%20package%20interfaces&amp;body=%2f2017%2f10%2f23%2facquiring-data-for-language-research-package-interfaces%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<!-- TODO:
+- Proofread
+- Sections (add?)
+-
+-->
+<div id="package-interfaces" class="section level2">
+<h2>Package interfaces</h2>
+<p>A convenient alternative method for acquiring data in R is through package interfaces to web services. These interfaces are built using R code to make connections with resources on the web through <strong>Automatic Programming Interfaces</strong> (APIs). Websites such as Project Gutenberg, Twitter, Facebook, and many others provide APIs to allow access to their data under certain conditions, some more limiting for data collection than others. Programmers (like you!) in the R community take up the task of wrapping calls to an API with R code to make accessing that data from R possible. For example, <a href="https://CRAN.R-project.org/package=gutenbergr">gutenbergr</a> provides access to Project Gutenberg, <a href="https://CRAN.R-project.org/package=rtweet">rtweet</a> to Twitter, and <a href="https://CRAN.R-project.org/package=Rfacebook">Rfacebook</a> to Facebook.</p>
+<p>Using R package interfaces, however, often requires some more knowledge about R objects and functions. Let’s take a look at how to access data from Project Gutenberg through the <code>gutenbergr</code> package. Along the way we will touch upon various functions and concepts that are key to working with the R data types vectors and data frames including filtering and writing tabular data to disk in plain-text format.</p>
+<div class="alert alert-note">
+  <p>The following code is available on GitHub <code>recipes-acquiring_data</code> and is built on the <code>recipes-project_template</code> I have discussed in detail <a href="https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/">here</a> and made accessible <a href="https://github.com/francojc/recipes-project_template.git">here</a>. I encourage you to follow along by downloading the <code>recipes-project_template</code> with <code>git</code> from the Terminal or create a new RStudio R Project and select the “Version Control” option.</p>
+
+</div>
+
+<p>To get started let’s install and load the package. The most simple method for downloading an R package in RStudio is to select the ‘Packages’ tab in the Files pane and click the ‘Install’ icon. To ensure that our code is reproducible, however, it is better to approach the installation of packages programmatically. If the package is not part of the R base library, we will not assume that the user will have the package on their system. The code to install and load the <code>gutenbergr</code> package is:</p>
+<pre class="r"><code>install.packages(&quot;gutenbergr&quot;) # install `gutenbergr` package
+library(gutenbergr) # load the `gutenbergr` package</code></pre>
+<p>This approach works just fine, but luck has it that there is an R package for installing and loading packages! The <a href="https://CRAN.R-project.org/package=pacman">pacman</a> package includes a set of functions for managing packages. A very useful one is <code>p_load()</code> which will look for a package on a system, load it if it is found, and install and then load it if it is not found. This helps potentially avoid using unnecessary bandwidth to install packages that may already exist on a user’s system. But, to use <code>pacman</code> we need to include the code to install and load it with the functions <code>install.packages()</code> and <code>library()</code>. I’ve included some code that will mimic the behavior of <code>p_load()</code> for installing <code>pacman</code> itself, but as you can see it is not elegant, luckily it’s only used once as we add it to the SETUP section of our master file, <code>_pipeline.R</code>.</p>
+<pre class="r"><code># Load `pacman`. If not installed, install then load.
+if (!require(&quot;pacman&quot;, character.only = TRUE)) {
+  install.packages(&quot;pacman&quot;)
+  library(&quot;pacman&quot;, character.only = TRUE)
+}</code></pre>
+<p>Now that we have <code>pacman</code> installed and loaded into our R session, let’s use the <code>p_load()</code> function to make sure to install/ load the two packages we will need for the upcoming tasks. If you are following along with the <code>recipes-project_template</code>, add this code within the SETUP section of the <code>acquire_data.R</code> file.</p>
+<pre class="r"><code># Script-specific options or packages
+pacman::p_load(tidyverse, gutenbergr)</code></pre>
+<div class="alert alert-note">
+  <p>Note that the arguments <code>tidyverse</code> and <code>gutenbergr</code> are comma-separated but not quoted.</p>
+
+</div>
+
+<p>Project Gutenberg provides access to thousands of texts in the public domain. The <code>gutenbergr</code> package contains a set of tables, or <strong>data frames</strong> in R speak, that index the meta-data for these texts broken down by text (<code>gutenberg_metadata</code>), author (<code>gutenberg_authors</code>), and subject (<code>gutenberg_subjects</code>). I’ll use the <code>glimpse()</code> function loaded in the <a href="https://CRAN.R-project.org/package=tidyverse">tidyverse</a> package<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> to summarize the structure of these data frames.</p>
+<pre class="r"><code>glimpse(gutenberg_metadata) # summarize text meta-data</code></pre>
+<pre><code>## Observations: 51,997
+## Variables: 8
+## $ gutenberg_id        &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, ...
+## $ title               &lt;chr&gt; NA, &quot;The Declaration of Independence of th...
+## $ author              &lt;chr&gt; NA, &quot;Jefferson, Thomas&quot;, &quot;United States&quot;, ...
+## $ gutenberg_author_id &lt;int&gt; NA, 1638, 1, 1666, 3, 1, 4, NA, 3, 3, NA, ...
+## $ language            &lt;chr&gt; &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, ...
+## $ gutenberg_bookshelf &lt;chr&gt; NA, &quot;United States Law/American Revolution...
+## $ rights              &lt;chr&gt; &quot;Public domain in the USA.&quot;, &quot;Public domai...
+## $ has_text            &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, ...</code></pre>
+<pre class="r"><code>glimpse(gutenberg_authors) # summarize authors meta-data</code></pre>
+<pre><code>## Observations: 16,236
+## Variables: 7
+## $ gutenberg_author_id &lt;int&gt; 1, 3, 4, 5, 7, 8, 9, 10, 12, 14, 16, 17, 1...
+## $ author              &lt;chr&gt; &quot;United States&quot;, &quot;Lincoln, Abraham&quot;, &quot;Henr...
+## $ alias               &lt;chr&gt; NA, NA, NA, NA, &quot;Dodgson, Charles Lutwidge...
+## $ birthdate           &lt;int&gt; NA, 1809, 1736, NA, 1832, NA, 1819, 1860, ...
+## $ deathdate           &lt;int&gt; NA, 1865, 1799, NA, 1898, NA, 1891, 1937, ...
+## $ wikipedia           &lt;chr&gt; NA, &quot;http://en.wikipedia.org/wiki/Abraham_...
+## $ aliases             &lt;chr&gt; NA, &quot;United States President (1861-1865)/L...</code></pre>
+<pre class="r"><code>glimpse(gutenberg_subjects) # summarize subjects meta-data</code></pre>
+<pre><code>## Observations: 140,173
+## Variables: 3
+## $ gutenberg_id &lt;int&gt; 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5...
+## $ subject_type &lt;chr&gt; &quot;lcc&quot;, &quot;lcsh&quot;, &quot;lcsh&quot;, &quot;lcc&quot;, &quot;lcc&quot;, &quot;lcsh&quot;, &quot;lcs...
+## $ subject      &lt;chr&gt; &quot;E201&quot;, &quot;United States. Declaration of Independen...</code></pre>
+<div class="alert alert-note">
+  <p>The <code>gutenberg_metadata</code>, <code>gutenberg_authors</code>, and <code>gutenberg_subjects</code> are periodically updated. To check to see when each data frame was last updated run:</p>
+<pre class="r"><code>attr(gutenberg_metadata, &quot;date_updated&quot;)</code></pre>
+<pre><code>## [1] &quot;2016-05-05&quot;</code></pre>
+<p></p>
+
+</div>
+
+<p>To download the text itself we use the <code>gutenberg_download()</code> function which takes one required argument, <code>gutenberg_id</code>. The <code>gutenberg_download()</code> function is what is known as ‘vectorized’, that is, it can take a single value or multiple values for the argument <code>gutenberg_id</code>. Vectorization refers to the process of applying a function to each of the elements stored in a <strong>vector</strong> –a primary object type in R. A vector is a grouping of values of one of various types including character (<code>chr</code>), integer (<code>int</code>), and logical (<code>lgl</code>) and a data frame is a grouping of vectors. The <code>gutenberg_download()</code> function takes an integer vector which can be manually added or selected from the <code>gutenberg_metadata</code> or <code>gutenberg_subjects</code> data frames using the <code>$</code> operator (e.g. <code>gutenberg_metadata$gutenberg_id</code>).</p>
+<p>Let’s first add them manually here as a toy example by generating a vector of integers from 1 to 5 assigned to the variable name <code>ids</code>.</p>
+<pre class="r"><code>ids &lt;- 1:5 # integer vector of values 1 to 5
+ids</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<p>To download the works from Project Gutenberg corresponding to the <code>gutenberg_id</code>s 1 to 5, we pass the <code>ids</code> object to the <code>gutenberg_download()</code> function.</p>
+<pre class="r"><code>works_sample &lt;- gutenberg_download(gutenberg_id = ids) # download works with `gutenberg_id` 1-5
+glimpse(works_sample) # summarize `works` dataset</code></pre>
+<pre><code>## Observations: 2,939
+## Variables: 2
+## $ gutenberg_id &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ text         &lt;chr&gt; &quot;December, 1971  [Etext #1]&quot;, &quot;&quot;, &quot;&quot;, &quot;The Projec...</code></pre>
+<p>Two attributes are returned: <code>gutenberg_id</code> and <code>text</code>. The <code>text</code> column contains values for each line of text (delimited by a carriage return) for each of the 5 works we downloaded. There are many more attributes available from the Project Gutenberg API that can be accessed by passing a character vector of the attribute names to the argument <code>meta_fields</code>. The column names of the <code>gutenberg_metadata</code> data frame contains the available attributes.</p>
+<pre class="r"><code>names(gutenberg_metadata) # print the column names of the `gutenberg_metadata` data frame</code></pre>
+<pre><code>## [1] &quot;gutenberg_id&quot;        &quot;title&quot;               &quot;author&quot;             
+## [4] &quot;gutenberg_author_id&quot; &quot;language&quot;            &quot;gutenberg_bookshelf&quot;
+## [7] &quot;rights&quot;              &quot;has_text&quot;</code></pre>
+<p>Let’s augment our previous download with the title and author of each of the works. To create a character vector we use the <code>c()</code> function, then, quote and delimit the individual elements of the vector with a comma.</p>
+<pre class="r"><code># download works with `gutenberg_id` 1-5 including `title` and `author` as attributes
+works_sample &lt;- gutenberg_download(gutenberg_id = ids, 
+                            meta_fields = c(&quot;title&quot;,
+                                            &quot;author&quot;))
+glimpse(works_sample) # summarize dataset</code></pre>
+<pre><code>## Observations: 2,939
+## Variables: 4
+## $ gutenberg_id &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ text         &lt;chr&gt; &quot;December, 1971  [Etext #1]&quot;, &quot;&quot;, &quot;&quot;, &quot;The Projec...
+## $ title        &lt;chr&gt; &quot;The Declaration of Independence of the United St...
+## $ author       &lt;chr&gt; &quot;Jefferson, Thomas&quot;, &quot;Jefferson, Thomas&quot;, &quot;Jeffer...</code></pre>
+<p>Now, in a more practical scenario we would like to select the values of <code>gutenberg_id</code> by some principled query such as works from a specific author, language, or subject. To do this we first query either the <code>gutenberg_metadata</code> data frame or the <code>gutenberg_subjects</code> data frame. Let’s say we want to download a random sample of 10 works from English Literature (Library of Congress Classification, “PR”). Using the <code>filter()</code> function (part of the <code>tidyverse</code> package set) we first extract all the Gutenberg ids from <code>gutenberg_subjects</code> where <code>subject_type == &quot;lcc&quot;</code> and <code>subject == &quot;PR&quot;</code> assigning the result to <code>ids</code>.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<pre class="r"><code>ids &lt;- 
+  filter(gutenberg_subjects, subject_type == &quot;lcc&quot;, subject == &quot;PR&quot;)
+glimpse(ids)</code></pre>
+<pre><code>## Observations: 7,100
+## Variables: 3
+## $ gutenberg_id &lt;int&gt; 11, 12, 13, 16, 20, 26, 27, 35, 36, 42, 43, 46, 5...
+## $ subject_type &lt;chr&gt; &quot;lcc&quot;, &quot;lcc&quot;, &quot;lcc&quot;, &quot;lcc&quot;, &quot;lcc&quot;, &quot;lcc&quot;, &quot;lcc&quot;, ...
+## $ subject      &lt;chr&gt; &quot;PR&quot;, &quot;PR&quot;, &quot;PR&quot;, &quot;PR&quot;, &quot;PR&quot;, &quot;PR&quot;, &quot;PR&quot;, &quot;PR&quot;, &quot;...</code></pre>
+<div class="alert alert-warning">
+  <p>The operators <code>=</code> and <code>==</code> are not equivalents. <code>==</code> is used for logical evaluation and <code>=</code> is an alternate notation for variable assignment (<code>&lt;-</code>).</p>
+
+</div>
+
+<p>The <code>gutenberg_subjects</code> data frame does not contain information as to whether a <code>gutenberg_id</code> is associated with a plain-text version. To limit our query to only those English Literature works with text, we filter the <code>gutenberg_metadata</code> data frame by the ids we have selected in <code>ids</code> and the attribute <code>has_text</code> in the <code>gutenberg_metadata</code> data frame.</p>
+<pre class="r"><code>ids_has_text &lt;- 
+  filter(gutenberg_metadata, gutenberg_id %in% ids$gutenberg_id, has_text == TRUE)
+glimpse(ids_has_text)</code></pre>
+<pre><code>## Observations: 6,724
+## Variables: 8
+## $ gutenberg_id        &lt;int&gt; 11, 12, 13, 16, 20, 26, 27, 35, 36, 42, 43...
+## $ title               &lt;chr&gt; &quot;Alice&#39;s Adventures in Wonderland&quot;, &quot;Throu...
+## $ author              &lt;chr&gt; &quot;Carroll, Lewis&quot;, &quot;Carroll, Lewis&quot;, &quot;Carro...
+## $ gutenberg_author_id &lt;int&gt; 7, 7, 7, 10, 17, 17, 23, 30, 30, 35, 35, 3...
+## $ language            &lt;chr&gt; &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, ...
+## $ gutenberg_bookshelf &lt;chr&gt; &quot;Children&#39;s Literature&quot;, &quot;Children&#39;s Liter...
+## $ rights              &lt;chr&gt; &quot;Public domain in the USA.&quot;, &quot;Public domai...
+## $ has_text            &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, ...</code></pre>
+<div class="alert alert-note">
+  <p>A couple R programming notes on the code phrase <code>gutenberg_id %in% ids$gutenberg_id</code>. First, the <code>$</code> symbol in <code>ids$gutenberg_id</code> is the programmatic way to target a particular column in an R data frame. In this example we select the <code>ids</code> data frame and the column <code>gutenberg_id</code>, which is a integer vector. The <code>gutenberg_id</code> variable that precedes the <code>%in%</code> operator does not need an explicit reference to a data frame because the primary argument of the <code>filter()</code> function is this data frame (<code>gutenberg_metadata</code>). Second, the <code>%in%</code> operator logically evaluates whether the vector elements in <code>gutenberg_metadata$gutenberg_ids</code> are also found in the vector <code>ids$gutenberg_id</code> returning <code>TRUE</code> and <code>FALSE</code> accordingly. This effectively filters those ids which are not in both vectors.</p>
+
+</div>
+
+<p>As we can see the number of works with text is fewer than the number of works listed, 7100 versus 6724. Now we can safely do our random selection of 10 works, with the function <code>sample_n()</code> and be confident that the ids we select will contain text when we take the next step by downloading the data.</p>
+<pre class="r"><code>set.seed(123) # make the sampling reproducible
+ids_sample &lt;- sample_n(ids_has_text, 10) # sample 10 works
+glimpse(ids_sample) # summarize the dataset</code></pre>
+<pre><code>## Observations: 10
+## Variables: 8
+## $ gutenberg_id        &lt;int&gt; 7688, 33533, 12160, 37761, 40406, 1050, 18...
+## $ title               &lt;chr&gt; &quot;Lucretia — Volume 04&quot;, &quot;The Convict&#39;s Far...
+## $ author              &lt;chr&gt; &quot;Lytton, Edward Bulwer Lytton, Baron&quot;, &quot;Pa...
+## $ gutenberg_author_id &lt;int&gt; 761, 35765, 1865, 1256, 25821, 467, 1062, ...
+## $ language            &lt;chr&gt; &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, ...
+## $ gutenberg_bookshelf &lt;chr&gt; NA, NA, NA, NA, NA, &quot;One Act Plays&quot;, NA, N...
+## $ rights              &lt;chr&gt; &quot;Public domain in the USA.&quot;, &quot;Public domai...
+## $ has_text            &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, ...</code></pre>
+<p>As before, we can now pass our ids (<code>ids_sample$gutenberg_id</code>) as the argument of <code>gutenberg_download()</code>.</p>
+<pre class="r"><code>works_pr &lt;- gutenberg_download(gutenberg_id = ids_sample$gutenberg_id, meta_fields = c(&quot;author&quot;, &quot;title&quot;))
+glimpse(works_pr) # summarize the dataset</code></pre>
+<pre><code>## Observations: 79,200
+## Variables: 4
+## $ gutenberg_id &lt;int&gt; 1050, 1050, 1050, 1050, 1050, 1050, 1050, 1050, 1...
+## $ text         &lt;chr&gt; &quot;THE DARK LADY OF THE SONNETS&quot;, &quot;&quot;, &quot;By Bernard S...
+## $ author       &lt;chr&gt; &quot;Shaw, Bernard&quot;, &quot;Shaw, Bernard&quot;, &quot;Shaw, Bernard&quot;...
+## $ title        &lt;chr&gt; &quot;The Dark Lady of the Sonnets&quot;, &quot;The Dark Lady of...</code></pre>
+<p>At this point we have data and could move on to processing this data in preparation for analysis. However, we are aiming for a reproducible workflow and this code does not conform to our principle of modularity: each subsequent step in our analysis will depend on running this code first. Furthermore, running this code as it is creates issues with bandwidth, as in our previous examples from direct downloads. To address modularity we will write the data to disk in <strong>plain-text format</strong>. In this way each subsequent step in our analysis can access the data locally. To address bandwidth concerns, we will devise a method for checking to see if the data is already downloaded and skip the download, if possible, to avoid accessing the Project Gutenberg server unnecessarily.</p>
+<p>To write our data frame to disk we will export it into a standard plain-text format for two-dimensional data: a CSV file (comma-separated value). The CSV structure for this data will look like this:</p>
+<pre><code>## gutenberg_id,text,author,title
+## 1050,THE DARK LADY OF THE SONNETS,&quot;Shaw, Bernard&quot;,The Dark Lady of the Sonnets
+## 1050,,&quot;Shaw, Bernard&quot;,The Dark Lady of the Sonnets
+## 1050,By Bernard Shaw,&quot;Shaw, Bernard&quot;,The Dark Lady of the Sonnets
+## 1050,,&quot;Shaw, Bernard&quot;,The Dark Lady of the Sonnets
+## 1050,,&quot;Shaw, Bernard&quot;,The Dark Lady of the Sonnets
+## 1050,,&quot;Shaw, Bernard&quot;,The Dark Lady of the Sonnets</code></pre>
+<p>The first line contains the names of the columns and subsequent lines the observations. Data points that contain commas themselves (e.g. “Shaw, Bernard”) are quoted to avoid misinterpreting these commas a deliminators in our data. To write this data to disk we will use the <code>write_csv()</code> function.</p>
+<pre class="r"><code>write_csv(works_pr, path = &quot;data/original/gutenberg_works_pr.csv&quot;)</code></pre>
+<p>To avoid downloading data that already resides on disk, let’s implement a similar strategy to the one used in the previous post for <a href="https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/">direct downloads</a>. I’ve incorporated the code for sampling and downloading data for a particular subject from Project Gutenberg with a control statement to check if the data file already exists into a function I named <code>get_gutenberg_subject()</code>. Take a look at this function below.</p>
+<pre class="r"><code>get_gutenberg_subject &lt;- function(subject, target_file, sample_size = 10) {
+  # Function: to download texts from Project Gutenberg with 
+  # a specific LCC subject and write the data to disk.
+  
+  # Check to see if the data already exists
+  if(!file.exists(target_file)) { # if data does not exist, download and write
+    target_dir &lt;- dirname(x) # generate target directory for the .csv file
+    dir.create(path = target_dir, recursive = TRUE, showWarnings = FALSE) # create target data directory
+    cat(&quot;Downloading data... \n&quot;) # print status message
+    # Select all records with a particular LCC subject
+    ids &lt;- 
+      filter(gutenberg_subjects, 
+             subject_type == &quot;lcc&quot;, subject == subject) # select subject
+    # Select only those records with plain text available
+    set.seed(123) # make the sampling reproducible
+    ids_sample &lt;- 
+      filter(gutenberg_metadata, 
+             gutenberg_id %in% ids$gutenberg_id, # select ids in both data frames 
+             has_text == TRUE) %&gt;% # select those ids that have text
+      sample_n(sample_size) # sample N works (default N = 10)
+    # Download sample with associated `author` and `title` metadata
+    works_sample &lt;- 
+      gutenberg_download(gutenberg_id = ids_sample$gutenberg_id, 
+                         meta_fields = c(&quot;author&quot;, &quot;title&quot;))
+    # Write the dataset to disk in .csv format
+    write_csv(works_sample, path = target_file)
+    cat(&quot;Data downloaded! \n&quot;) # print status message
+  } else { # if data exists, don&#39;t download it again
+    cat(&quot;Data already exists \n&quot;) # print status message
+  }
+}</code></pre>
+<p>Adding this function to our function script <code>functions/acquire_functions.R</code>, we can now use this function in our <code>code/acquire_data.R</code> script to download multiple subjects and store them in on disk in their own file.</p>
+<p>Let’s download American Literature now (LCC code “PQ”).</p>
+<pre class="r"><code># Download Project Gutenberg text for subject &#39;PQ&#39; (American Literature)
+# and then write this dataset to disk in .csv format
+get_gutenberg_subject(subject = &quot;PQ&quot;, target_file = &quot;data/original/gutenberg/works_pq.csv&quot;)</code></pre>
+<p>Applying this function to both the English and American Literature datasets, our data directory structure now looks like this:</p>
+<pre><code>data
+├── derived
+└── original
+    ├── gutenberg
+    │   ├── works_pq.csv
+    │   └── works_pr.csv
+    ├── sbc
+    │   ├── meta-data
+    │   └── transcriptions
+    └── scs
+        ├── README
+        ├── discourse
+        ├── disfluency
+        ├── tagged
+        ├── timed-transcript
+        └── transcript
+
+7 directories, 8 files</code></pre>
+<p>And as before in the previous post, it is a good idea to log the results of our work.</p>
+<pre class="r"><code># Log the directory structure of the Project Gutenberg data
+system(command = &quot;tree data/original/gutenberg &gt;&gt; log/data_original_gutenberg.log&quot;)</code></pre>
+<!-- then work with a more complex package interface. Introduce the `fulltext` package (or [crminer](https://github.com/ropensci/crminer) . Show how to search a specific publication, download the full text (in XML) format. Then extract the `doi`, `title`, and `abstract`, convert it to a data.frame and store it as a `.csv` file. 
+
+TODO: - work with `fulltext` and `crminer` exploration/ package tutorials
+      - determine the R skills needed to complete this activity
+
+Search for Plos ONE publications in Linguistics?
+-->
+</div>
+<div id="round-up" class="section level2">
+<h2>Round up</h2>
+<p>In this post I provided an overview to acquiring data from web service APIs through R packages. We took at closer look at the <code>gutenbergr</code> package which provides programmatic access to works available on Project Gutenberg. Working with package interfaces requires more knowledge of R including loading/ installing packages, working with vectors and data frames, and exporting data from an R session. We touched on these programming concepts and also outlined a method to create a reproducible workflow.</p>
+<p>Our last step in this mini series on acquiring data for language research with R, we will explore methods for acquire language data from the browsable web. I will discuss using the <code>rvest</code> package for downloading and isolating text elements from HTML pages and show how to organize and write the data to disk.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references">
+<div id="ref-R-gutenbergr">
+<p>Robinson, David. 2017. <em>Gutenbergr: Download and Process Public Domain Works from Project Gutenberg</em>. <a href="https://CRAN.R-project.org/package=gutenbergr" class="uri">https://CRAN.R-project.org/package=gutenbergr</a>.</p>
+</div>
+<div id="ref-R-tidyverse">
+<p>Wickham, Hadley. 2017. <em>Tidyverse: Easily Install and Load ’Tidyverse’ Packages</em>. <a href="https://CRAN.R-project.org/package=tidyverse" class="uri">https://CRAN.R-project.org/package=tidyverse</a>.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><code>tidyverse</code> is not a typical package. It is a set of packages: <code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>, <code>readr</code>, <code>purrr</code>, and <code>tibble</code>. These packages are all installed/ loaded with <code>tidyverse</code> and form the backbone for the type of work you will typically do in most analyses.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>See <a href="https://www.loc.gov/catdir/cpso/lcco/">Library of Congress Classification</a> documentation for a complete list of subject codes.<a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/2017/10/20/acquiring-data-for-language-research-direct-downloads/"><span
+      aria-hidden="true">&larr;</span> Acquiring data for language research (1/3): direct downloads</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "francojc" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Jerid Francom &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a> and hosted on <a href="https://github.com" target="_blank">Github</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/bash.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/css.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/markdown.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/shell.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/sql.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/tex.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/yaml.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+
