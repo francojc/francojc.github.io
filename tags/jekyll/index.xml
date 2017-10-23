@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on francojc ⟲</title>
-    <link>/tags/jekyll/</link>
+    <link>https://francojc.github.io/tags/jekyll/</link>
     <description>Recent content in Jekyll on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Publishing Rmarkdown to Wordpress or Jekyll</title>
-      <link>/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</link>
+      <link>https://francojc.github.io/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</link>
       <pubDate>Fri, 19 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</guid>
+      <guid>https://francojc.github.io/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</guid>
       <description>&lt;div id=&#34;publish-to-wordpress&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Publish to Wordpress&lt;/h2&gt;
 &lt;p&gt;When I first starting looking into matters, I was using a Wordpress site hosted on &lt;a href=&#34;http://wordpress.com&#34;&gt;Wordpress.com&lt;/a&gt;. I did some research on how to &lt;code&gt;knit&lt;/code&gt; and send an &lt;code&gt;.Rmd&lt;/code&gt; file to Wordpress with all images going along for the ride. I found &lt;a href=&#34;http://yihui.name/knitr/demo/wordpress/&#34;&gt;Yuhui Xie’s documentation on the official Knitr page&lt;/a&gt; which was very helpful and some &lt;a href=&#34;https://github.com/yihui/knitr-examples/blob/master/010-upload.Rmd&#34;&gt;documentation on uploading images&lt;/a&gt; to &lt;a href=&#34;http://imgur.com&#34;&gt;imgur.com&lt;/a&gt;.&lt;/p&gt;

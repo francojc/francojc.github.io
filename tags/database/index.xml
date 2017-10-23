@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database on francojc ⟲</title>
-    <link>/tags/database/</link>
+    <link>https://francojc.github.io/tags/database/</link>
     <description>Recent content in Database on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,12 +12,12 @@
     
     <item>
       <title>Acquiring data for language research (2/3): package interfaces</title>
-      <link>/2017/10/23/acquiring-data-for-language-research-package-interfaces/</link>
+      <link>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</link>
       <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/10/23/acquiring-data-for-language-research-package-interfaces/</guid>
-      <description>&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+      <guid>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</guid>
+      <description>&lt;link href=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;!-- TODO:
@@ -278,10 +278,10 @@ Search for Plos ONE publications in Linguistics?
     
     <item>
       <title>Create an SSH tunnel for a remote MySQL database</title>
-      <link>/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</link>
+      <link>https://francojc.github.io/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</link>
       <pubDate>Fri, 26 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</guid>
+      <guid>https://francojc.github.io/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</guid>
       <description>&lt;p&gt;his isn&amp;rsquo;t that hard to find out on the Internets, but I want to document a couple tips that I find useful once you create an SSH Tunnel to your remote MySQL database. After you create the tunnel, you will be able to interact with the database as if it were on your local machine, which simplifies running SQL scripts.&lt;/p&gt;
 
 &lt;ol&gt;

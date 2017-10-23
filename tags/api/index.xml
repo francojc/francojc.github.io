@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Api on francojc ⟲</title>
-    <link>/tags/api/</link>
+    <link>https://francojc.github.io/tags/api/</link>
     <description>Recent content in Api on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,12 +12,12 @@
     
     <item>
       <title>Acquiring data for language research (2/3): package interfaces</title>
-      <link>/2017/10/23/acquiring-data-for-language-research-package-interfaces/</link>
+      <link>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</link>
       <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/10/23/acquiring-data-for-language-research-package-interfaces/</guid>
-      <description>&lt;link href=&#34;/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
+      <guid>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</guid>
+      <description>&lt;link href=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;!-- TODO:
