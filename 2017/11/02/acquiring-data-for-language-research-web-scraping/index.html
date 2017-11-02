@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.29" />
+  <meta name="author" content="Jerid Francom">
+  <meta name="description" content="Associate Professor of Spanish and Linguistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/my-styles.css">
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-57189160-2', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/">
+
+  
+
+  <title>Acquiring data for language research (3/3): web scraping  | francojc ⟲</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">francojc ⟲</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="https://wfu.academia.edu/francom/">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/vitae.pdf">
+            
+            <span>Vitae</span>
+          </a>
+        </li>
+
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    
+    <span class="article-duration">19 min read</span>
+    
+    <h1 itemprop="name">Acquiring data for language research (3/3): web scraping </h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-11-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Thu, Nov 2, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/recipe">Recipe</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/rvest">rvest</a
+    >, 
+    
+    <a href="/tags/spanish">spanish</a
+    >, 
+    
+    <a href="/tags/web-scraping">web scraping</a
+    >, 
+    
+    <a href="/tags/data-frames">data frames</a
+    >, 
+    
+    <a href="/tags/vectors">vectors</a
+    >, 
+    
+    <a href="/tags/html">html</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Acquiring%20data%20for%20language%20research%20%283%2f3%29%3a%20web%20scraping%20&amp;url=https%3a%2f%2ffrancojc.github.io%2f2017%2f11%2f02%2facquiring-data-for-language-research-web-scraping%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Acquiring%20data%20for%20language%20research%20%283%2f3%29%3a%20web%20scraping%20&amp;body=https%3a%2f%2ffrancojc.github.io%2f2017%2f11%2f02%2facquiring-data-for-language-research-web-scraping%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<!-- TODO:
+-->
+<div id="web-scraping" class="section level2">
+<h2>Web scraping</h2>
+<p>There are many resources available through direct downloads from repositories and individual sites and R package interfaces to web resources with APIs, but these resources are relatively limited to the amount of public-facing textual data recorded on the web. In the case that you want to acquire data from webpages R can be used to access the web programmatically through a process known as web scraping. The complexity of web scrapes can vary but in general it requires more advanced knowledge of R as well as the structure of the language of the web: HTML (Hypertext Markup Language).</p>
+<div id="a-toy-example" class="section level3">
+<h3>A toy example</h3>
+<p>HTML is a cousin of XML and as such organizes web documents in a hierarchical format that is read by your browser as you navigate the web. Take for example the toy webpage I created for this demonstration in Figure <a href="#fig:example-webpage">1</a>.</p>
+<div class="figure"><span id="fig:example-webpage"></span>
+<img src="/post/2017-11-02-acquiring-data-for-language-research-3-3-web-scraping_files/figure-html/example-webpage-1.png" alt="Example web page." width="100%" />
+<p class="caption">
+Figure 1: Example web page.
+</p>
+</div>
+<p>The file accessed by my browser to render this webpage is <code>test.html</code> and in plain-text format looks like this:</p>
+<pre><code>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;intro&quot;&gt;
+      &lt;p&gt;Welcome!&lt;/p&gt;
+      &lt;p&gt;This is my first website. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Contact me:&lt;/td&gt;
+        &lt;td&gt;
+          &lt;a href=&quot;mailto:francojc@wfu.edu&quot;&gt;francojc@wfu.edu&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;div class=&quot;conc&quot;&gt;
+      &lt;p&gt;Good-bye!&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Each element in this file is delineated by an opening and closing tag, <code>&lt;head&gt;&lt;/head&gt;</code>. Tags are nested within other tags to create the structural hierarchy. Tags can take class and id labels to distinguish them from other tags and often contain other attributes that dictate how the tag is to behave when rendered visually by a browser. For example, there are two <code>&lt;div&gt;</code> tags in our toy example: one has the label <code>class = &quot;intro&quot;</code> and the other <code>class = &quot;conc&quot;</code>. <code>&lt;div&gt;</code> tags are often used to separate sections of a webpage that may require special visual formatting. The <code>&lt;a&gt;</code> tag, on the other hand, creates a web link. As part of this tag’s function, it requires the attribute <code>href=</code> and a web protocol –in this case it is a link to an email address <code>mailto:francojc@wfu.edu</code>. More often than not, however, the <code>href=</code> contains a URL (Uniform Resource Locator). A working example might look like this: <code>&lt;a href=&quot;https://francojc.github.io/&quot;&gt;My homepage&lt;/a&gt;</code>.</p>
+<p>The aim of a web scrape is to download the HTML file, parse the document structure, and extract the elements containing the relevant information we wish to capture. Let’s attempt to extract some information from our toy example. To do this we will need the <a href="https://CRAN.R-project.org/package=rvest">rvest</a> package. First, install/load the package, then, read and parse the HTML from the character vector named <code>web_file</code> assigning the result to <code>html</code>.</p>
+<pre class="r"><code>pacman::p_load(rvest) # install/ load `rvest`
+html &lt;- read_html(web_file) # read the raw html
+html</code></pre>
+<pre><code>## {xml_document}
+## &lt;html&gt;
+## [1] &lt;head&gt;\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset= ...
+## [2] &lt;body&gt;\n    &lt;div class=&quot;intro&quot;&gt;\n      &lt;p&gt;Welcome!&lt;/p&gt;\n      &lt;p&gt;Thi ...</code></pre>
+<p><code>read_html()</code> parses the raw HTML into an object of class <code>xml_document</code>. The summary output above shows that tags the HTML structure have been parsed into ‘nodes’. The tag nodes can be accessed by using the <code>html_nodes()</code> function by specifying the tag to isolate.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;div&quot;)</code></pre>
+<pre><code>## {xml_nodeset (2)}
+## [1] &lt;div class=&quot;intro&quot;&gt;\n      &lt;p&gt;Welcome!&lt;/p&gt;\n      &lt;p&gt;This is my firs ...
+## [2] &lt;div class=&quot;conc&quot;&gt;\n      &lt;p&gt;Good-bye!&lt;/p&gt;\n    &lt;/div&gt;</code></pre>
+<div class="alert alert-note">
+  <p>The <code>%&gt;%</code> operator is used to ‘pipe’ the output of one R operation to the input of the next operation. Piping is equivalent to embedding functions but tends to lead to more legible code.</p>
+<pre class="r"><code>sum(1:5) # embedding example</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>1:5 %&gt;% sum() # piping example</code></pre>
+<pre><code>## [1] 15</code></pre>
+<p>By default the subsequent function assumes that the output will be used as the first argument. If this is not the case, the <code>.</code> operator can be used to match the output to the correct argument.</p>
+<pre class="r"><code>1:5 %&gt;% paste(&quot;Number&quot;, .) # directing output with <code>.</code></code></pre>
+<pre><code>## [1] &quot;Number 1&quot; &quot;Number 2&quot; &quot;Number 3&quot; &quot;Number 4&quot; &quot;Number 5&quot;</code></pre>
+<p></p>
+
+</div>
+
+<p>Notice that <code>html_nodes(&quot;div&quot;)</code> has returned both <code>div</code> tags. To isolate one of tags by its class, we add the class name to the tag separating it with a <code>.</code>.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;div.intro&quot;)</code></pre>
+<pre><code>## {xml_nodeset (1)}
+## [1] &lt;div class=&quot;intro&quot;&gt;\n      &lt;p&gt;Welcome!&lt;/p&gt;\n      &lt;p&gt;This is my firs ...</code></pre>
+<p>Great. Now say we want to drill down and isolate the subordinate <code>&lt;p&gt;</code> nodes. We can add <code>p</code> to our node filter.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;div.intro p&quot;)</code></pre>
+<pre><code>## {xml_nodeset (2)}
+## [1] &lt;p&gt;Welcome!&lt;/p&gt;
+## [2] &lt;p&gt;This is my first website. &lt;/p&gt;</code></pre>
+<p>To extract the text contained within a node we use the <code>html_text()</code> function.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;div.intro p&quot;) %&gt;% 
+  html_text()</code></pre>
+<pre><code>## [1] &quot;Welcome!&quot;                   &quot;This is my first website. &quot;</code></pre>
+<p>The result is a character vector with two elements corresponding to the text contained in each <code>&lt;p&gt;</code> tag. If you were paying close attention you might have noticed that the second element in our vector includes extra whitespace after the period. To trim leading and trailing whitespace from text we can add the <code>trim = TRUE</code> argument to <code>html_text()</code>.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;div.intro p&quot;) %&gt;% 
+  html_text(trim = TRUE)</code></pre>
+<pre><code>## [1] &quot;Welcome!&quot;                  &quot;This is my first website.&quot;</code></pre>
+<p>From here we would then work to organize the text into a format we want to store it in and write the results to disk. Let’s leave writing data to disk for later in the post. For now keep our focus on working with <code>rvest</code> to acquire data from html documents working with a more practical example.</p>
+</div>
+<div id="a-practical-example" class="section level3">
+<h3>A practical example</h3>
+<p>With some basic understanding of HTML and how to use the <code>rvest</code> package, let’s turn to a realistic example. Say we want to acquire text from the Spanish news site <a href="https://elpais.com/">elpais.com</a>. The first step in any web scrape is to investigate the site and page(s) we want to scrape. Minimally this includes identifying the URL we want to target and exploring the structure of the HTML document. Take the following webpage I have identified, seen in Figure <a href="#fig:example-page-elpais">2</a>.</p>
+<div class="figure"><span id="fig:example-page-elpais"></span>
+<img src="/post/2017-11-02-acquiring-data-for-language-research-3-3-web-scraping_files/figure-html/example-page-elpais-1.png" alt="Content page from the Spanish new site El País." width="100%" />
+<p class="caption">
+Figure 2: Content page from the Spanish new site El País.
+</p>
+</div>
+<p>As in our toy example, first we want to feed the HTML document to the <code>read_html()</code> function to parse the tags into nodes. In this case we will assign the web address to the variable <code>url</code>. <code>read_html()</code> will automatically connect to the web and download the raw html.</p>
+<pre class="r"><code>url &lt;- &quot;https://elpais.com/elpais/2017/10/17/opinion/1508258340_992960.html&quot;
+html &lt;- read_html(url)
+html</code></pre>
+<pre><code>## {xml_document}
+## &lt;html lang=&quot;es&quot;&gt;
+## [1] &lt;head&gt;\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset= ...
+## [2] &lt;body id=&quot;salida_articulo&quot; class=&quot;salida_articulo&quot;&gt;\n&lt;div id=&quot;pxlhdd ...</code></pre>
+<p>At this point we have captured and parsed the raw HTML assigning it to the object named <code>html</code>. The next step is to identify the node or nodes that contain the information we want to extract from the page. To do this it is helpful to use a browser to inspect specific elements of the webpage. Your browser will be equipped with a command that you can enable by hovering your mouse over the element of the page you want to target and using a right click to select “Inspect Element”. This will split your browser window horizontally showing you the raw HTML underlying the webpage.</p>
+<div class="figure"><span id="fig:inspect-element"></span>
+<img src="/post/2017-11-02-acquiring-data-for-language-research-3-3-web-scraping_files/figure-html/inspect-element-1.png" alt="Using the &quot;Inspect Element&quot; command to explore raw html." width="100%" />
+<p class="caption">
+Figure 3: Using the “Inspect Element” command to explore raw html.
+</p>
+</div>
+<p>From Figure <a href="#fig:inspect-element">3</a> we see that the node we want to target is <code>h1</code>. Now this tag is common and we don’t want to extract every <code>h1</code> so we use the class <code>articulo-titulo</code> to specify we only want the title of the article. Using the convention described in our toy example, we can isolate the title of the page.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;h1.articulo-titulo&quot;)</code></pre>
+<pre><code>## {xml_nodeset (1)}
+## [1] &lt;h1 class=&quot;articulo-titulo &quot; id=&quot;articulo-titulo&quot; itemprop=&quot;headline ...</code></pre>
+<p>We can then extract the text with <code>html_text()</code>.</p>
+<pre class="r"><code>title &lt;- 
+  html %&gt;% 
+  html_nodes(&quot;h1.articulo-titulo&quot;) %&gt;% 
+  html_text(trim = TRUE)
+title</code></pre>
+<pre><code>## [1] &quot;Crímenes contra el periodismo en el seno de la UE&quot;</code></pre>
+<p>Let’s extract the author’s name and the article text in the same way.</p>
+<pre class="r"><code># Author
+author &lt;- 
+  html %&gt;% 
+  html_node(&quot;span.autor-nombre&quot;) %&gt;% 
+  html_text(trim = TRUE)
+# Article text
+text &lt;- 
+  html %&gt;% 
+  html_nodes(&quot;div.articulo-cuerpo p&quot;) %&gt;% 
+  html_text(trim = TRUE)</code></pre>
+<p>Another piece of information we might want to include in our web scrape is the date the article was published. Again, we use the “Inspect Element” tool in your browser to locate the tag we intend to isolate. This time, however, the information that returned by <code>html_text()</code> is less than ideal –the date is inter-spliced with text formatting.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;div.articulo-datos time&quot;) %&gt;% 
+  html_text(trim = TRUE)</code></pre>
+<pre><code>## [1] &quot;18 OCT 2017 - 14:26\t\t\t\t\tCEST&quot;</code></pre>
+<p>Looking at the <code>time</code> node provides another angle: a clean date is contained as the <code>datetime</code> attribute of the <code>time</code> tag.</p>
+<pre class="r"><code>html %&gt;% 
+  html_nodes(&quot;div.articulo-datos time&quot;)</code></pre>
+<pre><code>## {xml_nodeset (1)}
+## [1] &lt;time datetime=&quot;2017-10-18T14:26:30+02:00&quot; class=&quot;articulo-actualiza ...</code></pre>
+<p>To extract a tag’s attribute we use the <code>html_attr()</code> function.</p>
+<pre class="r"><code># Date
+date &lt;- 
+  html %&gt;% 
+  html_nodes(&quot;div.articulo-datos time&quot;) %&gt;% 
+  html_attr(&quot;datetime&quot;)
+date</code></pre>
+<pre><code>## [1] &quot;2017-10-18T14:26:30+02:00&quot;</code></pre>
+<p>At this point, we have isolated and extracted the title, author, date, and text from the webpage. Each of these elements are stored in character vectors in our R session. To complete our task we need to write this data to disk as plain text. With an eye towards a tidy dataset, an ideal format to store the data is in a CSV file where each column corresponds to one of the elements from our scrape and each row an observation. The observations will contain the text from each <code>&lt;p&gt;</code> tag. A CSV file is a tabular format and so before we can write the data to disk let’s coerce the data that we have into tabular format. We will use the <code>tibble()</code> function here to streamline our data frame creation.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Feeding each of the vectors <code>title</code>, <code>author</code>, <code>date</code>, and <code>text</code> as arguments to <code>tibble()</code> creates the tabular format we are looking for.</p>
+<pre class="r"><code>tibble(title, author, date, text)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["title"],"name":[1],"type":["chr"],"align":["left"]},{"label":["author"],"name":[2],"type":["chr"],"align":["left"]},{"label":["date"],"name":[3],"type":["chr"],"align":["left"]},{"label":["text"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"Crímenes contra el periodismo en el seno de la UE","2":"Rosario G. Gómez","3":"2017-10-18T14:26:30+02:00","4":"México, Irak y Siria encabezan de manera destacada la lista de los países más peligrosos para los periodistas; allí donde los profesionales de la información están especialmente expuestos a la violencia, figuran en la diana de los conflictos bélicos o su trabajo se ve cercenado por Gobiernos totalitarios. El barómetro de las violaciones de la libertad de prensa de Reporteros sin Fronteras contabiliza en lo que va de año 11 crímenes en México, 8 en Siria y 7 en Irak. Yemen, Afganistán, Honduras, Brasil o Somalia aparecen también entre los Estados en los que los informadores son vilmente asesinados. Cuando parecía que la Unión Europea estaba libre de este tipo de ataques atroces a la libertad de prensa, dos países —Dinamarca y Malta— han pasado a engrosar la lista de la vergüenza."},{"1":"Crímenes contra el periodismo en el seno de la UE","2":"Rosario G. Gómez","3":"2017-10-18T14:26:30+02:00","4":"Una bomba lapa situada en su coche acabó esta semana brutalmente con la vida de la periodista maltesa Daphne Caruana Galizia, de 53 años. Estaba involucrada en una investigación sobre los papeles de Malta, una derivación de los llamados papeles de Panamá,que revelaron en mayo cómo la pequeña isla mediterránea se había convertido en un paraíso fiscal dentro de la propia UE. Sus indagaciones salpicaron a la esposa del primer ministro y a varios miembros del Ejecutivo. Abocaron a un adelanto electoral y, pese a las revelaciones, el laborista Joseph Muscat volvió a ganar en junio."},{"1":"Crímenes contra el periodismo en el seno de la UE","2":"Rosario G. Gómez","3":"2017-10-18T14:26:30+02:00","4":"Caruana Galizia, la víctima mortal número 41 computada por RSF en lo que va de año, estaba en el punto de mira. Pocos días antes de ser asesinada presentó una denuncia en la que aseguraba haber recibido amenazas de muerte. Ahora su hijo culpa al Gobierno de Muscat de permitir el crimen, la corrupción y una cultura de impunidad. “Mi madre ha sido asesinada porque se interponía entre el Estado de derecho y quienes quieren violarlo, como muchos otros fuertes periodistas”, ha denunciado Matthew Caruana Galizia."},{"1":"Crímenes contra el periodismo en el seno de la UE","2":"Rosario G. Gómez","3":"2017-10-18T14:26:30+02:00","4":"En el otro extremo de la UE, en la costa sur de Copenhague, la policía encontró a finales de agosto parte del cuerpo de la periodista sueca Kim Wall, de 30 años, que según todos los indicios fue asesinada cuando se encontraba a bordo de un submarino para realizar un reportaje. Su cadáver, mutilado salvajemente, fue hallado en el mar Báltico. Peter Madsen, excéntrico inventor y propietario del sumergible Nautilus, ha sido acusado de homicidio."},{"1":"Crímenes contra el periodismo en el seno de la UE","2":"Rosario G. Gómez","3":"2017-10-18T14:26:30+02:00","4":"Crímenes destinados a acallar la voz de la prensa son moneda común en los países donde el narcotráfico, los paramilitares o los Estados corruptos se han hecho fuertes. Pero que estos ataques se produzcan en el seno de la Unión Europea son una noticia inquietante. La Comisión Europea, con su presidente, Jean-Claude Juncker en primera fila, se ha apresurado a condenar el asesinato de la reportera maltesa con una contundente declaración de intenciones: “El derecho de un periodista a investigar, hacer preguntas incómodas e informar de manera efectiva está en el corazón de nuestros valores y debe garantizarse siempre”."},{"1":"Crímenes contra el periodismo en el seno de la UE","2":"Rosario G. Gómez","3":"2017-10-18T14:26:30+02:00","4":"Puedes seguir EL PAÍS Opinión en Facebook, Twitter o suscribirte aquí a la Newsletter."}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Notice that there are six rows in this data frame, one corresponding to each paragraph in <code>text</code>. R has a bias towards working with vectors of the same length. As such each of the other vectors (<code>title</code>, <code>author</code>, and <code>date</code>) are replicated, or recycled, until they are the same length as the longest vector <code>text</code>, which a length of six.</p>
+<p>For good documentation let’s add our object <code>url</code> to the data frame, which contains the actual web link to this page, and assign the result to <code>webpage_data</code>.</p>
+<pre class="r"><code>webpage_data &lt;- tibble(title, author, date, text, url)</code></pre>
+<p>The final step is to write this data to disk. To do this we will use the <code>write_csv()</code> function.</p>
+<pre class="r"><code>write_csv(x = webpage_data, path = &quot;data/original/elpais_webpage.csv&quot;)</code></pre>
+</div>
+<div id="putting-it-all-together" class="section level3">
+<h3>Putting it all together</h3>
+<p>At this point you may be think, ‘Great, I can download data from a single page, but what about downloading multiple pages?’ Good question. That’s really where the strength of a programming approach takes hold. Extracting information from multiple pages is not fundamentally different than working with a single page. However, it does require more sophisticated code. I will not document the code in this post but you are encouraged to download the GitHub repository which contains the working code and peruse the <code>functions/aquire_functions.R</code> script to see the details and replicate the processing covered here. Yet I will give you a gist of the steps taken to scrape multiple pages from the El País website.</p>
+<p>As I mentioned earlier in this section, the first step in any web scrape is to investigate the structure of the site and page(s) we want to scrape. The El País site is organized such that each article is ‘tagged’ with some meta-category. After doing some browsing on their site, I discovered there is a searchable archive page that lists all the ‘tags’ used on the site. By selecting a tag, a paginated interface listing all of the articles associated with said tag is made available.</p>
+<div class="figure"><span id="fig:read-archives-elpais"></span>
+<img src="/post/2017-11-02-acquiring-data-for-language-research-3-3-web-scraping_files/figure-html/read-archives-elpais-1.png" alt="El País archives page for the `politica` tag." width="100%" />
+<p class="caption">
+Figure 4: El País archives page for the <code>politica</code> tag.
+</p>
+</div>
+<p>In a nutshell, the approach then is to leverage these archives to harvest links to article pages with a specific tag, download the content of these links and then organize and write the data to disk in CSV format. In more detail I’ve provided concrete steps with the custom functions I wrote to accomplish each:</p>
+<ol style="list-style-type: decimal">
+<li><em>Get the total number of archive pages available.</em></li>
+</ol>
+<p>Includes an optional argument <code>sample_size</code> to specify the number of archive pages to harvest links from. The default is <code>1</code>.</p>
+<pre class="r"><code>get_archive_pages &lt;- function(tag_name, sample_size = 1) {
+  # Function: Scrape tag main page and return selected number of archive pages
+  url &lt;- paste0(&quot;https://elpais.com/tag/&quot;, tag_name)
+  html &lt;- read_html(url) # load html from selected url
+  pages_available &lt;- 
+    html %&gt;% # pass html
+    html_node(&quot;li.paginacion-siguiente a&quot;) %&gt;% # isolate &#39;next page&#39; link
+    html_attr(&quot;href&quot;) %&gt;% # extract &#39;next page&#39; link
+    str_extract(&quot;\\d+$&quot;) %&gt;% # extract the numeric value (num pages of links) in link
+    as.numeric() + 1 # covert to a numeric vector and add 1 (to include first page)
+  cat(pages_available, &quot;pages available for the&quot;, tag_name, &quot;tag.\n&quot;)
+  archive_pages &lt;- paste0(url, &quot;/a/&quot;, (pages_available - (sample_size - 1)):pages_available) # compile urls
+  cat(sample_size, &quot;pages selected.\n&quot;)
+  return(archive_pages)
+}</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><em>Harvest the links to the content pages.</em></li>
+</ol>
+<p>The <code>str_replace()</code> function from the <a href="https://CRAN.R-project.org/package=stringr">stringr</a> library is used here to create valid URLs by replacing the <code>//</code> with <code>https://</code> in the links harvested directly from the webpage.</p>
+<pre class="r"><code>get_content_links &lt;- function(url) {
+  # Function: Scrape the content links from a tag archive page
+  html &lt;- read_html(url) # load html from selected url
+  urls &lt;- 
+    html %&gt;% # pass html
+    html_nodes(&quot;h2.articulo-titulo a&quot;) %&gt;% # isolate links
+    html_attr(&quot;href&quot;) %&gt;% # extract urls
+    str_replace(pattern = &quot;//&quot;, replacement = &quot;https://&quot;) # create valid urls
+  cat(length(urls),&quot;content links scraped from tag archives.\n&quot;)
+  return(urls)
+}</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><em>Get the content for a given link and organize it into tabular format.</em></li>
+</ol>
+<p>A conditional statement is included to identify webpages with no text content. All pages have a boilerplate paragraph, so pages with a <code>text</code> vector of length greater than one will be content pages.</p>
+<pre class="r"><code>get_content &lt;- function(url) {
+  # Function: Scrape the title, author, date, and text from a provided
+  # content link. Return as a tibble/data.frame
+  cat(&quot;Scraping:&quot;, url, &quot;\n&quot;)
+  html &lt;- read_html(url) # load html from selected url
+  
+  # Title
+  title &lt;- 
+    html %&gt;% # pass html
+    html_node(&quot;h1.articulo-titulo&quot;) %&gt;% # isolate title
+    html_text(trim = TRUE) # extract title and trim whitespace
+  
+  # Author
+  author &lt;- 
+    html %&gt;% # pass html
+    html_node(&quot;span.autor-nombre&quot;) %&gt;% # isolate author
+    html_text(trim = TRUE) # extract author and trim whitespace
+  
+  # Date
+  date &lt;- 
+    html %&gt;% # pass html
+    html_nodes(&quot;div.articulo-datos time&quot;) %&gt;% # isolate date
+    html_attr(&quot;datetime&quot;) # extract date
+  
+  # Text
+  text &lt;- 
+    html %&gt;% # pass html
+    html_nodes(&quot;div.articulo-cuerpo p&quot;) %&gt;% # isolate text by paragraph
+    html_text(trim = TRUE) # extract paragraphs and trim whitespace
+  
+  # Check to see if the article is text based
+  # - only one paragraph suggests a non-text article (cartoon/ video/ album)
+  if (length(text) &gt; 1) { 
+    # Create tibble/data.frame
+    return(tibble(url, title, author, date, text, paragraph = (1:length(text))))
+  } else {
+    message(&quot;Non-text based article. Link skipped.&quot;)
+    return(NULL)
+  }
+}</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><em>Write the tabular data to disk.</em></li>
+</ol>
+<p>I’ve added code we’ve used in the previous data acquisition methods in this post to create a target directory before writing the file.</p>
+<pre class="r"><code>write_content &lt;- function(content, target_file) {
+  # Function: Write the tibble content to disk. Create the directory if
+  # it does not already exist.
+  target_dir &lt;- dirname(target_file) # identify target file directory structure
+  dir.create(path = target_dir, recursive = TRUE, showWarnings = FALSE) # create directory
+  write_csv(content, target_file) # write csv file to target location
+  cat(&quot;Content written to disk!\n&quot;)
+}</code></pre>
+<p>These function each perform a task in our workflow and can be joined together to do our web scrape. To make this workflow maximally efficient I’ve wrapped them, and a conditional statement to avoid re-downloading a resource, in a function named <code>download_elpais_tag()</code>. I’ve also added the <code>map()</code> function to our workflow at a couple key points. <code>map()</code> takes an object an iterates over each element in that object. Since the <code>get_content_links()</code> and the <code>get_content()</code> functions work on an object with a single element, we need the functions to be iteratively applied to objects with multiple elements. After <code>map()</code> does its work applying the function to the elements of the object the results need to be joined. For the results from <code>map(get_content_links)</code> will be a vector, so <code>combine()</code> is the appropriate function. For <code>map(get_content)</code> a tibble data frame will be returned so we use <code>bind_rows()</code> to join the data.</p>
+<pre class="r"><code>download_elpais_tag &lt;- function(tag_name, sample_size, target_file, force = FALSE) {
+  # Function: Download articles from elpais.com based on tag name. Select
+  # number of archive pages to consult, then scrape and write the content 
+  # to disk. If the target file exists, do not download again.
+  if(!file.exists(target_file) | force == TRUE) {
+    cat(&quot;Downloading data.\n&quot;)
+    get_archive_pages(tag_name, sample_size) %&gt;% # select tag archive pages
+      map(get_content_links) %&gt;% # get content links from pages sampled
+      combine() %&gt;% # combine the results as a single vector
+      map(get_content) %&gt;% # get the content for each content link
+      bind_rows() %&gt;% # bind the results as a single tibble
+      write_content(target_file) # write content to disk
+  } else {
+    cat(&quot;Data already downloaded!\n&quot;)
+  }
+}</code></pre>
+<p>Adding these functions, including the <code>download_elpais_tag()</code> function to the <code>functions/acquire_functions.R</code> script in our project management template and then sourcing this script from the <code>acquire_data.R</code> script in the <code>code/</code> directory will allow us to use the function like so:</p>
+<pre class="r"><code># Scrape archives of the Spanish news site elpais.com by tag
+# To search for valid tags: https://elpais.com/tag/listado/
+download_elpais_tag(tag_name = &quot;politica&quot;, 
+                    target_file = &quot;data/original/elpais/political_articles.csv&quot;)</code></pre>
+<pre><code>90554 pages available for the politica tag.
+1 pages selected.
+22 content links scraped from tag archives.
+Scraping: https://elpais.com/deportes/2017/10/20/actualidad/1508510590_014924.html 
+Scraping: https://politica.elpais.com/politica/2017/10/20/actualidad/1508506425_813840.html 
+Scraping: https://elpais.com/internacional/2017/10/20/actualidad/1508503663_430515.html 
+Scraping: https://politica.elpais.com/politica/2017/10/20/actualidad/1508507460_569874.html 
+Scraping: https://elpais.com/cultura/2017/10/20/actualidad/1508488913_681643.html 
+Scraping: https://elpais.com/internacional/2017/10/20/actualidad/1508506096_337991.html 
+Scraping: https://politica.elpais.com/politica/2017/10/20/actualidad/1508503572_812343.html 
+Scraping: https://politica.elpais.com/politica/2017/10/20/actualidad/1508488656_838766.html 
+Scraping: https://politica.elpais.com/politica/2017/10/20/actualidad/1508489106_542799.html 
+Scraping: https://elpais.com/ccaa/2017/10/19/valencia/1508445805_457854.html 
+Scraping: https://elpais.com/elpais/2017/10/20/album/1508487891_134872.html 
+Non-text based article. Link skipped.
+Scraping: https://elpais.com/ccaa/2017/10/20/catalunya/1508492661_274873.html 
+Scraping: https://elpais.com/elpais/2017/10/19/ciencia/1508412461_971020.html 
+Scraping: https://elpais.com/ccaa/2017/10/20/andalucia/1508499080_565687.html 
+Scraping: https://elpais.com/ccaa/2017/10/20/catalunya/1508495565_034721.html 
+Scraping: https://elpais.com/cultura/2017/10/19/actualidad/1508403967_099974.html 
+Scraping: https://politica.elpais.com/politica/2017/10/20/actualidad/1508496322_284364.html 
+Scraping: https://elpais.com/economia/2017/10/19/actualidad/1508431364_731058.html 
+Scraping: https://elpais.com/elpais/2017/10/20/album/1508491490_512616.html 
+Non-text based article. Link skipped.
+Scraping: https://politica.elpais.com/politica/2017/10/20/actualidad/1508481079_647952.html 
+Scraping: https://elpais.com/ccaa/2017/10/20/valencia/1508493387_961965.html 
+Scraping: https://elpais.com/economia/2017/10/20/actualidad/1508492104_302263.html 
+Content written to disk!</code></pre>
+<p>I applied the function to the tag <code>gastronomia</code> (gastronomy) in the same fashion. The results are stored in the <code>data/original/</code> directory. Our complete data structure for this post looks like this:</p>
+<pre><code>data
+├── derived
+└── original
+    ├── elpais
+    │   ├── gastronomy_articles.csv
+    │   └── political_articles.csv
+    ├── gutenberg
+    │   ├── works_pq.csv
+    │   └── works_pr.csv
+    ├── sbc
+    │   ├── meta-data
+    │   └── transcriptions
+    └── scs
+        ├── README
+        ├── discourse
+        ├── disfluency
+        ├── tagged
+        ├── timed-transcript
+        └── transcript
+
+8 directories, 10 files</code></pre>
+<!-- then web scrape the State of the Union Addresses acquiring both raw text and meta-data.
+
+Consider how to store the data: `.csv` or `.xml`?
+
+-->
+</div>
+</div>
+<div id="getting-text-from-other-formats" class="section level2">
+<h2>Getting text from other formats</h2>
+<!-- TODO: include discussion on how to download Word and PDF files from the web. -->
+<p>As a final note it is worth pointing out that machine-readable data for analysis is often trapped in other formats such as Word or PDF files. R provides packages for working with these formats and can extract the text programmatically. See <a href="https://github.com/ropensci/antiword#readme">antiword</a> for Word files and <a href="https://ropensci.org/blog/2016/03/01/pdftools-and-jeroen">pdftools</a> for PDF files. In the case that a PDF is an image that needs OCR (Optical Character Recognition), you can experiment with the <a href="https://ropensci.org/blog/blog/2016/11/16/tesseract">tessseract</a> package. It is important to be aware, however, that recovering plain text from these formats can often result in conversion artifacts; especially using OCR. Not to worry, we can still work with the data it just might mean more pre-processing before we get to doing our analysis.</p>
+<!-- show how to extract text from Word documents `antiword`, from PDF files `pdftools`, and OCR `tesseract`. -->
+</div>
+<div id="round-up" class="section level2">
+<h2>Round up</h2>
+<p>In this post we covered scraping language data from the web. The <code>rvest</code> package provides a host of functions for downloading and parsing HTML. We first looked at a toy example to get a basic understanding of how HTML works and then moved to applying this knowledge to a practical example. To maintain a reproducible workflow, the code developed in this example was grouped into task-oriented functions which were in turn joined and wrapped into a function that provided convenient access to our workflow and avoided unnecessary downloads (in the case the data already exists on disk).</p>
+<p>Here we have built on previously introduced R coding concepts and demonstrated various others. Web scraping often requires more knowledge of and familiarity with R as well as other web technologies. Rest assured, however, practice will increase confidence in your abilities. I encourage you to practice on your own with other websites. You will encounter problems. Consult the R documentation in RStudio or online and lean on the R community on the web at sites such as <a href="https://stackoverflow.com">StackOverflow</a>.</p>
+<p>At this point you have both a bird’s eye view of the data available on the web and strategies on how to access a great majority of it. It is now time to turn to the next step in our data analysis project: data curation. In the next posts I will cover how to wrangle your raw data into a tidy dataset. This will include working with and incorporating meta-data as well as augmenting a dataset with linguistic annotations.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references">
+<div id="ref-R-rvest">
+<p>Wickham, Hadley. 2016. <em>Rvest: Easily Harvest (Scrape) Web Pages</em>. <a href="https://CRAN.R-project.org/package=rvest" class="uri">https://CRAN.R-project.org/package=rvest</a>.</p>
+</div>
+<div id="ref-R-tidyverse">
+<p>———. 2017. <em>Tidyverse: Easily Install and Load ’Tidyverse’ Packages</em>. <a href="https://CRAN.R-project.org/package=tidyverse" class="uri">https://CRAN.R-project.org/package=tidyverse</a>.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><code>tibble</code> objects are <code>data.frame</code> objects with some added extra bells and whistles that we won’t get into here.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/"><span
+      aria-hidden="true">&larr;</span> Acquiring data for language research (2/3): package interfaces</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "francojc" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Jerid Francom &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a> and hosted on <a href="https://github.com" target="_blank">Github</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/bash.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/css.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/markdown.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/shell.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/sql.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/tex.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/yaml.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

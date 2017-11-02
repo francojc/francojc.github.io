@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</loc>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
     </url>
@@ -326,8 +335,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/categories/corpora/</loc>
-      <lastmod>2014-05-24T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/corpora/</loc>
+      <lastmod>2017-10-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -336,8 +345,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/tags/corpora/</loc>
-      <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/categories/corpora/</loc>
+      <lastmod>2014-05-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -387,7 +396,7 @@
     <url>
     
       <loc>https://francojc.github.io/tags/data-frames/</loc>
-      <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -416,7 +425,7 @@
     
     <url>
     
-      <loc>https://francojc.github.io/categories/fish/</loc>
+      <loc>https://francojc.github.io/tags/fish/</loc>
       <lastmod>2015-02-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -426,7 +435,7 @@
     
     <url>
     
-      <loc>https://francojc.github.io/tags/fish/</loc>
+      <loc>https://francojc.github.io/categories/fish/</loc>
       <lastmod>2015-02-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -488,6 +497,16 @@
     
       <loc>https://francojc.github.io/tags/homebrew/</loc>
       <lastmod>2011-09-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/html/</loc>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -625,8 +644,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/categories/r/</loc>
-      <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/r/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -635,8 +654,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/tags/r/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/categories/r/</loc>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -666,7 +685,7 @@
     <url>
     
       <loc>https://francojc.github.io/categories/recipe/</loc>
-      <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -736,7 +755,7 @@
     <url>
     
       <loc>https://francojc.github.io/tags/rvest/</loc>
-      <lastmod>2015-03-01T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -766,7 +785,7 @@
     <url>
     
       <loc>https://francojc.github.io/tags/spanish/</loc>
-      <lastmod>2017-07-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -906,7 +925,7 @@
     <url>
     
       <loc>https://francojc.github.io/tags/vectors/</loc>
-      <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -917,6 +936,16 @@
     
       <loc>https://francojc.github.io/tags/vislcg3/</loc>
       <lastmod>2011-09-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/web-scraping/</loc>
+      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

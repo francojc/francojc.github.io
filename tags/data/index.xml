@@ -21,9 +21,6 @@
 
 
 &lt;!-- TODO:
-- Proofread
-- Sections (add?)
--
 --&gt;
 &lt;div id=&#34;package-interfaces&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Package interfaces&lt;/h2&gt;
@@ -292,6 +289,7 @@ Search for Plos ONE publications in Linguistics?
 
 &lt;/div&gt;
 
+&lt;!-- TODO: add {#anchor} below --&gt;
 &lt;div id=&#34;direct-downloads&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Direct downloads&lt;/h2&gt;
 &lt;p&gt;Published corpus data found in repositories or individual sources are usually the easiest to start working with as it is generally a matter of identifying a resource to download and then downloading it with R. OK, there’s a little more involved, but that’s the basic idea.&lt;/p&gt;

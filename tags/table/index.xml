@@ -1019,7 +1019,8 @@ Here is a warning note...
 &lt;p&gt;It is sometimes useful to include Twitter cards in posts. Here’s a tweet card using the &lt;code&gt;blogdown::shortcode()&lt;/code&gt; command:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::shortcode(&amp;#39;tweet&amp;#39;, &amp;#39;842100683650273281&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Five Things You Didn’t Realize Were Funded by the National Endowment for the Humanities: &lt;a href=&#34;https://t.co/ZsDhqDRJQD&#34;&gt;https://t.co/ZsDhqDRJQD&lt;/a&gt;&lt;/p&gt;&amp;mdash; Rob Townsend (@rbthisted) &lt;a href=&#34;https://twitter.com/rbthisted/status/842100683650273281?ref_src=twsrc%5Etfw&#34;&gt;March 15, 2017&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
 &lt;/div&gt;
 &lt;div id=&#34;plotting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Plotting&lt;/h2&gt;
