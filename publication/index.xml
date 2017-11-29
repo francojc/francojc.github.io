@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on francojc ⟲</title>
-    <link>/publication/</link>
+    <link>https://francojc.github.io/publication/</link>
     <description>Recent content in Publications on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,19 +12,19 @@
     
     <item>
       <title>Spanish diacritic error detection and restoration --a survey</title>
-      <link>/publication/spanish-diacritic-error-detection/</link>
+      <link>https://francojc.github.io/publication/spanish-diacritic-error-detection/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>/publication/spanish-diacritic-error-detection/</guid>
+      <guid>https://francojc.github.io/publication/spanish-diacritic-error-detection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kernel density estimation for text-based geolocation</title>
-      <link>/publication/kernel-density-estimation/</link>
+      <link>https://francojc.github.io/publication/kernel-density-estimation/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>/publication/kernel-density-estimation/</guid>
+      <guid>https://francojc.github.io/publication/kernel-density-estimation/</guid>
       <description></description>
     </item>
     
