@@ -23,21 +23,6 @@ nav#navbar-main li {
 }
 
 /*************************************************
- *  Metadata
- **************************************************/
- 
-.article-duration {
-  margin-top: 12px;
-  float: right;
-  font-size: 10px;
-  padding: 1px 5px;
-  font-weight: bold;
-  border-radius: 3px;
-  background: #b5c6ce;
-  color: #fff
-}
-
-/*************************************************
  *  Images and video
  **************************************************/
  
@@ -71,6 +56,7 @@ table {
 /*************************************************
  *  Figures
  **************************************************/
+ 
 .caption {
   color: #7a7a7a;
   font-size: 0.90rem;
@@ -84,6 +70,7 @@ pre,
 code {
   font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
   font-size: 0.85rem;
+  color: black; /* added this line to remove red default */
 }
 pre {
   background: #F8F8F8;
