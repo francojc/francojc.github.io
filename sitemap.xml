@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://francojc.github.io/2017/12/01/curate-language-data-organizing-meta-data/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
     </url>
@@ -418,8 +427,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/tags/corpora/</loc>
-      <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/categories/corpora/</loc>
+      <lastmod>2014-05-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -428,8 +437,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/categories/corpora/</loc>
-      <lastmod>2014-05-24T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/corpora/</loc>
+      <lastmod>2017-10-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -498,8 +507,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/tags/dslr/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/dataset/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -508,8 +517,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/tags/fish/</loc>
-      <lastmod>2015-02-02T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/dslr/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -528,8 +537,18 @@
     
     <url>
     
+      <loc>https://francojc.github.io/tags/fish/</loc>
+      <lastmod>2015-02-02T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/tags/ggplot2/</loc>
-      <lastmod>2015-08-12T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -658,6 +677,16 @@
     
     <url>
     
+      <loc>https://francojc.github.io/tags/meta-data/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/tags/models/</loc>
       <lastmod>2017-09-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -728,8 +757,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/tags/r/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/categories/r/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -738,8 +767,8 @@
     
     <url>
     
-      <loc>https://francojc.github.io/categories/r/</loc>
-      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/r/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -788,8 +817,28 @@
     
     <url>
     
+      <loc>https://francojc.github.io/tags/readtext/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://francojc.github.io/categories/recipe/</loc>
-      <lastmod>2017-11-02T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/regular-expressions/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -940,6 +989,26 @@
     
       <loc>https://francojc.github.io/tags/text-classification/</loc>
       <lastmod>2015-08-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/tidy/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/tidytext/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
