@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="author" content="Jerid Francom">
+  <meta name="description" content="Associate Professor of Spanish and Linguistics">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2017/12/15/curate-language-data-working-with-linguistic-annotations/">
+
+  
+  
+
+
+  
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7cMerriweather%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/my-styles.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-57189160-2', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2017/12/15/curate-language-data-working-with-linguistic-annotations/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@jeridfrancom">
+  <meta property="twitter:creator" content="@jeridfrancom">
+  
+  <meta property="og:site_name" content="francojc ⟲">
+  <meta property="og:url" content="/2017/12/15/curate-language-data-working-with-linguistic-annotations/">
+  <meta property="og:title" content="Curate language data (2/2): working with linguistic annotations | francojc ⟲">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-12-15T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2017-12-15T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>Curate language data (2/2): working with linguistic annotations | francojc ⟲</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">francojc ⟲</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <div class="article-inner">
+      <h1 itemprop="name">Curate language data (2/2): working with linguistic annotations</h1>
+
+      
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2017-12-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Fri, Dec 15, 2017
+    </time>
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    13 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/recipe">Recipe</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Curate%20language%20data%20%282%2f2%29%3a%20working%20with%20linguistic%20annotations&amp;url=%2f2017%2f12%2f15%2fcurate-language-data-working-with-linguistic-annotations%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2f2017%2f12%2f15%2fcurate-language-data-working-with-linguistic-annotations%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2017%2f12%2f15%2fcurate-language-data-working-with-linguistic-annotations%2f&amp;title=Curate%20language%20data%20%282%2f2%29%3a%20working%20with%20linguistic%20annotations"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2f2017%2f12%2f15%2fcurate-language-data-working-with-linguistic-annotations%2f&amp;title=Curate%20language%20data%20%282%2f2%29%3a%20working%20with%20linguistic%20annotations"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Curate%20language%20data%20%282%2f2%29%3a%20working%20with%20linguistic%20annotations&amp;body=%2f2017%2f12%2f15%2fcurate-language-data-working-with-linguistic-annotations%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+      <div class="article-style" itemprop="articleBody">
+        <link href="/rmarkdown-libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
+
+
+<!-- TODO:
+- 
+-->
+<p>Quantitative study of language investigates the distribution of linguistic units, the distribution between linguistic units, and the relationship between linguistic units and some other aspect of the world. This approach can provide interesting insight into general patterns in language behavior and particular phenomenon that may otherwise go unnoticed through other methods.</p>
+<p>When working with language data from unnannotated corpora the linguistic units are drawn from the surface linguistic form. Yet we know from linguistic investigation that any particular linguistic unit forms part of an underlying structure: a grammar. Grammar in a linguistic sense differs from popular use of the term ‘grammar’ which is understood as a set of conventionalized style principles on what to and what not to do in language (i.e. don’t end a sentence in a preposition). A grammar in linguistics, rather, is a set of cognitive constraints that provide the saffolding for how speakers create and understand language. There is no consensus as to what is in a grammar or what the constraints are that regulate linguistic behavior –this is the aim of most modern theories of linguistics.</p>
+<p>Where there is agreement is that there are implicit associations between linguistic units a various levels of abstraction (sound, words, word order, and meaning). As an example, consider the following sentence.</p>
+<pre class="plain"><code>The lazy dog jumped over the quick brown fox.</code></pre>
+<p>Looking at the word-level we can see that that are similarities in the behavior between the words ‘lazy’ and ‘brown’. These words, despite being different surface forms, both serve to modify, or restrict the interpretation of the following words, ‘dog’ and ‘fox’ respectively. Words that behave like ‘lazy’ and ‘brown’ are typically categorized as adjectives. An adjective is one of many word classes, or part-of-speech categories, which also include classes such as nouns, verbs, adverbs, prepositions, etc.</p>
+<p>To explore the distribution of these conceptual levels of linguistic form, researchers augment language data with annotations which make this implicit linguistic knowledge explicit. A part-of-speech annotated version of our toy example sentence could look like this.</p>
+<pre class="plain"><code>The_DET lazy_ADJ dog_N jumped_V over_PREP the_DET quick_ADV brown_ADJ fox_N.</code></pre>
+<p>Adding these part-of-speech labels, or tags as they are known, to the text makes targeting similarities between surface forms easier. Other types of linguistic annotation such as phonetic realization, lemma forms, phrasal constituents, dependency relationships, semantic values, etc. can be added as well. The formats for encoding linguistic annotation can vary quite a bit depending on the level of abstraction.</p>
+<p>The creation of linguistically annotated corpora, however, has two primary challenges that we should be aware of:</p>
+<ol style="list-style-type: decimal">
+<li>The more abstract the level of annotation is, the less agreement there is about what the pertainent features are and</li>
+<li>manual annotation is costly and prone to human error.</li>
+</ol>
+<p>Agreement on the relevant features of abstract linguistic structure means that any given resource which is linguistically annotated makes an explicit, or implicit decision about what features are relevant, and those that are not. For example, the word-tag combination ‘jumped_V’ specifies that ‘jump’ is a verb, but does not specify other potentially useful information such as tense. It is important to understand what the strengths and weaknesses of a particular annotation scheme are for your particular study.</p>
+<p>The costs associated with manual annotation mean that there are significantly fewer annotated resources available. To increase the amount of annotated data computational algorithms are typically applied to learn associations between surface forms and abstract linguistic structure from manually annotated sources and then used to automatically, or semi-automatically annotate other language data.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> The quality of the automatic annotations can vary significantly due to: (1) human annotator error or inconsistencies in the original data, (2) deficiencies in the machine learning process, or (3) incongruencies between the nature of the language used to train the machine annotator and the language to be annotated. The average investigator does not have much control over the challenges posed in (1) and (2). Point (3), however, is a concern for all investigators that use annotation software. For example, using annotation software that was trained on periodical text may perform below expections on text from conversational speech. In essence the issue is one of representativeness.</p>
+<p>In order to make the most of linguistic annotation it is important to be aware of these limitations. When working with an annotated corpus be sure to read the documentation: what is the annotation scheme used? and how was the annotation created (manual or (semi-)automatic)? When using annotation software consider how representative the training data is of the data you wish to annotate. The more informed you are about the resources you plan to use, the better equipped you will be to conduct a sound analysis.</p>
+<p>With this basic introduction to the benefits and potential shortcomings of using linguistically annotated corpora, let’s see how to parse annotated corpora in various formats and generate annotations for surface text in R.</p>
+<div id="parse-annotations" class="section level2">
+<h2>Parse annotations</h2>
+<div id="lexical-attributes" class="section level3">
+<h3>Lexical attributes</h3>
+<p>By far the most common type of linguistic annotation found in corpora is lexical. Is most likely due to the fact that it is easier to agree on the lexical properities of a word than say the syntactic parse of an utterance and machine annotators can more reliably learn many lexical properties compared to syntactic properties. The most common lexical property found in corpora is part-of-speech (PoS) information. There are two primary approaches to augmenting a corpus with PoS tags. The first is through inline tags, such as the toy example above where the word and tag are combined with a delimiter. The delimiter is typically either an underscore <code>_</code> or a forward slash <code>/</code>. The second approach is by using a structured document format such as XML. When XML is used is often due to the fact that other lexical and/or linguistic information is also incorporated. The rich structure of XML is not typically necessary for basic PoS tagging.</p>
+<p>Let’s work with two PoS tagged corpora, one with inline word-tag pairs and the other encoded in XML, and convert these resources to a tidy dataset.</p>
+<p>The <a href="https://github.com/francojc/activ-es">ACTIV-ES Corpus</a> we used in the <a href="https://francojc.github.io/2017/12/01/curate-language-data-organizing-meta-data/">previous post</a> includes two PoS tagged versions. The difference between these resources reflects the use of different tag sets to encode the PoS information. A tag set is a listing of the category labels that the resource uses. A larger tag set will allow for more fine grained distinctions than a smaller tag set. The version we will work with here is the smaller tag set which is a simplified version of the <a href="http://web.mit.edu/6.863/www/PennTreebankTags.html#Word">Penn Treebank tag set</a> <span class="citation">(Marcus, Santorini, and Marcinkiewicz 1993)</span>. It is important to consult the documentation of a resource and review the definition of a tag set so that you are aware of the correspondence between tag codes and their grammatical meaning.</p>
+<p>Let’s download the resource and store it in the <code>data/original/</code> directory. Again, we will use the custom function we have previously created <code>get_zip_data()</code>.</p>
+<pre class="r"><code># Download tagged-text version
+get_zip_data(url = &quot;https://github.com/francojc/activ-es/raw/master/activ-es-v.02/corpus/tagged.zip&quot;, target_dir = &quot;data/original/actives/tagged&quot;)</code></pre>
+<p>The corpus files from this version have the meta-data in the filename and the extension <code>.cor</code>.</p>
+<pre class="plain"><code>.
+├── es_Argentina_1950_Esposa-u?\201ltimo-modelo_movie_n_199500.cor
+├── es_Argentina_1952_No-abras-nunca-esa-puerta_movie_Mystery_184782.cor
+├── es_Argentina_1955_El-amor-nunca-muere_movie_Drama_47823.cor
+├── es_Argentina_1965_Ocurrido-en-Hualfi?\201n_movie_Documentary_282622.cor
+├── es_Argentina_1969_La-venganza-del-sexo_movie_Horror_62433.cor
+...</code></pre>
+<p>We will use the same code as used in the previous post to parse the meta-data from the filename but this time we will specifiy the <code>.cor</code> extension for the files to filter out any other files that are not part of the corpus itself.</p>
+<pre class="r"><code>pacman::p_load(tidyverse, readtext)
+aes &lt;- 
+  readtext(file = &quot;data/original/actives/tagged/*.cor&quot;, # read each file .run
+           docvarsfrom = &quot;filenames&quot;, # get attributes from filename
+           docvarnames = c(&quot;language&quot;, &quot;country&quot;, &quot;year&quot;, &quot;title&quot;, &quot;type&quot;, &quot;genre&quot;, &quot;imdb_id&quot;)) %&gt;% # # add the column names we want for each attribute
+  mutate(doc_id = row_number()) # change doc_id to numbers</code></pre>
+<p>Let’s take a look at the dataset.</p>
+<pre class="r"><code>glimpse(aes) # preview the data structure</code></pre>
+<pre><code>## Observations: 430
+## Variables: 9
+## $ doc_id   &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16...
+## $ text     &lt;chr&gt; &quot;No/ADV está/V ,/PUNC señora/N ./PUNC Aquí/ADV tampoc...
+## $ language &lt;chr&gt; &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;,...
+## $ country  &lt;chr&gt; &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;...
+## $ year     &lt;int&gt; 1950, 1952, 1955, 1965, 1969, 1973, 1975, 1977, 1979,...
+## $ title    &lt;chr&gt; &quot;Esposa-último-modelo&quot;, &quot;No-abras-nunca-esa-puerta&quot;,...
+## $ type     &lt;chr&gt; &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;,...
+## $ genre    &lt;chr&gt; &quot;n&quot;, &quot;Mystery&quot;, &quot;Drama&quot;, &quot;Documentary&quot;, &quot;Horror&quot;, &quot;Ad...
+## $ imdb_id  &lt;int&gt; 199500, 184782, 47823, 282622, 62433, 70250, 71897, 3...</code></pre>
+<p>In the <code>aes$text</code> column we see the word-tag pairs are joined by a forward slash <code>/</code>. Note that each token is separated by a single whitespace character, even punctuation. Let’s tokenize the data so that each word-tag pair appears in a separate row in the dataset. We can use the tidytext package function <code>unnest_tokens()</code> to do this. By default this function will strip punctuation and lowercase the text before tokenizing by whitespace. Given the format of the tagged corpus we are working with, we want to avoid this scenario as it will corrupt our word-tag pair structure. <code>unnest_tokens()</code> provides an option <code>token = &quot;regex&quot;</code> to tokenize with a custom regular expression pattern. In this case a simple single space will work for us <code>pattern = &quot; &quot;</code>. Let’s avoid lowercasing the text if nothing else as an example of how to do this.</p>
+<pre class="r"><code>pacman::p_load(tidytext)
+
+aes_tokens &lt;- 
+  aes %&gt;% 
+  unnest_tokens(output = term_tag, # column to store output
+                input = text, # input column
+                token = &quot;regex&quot;, # specify tokenization method
+                pattern = &quot; &quot;, # pattern to use to tokenize
+                to_lower = FALSE) # avoid lowercasing text
+
+glimpse(aes_tokens) # preview the dataset</code></pre>
+<pre><code>## Observations: 3,460,153
+## Variables: 9
+## $ doc_id   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+## $ language &lt;chr&gt; &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;,...
+## $ country  &lt;chr&gt; &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;...
+## $ year     &lt;int&gt; 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950,...
+## $ title    &lt;chr&gt; &quot;Esposa-último-modelo&quot;, &quot;Esposa-último-modelo&quot;, &quot;Es...
+## $ type     &lt;chr&gt; &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;,...
+## $ genre    &lt;chr&gt; &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;...
+## $ imdb_id  &lt;int&gt; 199500, 199500, 199500, 199500, 199500, 199500, 19950...
+## $ term_tag &lt;chr&gt; &quot;No/ADV&quot;, &quot;está/V&quot;, &quot;,/PUNC&quot;, &quot;señora/N&quot;, &quot;./PUNC&quot;, &quot;...</code></pre>
+<p>At this point the <code>aes_tokens</code> object is a tidy dataset which contains all the document meta-data and a column <code>term_tag</code> which contains our word-tag pairs. To separate the words and the tags into distinct columns we can use the intuitive <code>separate()</code> function. By default this function will use non-alphanumeric characters to separate a single column into multiple columns. This would work for many of the word-tag pairs, but we will run into problems where pairs include punctuation (i.e. <code>./PUNC</code>). In these cases we will end up with more than two columns. Specifing the separator is the best practice to avoid problems.</p>
+<pre class="r"><code>aes_term_tags &lt;- 
+  aes_tokens %&gt;% 
+  separate(col = term_tag, # specify the input column
+           into = c(&quot;term&quot;, &quot;tag&quot;), # character vector for names of new columns
+           sep = &quot;/&quot;) # specify value delimiter</code></pre>
+<p>Note, however, that the code above returned a number of warnings that there were too many values generated in our separation.</p>
+<pre class="plain"><code>Warning message:
+Too many values at 175 locations: 47776, 160728, 176407, 198136, 198773, 350305, 350353, 350368, 352410, 355566, 358205, 362791, 562238, 566430, 716695, 716722, 716723, 716726, 716731, 716733, ...</code></pre>
+<p>After inspection of these rows and the surrounding context (ex. <code>aes_tokens[47773:47778, ]</code>) it turns out that there are errors in the corpus. It appears “I” was interpreted by OCR as “/” and therefore the tagger labeled it as punctuation <code>//PUNC</code>. This appears to be the case for some 175 rows. I’ve chosen to drop these cases here using the argument <code>extra = &quot;drop&quot;</code>.</p>
+<pre class="r"><code>aes_term_tags &lt;- 
+  aes_tokens %&gt;% 
+  separate(col = term_tag, # specify the input column
+           into = c(&quot;term&quot;, &quot;tag&quot;), # character vector for names of new columns
+           sep = &quot;/&quot;, # specify value delimiter
+           extra = &quot;drop&quot;) # drop separations leading to more than two values 
+
+glimpse(aes_term_tags) # preview the dataset</code></pre>
+<pre><code>## Observations: 3,460,153
+## Variables: 10
+## $ doc_id   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+## $ language &lt;chr&gt; &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;, &quot;es&quot;,...
+## $ country  &lt;chr&gt; &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;Argentina&quot;, &quot;...
+## $ year     &lt;int&gt; 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950,...
+## $ title    &lt;chr&gt; &quot;Esposa-último-modelo&quot;, &quot;Esposa-último-modelo&quot;, &quot;Es...
+## $ type     &lt;chr&gt; &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;, &quot;movie&quot;,...
+## $ genre    &lt;chr&gt; &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;, &quot;n&quot;...
+## $ imdb_id  &lt;int&gt; 199500, 199500, 199500, 199500, 199500, 199500, 19950...
+## $ term     &lt;chr&gt; &quot;No&quot;, &quot;está&quot;, &quot;,&quot;, &quot;señora&quot;, &quot;.&quot;, &quot;Aquí&quot;, &quot;tampoco&quot;, ...
+## $ tag      &lt;chr&gt; &quot;ADV&quot;, &quot;V&quot;, &quot;PUNC&quot;, &quot;N&quot;, &quot;PUNC&quot;, &quot;ADV&quot;, &quot;ADV&quot;, &quot;PUNC&quot;...</code></pre>
+<p>Now each word and tag are in distinct columns in the same row. Let’s take a look at the distribution of the PoS tags for this corpus.</p>
+<pre class="r"><code>aes_term_tags %&gt;% 
+  count(tag) %&gt;% # count tags
+  ggplot(aes(x = reorder(tag, n), y = n)) + # map x-axis to `tag`, y-axis to `n`
+  geom_col() + # render as a bar plot
+  labs(x = &quot;Tags&quot;, y = &quot;Count&quot;, title = &quot;ACTIV-ES Corpus Distribution&quot;, subtitle = &quot;Count of part-of-speech tags&quot;) + # prettify labels
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) # adjust x-axis labels</code></pre>
+<p><img src="/rmarkdown-libs/figure-html4/aes-graph-tags-1.png" width="100%" /></p>
+<p>The format of the <code>aes_term_tags</code> dataset is convenient for doing certain types of manipulations, such as the one we just performed, but in other cases this format may not be ideal. We may, instead of parsing each word and its tag in separate columns, want to parse sentences, extract some word-tag window (<code>ngram</code>), or some other grouping of terms and tags. In any of these cases we will want to start with the <code>aes</code> dataset which contains the <code>text</code> column with all of the text and tags associated with each document in the corpus. To make this available for the next step in our analysis be saving the <code>aes</code> dataset in the <code>data/derived/</code> directory.</p>
+<!-- 
+# Tokenize sentences in ACTIV-ES corpus
+aes[1:5, ] %>% 
+  unnest_tokens(sentences, text, token = "regex", pattern = "(?<=[.?!]\\/PUNC)\\s") %>% 
+  mutate(sentence_id = row_number())
+ -->
+<pre class="r"><code>write_csv(x = aes, path = &quot;data/derived/aes_tagged.csv&quot;) # write `aes` dataset</code></pre>
+<p>Let’s now turn to the our second corpus example in which the PoS information is stored in XML format. The <a href="http://www.nltk.org/nltk_data/">Brown Corpus</a> is available in XML format from the NLTK website. It is stored in a <code>.zip</code> file. So again, we will use the <code>get_zip_data()</code> function to download and store the corpus files on our hard disk.</p>
+<pre class="r"><code># Download tagged-text version
+get_zip_data(url = &quot;https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/brown_tei.zip&quot;, target_dir = &quot;data/original/brown/&quot;)</code></pre>
+<p>Here is a preview of the files in our new directory <code>data/origina/brown/</code>.</p>
+<pre class="plain"><code>├── BrownXML.dtd
+├── BrownXML.rnc
+├── BrownXML.rng
+├── BrownXML.xsd
+├── Corpus.xml
+├── README
+├── a01.xml
+├── a02.xml
+├── a03.xml
+...</code></pre>
+<p>DTD (Document Type Definition) lays out or declares the legal elements and attributes in an XML resource. In essence a DTD is the ingredients list for all documents contained in the resource.</p>
+<p>RNC RNG XSD</p>
+<!-- Consider addding as an iframe -->
+<p><a href="http://xml.mherman.org">XML schema generator</a></p>
+<pre class="xml"><code>&lt;head&gt;
+&lt;title id=&quot;1&quot;&gt;Hello world&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+<p>namespaces used to uniquely identify elements and attributes in an XML document</p>
+<p><a href="https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/">post on web scraping</a></p>
+<ul>
+<li>Part of speech (xml) Brown XML</li>
+</ul>
+</div>
+<div id="syntactic-structure" class="section level3">
+<h3>Syntactic structure</h3>
+<!-- Source: http://www.nltk.org/nltk_data/ -->
+<ul>
+<li><p>Phrase structure (Penn WSJ #74)</p></li>
+<li><p>Dependency structure (Penn WSJ #18)</p></li>
+</ul>
+<!-- Search for other treebanks, and other resources: https://vlo.clarin.eu/search -->
+</div>
+</div>
+<div id="generate-annotations" class="section level2">
+<h2>Generate annotations</h2>
+<p>With UDpipe</p>
+<div id="lexical-attributes-1" class="section level3">
+<h3>Lexical attributes</h3>
+<ul>
+<li>POS, Lemma, Named Entity, Sentiment</li>
+</ul>
+</div>
+<div id="syntactic-structure-1" class="section level3">
+<h3>Syntactic structure</h3>
+<ul>
+<li>Dependency structure (CoNLL format)</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Treebank">Treebanks</a></p>
+</div>
+</div>
+<div id="round-up" class="section level2">
+<h2>Round up</h2>
+<ul>
+<li>Summary</li>
+</ul>
+<p>…</p>
+<ul>
+<li>Next step(s)</li>
+</ul>
+<p>…</p>
+<!-- Ideas
+
+- Set up WSJ treebank in tidy set for analysis of Object Relative Clauses (reduced/ non-reduced) as in Race, D. S., & MacDonald, M. C. (2003). The use of "that" in the production and comprehension of object relative clauses. Proceedings of the 25th Annual Meeting of the Cognitive Science Society, 946–951.
+- 
+
+
+-->
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references">
+<div id="ref-Marcus1993">
+<p>Marcus, Mitchell P, Beatrice Santorini, and Mary Ann Marcinkiewicz. 1993. “Building a large annotated corpus of English: The Penn Treebank.” <em>Computational Linguistics</em> 19 (2):313–30. <a href="https://doi.org/10.1162/coli.2010.36.1.36100" class="uri">https://doi.org/10.1162/coli.2010.36.1.36100</a>.</p>
+</div>
+<div id="ref-R-stringr">
+<p>Wickham, Hadley. 2017. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.</p>
+</div>
+<div id="ref-R-xml2">
+<p>Wickham, Hadley, James Hester, and Jeroen Ooms. 2017. <em>Xml2: Parse Xml</em>. <a href="https://CRAN.R-project.org/package=xml2" class="uri">https://CRAN.R-project.org/package=xml2</a>.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Semi-automatic annotation is an iterative process in which a machine annotator is used to provide a primary annotation and then human annotators review and attempt correct systematic errors.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+      </div>
+
+      
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/meta-data">meta-data</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/part-of-speech">part-of-speech</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/lemma">lemma</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/syntactic-structure">syntactic structure</a>
+  
+</div>
+
+
+
+    </div>
+  </div>
+
+</article>
+
+
+
+<div class="article-container article-widget">
+  <div class="hr-light"></div>
+  <h3>Related</h3>
+  <ul>
+    
+    <li><a href="/2017/12/01/curate-language-data-organizing-meta-data/">Curate language data (1/2): organizing meta-data</a></li>
+    
+  </ul>
+</div>
+
+
+
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "francojc" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Jerid Francom &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyCp-PTX7EwVGvo1lOhmK8PHZgakQLoz_RA"></script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/css.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/tex.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

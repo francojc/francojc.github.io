@@ -11,7 +11,7 @@
   <meta name="description" content="Associate Professor of Spanish and Linguistics">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/">
+  <link rel="alternate" hreflang="en-us" href="/2017/08/31/project-management-for-scalable-data-analysis/">
 
   
   
@@ -62,15 +62,15 @@
   
 
   
-  <link rel="alternate" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
-  <link rel="feed" href="https://francojc.github.io/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="francojc ⟲">
   
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/">
+  <link rel="canonical" href="/2017/08/31/project-management-for-scalable-data-analysis/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -78,7 +78,7 @@
   <meta property="twitter:creator" content="@jeridfrancom">
   
   <meta property="og:site_name" content="francojc ⟲">
-  <meta property="og:url" content="https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/">
+  <meta property="og:url" content="/2017/08/31/project-management-for-scalable-data-analysis/">
   <meta property="og:title" content="Project management for scalable data analysis | francojc ⟲">
   <meta property="og:description" content="">
   <meta property="og:locale" content="en-us">
@@ -301,35 +301,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Project%20management%20for%20scalable%20data%20analysis&amp;url=https%3a%2f%2ffrancojc.github.io%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f"
+         href="https://twitter.com/intent/tweet?text=Project%20management%20for%20scalable%20data%20analysis&amp;url=%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffrancojc.github.io%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f"
+         href="https://www.facebook.com/sharer.php?u=%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffrancojc.github.io%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f&amp;title=Project%20management%20for%20scalable%20data%20analysis"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f&amp;title=Project%20management%20for%20scalable%20data%20analysis"
          target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffrancojc.github.io%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f&amp;title=Project%20management%20for%20scalable%20data%20analysis"
+         href="http://service.weibo.com/share/share.php?url=%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f&amp;title=Project%20management%20for%20scalable%20data%20analysis"
          target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Project%20management%20for%20scalable%20data%20analysis&amp;body=https%3a%2f%2ffrancojc.github.io%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f">
+         href="mailto:?subject=Project%20management%20for%20scalable%20data%20analysis&amp;body=%2f2017%2f08%2f31%2fproject-management-for-scalable-data-analysis%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -347,12 +347,16 @@
 <script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
 
 
-<section id="project-management" class="level2">
+<!-- TODO:
+- Consider setting up projects as packages. One advantage would be to be able to document the data sources with data defintions. There may be other advantages, as well as complications associated with this type of approach that I'm not thinking about right now. Worth a look at least.
+- 
+-->
+<div id="project-management" class="section level2">
 <h2>Project management</h2>
 <p>This post can really be seen as an extension of the last post <a href="https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/">Getting started with R and RStudio</a> in that we will be getting to know some more advanced, but indispensable features of RStudio. These features, in combination with some organizational and programming strategies, will enable us to conduct efficient data analysis and set the stage for research is is both scalable and ready for sharing with either collaborators or the research community.</p>
 <p>To understand the value of this approach to project management we need to get a bird’s eye view of the key steps in a data science project. There are three main areas that any research project includes: <strong>data organization</strong>, <strong>data analysis</strong>, and <strong>reporting results</strong>.</p>
 <p>These three main areas have important subareas as well:</p>
-<ol type="1">
+<ol style="list-style-type: decimal">
 <li>Data organization:</li>
 </ol>
 <ul>
@@ -360,14 +364,14 @@
 <li><em>curating data</em> so that it will be reliable for subsequent steps in the process</li>
 <li><em>transforming the data</em> into a format that will facilitate the analysis of the data including the generation of new variables and measures.</li>
 </ul>
-<ol start="2" type="1">
+<ol start="2" style="list-style-type: decimal">
 <li>Data analysis:</li>
 </ol>
 <ul>
 <li><em>visualizing data</em> in summary tables and graphics to gain a better sense of the distribution of the question that we are aiming to learn about.</li>
 <li><em>statistical tests</em> to provide confirmation of the distribution(s) that we are investigating and/or a more robust understanding of the relationships between variables in our data</li>
 </ul>
-<ol start="3" type="1">
+<ol start="3" style="list-style-type: decimal">
 <li>Reporting results:</li>
 </ol>
 <ul>
@@ -375,11 +379,11 @@
 <li><em>Preparing reproducible results</em> by ensuring that our work is well documented and capable of being replicated</li>
 </ul>
 <p>By taking these steps into account in the organization of our project, we will be able to work more efficiently and effectively with R and RStudio. In the next section we will get set up with a model template for organizing a data science project. This structure will serve as our base for working in subsequent posts in this series.</p>
-</section>
-<section id="project-structure" class="level2">
+</div>
+<div id="project-structure" class="section level2">
 <h2>Project structure</h2>
 <p>As a starting point, we will download an existing project that I have created. This project will work as a template for implementing good project management with RStudio. The project template is housed remotely on the code sharing platform <a href="https://github.com/">GitHub</a> which leverages the <a href="https://git-scm.com/"><code>git</code> versioning software</a> to make local projects remotely accessible. After copying the project to your local machine, we will link RStudio to the project and continue our exploration of the various features available in this software to manage projects.</p>
-<section id="downloading-the-template" class="level3">
+<div id="downloading-the-template" class="section level3">
 <h3>Downloading the template</h3>
 <p>To download this project template, we will need to set up <code>git</code> on your machine first. I will have much more to say about <code>git</code> and GitHub in a later post in the series that will directly concern the process of versioning and sharing reproducible research, but for now we’ll only cover what is needed to get our project template from GitHub. If you are on a Mac, <code>git</code> is most likely already on your machine. To verify that this is the case you can open up the ‘Terminal.app’ on your machine and type this command at the prompt:</p>
 <pre class="bash"><code>which git</code></pre>
@@ -392,7 +396,7 @@
 <pre class="r"><code>/usr/local/bin/git</code></pre>
 <p>If a path is not returned, or you are on a PC, then you will need to download and install the software from the <code>git</code> homepage. Follow this <a href="https://git-scm.com/downloads">link to the <code>git</code> downloads page</a>.</p>
 <div class="figure"><span id="fig:git-install-1"></span>
-<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/git-install-1-1.png" alt="Git downloads page." width="100%" />
+<img src="/rmarkdown-libs/figure-html4/git-install-1-1.png" alt="Git downloads page." width="100%" />
 <p class="caption">
 Figure 1: Git downloads page.
 </p>
@@ -430,13 +434,13 @@ Unpacking objects: 100% (48/48), done.</code></pre>
 <pre class="plain"><code>README.md   code        figures     log
 _pipeline.R data        functions   report</code></pre>
 <p>We can now leave the Terminal, or git bash, and return to RStudio. We are now ready to link an R project to our cloned project.</p>
-</section>
-<section id="creating-an-r-project-within-rstudio" class="level3">
+</div>
+<div id="creating-an-r-project-within-rstudio" class="section level3">
 <h3>Creating an R Project within RStudio</h3>
 <p>As we have seen, RStudio provides a of host tools for facilitating work with R. A feature that makes working with the sometimes numerous data files, scripts, and other resources more manageable is the ‘R Project’ tool. In a nutshell, this RStudio tool allows us to select a directory where our project files live and effectively group these files and the work we do as a unit. At a basic level it simply helps manage individual projects more easily. As we move on to other posts in this series, and particularly when we discuss creating reproducible research, we will see that this feature will really prove its worth. For now, let’s make the project template an R project and turn to focus on the file and directory structure as it relates to doing efficient and reproducible data analysis in R.</p>
 <p>To link our template to an R Project, start up R and select the ‘New Project…’ dialogue from the RStudio toolbar menu. You will be presented with various options as seen in Figure <a href="#fig:r-project-1">2</a>.</p>
 <div class="figure"><span id="fig:r-project-1"></span>
-<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-1-1.png" alt="Options for creating an R Project in RStudio." width="400" />
+<img src="/rmarkdown-libs/figure-html4/r-project-1-1.png" alt="Options for creating an R Project in RStudio." width="400" />
 <p class="caption">
 Figure 2: Options for creating an R Project in RStudio.
 </p>
@@ -444,15 +448,15 @@ Figure 2: Options for creating an R Project in RStudio.
 <p>The first option is for starting a project from scratch. The last option is for cloning a project from a versioning repository like GitHub. With versioning software, like <code>git</code>, on our machine, we can clone and create an R Project in one step. We will make use of this option in future posts now that we have a basic understand of <code>git</code> and GitHub. For now, however, we want to link the project template we cloned manually using the command line, so select ‘Existing Directory’ from this menu.</p>
 <p>Next navigate to the directory which we cloned either typing the path to the directory, or more conveniently using the ‘Browse’ button. Once we have selected the directory and create the R Project, RStudio will open a new session with our directories and files listed in the Files pane.</p>
 <div class="figure"><span id="fig:r-project-2"></span>
-<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-2-1.png" alt="View of the project template as an R Project." width="100%" />
+<img src="/rmarkdown-libs/figure-html4/r-project-2-1.png" alt="View of the project template as an R Project." width="100%" />
 <p class="caption">
 Figure 3: View of the project template as an R Project.
 </p>
 </div>
 <p>You will notice that RStudio has created a file named <code>recipes-project_template.Rproj</code>. From now on you can navigate to this file using your operating system’s file explorer and open it to return working on this project. Your workspace settings, history, environment variables, etc. will be restored to the last time you were working on the project –more on this later.</p>
-</section>
-</section>
-<section id="saffolding-for-a-scalable-project" class="level2">
+</div>
+</div>
+<div id="saffolding-for-a-scalable-project" class="section level2">
 <h2>Saffolding for a scalable project</h2>
 <p>Now let’s turn to the files and directories of our project template and discuss how this structure is associated to the steps listed earlier to conduct a data science project. Below you will see the complete structure of the template.</p>
 <pre class="plain"><code>├── README.md
@@ -475,12 +479,12 @@ Figure 3: View of the project template as an R Project.
     ├── bibliography.bib
     ├── slides.Rmd
     └── web.Rmd</code></pre>
-<section id="directories" class="level3">
+<div id="directories" class="section level3">
 <h3>Directories</h3>
 <p>This template includes directories for data (<code>data</code>), code (<code>code</code>), and communicating findings (<code>report</code>). These directories are core to your project and where the heavy lifting takes place. The <code>data</code> and <code>report</code> directories have important subdirectories that separate key stages in your analysis. <code>data/original</code> is where the data in its raw form will be stored and <code>data/derived</code> is where any changes you make to the data for the particular analysis are stored. This distinction is an important one; to safeguard our analysis and to ensure that our analysis is reproducible we do not want to make changes to the original data that are not reflected in the project itself. The subdirectories of <code>report</code> separate the potential formats that we may use to communicate insight generated from this analysis.</p>
 <p>Before moving on to discuss the files included in the template, let’s discuss the other three supporting directories: <code>figures</code>, <code>log</code>, and <code>functions</code>. You will most likely generate figures in the course of the analysis. Grouping them together in the <code>figures</code> directory enables us to quickly reference them visually and also include them in any one or all of the reports that may be generated. The <code>log</code> directory is a convenient and easily identifiable place to document meta aspects of your analysis that will may not picture in your reports. Finally, a directory for housing custom functions you may write to facilitate particular stages of the analysis is provided, <code>functions</code>. We will soon see how powerful and indispensable custom functions are but for now just let me say that keeping them organized in a separate directory will enhance the legibility of your code and help you take full advantage of their power.</p>
-</section>
-<section id="files" class="level3">
+</div>
+<div id="files" class="section level3">
 <h3>Files</h3>
 <p>This template also includes various file templates that are associated with the tasks typically performed in a data analysis project. The R scripts in the <code>code/</code> directory are script templates to carry out the sub-tasks of our three main project steps: organize data; get the original data (<code>acquire_data.R</code>), clean and prepare key features of the data (<code>curate_data.R</code>), manipulate the data creating the needed variables and structure for the data analysis (<code>transform_data.R</code>), data analysis; visualize and perform statistical analyses on the data (<code>analyze_data.R</code>), and communicating findings; report results in appropriate formats (<code>generate_reports.R</code>).</p>
 <p>Each of these R scripts has a common structure which is outlined using code commenting. Take a look at the structure of the <code>acquire_data.R</code> script, copied below:</p>
@@ -510,7 +514,7 @@ Figure 3: View of the project template as an R Project.
 rm(list = ls())</code></pre>
 <p>The template shown here leverages code commenting to separate the script into meaningful tasks. The <code>ABOUT</code> section is where you will provide an overview of the purpose of the script in your project, how to use it, who created it, and when it was created. The <code>SETUP</code> section provides a space to load any required packages, source any required custom functions, and configure various other options. <code>RUN</code> is where the bulk of your code will be entered. As it has been stated various times, commenting is a vital part of sound coding practices. It is often helpful not only to comment the particular line of code, which we do by adding the <code>#</code> symbol to the immediate right of the code and then describe the task, but also to group coding sub-tasks in this section. RStudio provides a tool to create comment sections. You can use this tool by selecting ‘Code &gt; Insert Section…’ or the keyboard shortcut <code>shift + command + R</code> (Mac) or <code>shift + ctrl + R</code> (PC). Either approach will trigger a dialogue box to enter the name of the section. Once you have entered the name it will then appear in the section listing, as seen in Figure <a href="#fig:r-project-3">4</a>.</p>
 <div class="figure"><span id="fig:r-project-3"></span>
-<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-3-1.png" alt="View of the section listing in RStudio." width="100%" />
+<img src="/rmarkdown-libs/figure-html4/r-project-3-1.png" alt="View of the section listing in RStudio." width="100%" />
 <p class="caption">
 Figure 4: View of the section listing in RStudio.
 </p>
@@ -523,12 +527,12 @@ Figure 4: View of the section listing in RStudio.
 <p>The last two files in this template are the <code>_pipeline.R</code> script and the <code>README.md</code> document. <code>README.md</code> is the file used to describe the project in general terms including the purpose of the project, data sources, analysis methods, and other relevant information to help clarify how to reproduce the research with these project files. The <code>README</code> file may or may not include the <code>.md</code> extension. If it does, as in the example in this template, you will have access to the Markdown syntax options to provide word processing style formatting, if needed. If you end up storing you project on a code repository site, such as GitHub, this file will be rendered as a web document and be used as the introduction to your project.</p>
 <p>The <code>_pipeline.R</code> script is the master script for your analysis. It is a standard R script and includes the same internal commenting sections as the other <code>.R</code> scripts in the the <code>code/</code> directory (i.e. <code>ABOUT</code>, <code>SETUP</code>, <code>RUN</code>, <code>LOG</code>, and <code>CLEANUP</code>). This script, however, allows you to run the entire project from data to report in sequential order. In the <code>RUN</code> section you will find sub-steps which call the <code>source()</code> function on each of our processing scripts. Since each script representing a step in our analysis is modular, only the required input is read and output generated for each script. As logging step-specific information is taken care of in each particular script, the <code>LOG</code> section in the <code>_pipeline.R</code> script will most typically only include a call to the <code>sessionInfo()</code> function which reports details on the operating system and the packages and the versions of the packages used in the analysis. This information is vital for reproducing research as it documents the specific conditions that successfully generated the analysis.</p>
 <div class="alert alert-note">
-  <p>Quick note: there is nothing special about the names of the files in the template. You can edit and modify these file names as you see fit. You should, however, take note of good file naming practices. Names should be descriptive and short. Whitespace is traditionally avoided, but is not explicitly required. I have employed ‘snake case’ here by using an underscore (<code>_</code>) to mark spaces in file names. There are various style conventions used to avoid whitespace and for other coding practices. I recommend following the suggestions provided by Hadley Wickham in his book <a href="http://adv-r.had.co.nz/Style.html">‘Advanced R’</a> <span class="citation" data-cites="Wickham2014">(Wickham 2014)</span>. Whatever style you choose, the most important thing is to be consistent.</p>
+  <p>Quick note: there is nothing special about the names of the files in the template. You can edit and modify these file names as you see fit. You should, however, take note of good file naming practices. Names should be descriptive and short. Whitespace is traditionally avoided, but is not explicitly required. I have employed ‘snake case’ here by using an underscore (<code>_</code>) to mark spaces in file names. There are various style conventions used to avoid whitespace and for other coding practices. I recommend following the suggestions provided by Hadley Wickham in his book <a href="http://adv-r.had.co.nz/Style.html">‘Advanced R’</a> <span class="citation">(Wickham 2014)</span>. Whatever style you choose, the most important thing is to be consistent.</p>
 
 </div>
 
-</section>
-<section id="r-project-sessions" class="level3">
+</div>
+<div id="r-project-sessions" class="section level3">
 <h3>R Project sessions</h3>
 <p>Once the files and directories are linked to an R Project your workspace settings, command history, and objects can be saved at any point and restored to continue working on the analysis. To see this in action, let’s do a little work with this project template. Let’s run the <code>_pipeline.R</code> file. There isn’t much to our analysis at this point, as it is just boilerplate material for the most part, but it will serve to highlight how to work with an R Project session. To run this file, open it from the Files pane. It will appear in the Editor pane where we can now use the keyboard shortcut <code>option + command + R</code> (Mac) or <code>alt + ctrl + R</code> (PC) to run the entire master script.</p>
 <p>Once you have run the <code>_pipeline.R</code> script, some new files will appear in your directory structure, seen below.</p>
@@ -559,7 +563,7 @@ Figure 4: View of the section listing in RStudio.
 <p>The new files appear in the <code>log/</code> and <code>report/</code> directories. The <code>session_info.txt</code> file is our log of the session information. The <code>article.pdf</code>, <code>slides.html</code>, and <code>web.html</code> files are the rendered versions of the RMarkdown templates. If you browse to the History tab in the Environment pane you will see that we have one line in our history –the code that ran the <code>_pipeline.R</code> file. Let’s quit our R session now by closing RStudio. When prompted, choose ‘Save’ from the ‘Quit R session’ dialogue box. Now reopen our R project by either starting RStudio then choosing ‘File &gt; Recent Projects’ in the RStudio toolbar or by navigating to the <code>recipes-project_template.Rproj</code> file with your operating system’s file explorer and double-clicking it.</p>
 <p>Choosing to save our project before closing RStudio has the effect of taking a snapshot of the current workspace. The files that were open on closing the session are returned to the workspace. Any variables we had in memory and the command history are also returned. The details of this snapshot are stored in the files you will now find at the root of our project directory: <code>.RData</code> and <code>.Rhistory</code>.</p>
 <div class="figure"><span id="fig:r-project-4"></span>
-<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-4-1.png" alt="View of the R project snapshot files `.RData` and `.Rhistory`." width="100%" />
+<img src="/rmarkdown-libs/figure-html4/r-project-4-1.png" alt="View of the R project snapshot files `.RData` and `.Rhistory`." width="100%" />
 <p class="caption">
 Figure 5: View of the R project snapshot files <code>.RData</code> and <code>.Rhistory</code>.
 </p>
@@ -570,14 +574,14 @@ Figure 5: View of the R project snapshot files <code>.RData</code> and <code>.Rh
 </div>
 
 <p>If you choose not to save the workspace when quitting RStudio, these files will not be generated, if they do not already exist, or they will not be overwritten by the current session if they already exist.</p>
-</section>
-</section>
-<section id="round-up" class="level2">
+</div>
+</div>
+<div id="round-up" class="section level2">
 <h2>Round up</h2>
 <p>In this post we have discussed setting up and managing an R Project in RStudio. Along the way I provided a sample template for structuring your data analysis project based on the common steps in data science research. You have seen how this template is associated to each step and learned about some important conventions and guidelines for maintaining an efficient workflow. These principles are fundamental to creating an internally consistent and reproducible project.</p>
 <p>Later on in the series we will discuss project versioning and packaging to make a project fully reproducible for you and future collaborators. We will leave that discussion for now and turn our attention in the next post in the series which addresses one of the main conceptual underpinnings of quantitative research: statistical thinking.</p>
-</section>
-<section id="references" class="level2">
+</div>
+<div id="references" class="section level2">
 <h2>References</h2>
 <!-- Ideas for next posts:
 
@@ -641,14 +645,14 @@ Figure 5: View of the R project snapshot files <code>.RData</code> and <code>.Rh
 <p>Wickham, H. 2014. <em>Advanced R</em>. CRC Press.</p>
 </div>
 </div>
-</section>
-<section class="footnotes">
+</div>
+<div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>Plain text files, in essence, are the <em>lingua franca</em> of the computing world. They are the type of files that can be readily accessed through a plain-text editor such as ‘TextEdit’ (Mac) or ‘Notepad’ (PC). Importantly these files are not compiled by nor bound to any particular software, such as a document generated by Word or Excel. We will see how to write objects to disk as plain text files in subsequent posts.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>You can <a href="http://www.bibtex.org/Using/">generate your own Bibtex file</a> or generate one using bibliographic management software such as <a href="https://blog.mendeley.com/2011/10/25/howto-use-mendeley-to-create-citations-using-latex-and-bibtex/">Mendeley</a> or <a href="http://libguides.mit.edu/c.php?g=176000&amp;p=1159208">Zotero</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
-</section>
+</div>
 
       </div>
 

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on francojc ⟲</title>
-    <link>https://francojc.github.io/publication/</link>
+    <link>/publication/</link>
     <description>Recent content in Publications on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,46 +12,46 @@
     
     <item>
       <title>Spanish diacritic error detection and restoration --a survey</title>
-      <link>https://francojc.github.io/publication/spanish-diacritic-error-detection/</link>
+      <link>/publication/spanish-diacritic-error-detection/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/publication/spanish-diacritic-error-detection/</guid>
+      <guid>/publication/spanish-diacritic-error-detection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kernel density estimation for text-based geolocation</title>
-      <link>https://francojc.github.io/publication/kernel-density-estimation/</link>
+      <link>/publication/kernel-density-estimation/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/publication/kernel-density-estimation/</guid>
+      <guid>/publication/kernel-density-estimation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ACTIV-ES: a comparable, cross-dialect corpus of &#39;everyday&#39; Spanish from Argentina, Mexico, and Spain</title>
-      <link>https://francojc.github.io/publication/actives-a-comparable-cross-dialect-corpus/</link>
+      <link>/publication/actives-a-comparable-cross-dialect-corpus/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/publication/actives-a-comparable-cross-dialect-corpus/</guid>
+      <guid>/publication/actives-a-comparable-cross-dialect-corpus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Diacritic error detection and restoration via part-of-speech tags</title>
-      <link>https://francojc.github.io/publication/diacritic-error-detection-and-restoration/</link>
+      <link>/publication/diacritic-error-detection-and-restoration/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/publication/diacritic-error-detection-and-restoration/</guid>
+      <guid>/publication/diacritic-error-detection-and-restoration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Weighted and unweighted transducers for tweet normalization</title>
-      <link>https://francojc.github.io/publication/weighted-and-unweighted-transducers/</link>
+      <link>/publication/weighted-and-unweighted-transducers/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://francojc.github.io/publication/weighted-and-unweighted-transducers/</guid>
+      <guid>/publication/weighted-and-unweighted-transducers/</guid>
       <description></description>
     </item>
     
