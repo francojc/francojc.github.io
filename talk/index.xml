@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks on francojc ⟲</title>
-    <link>/talk/</link>
+    <link>https://francojc.github.io/talk/</link>
     <description>Recent content in Talks on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Quantitative Approaches to Language Research: Why Frequency Matters</title>
-      <link>/talk/quantitative-approaches-to-language-research/</link>
+      <link>https://francojc.github.io/talk/quantitative-approaches-to-language-research/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
-      <guid>/talk/quantitative-approaches-to-language-research/</guid>
+      <guid>https://francojc.github.io/talk/quantitative-approaches-to-language-research/</guid>
       <description>&lt;!-- &lt;script async class=&#39;speakerdeck-embed&#39; data-id=&#39;867067ae4a7d418f8289c2be8a2e031b&#39; data-ratio=&#39;1.33333333333333&#39; src=&#39;//speakerdeck.com/assets/embed.js&#39;&gt;&lt;/script&gt; --&gt;
 </description>
     </item>
