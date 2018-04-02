@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Jerid Francom">
   <meta name="description" content="Associate Professor of Spanish and Linguistics">
 
@@ -271,7 +271,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    13 min read
+    29 min read
   </span>
   
 
@@ -488,27 +488,345 @@ get_zip_data(url = &quot;https://raw.githubusercontent.com/nltk/nltk_data/gh-pag
 ├── a02.xml
 ├── a03.xml
 ...</code></pre>
-<p>DTD (Document Type Definition) lays out or declares the legal elements and attributes in an XML resource. In essence a DTD is the ingredients list for all documents contained in the resource.</p>
-<p>RNC RNG XSD</p>
-<!-- Consider addding as an iframe -->
-<p><a href="http://xml.mherman.org">XML schema generator</a></p>
-<pre class="xml"><code>&lt;head&gt;
-&lt;title id=&quot;1&quot;&gt;Hello world&lt;/title&gt;
-&lt;/head&gt;</code></pre>
-<p>namespaces used to uniquely identify elements and attributes in an XML document</p>
-<p><a href="https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/">post on web scraping</a></p>
-<ul>
-<li>Part of speech (xml) Brown XML</li>
-</ul>
+<p>The first four files are various types of declaration files. These files are generated to define the legal elements and attributes that the xml files need to conform to to be valid. For our purposes they are not of much use and we will ignore them.</p>
+<p>We then skip to the <code>README</code> file. In this document you will see that there is some information about the creation of the specific version of the Brown Corpus. Namely, this version was released by the NLTK team. Also, this file lets us know that the <code>Corpus.xml</code> file contains the entire corpus in a single file. The other files are single documents from the corpus. Let’s take a look at the first 14 lines from <code>Corpus.xml</code>. Open this file in a text editor to follow along.</p>
+<pre class="xml"><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;teiCorpus xmlns=&quot;http://www.tei-c.org/ns/1.0&quot; xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;
+&lt;teiHeader xml:id=&quot;BROWN-XML&quot; type=&quot;corpus&quot;&gt;
+&lt;fileDesc&gt;
+&lt;titleStmt&gt;
+&lt;title&gt;
+An XML Version of the Tagged Brown Corpus
+&lt;/title&gt;
+&lt;respStmt&gt;
+&lt;resp&gt;Creation of original&lt;/resp&gt;
+&lt;name&gt;Henry Kucera&lt;/name&gt;
+&lt;name&gt;Nelson Francis&lt;/name&gt;
+&lt;/respStmt&gt;</code></pre>
+<p>In the above xml we find the start of the meta-data for the document and corpus itself. Much of this information will not be of use to our processing of the data, but it is key to scan the document as you would the <code>README</code> document to be aware of any particular aspects of the data that are encoded here. On line two, however, we have a namespace declaration which we will need to be aware of when we start parsing the file with R. For now, let’s jump down this document and scan the rest of the contents.</p>
+<p>Beginning on line 69 we have some pertainent information. Specifically, we have the defintion of the text categories of the corpus.</p>
+<pre class="xml"><code>&lt;classDecl&gt;
+&lt;taxonomy xml:id=&quot;Brown-Categories&quot;&gt;
+&lt;category xml:id=&quot;A&quot;&gt;&lt;catDesc&gt; PRESS: REPORTAGE&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;B&quot;&gt;&lt;catDesc&gt; PRESS: EDITORIAL&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;C&quot;&gt;&lt;catDesc&gt; PRESS: REVIEWS&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;D&quot;&gt;&lt;catDesc&gt; RELIGION&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;E&quot;&gt;&lt;catDesc&gt; SKILL AND HOBBIES&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;F&quot;&gt;&lt;catDesc&gt; POPULAR LORE&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;G&quot;&gt;&lt;catDesc&gt; BELLES-LETTRES&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;H&quot;&gt;&lt;catDesc&gt; MISCELLANEOUS: GOVERNMENT &amp;amp; HOUSE ORGANS&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;J&quot;&gt;&lt;catDesc&gt; LEARNED&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;K&quot;&gt;&lt;catDesc&gt; FICTION: GENERAL&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;L&quot;&gt;&lt;catDesc&gt; FICTION: MYSTERY&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;M&quot;&gt;&lt;catDesc&gt; FICTION: SCIENCE&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;N&quot;&gt;&lt;catDesc&gt; FICTION: ADVENTURE&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;P&quot;&gt;&lt;catDesc&gt; FICTION: ROMANCE&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;R&quot;&gt;&lt;catDesc&gt; HUMOR&lt;/catDesc&gt;&lt;/category&gt;&lt;/taxonomy&gt;
+&lt;/classDecl&gt;</code></pre>
+<p>The <code>xml:id</code> attribute for the <code>category</code> elements provide us with a letter (<code>A</code>, <code>B</code>, <code>C</code> etc.) which corresponds to a genre in the corpus. The <code>catDesc</code> element has the text description of what this letter code represents. This will be helpful later on as we organize and associate the documents of the corpus with their proper text category.</p>
+<p>Beginning on line 127 we find our first document.</p>
+<pre class="xml"><code>&lt;TEI xmlns=&quot;http://www.tei-c.org/ns/1.0&quot; xml:base=&quot;Texts/a01.xml&quot;&gt;&lt;teiHeader&gt;&lt;fileDesc&gt;&lt;titleStmt&gt;&lt;title&gt;Sample A01 from  The Atlanta Constitution&lt;/title&gt;&lt;title type=&quot;sub&quot;&gt; November 4, 1961, p.1 &quot;Atlanta Primary ...&quot; 
+ &quot;Hartsfield Files&quot; 
+ August 17, 1961, &quot;Urged strongly ...&quot; 
+ &quot;Sam Caldwell Joins&quot; 
+ March 6,1961, p.1 &quot;Legislators Are Moving&quot; by Reg Murphy
+ &quot;Legislator to fight&quot; by Richard Ashworth 
+ &quot;House Due Bid...&quot; 
+ p.18 &quot;Harry Miller Wins...&quot; 
+&lt;/title&gt;&lt;/titleStmt&gt;&lt;editionStmt&gt;&lt;edition&gt;A part  of the XML version of the Brown Corpus&lt;/edition&gt;&lt;/editionStmt&gt;&lt;extent&gt;1,988 words 431 (21.7%) quotes 2 symbols&lt;/extent&gt;&lt;publicationStmt&gt;&lt;idno&gt;A01&lt;/idno&gt;&lt;availability&gt;&lt;p&gt;Used by permission of The Atlanta ConstitutionState News Service (H), and Reg Murphy (E).&lt;/p&gt;&lt;/availability&gt;&lt;/publicationStmt&gt;&lt;sourceDesc&gt;&lt;bibl&gt; The Atlanta Constitution&lt;/bibl&gt;&lt;/sourceDesc&gt;&lt;/fileDesc&gt;&lt;encodingDesc&gt;&lt;p&gt;Arbitrary Hyphen: multi-million [0520]&lt;/p&gt;&lt;/encodingDesc&gt;&lt;revisionDesc&gt;&lt;change when=&quot;2008-04-27&quot;&gt;Header auto-generated for TEI version&lt;/change&gt;&lt;/revisionDesc&gt;&lt;/teiHeader&gt;
+&lt;text xml:id=&quot;A01&quot; decls=&quot;A&quot;&gt;
+&lt;body&gt;&lt;p&gt;&lt;s n=&quot;1&quot;&gt;&lt;w type=&quot;AT&quot;&gt;The&lt;/w&gt; &lt;w type=&quot;NP&quot; subtype=&quot;TL&quot;&gt;Fulton&lt;/w&gt; &lt;w type=&quot;NN&quot; subtype=&quot;TL&quot;&gt;County&lt;/w&gt; &lt;w type=&quot;JJ&quot; subtype=&quot;TL&quot;&gt;Grand&lt;/w&gt; &lt;w type=&quot;NN&quot; subtype=&quot;TL&quot;&gt;Jury&lt;/w&gt; &lt;w type=&quot;VBD&quot;&gt;said&lt;/w&gt; &lt;w type=&quot;NR&quot;&gt;Friday&lt;/w&gt; &lt;w type=&quot;AT&quot;&gt;an&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;investigation&lt;/w&gt; &lt;w type=&quot;IN&quot;&gt;of&lt;/w&gt; &lt;w type=&quot;NPg&quot;&gt;Atlanta&#39;s&lt;/w&gt; &lt;w type=&quot;JJ&quot;&gt;recent&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;primary&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;election&lt;/w&gt; &lt;w type=&quot;VBD&quot;&gt;produced&lt;/w&gt; &lt;c type=&quot;pct&quot;&gt;``&lt;/c&gt; &lt;w type=&quot;AT&quot;&gt;no&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;evidence&lt;/w&gt; &lt;c type=&quot;pct&quot;&gt;&#39;&#39;&lt;/c&gt; &lt;w type=&quot;CS&quot;&gt;that&lt;/w&gt; &lt;w type=&quot;DTI&quot;&gt;any&lt;/w&gt; &lt;w type=&quot;NNS&quot;&gt;irregularities&lt;/w&gt; &lt;w type=&quot;VBD&quot;&gt;took&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;place&lt;/w&gt; &lt;c type=&quot;pct&quot;&gt;.&lt;/c&gt; &lt;/s&gt;
+&lt;/p&gt;</code></pre>
+<p>Looking through the elements and attributes we find various pieces of linguistic and non-linguistic information. The <code>TEI</code> element opens this particular document. Since we are only looking at the beginning of this document, we will not see the closing <code>TEI</code> element. The information before the <code>text</code> element is the meta-data for this document. <code>text</code> starts the content portion of the document. It has two attributes <code>xml:id=</code> and <code>decls=</code> which correspond to the document name and the category type. <code>body</code> opens the text portion of the document. <code>p</code> defines a paragraph in the text, <code>s</code> a sentence, <code>w</code> delimits words, and <code>c</code> punctuation. You will see that the <code>s</code>, <code>w</code>, and <code>c</code> elements have meta-data attributes corresponding to sentence number (<code>n=</code>), word type (<code>type=</code>), and punctuation type (<code>type=</code>). The <code>w</code> and <code>c</code> elements have values corresponding to the real text in the document.</p>
+<p>Let’s now take a look at one of the individual corpus documents. Open <code>a01.xml</code> in a text editor.</p>
+<pre class="xml"><code>&lt;TEI xmlns=&quot;http://www.tei-c.org/ns/1.0&quot;&gt;&lt;teiHeader&gt;&lt;fileDesc&gt;&lt;titleStmt&gt;&lt;title&gt;Sample A01 from  The Atlanta Constitution&lt;/title&gt;&lt;title type=&quot;sub&quot;&gt; November 4, 1961, p.1 &quot;Atlanta Primary ...&quot; 
+ &quot;Hartsfield Files&quot; 
+ August 17, 1961, &quot;Urged strongly ...&quot; 
+ &quot;Sam Caldwell Joins&quot; 
+ March 6,1961, p.1 &quot;Legislators Are Moving&quot; by Reg Murphy
+ &quot;Legislator to fight&quot; by Richard Ashworth 
+ &quot;House Due Bid...&quot; 
+ p.18 &quot;Harry Miller Wins...&quot; 
+&lt;/title&gt;&lt;/titleStmt&gt;&lt;editionStmt&gt;&lt;edition&gt;A part  of the XML version of the Brown Corpus&lt;/edition&gt;&lt;/editionStmt&gt;&lt;extent&gt;1,988 words 431 (21.7%) quotes 2 symbols&lt;/extent&gt;&lt;publicationStmt&gt;&lt;idno&gt;A01&lt;/idno&gt;&lt;availability&gt;&lt;p&gt;Used by permission of The Atlanta ConstitutionState News Service (H), and Reg Murphy (E).&lt;/p&gt;&lt;/availability&gt;&lt;/publicationStmt&gt;&lt;sourceDesc&gt;&lt;bibl&gt; The Atlanta Constitution&lt;/bibl&gt;&lt;/sourceDesc&gt;&lt;/fileDesc&gt;&lt;encodingDesc&gt;&lt;p&gt;Arbitrary Hyphen: multi-million [0520]&lt;/p&gt;&lt;/encodingDesc&gt;&lt;revisionDesc&gt;&lt;change when=&quot;2008-04-27&quot;&gt;Header auto-generated for TEI version&lt;/change&gt;&lt;/revisionDesc&gt;&lt;/teiHeader&gt;
+&lt;text xml:id=&quot;A01&quot; decls=&quot;A&quot;&gt;
+&lt;body&gt;&lt;p&gt;&lt;s n=&quot;1&quot;&gt;&lt;w type=&quot;AT&quot;&gt;The&lt;/w&gt; &lt;w type=&quot;NP&quot; subtype=&quot;TL&quot;&gt;Fulton&lt;/w&gt; &lt;w type=&quot;NN&quot; subtype=&quot;TL&quot;&gt;County&lt;/w&gt; &lt;w type=&quot;JJ&quot; subtype=&quot;TL&quot;&gt;Grand&lt;/w&gt; &lt;w type=&quot;NN&quot; subtype=&quot;TL&quot;&gt;Jury&lt;/w&gt; &lt;w type=&quot;VBD&quot;&gt;said&lt;/w&gt; &lt;w type=&quot;NR&quot;&gt;Friday&lt;/w&gt; &lt;w type=&quot;AT&quot;&gt;an&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;investigation&lt;/w&gt; &lt;w type=&quot;IN&quot;&gt;of&lt;/w&gt; &lt;w type=&quot;NPg&quot;&gt;Atlanta&#39;s&lt;/w&gt; &lt;w type=&quot;JJ&quot;&gt;recent&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;primary&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;election&lt;/w&gt; &lt;w type=&quot;VBD&quot;&gt;produced&lt;/w&gt; &lt;c type=&quot;pct&quot;&gt;``&lt;/c&gt; &lt;w type=&quot;AT&quot;&gt;no&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;evidence&lt;/w&gt; &lt;c type=&quot;pct&quot;&gt;&#39;&#39;&lt;/c&gt; &lt;w type=&quot;CS&quot;&gt;that&lt;/w&gt; &lt;w type=&quot;DTI&quot;&gt;any&lt;/w&gt; &lt;w type=&quot;NNS&quot;&gt;irregularities&lt;/w&gt; &lt;w type=&quot;VBD&quot;&gt;took&lt;/w&gt; &lt;w type=&quot;NN&quot;&gt;place&lt;/w&gt; &lt;c type=&quot;pct&quot;&gt;.&lt;/c&gt; &lt;/s&gt;
+&lt;/p&gt;</code></pre>
+<p>You should notice that this corresponds to the same information we found in the <code>Corpus.xml</code> document for the first content portion. Perusing the other corpus document files we see that the names of the document files <code>a01.xml</code>, <code>a02.xml</code>, etc. reflect the information about the genre category (<code>a</code>, <code>b</code>, <code>c</code>, etc.) and the file number (<code>01</code>, <code>02</code>, <code>03</code>, etc.). This same information is found in the <code>text</code> element attributes for each document, so the file names are redundant, in a sense.</p>
+<p>With this information in hand let’s consider what we want to do with this data and how to do it in R. We know we want to end up with a tidy dataset. The question is what information do we want in our dataset and then how to go about processing the data to get it in that form. Let’s say we want to extract the following data and represent it as our columns in the tidy dataset:</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["document_id"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["category"],"name":[2],"type":["chr"],"align":["left"]},{"label":["category_description"],"name":[3],"type":["chr"],"align":["left"]},{"label":["words"],"name":[4],"type":["chr"],"align":["left"]},{"label":["pos"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"A","3":"PRESS: REPORTAGE","4":"The","5":"AT"},{"1":"2","2":"A","3":"PRESS: REPORTAGE","4":"Austin","5":"AP"},{"1":"3","2":"A","3":"PRESS: REPORTAGE","4":"Several","5":"AP"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>The <code>document_id</code> and <code>category</code> information can be extracted from the <code>text</code> element for the attributes <code>xml:id=</code> and <code>decls=</code>. The <code>category_description</code> information is only found in the <code>Corpus.xml</code> document so a some point we need to extract this information. Each document in the corpus contains a <code>category</code> letter code in the <code>decls=</code> attribute of the <code>text</code> element. This information appears for each document in the <code>Corpus.xml</code> file and each of the corpus document files (<code>a01.xml</code>, <code>a02.xml</code>) as well. Words <code>words</code> will be extracted from the <code>w</code> and <code>c</code> elements (to include punctuation). The part-of-speech information will be harvested from the <code>type=</code> attribute of the <code>w</code> and <code>c</code> elements.</p>
+<p>There are various strategies we can take to acheive our goal here. My approach is to extract <code>document_id</code>, <code>category</code>, <code>words</code>, and <code>pos</code> information from the individual document files and then join this information with the <code>category_description</code> information in the <code>Corpus.xml</code> file by the <code>decls=</code> attribute we will call <code>category</code>. This approach is based on my own experience with working with structured documents and R. It is also possible to extract all the information we need directly from the <code>Corpus.xml</code> document, but the programming strategy necessary to recursively process the data from each document inside the same document creates a more complicated programming workflow. So to simplify things, let’s work with the first document file (<code>a01.xml</code>) to create a series of commands to extract the <code>document_id</code>, <code>category</code>, <code>words</code>, and <code>pos</code> information from this single document. Then we will apply this strategy to each document using a custom function based on our method for extracting the relevant information from the single file combining the results from all the files in a single data frame. At the end we will extract the <code>category_description</code> information and a <code>category</code> column from <code>Corpus.xml</code> that we can use to perform a join to our main dataset. The result will give us the tidy dataset that we’re aiming for. Let’s get started.</p>
+<p>To parse and extract the data we are targeting, we will take advantage of the very useful <a href="https://CRAN.R-project.org/package=xml2">xml2 package</a>. This package includes functions to read xml, target specific elements and attributes, and extract the text that they contain. Let’s start by reading the <code>a01.xml</code> document into R with <code>read_xml()</code>.</p>
+<pre class="r"><code>pacman::p_load(xml2)
+
+file &lt;- &quot;data/original/brown/a01.xml&quot;
+doc &lt;- read_xml(file) # read xml document
+
+doc # preview object</code></pre>
+<pre><code>## {xml_document}
+## &lt;TEI xmlns=&quot;http://www.tei-c.org/ns/1.0&quot;&gt;
+## [1] &lt;teiHeader&gt;\n  &lt;fileDesc&gt;\n    &lt;titleStmt&gt;\n      &lt;title&gt;Sample A01  ...
+## [2] &lt;text xml:id=&quot;A01&quot; decls=&quot;A&quot;&gt;\n  &lt;body&gt;\n    &lt;p&gt;\n      &lt;s n=&quot;1&quot;&gt;\n  ...</code></pre>
+<p>The <code>doc</code> object is <code>xml_document</code> class. We see the namespace declaration and then a vector of elements from our <code>a01.xml</code> document. To target specific elements in this object we use the <code>xml_find_all()</code> function. It takes an <code>xml_document</code> as an object, and then an argument <code>xpath</code> which specifies the element in the xml structure we are looking for. It will find and return all those elements that match. All element names are prefixed with <code>\\</code> so if we want to target the <code>text</code> element the <code>xpath</code> argument will be <code>\\text</code>. Before we implement this we need to remove the namespace declaration in our <code>xml_document</code> object has it automatically prefixes all elements and makes our simple pattern matches more complicated.</p>
+<pre class="r"><code>doc %&gt;% xml_ns_strip() # remove the namespace to simplify path matching
+
+doc # preview object</code></pre>
+<pre><code>## {xml_document}
+## &lt;TEI&gt;
+## [1] &lt;teiHeader&gt;\n  &lt;fileDesc&gt;\n    &lt;titleStmt&gt;\n      &lt;title&gt;Sample A01  ...
+## [2] &lt;text xml:id=&quot;A01&quot; decls=&quot;A&quot;&gt;\n  &lt;body&gt;\n    &lt;p&gt;\n      &lt;s n=&quot;1&quot;&gt;\n  ...</code></pre>
+<p>We now see that the namespace no longer appears. We can now proceed to target the <code>text</code> element as we had planned.</p>
+<pre class="r"><code>doc %&gt;% 
+  xml_find_all(&quot;//text&quot;) # isolate text element</code></pre>
+<pre><code>## {xml_nodeset (1)}
+## [1] &lt;text xml:id=&quot;A01&quot; decls=&quot;A&quot;&gt;\n  &lt;body&gt;\n    &lt;p&gt;\n      &lt;s n=&quot;1&quot;&gt;\n  ...</code></pre>
+<p>Our object is not of type <code>xml_nodeset</code>. xml2 refers to elements as nodes. As we have isolated a node, in this case <code>text</code>, this makes sense as the rest of the xml document structure is no longer part of our object. The next step is to target the two attributes of interest to us <code>xml:id</code> and <code>decls</code>. The function <code>xml_attr()</code> does just this. Note that the <code>xml</code> in <code>xml:id</code> is just a prefix and is not considered the attribute name. Therefore we can use <code>id</code> as our pattern to match.</p>
+<pre class="r"><code>document_id &lt;- 
+  doc %&gt;% 
+  xml_find_all(&quot;//text&quot;) %&gt;% # isolate element
+  xml_attr(&quot;id&quot;) # extract value
+
+document_id # preview</code></pre>
+<pre><code>## [1] &quot;A01&quot;</code></pre>
+<p>Our goal is to eliminate the redundant category letter in the <code>document_id</code>. We can use a regular expression (<code>\\d+</code>) with the <code>str_extract()</code> function to only extract the digits.</p>
+<pre class="r"><code>document_id &lt;- 
+  doc %&gt;% 
+  xml_find_all(&quot;//text&quot;) %&gt;% # isolate element
+  xml_attr(&quot;id&quot;) %&gt;% # extract attribute
+  str_extract(&quot;\\d+&quot;) # extract digits
+
+document_id # preview</code></pre>
+<pre><code>## [1] &quot;01&quot;</code></pre>
+<p>Looks good. Let’s do the same, now for the <code>decls</code> attribute which contains the <code>category</code> information we are looking for.</p>
+<pre class="r"><code>category &lt;- 
+  doc %&gt;% 
+  xml_find_all(&quot;//text&quot;) %&gt;% # isolate element
+  xml_attr(&quot;decls&quot;) # extract attribute
+
+category # preview</code></pre>
+<pre><code>## [1] &quot;A&quot;</code></pre>
+<p>Now it’s time to turn to extracting <code>words</code> and <code>pos</code> tags. As identified earlier, <code>words</code> are contained as values inside the <code>w</code> and <code>c</code> elements. <code>pos</code> tags are attributes of the <code>w</code> and <code>c</code> elements. We’ve seen how to get the attribute of an xml element, but to get the value of an element we use the <code>xml_text()</code> function. Let’s target <code>w</code> or <code>c</code> elements (at the same time using the pipe <code>|</code> regular expression operator) and extract the values for each matching element.</p>
+<pre class="r"><code>words &lt;- 
+  doc %&gt;% 
+  xml_find_all(&quot;//w|//c&quot;) %&gt;% # isolate elements
+  xml_text() # extract text
+
+head(words, 25) # preview first 25 matches</code></pre>
+<pre><code>##  [1] &quot;The&quot;            &quot;Fulton&quot;         &quot;County&quot;         &quot;Grand&quot;         
+##  [5] &quot;Jury&quot;           &quot;said&quot;           &quot;Friday&quot;         &quot;an&quot;            
+##  [9] &quot;investigation&quot;  &quot;of&quot;             &quot;Atlanta&#39;s&quot;      &quot;recent&quot;        
+## [13] &quot;primary&quot;        &quot;election&quot;       &quot;produced&quot;       &quot;``&quot;            
+## [17] &quot;no&quot;             &quot;evidence&quot;       &quot;&#39;&#39;&quot;             &quot;that&quot;          
+## [21] &quot;any&quot;            &quot;irregularities&quot; &quot;took&quot;           &quot;place&quot;         
+## [25] &quot;.&quot;</code></pre>
+<p>Now let’s apply <code>xml_attr()</code> to the xml elements <code>w</code> and <code>c</code> and get the <code>pos</code> tag information from the <code>type=</code> attribute.</p>
+<pre class="r"><code>pos &lt;- 
+  doc %&gt;% 
+  xml_find_all(&quot;//w|//c&quot;) %&gt;% # isolate elements
+  xml_attr(&quot;type&quot;) # extract attribute
+
+head(pos, 25) # preview first 25 matches</code></pre>
+<pre><code>##  [1] &quot;AT&quot;  &quot;NP&quot;  &quot;NN&quot;  &quot;JJ&quot;  &quot;NN&quot;  &quot;VBD&quot; &quot;NR&quot;  &quot;AT&quot;  &quot;NN&quot;  &quot;IN&quot;  &quot;NPg&quot;
+## [12] &quot;JJ&quot;  &quot;NN&quot;  &quot;NN&quot;  &quot;VBD&quot; &quot;pct&quot; &quot;AT&quot;  &quot;NN&quot;  &quot;pct&quot; &quot;CS&quot;  &quot;DTI&quot; &quot;NNS&quot;
+## [23] &quot;VBD&quot; &quot;NN&quot;  &quot;pct&quot;</code></pre>
+<p>If everything worked according to plan there should be a <code>pos</code> tag for each word in <code>words</code>. Therefore the length of each of the vectors <code>words</code> and <code>pos</code> should be the same. Let’s check using <code>length()</code>.</p>
+<pre class="r"><code>length(words)</code></pre>
+<pre><code>## [1] 2239</code></pre>
+<pre class="r"><code>length(pos)</code></pre>
+<pre><code>## [1] 2239</code></pre>
+<p>All good. The next step is to create a data frame from our variables <code>document_id</code>, <code>category</code>, <code>words</code>, <code>pos</code>. The first two variables have length 1 and as we just saw the last two have a length of 2239. When we combine these variables to create a data frame R will automatically repeat the values of <code>document_id</code> and <code>category</code> to match the length of the longest vector(s). The result will be a rectangular, i.e. tidy, dataset for this first document.</p>
+<pre class="r"><code>data &lt;- 
+  data_frame(document_id, category, words, pos) # create tidy dataset
+
+glimpse(data) # preview</code></pre>
+<pre><code>## Observations: 2,239
+## Variables: 4
+## $ document_id &lt;chr&gt; &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;0...
+## $ category    &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, ...
+## $ words       &lt;chr&gt; &quot;The&quot;, &quot;Fulton&quot;, &quot;County&quot;, &quot;Grand&quot;, &quot;Jury&quot;, &quot;said&quot;...
+## $ pos         &lt;chr&gt; &quot;AT&quot;, &quot;NP&quot;, &quot;NN&quot;, &quot;JJ&quot;, &quot;NN&quot;, &quot;VBD&quot;, &quot;NR&quot;, &quot;AT&quot;, &quot;...</code></pre>
+<p>We now have 4 columns corresponding to the information we have extracted and 2239 rows which correspond to each word in the document.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["document_id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["category"],"name":[2],"type":["chr"],"align":["left"]},{"label":["words"],"name":[3],"type":["chr"],"align":["left"]},{"label":["pos"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"01","2":"A","3":"The","4":"AT"},{"1":"01","2":"A","3":"Fulton","4":"NP"},{"1":"01","2":"A","3":"County","4":"NN"},{"1":"01","2":"A","3":"Grand","4":"JJ"},{"1":"01","2":"A","3":"Jury","4":"NN"},{"1":"01","2":"A","3":"said","4":"VBD"},{"1":"01","2":"A","3":"Friday","4":"NR"},{"1":"01","2":"A","3":"an","4":"AT"},{"1":"01","2":"A","3":"investigation","4":"NN"},{"1":"01","2":"A","3":"of","4":"IN"},{"1":"01","2":"A","3":"Atlanta's","4":"NPg"},{"1":"01","2":"A","3":"recent","4":"JJ"},{"1":"01","2":"A","3":"primary","4":"NN"},{"1":"01","2":"A","3":"election","4":"NN"},{"1":"01","2":"A","3":"produced","4":"VBD"},{"1":"01","2":"A","3":"``","4":"pct"},{"1":"01","2":"A","3":"no","4":"AT"},{"1":"01","2":"A","3":"evidence","4":"NN"},{"1":"01","2":"A","3":"''","4":"pct"},{"1":"01","2":"A","3":"that","4":"CS"},{"1":"01","2":"A","3":"any","4":"DTI"},{"1":"01","2":"A","3":"irregularities","4":"NNS"},{"1":"01","2":"A","3":"took","4":"VBD"},{"1":"01","2":"A","3":"place","4":"NN"},{"1":"01","2":"A","3":".","4":"pct"},{"1":"01","2":"A","3":"The","4":"AT"},{"1":"01","2":"A","3":"jury","4":"NN"},{"1":"01","2":"A","3":"further","4":"RBR"},{"1":"01","2":"A","3":"said","4":"VBD"},{"1":"01","2":"A","3":"in","4":"IN"},{"1":"01","2":"A","3":"term-end","4":"NN"},{"1":"01","2":"A","3":"presentments","4":"NNS"},{"1":"01","2":"A","3":"that","4":"CS"},{"1":"01","2":"A","3":"the","4":"AT"},{"1":"01","2":"A","3":"City","4":"NN"},{"1":"01","2":"A","3":"Executive","4":"JJ"},{"1":"01","2":"A","3":"Committee","4":"NN"},{"1":"01","2":"A","3":",","4":"pct"},{"1":"01","2":"A","3":"which","4":"WDT"},{"1":"01","2":"A","3":"had","4":"HVD"},{"1":"01","2":"A","3":"over-all","4":"JJ"},{"1":"01","2":"A","3":"charge","4":"NN"},{"1":"01","2":"A","3":"of","4":"IN"},{"1":"01","2":"A","3":"the","4":"AT"},{"1":"01","2":"A","3":"election","4":"NN"},{"1":"01","2":"A","3":",","4":"pct"},{"1":"01","2":"A","3":"``","4":"pct"},{"1":"01","2":"A","3":"deserves","4":"VBZ"},{"1":"01","2":"A","3":"the","4":"AT"},{"1":"01","2":"A","3":"praise","4":"NN"},{"1":"01","2":"A","3":"and","4":"CC"},{"1":"01","2":"A","3":"thanks","4":"NNS"},{"1":"01","2":"A","3":"of","4":"IN"},{"1":"01","2":"A","3":"the","4":"AT"},{"1":"01","2":"A","3":"City","4":"NN"},{"1":"01","2":"A","3":"of","4":"IN"},{"1":"01","2":"A","3":"Atlanta","4":"NP"},{"1":"01","2":"A","3":"''","4":"pct"},{"1":"01","2":"A","3":"for","4":"IN"},{"1":"01","2":"A","3":"the","4":"AT"},{"1":"01","2":"A","3":"manner","4":"NN"},{"1":"01","2":"A","3":"in","4":"IN"},{"1":"01","2":"A","3":"which","4":"WDT"},{"1":"01","2":"A","3":"the","4":"AT"},{"1":"01","2":"A","3":"election","4":"NN"},{"1":"01","2":"A","3":"was","4":"BEDZ"},{"1":"01","2":"A","3":"conducted","4":"VBN"},{"1":"01","2":"A","3":".","4":"pct"},{"1":"01","2":"A","3":"The","4":"AT"},{"1":"01","2":"A","3":"September-October","4":"NP"},{"1":"01","2":"A","3":"term","4":"NN"},{"1":"01","2":"A","3":"jury","4":"NN"},{"1":"01","2":"A","3":"had","4":"HVD"},{"1":"01","2":"A","3":"been","4":"BEN"},{"1":"01","2":"A","3":"charged","4":"VBN"},{"1":"01","2":"A","3":"by","4":"IN"},{"1":"01","2":"A","3":"Fulton","4":"NP"},{"1":"01","2":"A","3":"Superior","4":"JJ"},{"1":"01","2":"A","3":"Court","4":"NN"},{"1":"01","2":"A","3":"Judge","4":"NN"},{"1":"01","2":"A","3":"Durwood","4":"NP"},{"1":"01","2":"A","3":"Pye","4":"NP"},{"1":"01","2":"A","3":"to","4":"TO"},{"1":"01","2":"A","3":"investigate","4":"VB"},{"1":"01","2":"A","3":"reports","4":"NNS"},{"1":"01","2":"A","3":"of","4":"IN"},{"1":"01","2":"A","3":"possible","4":"JJ"},{"1":"01","2":"A","3":"``","4":"pct"},{"1":"01","2":"A","3":"irregularities","4":"NNS"},{"1":"01","2":"A","3":"''","4":"pct"},{"1":"01","2":"A","3":"in","4":"IN"},{"1":"01","2":"A","3":"the","4":"AT"},{"1":"01","2":"A","3":"hard-fought","4":"JJ"},{"1":"01","2":"A","3":"primary","4":"NN"},{"1":"01","2":"A","3":"which","4":"WDT"},{"1":"01","2":"A","3":"was","4":"BEDZ"},{"1":"01","2":"A","3":"won","4":"VBN"},{"1":"01","2":"A","3":"by","4":"IN"},{"1":"01","2":"A","3":"Mayor-nominate","4":"NN"},{"1":"01","2":"A","3":"Ivan","4":"NP"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>With this working strategy we can create a custom function to process and parse a document in this corpus. I’ve added the steps to the function <code>parse_xml_doc()</code> with a few additions: a comment to describe the function, <code>cat()</code> functions to update the progress, and a <code>return()</code> function to make the results accessible.</p>
+<pre class="r"><code>parse_xml_doc &lt;- function(file) {
+  # Function: reads a Brown XML file and returns a tidy dataset
+  # with the attributes `document_id`, `category`, `words`, and `pos`
+  
+  cat(&quot;Reading&quot;, basename(file), &quot;... &quot;) # status update
+  
+  doc &lt;- read_xml(file) # read xml document
+  doc %&gt;% xml_ns_strip() # remove the namespace to simplify path matching
+  
+  document_id &lt;- 
+    doc %&gt;% 
+    xml_find_all(&quot;//text&quot;) %&gt;% # isolate element
+    xml_attr(&quot;id&quot;) %&gt;% # extract attribute
+    str_extract(&quot;\\d+&quot;) # extract digits
+  
+  category &lt;- 
+    doc %&gt;% 
+    xml_find_all(&quot;//text&quot;) %&gt;% # isolate element
+    xml_attr(&quot;decls&quot;) # extract attribute
+  
+  words &lt;- 
+    doc %&gt;% 
+    xml_find_all(&quot;//w|//c&quot;) %&gt;% # isolate elements
+    xml_text() # extract text
+  
+  pos &lt;- 
+    doc %&gt;% 
+    xml_find_all(&quot;//w|//c&quot;) %&gt;% # isolate elements
+    xml_attr(&quot;type&quot;) # extract attribute
+  
+  data &lt;- 
+    data_frame(document_id, category, words, pos) # create tidy dataset
+  
+  cat(&quot;Done.\n&quot;) # status update
+  
+  return(data) # make the function output the dataset
+}</code></pre>
+<p>Let’s check if our function works as expected by testing it on another xml file in the corpus.</p>
+<pre class="r"><code>parse_xml_doc(file = &quot;data/original/brown/a02.xml&quot;) %&gt;% 
+  head(25)</code></pre>
+<pre><code>## Reading a02.xml ... Done.</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["document_id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["category"],"name":[2],"type":["chr"],"align":["left"]},{"label":["words"],"name":[3],"type":["chr"],"align":["left"]},{"label":["pos"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"02","2":"A","3":"Austin","4":"NP"},{"1":"02","2":"A","3":",","4":"pct"},{"1":"02","2":"A","3":"Texas","4":"NP"},{"1":"02","2":"A","3":"--","4":"pct"},{"1":"02","2":"A","3":"Committee","4":"NN"},{"1":"02","2":"A","3":"approval","4":"NN"},{"1":"02","2":"A","3":"of","4":"IN"},{"1":"02","2":"A","3":"Gov.","4":"NN"},{"1":"02","2":"A","3":"Price","4":"NP"},{"1":"02","2":"A","3":"Daniel's","4":"NPg"},{"1":"02","2":"A","3":"``","4":"pct"},{"1":"02","2":"A","3":"abandoned","4":"VBN"},{"1":"02","2":"A","3":"property","4":"NN"},{"1":"02","2":"A","3":"''","4":"pct"},{"1":"02","2":"A","3":"act","4":"NN"},{"1":"02","2":"A","3":"seemed","4":"VBD"},{"1":"02","2":"A","3":"certain","4":"JJ"},{"1":"02","2":"A","3":"Thursday","4":"NR"},{"1":"02","2":"A","3":"despite","4":"IN"},{"1":"02","2":"A","3":"the","4":"AT"},{"1":"02","2":"A","3":"adamant","4":"JJ"},{"1":"02","2":"A","3":"protests","4":"NNS"},{"1":"02","2":"A","3":"of","4":"IN"},{"1":"02","2":"A","3":"Texas","4":"NP"},{"1":"02","2":"A","3":"bankers","4":"NNS"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Looks like it works as expected. Now let’s get the paths to the other files in the corpus and iteratively apply this function <code>parse_xml_doc()</code> to each in turn, combining the result in a single data frame with <code>bind_rows()</code>. We will use a regular expression with <code>list.files()</code> to target only the individual corpus files we are interested (avoiding <code>Corpus.xml</code>, for example).</p>
+<pre class="r"><code>files &lt;- 
+  list.files(path = &quot;data/original/brown/&quot;, # directory where the files are
+             pattern = &quot;^\\w\\d+&quot;, # only return files starting with letter + digits
+             full.names = TRUE) # return the full path
+
+brown_data &lt;- 
+  files %&gt;% # pass files
+  map(parse_xml_doc) %&gt;% # iteratively process each file 
+  bind_rows() # bind the resulting data frames into one
+
+glimpse(brown_data) # preview</code></pre>
+<pre><code>## Observations: 1,155,866
+## Variables: 4
+## $ document_id &lt;chr&gt; &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;01&quot;, &quot;0...
+## $ category    &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, ...
+## $ words       &lt;chr&gt; &quot;The&quot;, &quot;Fulton&quot;, &quot;County&quot;, &quot;Grand&quot;, &quot;Jury&quot;, &quot;said&quot;...
+## $ pos         &lt;chr&gt; &quot;AT&quot;, &quot;NP&quot;, &quot;NN&quot;, &quot;JJ&quot;, &quot;NN&quot;, &quot;VBD&quot;, &quot;NR&quot;, &quot;AT&quot;, &quot;...</code></pre>
+<p>At this point the only thing to do is to obtain the <code>category_description</code> information We will extract this information and the category as well from the <code>Corpus.xml</code> document and then perform a join operation.</p>
+<p>On lines 71-85 of the <code>Corpus.xml</code> file we find the category information. Here’s the first few lines.</p>
+<pre class="xml"><code>&lt;category xml:id=&quot;A&quot;&gt;&lt;catDesc&gt; PRESS: REPORTAGE&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;B&quot;&gt;&lt;catDesc&gt; PRESS: EDITORIAL&lt;/catDesc&gt;&lt;/category&gt;
+&lt;category xml:id=&quot;C&quot;&gt;&lt;catDesc&gt; PRESS: REVIEWS&lt;/catDesc&gt;&lt;/category&gt;
+...</code></pre>
+<p>Let’s read the <code>Corpus.xml</code> file and assign it to <code>doc</code>. Next we will again apply the <code>xml_find_all()</code> function to extract the attributes (<code>id</code>) and elements (<code>category</code>) that we are interested in . In the previous approach we removed the namespace information for each xml document to simplify searching and extracting elments. In each of those documents there was one namespace per file. In the <code>Corpus.xml</code> there are namespaces for the file and each of the documents that are within. Since we are only going to extract a small portion of the <code>Corpus.xml</code> document, we will leave the namespace alone and prefix the pattern to match the <code>category</code> elements with <code>d1:</code> (‘document 1’).</p>
+<pre class="r"><code>doc &lt;- read_xml(x = &quot;data/original/brown/Corpus.xml&quot;) # read xml
+
+category &lt;- 
+  doc %&gt;% 
+  xml_find_all(&quot;//d1:category&quot;) %&gt;% # isolate elements
+  xml_attr(&quot;id&quot;) # extract attributes
+
+category_description &lt;- 
+  doc %&gt;% 
+  xml_find_all(&quot;//d1:category&quot;) %&gt;% # isolate elements
+  xml_text(trim = TRUE) # extract text (trim any whitespace)
+
+brown_categories &lt;- 
+  data_frame(category, category_description) # create a data frame
+
+glimpse(brown_categories) # preview</code></pre>
+<pre><code>## Observations: 15
+## Variables: 2
+## $ category             &lt;chr&gt; &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;...
+## $ category_description &lt;chr&gt; &quot;PRESS: REPORTAGE&quot;, &quot;PRESS: EDITORIAL&quot;, &quot;...</code></pre>
+<p>Now we have a data frame with the <code>category</code> and <code>category_description</code> from the <code>Corpus.xml</code> file. The <code>category</code> information is the letter code that corresponds to the same column name and values in the <code>brown_data</code>. We can now join these two data frames using this shared <code>category</code> column. We will do a left join operation which will have the effect of keeping all the values in the <code>brown_data</code> and connecting the values that match in <code>category</code> in the <code>brown_categories</code> data. I arrange the order of the columns, for aesthetic purposes, with <code>select()</code>.</p>
+<pre class="r"><code>brown &lt;- 
+  left_join(brown_data, brown_categories) %&gt;% # join by `category`
+  select(document_id, category, category_description, words, pos) # arrange column order
+
+head(brown, 25) # preview</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["document_id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["category"],"name":[2],"type":["chr"],"align":["left"]},{"label":["category_description"],"name":[3],"type":["chr"],"align":["left"]},{"label":["words"],"name":[4],"type":["chr"],"align":["left"]},{"label":["pos"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"The","5":"AT"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"Fulton","5":"NP"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"County","5":"NN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"Grand","5":"JJ"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"Jury","5":"NN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"said","5":"VBD"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"Friday","5":"NR"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"an","5":"AT"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"investigation","5":"NN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"of","5":"IN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"Atlanta's","5":"NPg"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"recent","5":"JJ"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"primary","5":"NN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"election","5":"NN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"produced","5":"VBD"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"``","5":"pct"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"no","5":"AT"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"evidence","5":"NN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"''","5":"pct"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"that","5":"CS"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"any","5":"DTI"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"irregularities","5":"NNS"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"took","5":"VBD"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":"place","5":"NN"},{"1":"01","2":"A","3":"PRESS: REPORTAGE","4":".","5":"pct"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>So we’ve produced the dataset that we aimed to create. Let’s visualize the distribution of these part-of-speech tags in the same way we did earlier with the ACTIV-ES Corpus.</p>
+<pre class="r"><code>brown %&gt;% 
+  count(pos) %&gt;% # count tags
+  ggplot(aes(x = reorder(pos, n), y = n)) + # map x-axis to `tag`, y-axis to `n`
+  geom_col() + # render as a bar plot
+  labs(x = &quot;Tags&quot;, y = &quot;Count&quot;, title = &quot;Brown Corpus Distribution&quot;, subtitle = &quot;Count of part-of-speech tags&quot;) + # prettify labels
+  theme(axis.text.x = element_text(angle = 90, vjust = .5, size = 5)) # adjust x-axis labels</code></pre>
+<p><img src="/rmarkdown-libs/figure-html4/brown-graph-tags-1.png" width="100%" /></p>
+<p>You will notice that the tag set is much larger for this corpus. Specifically, there are 84 tags. In the ACTIV-ES Corpus there are 14 tags. This means that the grammatical category distinctions are more fine grained. For some types of research this level of granularity is required for other research it may not be.</p>
+<p>Our final step is to write this tidy dataset to disk to make it accessible for future work.</p>
+<pre class="r"><code>write_csv(x = brown, path = &quot;data/derived/brown_tagged.csv&quot;) # write `brown` dataset</code></pre>
 </div>
 <div id="syntactic-structure" class="section level3">
 <h3>Syntactic structure</h3>
 <!-- Source: http://www.nltk.org/nltk_data/ -->
+<p>In this next section the idea is to work with syntactic annotations. These annotations are more complex in terms of linguistic features, but also more complex to work with in R. There are two main approaches to annotating syntax. In one approach phrase structure is modeled and the other dependency relationships are modeled. Phrase structure makes the assumption that the fundamental unit of syntax is the constituent. Whereas this is not the case in dependency annotations where each word is a node in which relationships are edges between these nodes.</p>
+<p>A common format for representing phrase structure is the Penn Treebank format. A basic sentence seen below as an example.</p>
+<pre class="plain"><code>( (S (NP John)
+     (VP likes 
+         (NP trains))))</code></pre>
+<p>The whitespace is provide to make it easier for humans to visually parse the tree but is not important in computing terms. What is important is the bracketing relationships which together provide a linear and hiearchical structure.</p>
+<pre><code>( (S (NP John) (VP likes (NP trains))))</code></pre>
+<p>Phrase structure (Penn WSJ #74) Wall Street Journal</p>
+<pre class="plain"><code>( (S (NP-SBJ (NP Pierre Vinken)
+             ,
+             (ADJP (NP 61 years)
+           old)
+             ,)
+     (VP will
+         (VP join
+             (NP the board)
+             (PP-CLR as
+             (NP a nonexecutive director))
+         (NP-TMP Nov. 29)))
+     .))</code></pre>
+<p>Dependency annotations tend to</p>
+<pre class="plain"><code>Pierre  NNP 2
+Vinken  NNP 8
+,   ,   2
+61  CD  5
+years   NNS 6
+old JJ  2
+,   ,   2
+will    MD  0
+join    VB  8
+the DT  11
+board   NN  9
+as  IN  9
+a   DT  15
+nonexecutive    JJ  15
+director    NN  12
+Nov.    NNP 9
+29  CD  16
+.   .   8</code></pre>
 <ul>
-<li><p>Phrase structure (Penn WSJ #74)</p></li>
-<li><p>Dependency structure (Penn WSJ #18)</p></li>
+<li>Dependency structure (Penn WSJ #18)</li>
 </ul>
 <!-- Search for other treebanks, and other resources: https://vlo.clarin.eu/search -->
+<!-- 
+
+I'm really not sure what to do with this syntactic annotations thing. I've never worked with these annotations to do any research. So I dont' have any questions I can think of that I want to model. Furthermore, I'm not sure how to wrangle the data to get it into a tidy format, or at least a format that will facilitate analysis --which is the point of this post. The Penn annotations are really awkward. They are not easily parsable. There are stand-alone software packages in Java that can do searches over the tree structure of the constituent format, but I'm trying to look for an R solution, trying to avoid getting into other programming languages and the installation issues involved there.
+
+On the other hand I'm not sure what do do with a dependency parse. I guess one thing to do would be to see if I can find studies that have used these parses to do work with syntax in the corpus study vein. 
+
+One thing to do would be to just talk about the formats and how they are less straight-forward to deal with. I could take a look at the TGrep software and see if the output could generate something to work with in R and make that the focus. On the other hand dependency parses could be approached in a similar method, but I also need to do more research to get a better idea.
+
+In the next section I want to show how to generate pos, lemma, sentiment, and syntactic annotations. A lot of that can be done with the `udpipe` package, and then some working with the `sentiment` package to splice in seniment for words. Maybe jumping directly into generating the annotations would be a good way to work with this. First talk about the formats available and then show how to generate the annotations with `udpipe`. Still some basic understandng of what to do with these outputs will be necessary, if not for this post, at least for some subseequent post and even for the Chapter for Corpus Studies of Syntax. It may be worth my while to stop the writing and do the research before coming back and finishing the post. 
+
+-->
 </div>
 </div>
 <div id="generate-annotations" class="section level2">

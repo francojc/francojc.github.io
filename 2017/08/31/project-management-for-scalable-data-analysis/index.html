@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Jerid Francom">
   <meta name="description" content="Associate Professor of Spanish and Linguistics">
 
@@ -554,13 +554,19 @@ Figure 4: View of the section listing in RStudio.
 ├── recipes-project_template.Rproj
 └── report/
     ├── article.Rmd
-    ├── article.pdf
+    ├── article.html
     ├── bibliography.bib
     ├── slides.Rmd
     ├── slides.html
     ├── web.Rmd
     └── web.html</code></pre>
-<p>The new files appear in the <code>log/</code> and <code>report/</code> directories. The <code>session_info.txt</code> file is our log of the session information. The <code>article.pdf</code>, <code>slides.html</code>, and <code>web.html</code> files are the rendered versions of the RMarkdown templates. If you browse to the History tab in the Environment pane you will see that we have one line in our history –the code that ran the <code>_pipeline.R</code> file. Let’s quit our R session now by closing RStudio. When prompted, choose ‘Save’ from the ‘Quit R session’ dialogue box. Now reopen our R project by either starting RStudio then choosing ‘File &gt; Recent Projects’ in the RStudio toolbar or by navigating to the <code>recipes-project_template.Rproj</code> file with your operating system’s file explorer and double-clicking it.</p>
+<p>The new files appear in the <code>log/</code> and <code>report/</code> directories. The <code>session_info.txt</code> file is our log of the session information. The <code>article.html</code>, <code>slides.html</code>, and <code>web.html</code> files are the rendered versions of the RMarkdown templates. If you browse to the History tab in the Environment pane you will see that we have one line in our history –the code that ran the <code>_pipeline.R</code> file.</p>
+<div class="alert alert-warning">
+  <p>The <code>article.Rmd</code> file is set to render a web document by default in this template. If you want to render a PDF document, you will need to have a working Latex installation. For those who would like to set up PDF rendering of RMarkdown documents, here are <a href="https://yihui.name/tinytex/">instructions</a> on how to set up Latex.</p>
+
+</div>
+
+<p>Let’s quit our R session now by closing RStudio. When prompted, choose ‘Save’ from the ‘Quit R session’ dialogue box. Now reopen our R project by either starting RStudio then choosing ‘File &gt; Recent Projects’ in the RStudio toolbar or by navigating to the <code>recipes-project_template.Rproj</code> file with your operating system’s file explorer and double-clicking it.</p>
 <p>Choosing to save our project before closing RStudio has the effect of taking a snapshot of the current workspace. The files that were open on closing the session are returned to the workspace. Any variables we had in memory and the command history are also returned. The details of this snapshot are stored in the files you will now find at the root of our project directory: <code>.RData</code> and <code>.Rhistory</code>.</p>
 <div class="figure"><span id="fig:r-project-4"></span>
 <img src="/rmarkdown-libs/figure-html4/r-project-4-1.png" alt="View of the R project snapshot files `.RData` and `.Rhistory`." width="100%" />

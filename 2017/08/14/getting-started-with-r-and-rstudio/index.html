@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Jerid Francom">
   <meta name="description" content="Associate Professor of Spanish and Linguistics">
 
@@ -579,7 +579,7 @@ Figure 21: The packages installation dialogue box.
 <p>Type the names <code>dplyr</code>, <code>ggplot2</code>, and <code>tidytext</code> into the ‘Packages’ field leaving the other default configuration fields. You will notice as you type the package names, RStudio will pattern match the name which can be helpful to make sure you type the names correctly. Once you have the names entered, click the ‘Install’ button. At this point RStudio will run the installation code for these packages. As they install there will be quite a bit of output, some of it in red font, in the Console. When the installation is complete the prompt <code>&gt;</code> at the Console will appear; ready to take another command.</p>
 <p>The Console approach leverages the function <code>install.packages()</code>. To find out more about how to use this function, I encourage you to look at the R documentation using <code>?install.packages</code>. I will leave this as an exercise for you to complete. Now back to our example code that we will enter in the Editor pane.</p>
 <p>Copy and paste the following code into the Editor pane.</p>
-<pre class="r"><code>library(dplyr) # data manipulation
+<pre class="plain"><code>library(dplyr) # data manipulation
 library(ggplot2) # package for generating a word frequency plot
 library(tidytext) # package for doing a word frequency analysis
 
@@ -588,7 +588,7 @@ text &lt;- c(&quot;The Fulton County Grand Jury said Friday an investigation of 
 &quot;The September-*october term jury had been charged by Fulton Superior Court Judge Durwood Pye to investigate reports of possible irregularities in the hard-fought primary which was won by Mayor-nominate Ivan Allen Jr..&quot;,
 &quot;Only a relative handful of such reports was received, the jury said, considering the widespread interest in the election, the number of voters and the size of this city.&quot;) # first 4 lines from the Brown Corpus
 
-text_df &lt;- data.frame(line = 1:4, text = text) # create a tabular dataset with the columns `line` and `text`
+text_df &lt;- data_frame(line = 1:4, text = text) # create a tabular dataset with the columns `line` and `text`
 
 text.word.freq &lt;- unnest_tokens(tbl = text_df, input = text, output = words) %&gt;% # tokenize `text` into `words`
   count(words, sort = TRUE) %&gt;% # count `words` and sort them
@@ -596,6 +596,7 @@ text.word.freq &lt;- unnest_tokens(tbl = text_df, input = text, output = words) 
 
 ggplot(data = text.word.freq, aes(x = reorder(words, desc(n)), y = n)) + geom_bar(stat = &quot;identity&quot;) + labs(x = &quot;Words&quot;, y = &quot;Count&quot;, title = &quot;Word frequency plot&quot;) # plot the `words` on the x-axis and the count `n` on the y-axis using a bar plot ordered by `n`</code></pre>
 <p>Your code should look something similar to what you see in Figure <a href="#fig:R-basic-5">22</a>. Note that I have resized the Editor pane to view most of the code.</p>
+<!-- say something about code highlighting? -->
 <div class="figure"><span id="fig:R-basic-5"></span>
 <img src="/rmarkdown-libs/figure-html4/R-basic-5-1.png" alt="Code for a basic word frequency analysis in the Editor pane." width="100%" />
 <p class="caption">
@@ -667,7 +668,9 @@ Figure 28: Moving a file to a new directory in the Files tab.
 Figure 29: Quiting an R session.
 </p>
 </div>
-<p>We can choose not to save the workspace and our files will be preserved (as long as they have been previously saved to the hard disk). What we lose, however, are the variables and history that RStudio has in memory at the current moment in our session. If you want to begin your next session with these variables and history loaded from the get-go, then we will want to save the workspace. Let’s choose to save the workspace to see this in action. After quitting RStudio, restart the application. Because we had chosen to save the workspace we now have our variables and history in this new R session. You can view them in the Environment pane. If you navigate to the working directory in the Files tab in the Files tab you will also see a couple new files have been added to our files and directory list: <code>.RData</code> and <code>.Rhistory</code>.</p>
+<p>We can choose not to save the workspace and our files will be preserved (as long as they have been previously saved to the hard disk). What we lose, however, are the variables and history that RStudio has in memory at the current moment in our session. If you want to begin your next session with these variables and history loaded from the get-go, then we will want to save the workspace. Let’s choose to save the workspace to see this in action. After quitting RStudio, restart the application.
+Because we had chosen to save the workspace we now have our variables and history in this new R session. You can view them in the Environment pane. If you navigate to the working directory in the Files tab in the Files tab you will also see a couple new files have been added to our files and directory list: <code>.RData</code> and <code>.Rhistory</code>.</p>
+<!-- speak about issues created by saving the workspace environment. Write scripts/ projects with assumption that nothing is saved in the workspace environment -->
 <div class="figure"><span id="fig:R-basic-13"></span>
 <img src="/rmarkdown-libs/figure-html4/R-basic-13-1.png" alt="Workspace files `.RData` and `.Rhistory`." width="100%" />
 <p class="caption">

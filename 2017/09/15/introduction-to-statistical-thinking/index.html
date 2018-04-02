@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Jerid Francom">
   <meta name="description" content="Associate Professor of Spanish and Linguistics">
 
@@ -348,7 +348,7 @@
 
 
 <p>Before we begin working on the specifics of our data project, it is important to have a clear understanding of some of the basic concepts that need to be in place to guide our work. In this post I will cover some of these topics including the importance of identifying a research question, how different statistical approaches relate to different types of research, and understanding data from a sampling and organizational standpoint. I will also provide some examples of linking research questions with variables in a toy dataset as we begin to discuss how to approach data analysis, primarily through visualization techniques.</p>
-<section id="research-aims" class="level2">
+<div id="research-aims" class="section level2">
 <h2>Research aims</h2>
 <!-- TODO: pepper in examples of the types of questions and methods one might find -->
 <p>Before jumping into the code, every researcher must come to a project with a clear idea about the purpose of the analysis. This means doing your homework in order to understand what it is exactly that you want to achieve; that is, you need to identify a <strong>research question</strong>. The first step is become versed in the previous literature on the topic. What has been written? What are the main findings? Secondly, it is important to become familiar with the standard methods for approaching the topic of interest. How has the topic been approached methodologically? What are the types, sources, and quality of data employed? What have been the statistical approaches employed? What particular statistical tests have been chosen? Getting an overview not only of the domain-specific findings in the literature but also the methodological choices will help you identify promising plan for carrying out your research.</p>
@@ -356,28 +356,28 @@
 <!-- * Identify a research question -->
 <!--   - research previous literature -->
 <!--   - get to know the nature of the phenomenon -->
-</section>
-<section id="choosing-a-statistical-approach" class="level2">
+</div>
+<div id="choosing-a-statistical-approach" class="section level2">
 <h2>Choosing a statistical approach</h2>
 <p>With a research question in hand and a sense of how similar studies have approached the topic methodologically, it’s time to make a more refined decision about how the data is to be analyzed. This decision will dictate all other methodological choices from data collection to interpreting results.</p>
 <p>There are three main statistical approaches:</p>
 <!-- * Identify goals of your analysis -->
-<section id="inference" class="level3">
+<div id="inference" class="section level3">
 <h3>Inference</h3>
 <!-- TODO: find a way to introduce the concept 'model'. this could make it easier to speak about statistical approaches, here and later in the post -->
 <!-- TODO: pepper in examples of each type of statistical approach to ground these concepts a bit -->
 <p>Also commonly known as hypothesis testing or confirmation, statistical inference aims to establish whether there is a reliable and generalizable relationship given patterns in the data. The approach makes the starting assumption that there is no relationship, or that the null hypothesis (<span class="math inline">\(H_0\)</span>) is true. A relationship is only reliable, or <em>significant</em>, if the chance that the null hypothesis is false is less than some predetermined threshold; in which case we accept the alternative hypothesis (<span class="math inline">\(H_1\)</span>). The standard threshold used in the Social Sciences, Linguistic included, is the famous p-value <span class="math inline">\(p &lt; .05\)</span>. Without digging into the deeper meaning of a p-value, in a nutshell a p-value is a confidence measure to suggest that the relationship you are investigating is robust and reliable given the data. In an inference approach all the data is used and is used <em>only</em> once. This is not the case for the other two statistical approaches we will cover, Exploration and Prediction. For this reason it is vital to identify your statistical approach from the beginning. In the case of inference tests, failing to make a clear hypothesis often leads to p-hacking; a practice of running multiple tests and/or parameters on the same data (i.e. reusing the data) until evidence for the alternative hypothesis appears.</p>
-</section>
-<section id="exploration" class="level3">
+</div>
+<div id="exploration" class="section level3">
 <h3>Exploration</h3>
 <p>One of two statistical learning approaches, this statistical method is used to uncover potential relationships in the data and gain new insight in an area where predictions and hypotheses cannot be clearly made. In statistical learning, exploration is a type of <strong>unsupervised learning</strong>. Supervision here, and for Prediction, refers to the presence or absence of an outcome variable. By choosing exploration as our approach we make no assumptions (or hypotheses) about the relationships between any of the particular variables in the data. Rather we hope to investigate the extent to which we can induce meaningful patterns wherever they may lie. Findings from exploratory analyses can provide valuable insight for future study but they cannot be safely used to generalize to the larger population, which is why exploratory analyses are often known as hypothesis generating analyses (rather than hypothesis confirming). Given our generalizing power is curtailed, the data <em>can</em> be reused multiple times trying out various tests. While it is not strictly required, data for exploratory analysis is often partitioned into two sets, training and validation, at roughly an 80%/20% split. The training set is used for refining statistical measures and the test set is used to evaluate the refined measures. Although the evaluation results still cannot be used to generalize, the insight can be taken as stronger evidence that there is a potential relationship, or set of relationships, worthy of further study.</p>
-</section>
-<section id="prediction" class="level3">
+</div>
+<div id="prediction" class="section level3">
 <h3>Prediction</h3>
 <p>The other statistical learning approach, Prediction, aims to uncover relationships in our data as they pertain to a particular outcome variable. This approach is known as <strong>supervised learning</strong>. Similar to Exploration in many ways, this approach also makes no assumptions about the potential relationships between variables in our data and the data can be used multiple times to refine our statistical tests in order to tease out the most effective method for our goals. Where an exploratory analysis aims to uncover meaningful patterns of any sort, prediction, however, is more focused in that the main aim is to ascertain the extent to which the variables in the data pattern, individually or together, in such a way to make reliable associations to a particular outcome variable in unseen data. To evaluate the robustness of a prediction model the data is partitioned into training and validation sets. Depending on the application and the amount of available data, a third ‘development’ set is sometimes created as a pseudo test set to facilitate the testing of multiple approaches before the final evaluation. The proportions vary, but it a good rule of thumb is to reserve 60% of the data for training, 20% for development, and 20% for validation.</p>
-</section>
-</section>
-<section id="understanding-data" class="level2">
+</div>
+</div>
+<div id="understanding-data" class="section level2">
 <h2>Understanding data</h2>
 <p>Knowing the statistical approach to take then frames the next conceptual steps: <strong>data sampling</strong> and <strong>organization of data</strong>. But what is data anyway? Abstractly it is some set of empirical observations about the world. There are innumerable types of observations, as you can imagine, which can be used to describe objects and events. Our scientific aim is to systematically attempt to relate these observations and deduce the nature of their relationships to gain a better understanding of how our world works.</p>
 <p>Language research aims to understand a subset of these observations, namely those that concern linguistic behavior. The psycholinguist may observe the reaction times in a lexical decision task, eye-gaze in a visual world paradigm, or electro-magnetic brain activation in an ERP study. A sociolinguist may conduct interviews with members of a community, solicit language attitude responses to a language attitude survey, or ethnographically record face-to-face encounters. A syntactician may solicit acceptability ratings, calculate the frequency of a syntactic structure in a corpus, or document the permutations of subject-verb-object order in the world’s languages. As language is a defining characteristic of our species, language-related observations feature many other disciplines as well such as Anthropology, History, Neurology, Mathematics, and Biology. Linguistic inquiry, then, is not isolated to linguistic form, but rather the connection between linguistic form and other non-linguistic objects and events in the world at large –wherever that may take us.</p>
@@ -385,7 +385,7 @@
 <!--   - Data is empirical observations about the world -->
 <!--   - Innumberable types of observations: linguistic and non-linguistic -->
 <!--   - Examples (acceptability ratings, reaction times, words in a corpus, lengths of words, age, sex, occupation, (non)-native speaker, etc.) -->
-<section id="sampling" class="level3">
+<div id="sampling" class="section level3">
 <h3>Sampling</h3>
 <p>One major limitation inherent to most data sampling, and a primary reason why statistics are so important to doing and interpreting science, is the fact that our vantage point to the observing the world is restricted. We can only work with the data at our disposal, a <strong>sample</strong>, even when it is clear that there is a much larger existing world, or <strong>population</strong>. Ideally we would have access to the entire population of interest, but in most cases this is either not physically possible to obtain (or even store) the data or it is conceptually impossible to ever observe the entire population. As an example, say we wanted to catalog all the words in the English language. From a logistics point of view, where would we start? Any given dictionary only catalogs a subset of the words in a language –many words that are used in English-speaking communities, especially those from spoken language, will not appear. A corpus may capture linguistic diversity that does not appear in a dictionary, but it too will fall short of our lofty goal. But for argumentation sake, let’s imagine we could somehow capture all the words. What happens to our population in a day, a week, or a month from now? It quickly becomes a sample because new words are created all the time and some words are lost. Our population of words in the English language, then, is a moving target.</p>
 <p>This transitory property of populations is well-known and methods for obtaining reliable, or externally valid, samples is an area of study in its own right. In short, we aim for a sample to be balanced and representative of the idealized population. <em>Representativeness</em> is the extent to which a sample reflects the total diversity in the population. <em>Balance</em> is concerned with modeling the proportions of that diversity. An ideal sample combines both.</p>
@@ -399,8 +399,8 @@
 <!--   - The best we can do is shoot for a sample of that population which aims to model the population as appropriately possible given the particular research question to be addressed -->
 <!--   - In the end we will always strive for a balanced and representative sample. A balanced sample contains the predicted major features indicative of the population. A representative sample contains these features in a way that reflect the proportion of these features.  -->
 <!--   - Attaining the most ideal sample given the potential limitations is key to gaining robust and generalizable insight into the nature of the phenomenon we are investigating.  -->
-</section>
-<section id="organization" class="level3">
+</div>
+<div id="organization" class="section level3">
 <h3>Organization</h3>
 <p>Identifying and capturing a data sample moves us one step closer to performing our data analysis but the format of the raw or original data is often not in a format conducive for visualization nor statistical tests. The hypothetical written Spanish data we identified to sample in the previous section would most likely take the form of documents of running text with potentially some meta-data about the text (author, title of the work, date published, genre, etc.) in the header of the file and/or the name of each file.</p>
 <pre class="plain"><code>Title: Cuando los robots tomen el mando y hagan la guerra
@@ -416,86 +416,86 @@ La primera reflexión abarcadora sobre la coexistencia entre los robots y los hu
 <caption><span id="tab:spanish-works">Table 1: </span>Tidy dataset</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">doc_id</th>
-<th style="text-align: left;">genre</th>
-<th style="text-align: left;">word</th>
+<th align="left">doc_id</th>
+<th align="left">genre</th>
+<th align="left">word</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">sociales</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">años</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">anterior</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">de</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">de</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">a</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">el</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">sólida</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">sus</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">los</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">también</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">comprenda</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">aun</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">medio</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">así</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">luna</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">nieves</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">días</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">de</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">de</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">encerrar</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">rioja</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">to</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">escena</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">adiós</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">comprar</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">de</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">a</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">por</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">señor</td>
 </tr>
 </tbody>
 </table>
@@ -507,109 +507,110 @@ La primera reflexión abarcadora sobre la coexistencia entre los robots y los hu
 <caption><span id="tab:spanish-works-freq">Table 2: </span>Tidy dataset with <code>word_freq</code> variable.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">doc_id</th>
-<th style="text-align: left;">genre</th>
-<th style="text-align: left;">word</th>
-<th style="text-align: right;">word_freq</th>
+<th align="left">doc_id</th>
+<th align="left">genre</th>
+<th align="left">word</th>
+<th align="right">word_freq</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">de</td>
-<td style="text-align: right;">747</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">de</td>
+<td align="right">747</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">la</td>
-<td style="text-align: right;">559</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">la</td>
+<td align="right">559</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">el</td>
-<td style="text-align: right;">376</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">el</td>
+<td align="right">376</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">en</td>
-<td style="text-align: right;">309</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">en</td>
+<td align="right">309</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cosmografía</td>
-<td style="text-align: left;">Astronomy</td>
-<td style="text-align: left;">que</td>
-<td style="text-align: right;">306</td>
+<td align="left">Cosmografía</td>
+<td align="left">Astronomy</td>
+<td align="left">que</td>
+<td align="right">306</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">de</td>
-<td style="text-align: right;">33</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">de</td>
+<td align="right">33</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">la</td>
-<td style="text-align: right;">30</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">la</td>
+<td align="right">30</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">y</td>
-<td style="text-align: right;">20</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">y</td>
+<td align="right">20</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">los</td>
-<td style="text-align: right;">17</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">los</td>
+<td align="right">17</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cuando los robots tomen el mando y hagan la guerra</td>
-<td style="text-align: left;">News</td>
-<td style="text-align: left;">que</td>
-<td style="text-align: right;">14</td>
+<td align="left">Cuando los robots tomen el mando y hagan la guerra</td>
+<td align="left">News</td>
+<td align="left">que</td>
+<td align="right">14</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">to</td>
-<td style="text-align: right;">314</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">to</td>
+<td align="right">314</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">de</td>
-<td style="text-align: right;">217</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">de</td>
+<td align="right">217</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">a</td>
-<td style="text-align: right;">206</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">a</td>
+<td align="right">206</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">que</td>
-<td style="text-align: right;">175</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">que</td>
+<td align="right">175</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Heath’s Modern Language Series: El trovador</td>
-<td style="text-align: left;">Opera</td>
-<td style="text-align: left;">_m</td>
-<td style="text-align: right;">172</td>
+<td align="left">Heath’s Modern Language Series: El trovador</td>
+<td align="left">Opera</td>
+<td align="left">_m</td>
+<td align="right">172</td>
 </tr>
 </tbody>
 </table>
 <p>Other measures and/or attributes can be added as necessary to this tabular format and in some cases we may convert our tidy tabular dataset to other data formats that may be required for some particular statistic approaches but at all times the relationship between the variables should be maintained in line with our research purpose. We will touch on examples of other types of data formats when we dive into particular statistical approaches that require them later in the series.</p>
-</section>
-<section id="informational-value" class="level3">
+</div>
+<div id="informational-value" class="section level3">
 <h3>Informational value</h3>
+<!-- levels of measurement -->
 <p>Let’s turn now to the informational nature of our variables as it will set up how we implement our data analysis. Taking our variable <code>word_freq</code> as an example, it is important to point out there are many ways to define ‘frequency’. Some frequency measures are more appropriate than others given the statistical approach we intend to apply to our data. Our current dataset contains raw frequency scores, that is the frequency is measured in observed counts for each word in each file of our data. We could, for example, instead bin our frequency scores under the labels “high” and “low” frequency converting frequency from counts to labels. In this case we change the <strong>informational value</strong> of <code>word_freq</code>. Some variables in our dataset, on the other hand, cannot be converted. Take for example, <code>genre</code>. The values for <code>genre</code> label the genre of the file from which the word was observed. We could of course summarize the genres under meta-genres, but we maintain labeled data; the same informational value as before.</p>
 <p>Understanding the informational value of variables in key to organizing and preparing your data for analysis as it has implications for what insight we can gain from the data and what visualization techniques and statistical measures we can use to interrogate the data. There are four potential informational values for all data: nominal, ordinal, interval, and ratio.</p>
 <ul>
@@ -618,7 +619,7 @@ La primera reflexión abarcadora sobre la coexistencia entre los robots y los hu
 <li><p><em>Interval variables</em> are like ordinal variables in which there is an explicit precedence relationship, but in addition the values describe precise intervals between each value. So take our earlier operationalization of age as “young”, “middle-aged”, and “old”. As an ordinal variable no assumption is made that the differences in age between young and middle-aged are the same as between middle-aged and old –only that one class is ordered before or after another. If our criterion to code our values of age, however, were based regular intervals between age groups, not some non-regular assignment, then our values of age would be interval-valued.</p></li>
 <li><p><em>Ratio variables</em> have all the properties of interval variables but also include a non-arbitrary definition of zero. Frequency counts are ratio variables as it is clear that there is a potential value for 0 and any value greater can be interpreted in reference to this anchor. A word with a frequency of 100 is two times as large as a word with frequency 50. By the same token, a participant that is 20 years old is half the age of a 40 year old participant.</p></li>
 </ul>
-<p>These informational types are often described in macro terms grouping nominal and ordinal variables as <strong>categorical variables</strong> and interval and ratio variables as <strong>continous variables</strong>. All continuous variables can be converted to categorical variables, but the reverse is not true. In most cases it is preferred to cast your data as continuous, if the nature of the variable permits it, as the recasting of continuous data to categorical data results in a loss of information –which will result in a loss of statistical power and may lead to results that obscure meaningful patterns in the data.</p>
+<p>These informational types are often described in macro terms grouping nominal and ordinal variables as <strong>categorical variables</strong> and interval and ratio variables as <strong>continous variables</strong>. All continuous variables can be converted to categorical variables, but the reverse is not true. In most cases it is preferred to cast your data as continuous, if the nature of the variable permits it, as the recasting of continuous data to categorical data results in a loss of information –which will result in a loss of statistical power and may lead to results that obscure meaningful patterns in the data <span class="citation">(Baayen 2004)</span>. <!-- Baayen 2004 --></p>
 <!-- The structure of raw, or original, data sampled varies  -->
 <!-- * Informational value of variables -->
 <!--   - In preparation for analysis, the research must be cognicent of the informational status of the variables of the data -->
@@ -637,8 +638,8 @@ La primera reflexión abarcadora sobre la coexistencia entre los robots y los hu
 <!--   - While some variables and their informational value are self-evident (such as sex, or age), some need to be interpreted and explicitly formulated -->
 <!--   - Measurements -->
 <!--     * Some variables contain information that needs to be calculated (frequencies, dispersion, etc.) or transformed (log, normalization (z-scores, etc.)) to be meaningful for analysis -->
-</section>
-<section id="dependent-and-independent-variables" class="level3">
+</div>
+<div id="dependent-and-independent-variables" class="section level3">
 <h3>Dependent and independent variables</h3>
 <p>The last step before we move to visualization and statistical tests is to identify our <strong>dependent variable</strong> and/ or <strong>independent variables</strong>. A dependent variable is the outcome variable that is used in inference and prediction analyses that reflects the observations of the behavior we want to gain understanding about. The identification of a dependent variable should be guided by your research question; it is the measure of the phenomenon in question. An independent variable is a predictor variable, or a variable which we assume will be related to the values of the dependent variable in some systematic way. There is typically only one dependent variable in an analysis, but there can be multiple independent variables. In an exploratory analysis, however, all the variables are independent variables as this approach assumes no particular relationship between the variables; the goal in this approach, remember, is to uncover patterns that may suggest a relationship between particular set of variables.</p>
 <!-- * Dependent and independent variables -->
@@ -647,103 +648,103 @@ La primera reflexión abarcadora sobre la coexistencia entre los robots y los hu
 <!--   - Independent variables are those variables that we aim to use to understand the nature and variability of the dependent variable -->
 <!--   - In hypothesis testing or prediction a dependent variable must be identified (in prediction this variable is also called the class or outcome variable) -->
 <!--   - For exploration, where the goal is to discover patterns, the dependent variable is unknown and is the feature that we aim to discover -->
-</section>
-</section>
-<section id="data-analysis" class="level2">
+</div>
+</div>
+<div id="data-analysis" class="section level2">
 <h2>Data analysis</h2>
 <p>The primary goal of a data analysis is to reduce the observed data to a human-interpretable summary that best approximates the nature of the phenomenon we are investigating. With well-sampled data in a tidy dataset in hand where observations and variables are explicitly related, identified for their informational value, and the dependent and/or independent variables are clear, we can now proceed to visualizing and applying the appropriate statistical tests to the data to come to some more concrete, actionable insight.</p>
-<section id="visualization" class="level3">
+<div id="visualization" class="section level3">
 <h3>Visualization</h3>
 <p>It is always key to gain insight into the behavior of the data visually before jumping in to the statistical analysis. Using our research aim as our guide, we will choose the most appropriate visualization to use given the number and informational value of our target variables. To get a sense of how this looks, let’s work with an example dataset and pose different questions to the data with an eye towards seeing how various combinations of variables are visualized.</p>
-<p>The dataset we will use here is from the <a href="http://talkbank.org/">TalkBank repository</a> which provides data from various language learning contexts.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> The specific data we will use is the ‘narratives’ section of the <a href="http://talkbank.org/access/SLABank/English/BELC.html">BELC (Barcelona English Language Corpus)</a> <span class="citation" data-cites="Munoz2006">(Muñoz 2006)</span>. It is a corpus of writing samples from second language learners of English at different ages. Participants were given the task of writing for 15 minutes on the topic of “Me: my past, present and future”. Data was collected for many (but not all) participants up to four times over the course of seven years. The entire dataset includes 123 observations from 54 participants. Below I’ve included the first 10 observations from the dataset which reflects some data cleaning I’ve done so we start with a tidy dataset.</p>
+<p>The dataset we will use here is from the <a href="http://talkbank.org/">TalkBank repository</a> which provides data from various language learning contexts.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> The specific data we will use is the ‘narratives’ section of the <a href="http://talkbank.org/access/SLABank/English/BELC.html">BELC (Barcelona English Language Corpus)</a> <span class="citation">(Muñoz 2006)</span>. It is a corpus of writing samples from second language learners of English at different ages. Participants were given the task of writing for 15 minutes on the topic of “Me: my past, present and future”. Data was collected for many (but not all) participants up to four times over the course of seven years. The entire dataset includes 123 observations from 54 participants. Below I’ve included the first 10 observations from the dataset which reflects some data cleaning I’ve done so we start with a tidy dataset.</p>
 <table>
 <caption><span id="tab:view-belc-dataset">Table 3: </span>BELC dataset for demonstration.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">participant_id</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">learner_group</th>
-<th style="text-align: right;">age</th>
-<th style="text-align: right;">tokens</th>
+<th align="left">participant_id</th>
+<th align="left">sex</th>
+<th align="left">learner_group</th>
+<th align="right">age</th>
+<th align="right">tokens</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">120</td>
+<td align="left">01</td>
+<td align="left">female</td>
+<td align="left">1</td>
+<td align="right">12</td>
+<td align="right">120</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">78</td>
+<td align="left">01</td>
+<td align="left">female</td>
+<td align="left">2</td>
+<td align="right">14</td>
+<td align="right">78</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">11</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">1</td>
+<td align="right">10</td>
+<td align="right">11</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">43</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">2</td>
+<td align="right">12</td>
+<td align="right">43</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">80</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">3</td>
+<td align="right">16</td>
+<td align="right">80</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">26</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">4</td>
+<td align="right">17</td>
+<td align="right">26</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">03</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">16</td>
+<td align="left">03</td>
+<td align="left">male</td>
+<td align="left">1</td>
+<td align="right">10</td>
+<td align="right">16</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">03</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">28</td>
+<td align="left">03</td>
+<td align="left">male</td>
+<td align="left">2</td>
+<td align="right">12</td>
+<td align="right">28</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">04</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">32</td>
+<td align="left">04</td>
+<td align="left">male</td>
+<td align="left">1</td>
+<td align="right">10</td>
+<td align="right">32</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">04</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">73</td>
+<td align="left">04</td>
+<td align="left">male</td>
+<td align="left">2</td>
+<td align="right">12</td>
+<td align="right">73</td>
 </tr>
 </tbody>
 </table>
 <p>The variables <code>participant_id</code>, <code>sex</code>, and <code>age</code> should be self-explanatory. <code>learner_group</code> contains the values 1-4 which record the stage for each participant formally learning English. The number of words written in each sample is listed for each participant at each stage in the variable <code>tokens</code>. We should also note the informational value of these variables. <code>participant_id</code>, <code>sex</code>, and <code>learner_group</code> are categorical variables; both <code>participant_id</code> and <code>sex</code> are nominal and <code>learner_group</code> is ordinal. <code>age</code> and <code>tokens</code> are continuous variables; both of the ratio type as they are scaled in relation to a non-arbitrary value for zero.</p>
 <p>With general understanding of the data, let’s run through various data analysis scenarios and their corresponding visualizations grouping them by the information value of the dependent variable.</p>
 <p><strong>Categorical dependent variable</strong></p>
-<ol type="1">
+<ol style="list-style-type: decimal">
 <li>No independent variable</li>
 </ol>
 <p>Starting basic, let’s say we are interested in investigating the difference in the number of <code>males</code> and <code>females</code> in our study. This is not a particularly interesting question, but it allow us to illustrate a scenario in which we have a single dependent variable, <code>sex</code>, which is categorical. When summarizing categorical data we produce counts of each of the levels of that variable. We can visualize this summary in one of two ways, textually and graphically. A text summary would look like this:</p>
@@ -752,13 +753,13 @@ female   male
     67     56 </code></pre>
 <p>A graphic display does not necessarily facilitate a better understanding, in such a simple case, but let’s graphically visualize this scenario anyway. The type of plot we want to use is a ‘bar plot’, which simply plots the dependent variable on the x-axis and the counts on the y-axis.</p>
 <div class="figure"><span id="fig:dep-cat"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-1.png" alt="Bar plot of the categorical variable `sex`." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-cat-1.png" alt="Bar plot of the categorical variable `sex`." width="80%" />
 <p class="caption">
 Figure 1: Bar plot of the categorical variable <code>sex</code>.
 </p>
 </div>
 <p>Inspecting these visualizations it is clear that there is a numeric difference between the number of writing samples in the data written by women. At this point, however, we only have a trend. To decide whether this is a reliable contrast is the purpose of our statistical tests, but we’ll leave the details of statistical testing for this scenario, and those that follow, for subsequent posts.</p>
-<ol start="2" type="1">
+<ol start="2" style="list-style-type: decimal">
 <li>One categorical independent variable</li>
 </ol>
 <p>A more common scenario is one in which we have a categorical dependent variable and a categorical independent variable. With our data we can investigate the relationship between <code>sex</code> and the <code>learner_group</code>. Are there more males than females in a particular learner group? In this case both variables are categorical and the dimensions are such that we can textually represent them and gain some insight.</p>
@@ -769,20 +770,20 @@ sex       1  2  3  4
 <p>It’s more difficult to see the pattern here than in the basic single dependent variable scenario for two reasons: 1) as the number of independent variables and/or the levels within an independent variable increase, our ability to interpret the results decreases. 2) the relationship between <code>sex</code> and <code>learner_group</code> does not take into account that there are more female samples than males, and therefore the raw counts here can be misleading.</p>
 <p>A graphic representation of this contrast will be a bit easier to interpret; although it is important to be aware that more variables and levels always leads to interpretability problems. The bar plot below reflects the raw counts from the cross-tabulation of the variables <code>sex</code> and <code>learner_group</code>.</p>
 <div class="figure"><span id="fig:dep-cat-ind-cat-graph"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-graph-1.png" alt="Bar plot of the variable `sex` and `learner_group`." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-cat-ind-cat-graph-1.png" alt="Bar plot of the variable `sex` and `learner_group`." width="80%" />
 <p class="caption">
 Figure 2: Bar plot of the variable <code>sex</code> and <code>learner_group</code>.
 </p>
 </div>
 <p>Adjusting the bar plot to account for the proportions of males to females in each group provides a clearer picture of the relationship between <code>sex</code> and <code>learner_group</code>.</p>
 <div class="figure"><span id="fig:dep-cat-ind-cat-graph-2"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-graph-2-1.png" alt="Bar plot of the variable `sex` and `learner_group` proportionally scaled." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-cat-ind-cat-graph-2-1.png" alt="Bar plot of the variable `sex` and `learner_group` proportionally scaled." width="80%" />
 <p class="caption">
 Figure 3: Bar plot of the variable <code>sex</code> and <code>learner_group</code> proportionally scaled.
 </p>
 </div>
 <p>From this visualization it appears that there are more females in the first and last learner groups.</p>
-<ol start="3" type="1">
+<ol start="3" style="list-style-type: decimal">
 <li>Two categorical independent variables</li>
 </ol>
 <p>Let’s look at a more complex case in which we have two categorical independent variables. Now the dataset, as is, does not have a third categorical variable for us to explore but we can recast the continuous <code>tokens</code> variable as a categorical variable if we bin the scores into groups. I’ve binned <code>tokens</code> into three score groups with equal ranges in a new variable called <code>token_bins</code>.</p>
@@ -790,94 +791,94 @@ Figure 3: Bar plot of the variable <code>sex</code> and <code>learner_group</cod
 <caption><span id="tab:token-bins">Table 4: </span><code>belc</code> dataset with categorical <code>token_bins</code> variable added.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">participant_id</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">learner_group</th>
-<th style="text-align: right;">age</th>
-<th style="text-align: right;">tokens</th>
-<th style="text-align: left;">token_bins</th>
+<th align="left">participant_id</th>
+<th align="left">sex</th>
+<th align="left">learner_group</th>
+<th align="right">age</th>
+<th align="right">tokens</th>
+<th align="left">token_bins</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">120</td>
-<td style="text-align: left;">mid</td>
+<td align="left">01</td>
+<td align="left">female</td>
+<td align="left">1</td>
+<td align="right">12</td>
+<td align="right">120</td>
+<td align="left">mid</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">78</td>
-<td style="text-align: left;">mid</td>
+<td align="left">01</td>
+<td align="left">female</td>
+<td align="left">2</td>
+<td align="right">14</td>
+<td align="right">78</td>
+<td align="left">mid</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">low</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">1</td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="left">low</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: left;">low</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">2</td>
+<td align="right">12</td>
+<td align="right">43</td>
+<td align="left">low</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: left;">mid</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">3</td>
+<td align="right">16</td>
+<td align="right">80</td>
+<td align="left">mid</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: left;">low</td>
+<td align="left">02</td>
+<td align="left">female</td>
+<td align="left">4</td>
+<td align="right">17</td>
+<td align="right">26</td>
+<td align="left">low</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">03</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: left;">low</td>
+<td align="left">03</td>
+<td align="left">male</td>
+<td align="left">1</td>
+<td align="right">10</td>
+<td align="right">16</td>
+<td align="left">low</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">03</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">28</td>
-<td style="text-align: left;">low</td>
+<td align="left">03</td>
+<td align="left">male</td>
+<td align="left">2</td>
+<td align="right">12</td>
+<td align="right">28</td>
+<td align="left">low</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">04</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: left;">low</td>
+<td align="left">04</td>
+<td align="left">male</td>
+<td align="left">1</td>
+<td align="right">10</td>
+<td align="right">32</td>
+<td align="left">low</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">04</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">73</td>
-<td style="text-align: left;">mid</td>
+<td align="left">04</td>
+<td align="left">male</td>
+<td align="left">2</td>
+<td align="right">12</td>
+<td align="right">73</td>
+<td align="left">mid</td>
 </tr>
 </tbody>
 </table>
@@ -901,25 +902,25 @@ learner_group low mid high
             4   2   3    0</code></pre>
 <p>To graphically visualize three categorical variables we turn to a mosaic plot.</p>
 <div class="figure"><span id="fig:dep-cat-ind-cat-2-graph"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-cat-ind-cat-2-graph-1.png" alt="Mosaic plot contrasting the categorical variables `sex`, `learner_group`, and `token_bins`." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-cat-ind-cat-2-graph-1.png" alt="Mosaic plot contrasting the categorical variables `sex`, `learner_group`, and `token_bins`." width="80%" />
 <p class="caption">
 Figure 4: Mosaic plot contrasting the categorical variables <code>sex</code>, <code>learner_group</code>, and <code>token_bins</code>.
 </p>
 </div>
 <p>From these visualizations we can see there is a general trend for the tokens from writing samples to increase in higher learner groups. There are some apparent divergent scores from this trend to be cautious of, however.</p>
 <p><strong>Continuous dependent variable</strong></p>
-<ol type="1">
+<ol style="list-style-type: decimal">
 <li>No independent variable</li>
 </ol>
 <p>Working with a single continuous dependent variable means that the only practical way to summarize the data is graphically –as textual visualization will be very verbose and by and large uninterpretable. Plotting a single continuous variable often takes the form of a histogram which summarizes the frequency of the values of the dependent variable. So from our dataset, we may want to know what the distribution of <code>token</code> scores looks like. That is, are they normally distributed (‘bell-shaped’), or skewed to the left or right (more values in the low or high range), or some other type of distribution (i.e. bi-modal, etc.)?</p>
 <div class="figure"><span id="fig:dep-con-graph"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-graph-1.png" alt="Histogram (with and without a density line) for the continuous variable `tokens`." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-con-graph-1.png" alt="Histogram (with and without a density line) for the continuous variable `tokens`." width="80%" />
 <p class="caption">
 Figure 5: Histogram (with and without a density line) for the continuous variable <code>tokens</code>.
 </p>
 </div>
 <p>The plot on the left is a standard histogram and the plot on the right is the same histogram with a density line added to highlight the distribution. From these plots we see that token counts are slightly left skewed. The longer tail to the right for higher token scores shows some evidence of outliers –that is, scores that are uncharacteristic of the general data distribution. For many analyses plotting a histogram is a key first step to identifying they type of statistical test to use on the data as certain test have assumptions about how the data should be distributed for their results to be reliable. For example, a class of tests called <em>parametric</em> assume that continuous data is normally distributed (<em>non-parametric</em> tests do not make this assumption). Having plotted the data we can see that it is probably not normally distributed. All is not lost, however. There are methods for <em>transforming</em> the data that can often times take mildly skewed data and coerce it into a normal distribution.</p>
-<ol start="2" type="1">
+<ol start="2" style="list-style-type: decimal">
 <li>One categorical independent variable</li>
 </ol>
 <p>Another common data analysis scenario is one in which we have a continuous dependent variable and one categorical independent variable. Say we wanted to know the average number of <code>tokens</code> used by men and by women. We would use the <code>tokens</code> variable as our dependent variable and and <code>sex</code> as the independent variable. We can visualize these means textually, as we are calculating the mean for each level of <code>sex</code>,</p>
@@ -927,32 +928,32 @@ Figure 5: Histogram (with and without a density line) for the continuous variabl
 57.14925 60.80357 </code></pre>
 <p>or graphically with a box plot, in which we get a host of information about the distribution.</p>
 <div class="figure"><span id="fig:dep-con-ind-cat-graph"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-cat-graph-1.png" alt="Box plot summarizing the contrast between `sex` and `tokens`." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-con-ind-cat-graph-1.png" alt="Box plot summarizing the contrast between `sex` and `tokens`." width="80%" />
 <p class="caption">
 Figure 6: Box plot summarizing the contrast between <code>sex</code> and <code>tokens</code>.
 </p>
 </div>
 <p>If you take a look at the results in the box plot you will see that the medians (the <strong>bold horizontal lines</strong>) are not that different. Note that the mean and the median measure different things. And the mean is more sensitive to outliers –and the plot shows that there are some outliers in the male and female data. When we statistically analyze the data these types of outliers contribute to unexplained variation, or ‘noise’ at it is often called. Noise has the effect of reducing our confidence that the differences between populations are real, and not likely due to chance. We see much more on this later in the series.</p>
-<ol start="3" type="1">
+<ol start="3" style="list-style-type: decimal">
 <li>One continuous independent variable</li>
 </ol>
 <p>The behavior of two continuous variables, one dependent and the other independent is represented using a scatter plot. The value for each variable for each observation is plotted as a coordinate pair. From this mapping we evaluate the relationship, or correlation, between the variables. Sticking with <code>tokens</code> as our measure, let’s explore the extent to which <code>age</code> conditions the number of tokens used by a participant.</p>
 <div class="figure"><span id="fig:dep-con-ind-con-graph"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens`." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-con-ind-con-graph-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens`." width="80%" />
 <p class="caption">
 Figure 7: Scatter plot visualizing the correlation between the continuous variables <code>age</code> and <code>tokens</code>.
 </p>
 </div>
 <p>From a visual inspection it appears that there is a slight effect for <code>age</code> on <code>tokens</code>, namely that the older the participant the more tokens they tend to use.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> It is often helpful, and/ or necessary to add a trend line to the plot to help see the relationship more clearly. Note that the ribbon (in grey) surrounding the trend line is the ‘standard error’, or SE. The SE is a confidence interval suggesting that the trend line could have been drawn within any part of this space. You will note that a larger ribbon width corresponds with more variability. This is clearly the case for the tokens used by participants at age 14.</p>
 <div class="figure"><span id="fig:dep-con-ind-con-graph-2"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-2-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a trend line." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-con-ind-con-graph-2-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a trend line." width="80%" />
 <p class="caption">
 Figure 8: Scatter plot visualizing the correlation between the continuous variables <code>age</code> and <code>tokens</code> with a trend line.
 </p>
 </div>
 <p>Another note on the trend line. The trend line drawn here is a non-linear, which is why you see the line is bendy. Often times when we are doing hypothesis testing we will be making the assumption that the relationship between two or more variables is linear, not non-linear. We can add a linear trend line to get a better understanding of the linear relationship between our variables.</p>
 <div class="figure"><span id="fig:dep-con-ind-con-graph-3"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-3-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a linear trend line." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-con-ind-con-graph-3-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` with a linear trend line." width="80%" />
 <p class="caption">
 Figure 9: Scatter plot visualizing the correlation between the continuous variables <code>age</code> and <code>tokens</code> with a linear trend line.
 </p>
@@ -960,14 +961,14 @@ Figure 9: Scatter plot visualizing the correlation between the continuous variab
 <p>Interpreting the linear representation we see there is an apparent trend for increasing values for <code>tokens</code> as <code>age</code> increases.</p>
 <p>Say our aim was to understand the relationship between <code>age</code> and <code>tokens</code> as a potential function of <code>sex</code>. We can incorporate <code>age</code> as a categorical variable. The result provides us a scatter plot with two trend lines, one for each level of <code>sex</code>.</p>
 <div class="figure"><span id="fig:dep-con-ind-con-graph-4"></span>
-<img src="/post/2017-09-15-introduction-to-statistical-thinking_files/figure-html/dep-con-ind-con-graph-4-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` by `sex` with a linear trend line." width="80%" />
+<img src="/rmarkdown-libs/figure-html4/dep-con-ind-con-graph-4-1.png" alt="Scatter plot visualizing the correlation between the continuous variables `age` and `tokens` by `sex` with a linear trend line." width="80%" />
 <p class="caption">
 Figure 10: Scatter plot visualizing the correlation between the continuous variables <code>age</code> and <code>tokens</code> by <code>sex</code> with a linear trend line.
 </p>
 </div>
 <p>From this visualization we see there is an apparent difference between males and females. Namely, males appear to increase their token production more than females of the same age. The SE ribbons here, however, are telling. Since they overlap we should be very cautious in interpreting the difference the trend line shows. Overlapping SE ribbons suggest the trend line could have been drawn in this space and therefore there is a likely probability that the visual difference will not result in a statistical difference. Again, this is another example of why visualization is such an integral first step in data analysis.</p>
-</section>
-<section id="statistical-tests" class="level3">
+</div>
+<div id="statistical-tests" class="section level3">
 <h3>Statistical tests</h3>
 <p>In the previous section various visualization strategies were illustrated through the lens of typical data analysis scenarios. To gain confidence that the trends in the data that we observe are reliable we submit the data to statistical tests. There are numerous tests available, too many to discuss at this point. But it is important to understand that much like our visualization choices, the test we choose depends on the number of variables we are investigating and the information values of these variables. However, particular statistical tests also potentially require a number of test specific assumptions (such as whether the data is normally distributed, for example). We will cover these on a case by case basis later on in the series.</p>
 <!-- * Goal is to reduce the data into a summary of the data that best approximates the nature of the phenomenon that we are investigating.  -->
@@ -976,14 +977,14 @@ Figure 10: Scatter plot visualizing the correlation between the continuous varia
 <!--   - With an intuition of the data, awareness of the informational values of our variables, and having identified dependent and independent variables, we proceed to statistical analysis to develop a model that achieves these goals. Ultimately we want to know if the nature of the connections between our variables are reliable. That's what statistics will do for us. -->
 <!--   - (Examples) -->
 <!-- Keep these examples brief, as we will deal with data analysis head on later in the series.  -->
-</section>
-</section>
-<section id="round-up" class="level2">
+</div>
+</div>
+<div id="round-up" class="section level2">
 <h2>Round up</h2>
 <p>In this post we covered some foundational topics for any data analysis project. Guiding the entire process is a clear research question. From there we can proceed to acquire data that is relevant and reliable on the phenomenon we hope to understand better, choose a statistical approach which matches our analysis goals, and organize our data into a format conducive for achieving these goals. Only at this point can we confidently move to analyzing our data, first beginning with appropriate visualization techniques to get a feel for the trends and then moving to performing the relevant statistical tests to provide confidence that the trends captured in our visualizations are in fact reliable.</p>
 <p>There is still much left to discuss, in particular what statistical tests to apply to a given data analysis scenario and the assumptions behind statistical tests. We will address these topics later in the series when we have established a stronger and practical understanding of the preceding project steps and increase our proficiency programming in R. The next steps in this journey will be to learn about data types and sources and the specifics of acquiring data for language research.</p>
-</section>
-<section id="references" class="level2">
+</div>
+<div id="references" class="section level2">
 <h2>References</h2>
 <!-- OTHER APPROACHES TO THE TOPIC
 
@@ -1095,6 +1096,9 @@ Chapter 5: Some statistics for Corpus Linguistics
 
 -->
 <div id="refs" class="references">
+<div id="ref-Baayen2004">
+<p>Baayen, R. Harald. 2004. “Statistics in Psycholinguistics: A critique of some current gold standards.” <em>Mental Lexicon Working Papers</em> 1 (1):1–47.</p>
+</div>
 <div id="ref-Gries2013a">
 <p>Gries, ST. 2013. <em>Statistics for Linguistics with R. A Practical Introduction</em>. 2nd revise.</p>
 </div>
@@ -1108,14 +1112,14 @@ Chapter 5: Some statistics for Corpus Linguistics
 <p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science</em>. First edit. O’Reilly Media. <a href="http://r4ds.had.co.nz/" class="uri">http://r4ds.had.co.nz/</a>.</p>
 </div>
 </div>
-</section>
-<section class="footnotes">
+</div>
+<div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>The <a href="http://talkbank.org/">HomeBank</a> section of TalkBank is restricted to members only. Membership is free but you will need to contact the repository and request membership.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>Note that I’ve added a ‘jitter’ to the data points in this scatter plot to avoid overplotting.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
-</section>
+</div>
 
       </div>
 

@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Jerid Francom</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/talk/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://francojc.github.io/talk/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Quantitative Approaches to Language Research: Why Frequency Matters</title>
@@ -16,8 +18,7 @@
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
       <guid>https://francojc.github.io/talk/quantitative-approaches-to-language-research/</guid>
-      <description>&lt;!-- &lt;script async class=&#39;speakerdeck-embed&#39; data-id=&#39;867067ae4a7d418f8289c2be8a2e031b&#39; data-ratio=&#39;1.33333333333333&#39; src=&#39;//speakerdeck.com/assets/embed.js&#39;&gt;&lt;/script&gt; --&gt;
-</description>
+      <description> -- </description>
     </item>
     
   </channel>
