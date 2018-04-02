@@ -509,7 +509,7 @@ wordcloud(words = rep.wordlist$words, freq = rep.wordlist$freq, max.words = 50)<
 <p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-1.png" width="100%" /></p>
 <pre class="r"><code>wordcloud(words = dem.wordlist$words, freq = dem.wordlist$freq, max.words = 50)</code></pre>
 <p><img src="/post/2015-04-04-keyword-analysis-of-state-of-the-union-speeches_files/figure-html/create-wordclouds-2.png" width="100%" /></p>
-<p>Alright, now we are in a position to do some comparing. Looking at the word clouds we can see obvious similarities and differences. The size of the text, however, can be misleading here: text between each word cloud is not on the same scale. That is, it’s hard to know how these frequencies/text sizes really match up between the corpora. To identify those words that are most/ least indicative of each corpus (when compared to the other corpus) we want to compare the relative frequency of words in the <code>rep.corpus</code> with the relative frequencies in the <code>dem.corpus</code>. Using the ratio of <code>rep.corpus</code>/ <code>dem.corpus</code> we will find that words with highest values tend to be more indicative of the <code>rep.corpus</code> and lowest values more indicative of the <code>dem.corpus</code>. This calculation is known as a Relative Frequency Ratio <span class="citation" data-cites="Damerau:1993">(Damerau 1993)</span>.</p>
+<p>Alright, now we are in a position to do some comparing. Looking at the word clouds we can see obvious similarities and differences. The size of the text, however, can be misleading here: text between each word cloud is not on the same scale. That is, it’s hard to know how these frequencies/text sizes really match up between the corpora. To identify those words that are most/ least indicative of each corpus (when compared to the other corpus) we want to compare the relative frequency of words in the <code>rep.corpus</code> with the relative frequencies in the <code>dem.corpus</code>. Using the ratio of <code>rep.corpus</code>/ <code>dem.corpus</code> we will find that words with highest values tend to be more indicative of the <code>rep.corpus</code> and lowest values more indicative of the <code>dem.corpus</code>. This calculation is known as a Relative Frequency Ratio <span class="citation">(Damerau 1993)</span>.</p>
 <pre class="r"><code>rfr.calc &lt;- function(wordlist.a, wordlist.b, create_df = FALSE) {
   # Calculate Relative Frequency Ratio #
   # Words in wordlist.b, not in wordlist.a
@@ -547,7 +547,7 @@ rfr_df &lt;- rfr.calc(wordlist.a = rep.wordlist,
   head</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Words"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Scores"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"will","2":"-0.002114276","_rn_":"1"},{"1":"year","2":"-0.001789069","_rn_":"2"},{"1":"work","2":"-0.001753218","_rn_":"3"},{"1":"every","2":"-0.001132713","_rn_":"4"},{"1":"jobs","2":"-0.001065103","_rn_":"5"},{"1":"know","2":"-0.001061382","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Words"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Scores"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"will","2":"-0.002121858","_rn_":"1"},{"1":"year","2":"-0.001783524","_rn_":"2"},{"1":"work","2":"-0.001753091","_rn_":"3"},{"1":"every","2":"-0.001132612","_rn_":"4"},{"1":"know","2":"-0.001069488","_rn_":"5"},{"1":"jobs","2":"-0.001065032","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Looks good. Let’s take the top 25 and the bottom 25 and add Party labels to get ready to visually summarize these top results.</p>
@@ -597,15 +597,15 @@ ggplot(rep.dem_df, aes(x = reorder(Words, Scores), y = Scores, color = Party)) +
 ## [4] &quot;e government. it recognizes that a   federal   budget should be a stabilizing fac&quot;
 ## [5] &quot;ons for some crops and apply rigid   federal   controls over the use of the diver&quot;</code></pre>
 <p>And there you have it a re-creation of the analysis using AntConc, this time using R.</p>
-<section id="references" class="level2 unnumbered">
+<div id="references" class="section level2 unnumbered">
 <h2>References</h2>
 <div id="refs" class="references">
 <div id="ref-Damerau:1993">
-<p>Damerau, F J. 1993. “Generating and evaluating domain-oriented multi-word terms from texts” 29 (4):433–47.</p>
+<p>Damerau, F J. 1993. “Generating and evaluating domain-oriented multi-word terms from texts.” <em>Information Processing &amp; Management</em> 29 (4):433–47.</p>
 </div>
 </div>
-</section>
-<section class="footnotes">
+</div>
+<div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>The handing off portion uses the <code>%&gt;%</code> syntax from the <code>magrittr</code> package (loaded through the <code>dplyr</code> package here).<a href="#fnref1" class="footnote-back">↩</a></p></li>
@@ -613,7 +613,7 @@ ggplot(rep.dem_df, aes(x = reorder(Words, Scores), y = Scores, color = Party)) +
 <li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expressions</a> are used for pattern matching<a href="#fnref3" class="footnote-back">↩</a></p></li>
 <li id="fn4"><p>One twist is the <code>my.sub()</code> function I wrote to simplify adding custom transformations to <code>tm_map()</code>.<a href="#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
-</section>
+</div>
 
       </div>
 

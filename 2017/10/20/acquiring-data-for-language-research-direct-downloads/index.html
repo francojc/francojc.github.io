@@ -354,7 +354,7 @@
 </div>
 
 <!-- TODO: add {#anchor} below -->
-<section id="direct-downloads" class="level2">
+<div id="direct-downloads" class="section level2">
 <h2>Direct downloads</h2>
 <p>Published corpus data found in repositories or individual sources are usually the easiest to start working with as it is generally a matter of identifying a resource to download and then downloading it with R. OK, there’s a little more involved, but that’s the basic idea.</p>
 <p>Let’s take a look at how this works starting with the a sample from the Switchboard Corpus, a corpus of 2,400 telephone conversations by 543 speakers. First we navigate to the site with a browser and download the file that we are looking for. In this case I found the Switchboard Corpus on the <a href="http://www.nltk.org/nltk_data/">NLTK data repository site</a>. More often than not this file will be some type of compressed archive file with an extension such as <code>.zip</code> or <code>.tz</code>, which is the case here. Archive files make downloading multiple files easy by grouping files and directories into one file. In R we can used the <code>download.file()</code> function from the base R library<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. There are a number of <strong>arguments</strong> that a function may require or provide optionally. The <code>download.file()</code> function minimally requires two: <code>url</code> and <code>destfile</code>. That is the file to download and the location where it is to be saved to disk.</p>
@@ -569,18 +569,18 @@ system(command = &quot;tree data/original/scs &gt;&gt; log/data_original_scs.log
     └── web.Rmd
 
 8 directories, 15 files</code></pre>
-</section>
-<section id="round-up" class="level2">
+</div>
+<div id="round-up" class="section level2">
 <h2>Round up</h2>
 <p>In this post we’ve covered how to access, download, and organize data contained in .zip files; the most common format for language data found on repositories and individual sites. This included an introduction to a few key R programming concepts and strategies including using functions, writing custom functions, and controlling program flow with control statements. Our approach was to gather data while also keeping in mind the reproducibility of the code. To this end I introduced programming strategies for avoiding unnecessary web traffic (downloads), scalable directory creation, and data documentation.</p>
 <p>In the next post in this three part mini-series I will cover acquiring data from web services such as Project Gutenberg, Twitter, and Facebook through R packages. Using package interfaces will require additional knowledge of R objects. I will discuss vector types and data frames and show how to manipulate these objects in practical situations like filtering data and writing data to disk in plain-text files.</p>
-</section>
-<section class="footnotes">
+</div>
+<div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>Remember base R packages are installed by default with R and are loaded and accessible by default in each R session.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
-</section>
+</div>
 
       </div>
 

@@ -475,7 +475,7 @@ aes_country_props</code></pre>
   ggplot(aes(x = country, y = prop)) + # create x- and y-axis mappings
   geom_col() + # visualize a column-wise geometry
   labs(x = &quot;Country&quot;, y = &quot;Proportion (%)&quot;, title = &quot;ACTIV-ES Corpus Distribution&quot;, subtitle = &quot;Proportion of words in each country sub-corpus&quot;)</code></pre>
-<p><img src="/rmarkdown-libs/figure-html4/aes-country-plot-labs-1.png" width="100%" /></p>
+<p><img src="/post/2017-12-01-curate-language-data-organizing-metadata_files/figure-html/aes-country-plot-labs-1.png" width="100%" /></p>
 <p>In this example we covered reading a corpus and the meta-data information contained withing the file names of this corpus with the readtext package. We then did some quick exploratory work to find the corpus size and the proportions of the corpus by country sub-corpus with the tidytext package and assorted functions from the tidyverse package. We rounded things out with a brief introduction to the ggplot2 package which we used to visualize the country sub-corpus proportions.</p>
 </div>
 </div>
@@ -1112,7 +1112,7 @@ sdac[!complete.cases(sdac), ] %&gt;% glimpse # view incomplete cases</code></pre
   geom_col() +
   labs(x = &quot;Dialect region&quot;, y = &quot;Utterance count&quot;, title = &quot;Switchboard Dialog Act Corpus&quot;, subtitle = &quot;Utterances per dialect region&quot;) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
-<p><img src="/rmarkdown-libs/figure-html4/sdac-dialect-plot-1.png" width="100%" /></p>
+<p><img src="/post/2017-12-01-curate-language-data-organizing-metadata_files/figure-html/sdac-dialect-plot-1.png" width="100%" /></p>
 <p>Let’s see how men and women figure across the dialect areas.</p>
 <pre class="r"><code>sdac %&gt;% 
   group_by(dialect_area, sex) %&gt;% 
@@ -1121,7 +1121,7 @@ sdac[!complete.cases(sdac), ] %&gt;% glimpse # view incomplete cases</code></pre
   geom_col() +
   labs(x = &quot;Dialect region&quot;, y = &quot;Utterance count&quot;, title = &quot;Switchboard Dialog Act Corpus&quot;, subtitle = &quot;Utterances per dialect region and sex&quot;) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
-<p><img src="/rmarkdown-libs/figure-html4/sdac-dialect-sex-plot-1.png" width="100%" /></p>
+<p><img src="/post/2017-12-01-curate-language-data-organizing-metadata_files/figure-html/sdac-dialect-sex-plot-1.png" width="100%" /></p>
 <p>There are many other ways to group and count the dataset but I’ll leave that to you to look at!</p>
 </div>
 </div>
@@ -1140,13 +1140,13 @@ sdac[!complete.cases(sdac), ] %&gt;% glimpse # view incomplete cases</code></pre
 <p>Henry, Lionel, and Hadley Wickham. 2017. <em>Purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr" class="uri">https://CRAN.R-project.org/package=purrr</a>.</p>
 </div>
 <div id="ref-R-tidytext">
-<p>Robinson, David, and Julia Silge. 2017. <em>Tidytext: Text Mining Using ’Dplyr’, ’Ggplot2’, and Other Tidy Tools</em>. <a href="https://CRAN.R-project.org/package=tidytext" class="uri">https://CRAN.R-project.org/package=tidytext</a>.</p>
+<p>Robinson, David, and Julia Silge. 2018. <em>Tidytext: Text Mining Using ’Dplyr’, ’Ggplot2’, and Other Tidy Tools</em>. <a href="https://CRAN.R-project.org/package=tidytext" class="uri">https://CRAN.R-project.org/package=tidytext</a>.</p>
 </div>
 <div id="ref-R-stringr">
-<p>Wickham, Hadley. 2017. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.</p>
+<p>Wickham, Hadley. 2018. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.</p>
 </div>
 <div id="ref-R-ggplot2">
-<p>Wickham, Hadley, and Winston Chang. 2017. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>.</p>
+<p>Wickham, Hadley, and Winston Chang. 2018. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>.</p>
 </div>
 <div id="ref-R-dplyr">
 <p>Wickham, Hadley, Romain Francois, Lionel Henry, and Kirill Müller. 2017. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>

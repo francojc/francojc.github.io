@@ -396,7 +396,7 @@
 <pre class="r"><code>/usr/local/bin/git</code></pre>
 <p>If a path is not returned, or you are on a PC, then you will need to download and install the software from the <code>git</code> homepage. Follow this <a href="https://git-scm.com/downloads">link to the <code>git</code> downloads page</a>.</p>
 <div class="figure"><span id="fig:git-install-1"></span>
-<img src="/rmarkdown-libs/figure-html4/git-install-1-1.png" alt="Git downloads page." width="100%" />
+<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/git-install-1-1.png" alt="Git downloads page." width="100%" />
 <p class="caption">
 Figure 1: Git downloads page.
 </p>
@@ -440,7 +440,7 @@ _pipeline.R data        functions   report</code></pre>
 <p>As we have seen, RStudio provides a of host tools for facilitating work with R. A feature that makes working with the sometimes numerous data files, scripts, and other resources more manageable is the ‘R Project’ tool. In a nutshell, this RStudio tool allows us to select a directory where our project files live and effectively group these files and the work we do as a unit. At a basic level it simply helps manage individual projects more easily. As we move on to other posts in this series, and particularly when we discuss creating reproducible research, we will see that this feature will really prove its worth. For now, let’s make the project template an R project and turn to focus on the file and directory structure as it relates to doing efficient and reproducible data analysis in R.</p>
 <p>To link our template to an R Project, start up R and select the ‘New Project…’ dialogue from the RStudio toolbar menu. You will be presented with various options as seen in Figure <a href="#fig:r-project-1">2</a>.</p>
 <div class="figure"><span id="fig:r-project-1"></span>
-<img src="/rmarkdown-libs/figure-html4/r-project-1-1.png" alt="Options for creating an R Project in RStudio." width="400" />
+<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-1-1.png" alt="Options for creating an R Project in RStudio." width="400" />
 <p class="caption">
 Figure 2: Options for creating an R Project in RStudio.
 </p>
@@ -448,7 +448,7 @@ Figure 2: Options for creating an R Project in RStudio.
 <p>The first option is for starting a project from scratch. The last option is for cloning a project from a versioning repository like GitHub. With versioning software, like <code>git</code>, on our machine, we can clone and create an R Project in one step. We will make use of this option in future posts now that we have a basic understand of <code>git</code> and GitHub. For now, however, we want to link the project template we cloned manually using the command line, so select ‘Existing Directory’ from this menu.</p>
 <p>Next navigate to the directory which we cloned either typing the path to the directory, or more conveniently using the ‘Browse’ button. Once we have selected the directory and create the R Project, RStudio will open a new session with our directories and files listed in the Files pane.</p>
 <div class="figure"><span id="fig:r-project-2"></span>
-<img src="/rmarkdown-libs/figure-html4/r-project-2-1.png" alt="View of the project template as an R Project." width="100%" />
+<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-2-1.png" alt="View of the project template as an R Project." width="100%" />
 <p class="caption">
 Figure 3: View of the project template as an R Project.
 </p>
@@ -514,7 +514,7 @@ Figure 3: View of the project template as an R Project.
 rm(list = ls())</code></pre>
 <p>The template shown here leverages code commenting to separate the script into meaningful tasks. The <code>ABOUT</code> section is where you will provide an overview of the purpose of the script in your project, how to use it, who created it, and when it was created. The <code>SETUP</code> section provides a space to load any required packages, source any required custom functions, and configure various other options. <code>RUN</code> is where the bulk of your code will be entered. As it has been stated various times, commenting is a vital part of sound coding practices. It is often helpful not only to comment the particular line of code, which we do by adding the <code>#</code> symbol to the immediate right of the code and then describe the task, but also to group coding sub-tasks in this section. RStudio provides a tool to create comment sections. You can use this tool by selecting ‘Code &gt; Insert Section…’ or the keyboard shortcut <code>shift + command + R</code> (Mac) or <code>shift + ctrl + R</code> (PC). Either approach will trigger a dialogue box to enter the name of the section. Once you have entered the name it will then appear in the section listing, as seen in Figure <a href="#fig:r-project-3">4</a>.</p>
 <div class="figure"><span id="fig:r-project-3"></span>
-<img src="/rmarkdown-libs/figure-html4/r-project-3-1.png" alt="View of the section listing in RStudio." width="100%" />
+<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-3-1.png" alt="View of the section listing in RStudio." width="100%" />
 <p class="caption">
 Figure 4: View of the section listing in RStudio.
 </p>
@@ -569,7 +569,7 @@ Figure 4: View of the section listing in RStudio.
 <p>Let’s quit our R session now by closing RStudio. When prompted, choose ‘Save’ from the ‘Quit R session’ dialogue box. Now reopen our R project by either starting RStudio then choosing ‘File &gt; Recent Projects’ in the RStudio toolbar or by navigating to the <code>recipes-project_template.Rproj</code> file with your operating system’s file explorer and double-clicking it.</p>
 <p>Choosing to save our project before closing RStudio has the effect of taking a snapshot of the current workspace. The files that were open on closing the session are returned to the workspace. Any variables we had in memory and the command history are also returned. The details of this snapshot are stored in the files you will now find at the root of our project directory: <code>.RData</code> and <code>.Rhistory</code>.</p>
 <div class="figure"><span id="fig:r-project-4"></span>
-<img src="/rmarkdown-libs/figure-html4/r-project-4-1.png" alt="View of the R project snapshot files `.RData` and `.Rhistory`." width="100%" />
+<img src="/post/2017-08-31-project-management-for-scalable-data-analysis_files/figure-html/r-project-4-1.png" alt="View of the R project snapshot files `.RData` and `.Rhistory`." width="100%" />
 <p class="caption">
 Figure 5: View of the R project snapshot files <code>.RData</code> and <code>.Rhistory</code>.
 </p>

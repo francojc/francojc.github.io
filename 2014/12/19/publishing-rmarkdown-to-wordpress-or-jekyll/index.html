@@ -344,7 +344,7 @@
 <script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
 
 
-<section id="publish-to-wordpress" class="level2">
+<div id="publish-to-wordpress" class="section level2">
 <h2>Publish to Wordpress</h2>
 <p>When I first starting looking into matters, I was using a Wordpress site hosted on <a href="http://wordpress.com">Wordpress.com</a>. I did some research on how to <code>knit</code> and send an <code>.Rmd</code> file to Wordpress with all images going along for the ride. I found <a href="http://yihui.name/knitr/demo/wordpress/">Yuhui Xie’s documentation on the official Knitr page</a> which was very helpful and some <a href="https://github.com/yihui/knitr-examples/blob/master/010-upload.Rmd">documentation on uploading images</a> to <a href="http://imgur.com">imgur.com</a>.</p>
 <p>This approach requires the <code>knitr</code>, <code>markdown</code> and <code>RWordpress</code> packages. First we set up some options in <code>knitr</code> to adjust the figure sizes and upload them to imgur.com.</p>
@@ -374,10 +374,10 @@ text = paste(readLines(html.file), collapse = &quot;\n&quot;)
 # Send to Worpdress
 newPost(list(description = text, title = &quot;Your post&#39;s title!&quot;), publish = FALSE)</code></pre>
 <p>I put together a command-line script that you can find <a href="https://github.com/francojc/exploRations/tree/master/Publishing">here</a>.</p>
-</section>
-<section id="publish-to-jekyll-and-host-on-github" class="level2">
+</div>
+<div id="publish-to-jekyll-and-host-on-github" class="section level2">
 <h2>Publish to Jekyll and host on GitHub</h2>
-<section id="setting-up-your-site" class="level3">
+<div id="setting-up-your-site" class="section level3">
 <h3>Setting up your site</h3>
 <p>After poking around on the web I was intrigued by the <a href="http://jekyllrb.com">Jekyll</a> publishing framework and hosting on <a href="https://help.github.com/articles/using-jekyll-with-pages/">GitHub</a>. After some reading and browsing around other Jekyll sites on GitHub, I decided to fork the <a href="https://mademistakes.com/articles/minimal-mistakes-jekyll-theme/"><code>minimal-mistakes</code></a> Jekyll theme by Michael Rose.</p>
 <p>You could find any number of themes on the web that have the main configurations already set up. Michael Rose has a <a href="https://mademistakes.com/work/jekyll-themes/">few</a>, but you can also find good basic themes using <a href="http://jekyllbootstrap.com">Jekyll-bootstrap</a>. If you go this way you’ll have a similar set of steps to get up and running.</p>
@@ -452,8 +452,8 @@ This sure is fun...</code></pre>
 <pre class="bash"><code>jekyll serve</code></pre>
 <p>Preview, ooh’s and aah’s.</p>
 <p>To create pages, edit the navigation, and other changes I will refer you to the <a href="https://mmistakes.github.io/minimal-mistakes/theme-setup/#site-setup"><code>minimal-mistakes</code> documentation</a>.</p>
-</section>
-<section id="publishing" class="level3">
+</div>
+<div id="publishing" class="section level3">
 <h3>Publishing</h3>
 <p>Now we want to be able to convert a <code>.Rmd</code> document to a <code>.md</code> document and then prepare the figure paths to look for our figures in the <code>images</code> directory in our <code>Jekyll</code> site. I found a nice base function that uses <code>knitr</code> and knitr options to do just that at <a href="https://jfisher-usgs.github.io/r/2012/07/03/knitr-jekyll/">jfisher-usgs</a>.</p>
 <pre class="r"><code>library(knitr)
@@ -476,8 +476,8 @@ git commit -m &quot;Initial configuration and post&quot;
 git push</code></pre>
 <p>Now you can visit your GitHub site and marvel at your work.</p>
 <p>Again, I put together a command-line script to make it easier to run this script. You can find it <a href="https://github.com/francojc/exploRations/tree/master/Publishing">here</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
       </div>
 

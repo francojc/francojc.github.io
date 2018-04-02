@@ -349,7 +349,7 @@
 
 <!-- TODO:
 -->
-<section id="package-interfaces" class="level2">
+<div id="package-interfaces" class="section level2">
 <h2>Package interfaces</h2>
 <p>A convenient alternative method for acquiring data in R is through package interfaces to web services. These interfaces are built using R code to make connections with resources on the web through <strong>Automatic Programming Interfaces</strong> (APIs). Websites such as Project Gutenberg, Twitter, Facebook, and many others provide APIs to allow access to their data under certain conditions, some more limiting for data collection than others. Programmers (like you!) in the R community take up the task of wrapping calls to an API with R code to make accessing that data from R possible. For example, <a href="https://CRAN.R-project.org/package=gutenbergr">gutenbergr</a> provides access to Project Gutenberg, <a href="https://CRAN.R-project.org/package=rtweet">rtweet</a> to Twitter, and <a href="https://CRAN.R-project.org/package=Rfacebook">Rfacebook</a> to Facebook.</p>
 <p>Using R package interfaces, however, often requires some more knowledge about R objects and functions. Let’s take a look at how to access data from Project Gutenberg through the <code>gutenbergr</code> package. Along the way we will touch upon various functions and concepts that are key to working with the R data types vectors and data frames including filtering and writing tabular data to disk in plain-text format.</p>
@@ -573,30 +573,30 @@ TODO: - work with `fulltext` and `crminer` exploration/ package tutorials
 
 Search for Plos ONE publications in Linguistics?
 -->
-</section>
-<section id="round-up" class="level2">
+</div>
+<div id="round-up" class="section level2">
 <h2>Round up</h2>
 <p>In this post I provided an overview to acquiring data from web service APIs through R packages. We took at closer look at the <code>gutenbergr</code> package which provides programmatic access to works available on Project Gutenberg. Working with package interfaces requires more knowledge of R including loading/ installing packages, working with vectors and data frames, and exporting data from an R session. We touched on these programming concepts and also outlined a method to create a reproducible workflow.</p>
 <p>Our last step in this mini series on acquiring data for language research with R, we will explore methods for acquire language data from the browsable web. I will discuss using the <code>rvest</code> package for downloading and isolating text elements from HTML pages and show how to organize and write the data to disk.</p>
-</section>
-<section id="references" class="level2 unnumbered">
+</div>
+<div id="references" class="section level2 unnumbered">
 <h2>References</h2>
 <div id="refs" class="references">
 <div id="ref-R-gutenbergr">
-<p>Robinson, David. 2017. <em>Gutenbergr: Download and Process Public Domain Works from Project Gutenberg</em>. <a href="https://CRAN.R-project.org/package=gutenbergr" class="uri">https://CRAN.R-project.org/package=gutenbergr</a>.</p>
+<p>Robinson, David. 2018. <em>Gutenbergr: Download and Process Public Domain Works from Project Gutenberg</em>. <a href="https://CRAN.R-project.org/package=gutenbergr" class="uri">https://CRAN.R-project.org/package=gutenbergr</a>.</p>
 </div>
 <div id="ref-R-tidyverse">
 <p>Wickham, Hadley. 2017. <em>Tidyverse: Easily Install and Load the ’Tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse" class="uri">https://CRAN.R-project.org/package=tidyverse</a>.</p>
 </div>
 </div>
-</section>
-<section class="footnotes">
+</div>
+<div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p><code>tidyverse</code> is not a typical package. It is a set of packages: <code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>, <code>readr</code>, <code>purrr</code>, and <code>tibble</code>. These packages are all installed/ loaded with <code>tidyverse</code> and form the backbone for the type of work you will typically do in most analyses.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>See <a href="https://www.loc.gov/catdir/cpso/lcco/">Library of Congress Classification</a> documentation for a complete list of subject codes.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
-</section>
+</div>
 
       </div>
 

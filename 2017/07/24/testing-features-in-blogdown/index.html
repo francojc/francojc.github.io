@@ -344,14 +344,17 @@
 <script src="/rmarkdown-libs/pagedtable/js/pagedtable.js"></script>
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
 <link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <p>This is a post to test the functionality of <code>blogdown</code>. We are going to look at how various types of outputs are rendered and do some tweaking to get things to work right. The hope is to get an idea of what the best practices for creating posts and pages is when working with this software.</p>
-<section id="tables" class="level2">
+<div id="tables" class="section level2">
 <h2>Tables</h2>
 <p>Here’s some more code working with tables with different functions.</p>
 <pre class="r"><code>as_tibble(mtcars) # to glimpse</code></pre>
@@ -369,947 +372,1739 @@
 <p>How about <code>htmlTable()</code>?</p>
 <pre class="r"><code>library(htmlTable)
 htmlTable(mtcars)</code></pre>
-<p><table class='gmisc_table' style='border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;' >
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
 <tr>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey;'> </th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>mpg</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>cyl</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>disp</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>hp</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>drat</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>wt</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>qsec</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>vs</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>am</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>gear</th>
-<th style='border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;'>carb</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey;">
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+mpg
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+cyl
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+disp
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+hp
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+drat
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+wt
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+qsec
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+vs
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+am
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+gear
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+carb
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style='text-align: left;'>Mazda RX4</td>
-<td style='text-align: center;'>21</td>
-<td style='text-align: center;'>6</td>
-<td style='text-align: center;'>160</td>
-<td style='text-align: center;'>110</td>
-<td style='text-align: center;'>3.9</td>
-<td style='text-align: center;'>2.62</td>
-<td style='text-align: center;'>16.46</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Mazda RX4
+</td>
+<td style="text-align: center;">
+21
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+160
+</td>
+<td style="text-align: center;">
+110
+</td>
+<td style="text-align: center;">
+3.9
+</td>
+<td style="text-align: center;">
+2.62
+</td>
+<td style="text-align: center;">
+16.46
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Mazda RX4 Wag</td>
-<td style='text-align: center;'>21</td>
-<td style='text-align: center;'>6</td>
-<td style='text-align: center;'>160</td>
-<td style='text-align: center;'>110</td>
-<td style='text-align: center;'>3.9</td>
-<td style='text-align: center;'>2.875</td>
-<td style='text-align: center;'>17.02</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Mazda RX4 Wag
+</td>
+<td style="text-align: center;">
+21
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+160
+</td>
+<td style="text-align: center;">
+110
+</td>
+<td style="text-align: center;">
+3.9
+</td>
+<td style="text-align: center;">
+2.875
+</td>
+<td style="text-align: center;">
+17.02
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Datsun 710</td>
-<td style='text-align: center;'>22.8</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>108</td>
-<td style='text-align: center;'>93</td>
-<td style='text-align: center;'>3.85</td>
-<td style='text-align: center;'>2.32</td>
-<td style='text-align: center;'>18.61</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>1</td>
+<td style="text-align: left;">
+Datsun 710
+</td>
+<td style="text-align: center;">
+22.8
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+108
+</td>
+<td style="text-align: center;">
+93
+</td>
+<td style="text-align: center;">
+3.85
+</td>
+<td style="text-align: center;">
+2.32
+</td>
+<td style="text-align: center;">
+18.61
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+1
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Hornet 4 Drive</td>
-<td style='text-align: center;'>21.4</td>
-<td style='text-align: center;'>6</td>
-<td style='text-align: center;'>258</td>
-<td style='text-align: center;'>110</td>
-<td style='text-align: center;'>3.08</td>
-<td style='text-align: center;'>3.215</td>
-<td style='text-align: center;'>19.44</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>1</td>
+<td style="text-align: left;">
+Hornet 4 Drive
+</td>
+<td style="text-align: center;">
+21.4
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+258
+</td>
+<td style="text-align: center;">
+110
+</td>
+<td style="text-align: center;">
+3.08
+</td>
+<td style="text-align: center;">
+3.215
+</td>
+<td style="text-align: center;">
+19.44
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+1
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Hornet Sportabout</td>
-<td style='text-align: center;'>18.7</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>360</td>
-<td style='text-align: center;'>175</td>
-<td style='text-align: center;'>3.15</td>
-<td style='text-align: center;'>3.44</td>
-<td style='text-align: center;'>17.02</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Hornet Sportabout
+</td>
+<td style="text-align: center;">
+18.7
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+360
+</td>
+<td style="text-align: center;">
+175
+</td>
+<td style="text-align: center;">
+3.15
+</td>
+<td style="text-align: center;">
+3.44
+</td>
+<td style="text-align: center;">
+17.02
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Valiant</td>
-<td style='text-align: center;'>18.1</td>
-<td style='text-align: center;'>6</td>
-<td style='text-align: center;'>225</td>
-<td style='text-align: center;'>105</td>
-<td style='text-align: center;'>2.76</td>
-<td style='text-align: center;'>3.46</td>
-<td style='text-align: center;'>20.22</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>1</td>
+<td style="text-align: left;">
+Valiant
+</td>
+<td style="text-align: center;">
+18.1
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+225
+</td>
+<td style="text-align: center;">
+105
+</td>
+<td style="text-align: center;">
+2.76
+</td>
+<td style="text-align: center;">
+3.46
+</td>
+<td style="text-align: center;">
+20.22
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+1
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Duster 360</td>
-<td style='text-align: center;'>14.3</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>360</td>
-<td style='text-align: center;'>245</td>
-<td style='text-align: center;'>3.21</td>
-<td style='text-align: center;'>3.57</td>
-<td style='text-align: center;'>15.84</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Duster 360
+</td>
+<td style="text-align: center;">
+14.3
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+360
+</td>
+<td style="text-align: center;">
+245
+</td>
+<td style="text-align: center;">
+3.21
+</td>
+<td style="text-align: center;">
+3.57
+</td>
+<td style="text-align: center;">
+15.84
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Merc 240D</td>
-<td style='text-align: center;'>24.4</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>146.7</td>
-<td style='text-align: center;'>62</td>
-<td style='text-align: center;'>3.69</td>
-<td style='text-align: center;'>3.19</td>
-<td style='text-align: center;'>20</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Merc 240D
+</td>
+<td style="text-align: center;">
+24.4
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+146.7
+</td>
+<td style="text-align: center;">
+62
+</td>
+<td style="text-align: center;">
+3.69
+</td>
+<td style="text-align: center;">
+3.19
+</td>
+<td style="text-align: center;">
+20
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Merc 230</td>
-<td style='text-align: center;'>22.8</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>140.8</td>
-<td style='text-align: center;'>95</td>
-<td style='text-align: center;'>3.92</td>
-<td style='text-align: center;'>3.15</td>
-<td style='text-align: center;'>22.9</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Merc 230
+</td>
+<td style="text-align: center;">
+22.8
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+140.8
+</td>
+<td style="text-align: center;">
+95
+</td>
+<td style="text-align: center;">
+3.92
+</td>
+<td style="text-align: center;">
+3.15
+</td>
+<td style="text-align: center;">
+22.9
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Merc 280</td>
-<td style='text-align: center;'>19.2</td>
-<td style='text-align: center;'>6</td>
-<td style='text-align: center;'>167.6</td>
-<td style='text-align: center;'>123</td>
-<td style='text-align: center;'>3.92</td>
-<td style='text-align: center;'>3.44</td>
-<td style='text-align: center;'>18.3</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Merc 280
+</td>
+<td style="text-align: center;">
+19.2
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+167.6
+</td>
+<td style="text-align: center;">
+123
+</td>
+<td style="text-align: center;">
+3.92
+</td>
+<td style="text-align: center;">
+3.44
+</td>
+<td style="text-align: center;">
+18.3
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Merc 280C</td>
-<td style='text-align: center;'>17.8</td>
-<td style='text-align: center;'>6</td>
-<td style='text-align: center;'>167.6</td>
-<td style='text-align: center;'>123</td>
-<td style='text-align: center;'>3.92</td>
-<td style='text-align: center;'>3.44</td>
-<td style='text-align: center;'>18.9</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Merc 280C
+</td>
+<td style="text-align: center;">
+17.8
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+167.6
+</td>
+<td style="text-align: center;">
+123
+</td>
+<td style="text-align: center;">
+3.92
+</td>
+<td style="text-align: center;">
+3.44
+</td>
+<td style="text-align: center;">
+18.9
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Merc 450SE</td>
-<td style='text-align: center;'>16.4</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>275.8</td>
-<td style='text-align: center;'>180</td>
-<td style='text-align: center;'>3.07</td>
-<td style='text-align: center;'>4.07</td>
-<td style='text-align: center;'>17.4</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>3</td>
+<td style="text-align: left;">
+Merc 450SE
+</td>
+<td style="text-align: center;">
+16.4
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+275.8
+</td>
+<td style="text-align: center;">
+180
+</td>
+<td style="text-align: center;">
+3.07
+</td>
+<td style="text-align: center;">
+4.07
+</td>
+<td style="text-align: center;">
+17.4
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+3
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Merc 450SL</td>
-<td style='text-align: center;'>17.3</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>275.8</td>
-<td style='text-align: center;'>180</td>
-<td style='text-align: center;'>3.07</td>
-<td style='text-align: center;'>3.73</td>
-<td style='text-align: center;'>17.6</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>3</td>
+<td style="text-align: left;">
+Merc 450SL
+</td>
+<td style="text-align: center;">
+17.3
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+275.8
+</td>
+<td style="text-align: center;">
+180
+</td>
+<td style="text-align: center;">
+3.07
+</td>
+<td style="text-align: center;">
+3.73
+</td>
+<td style="text-align: center;">
+17.6
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+3
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Merc 450SLC</td>
-<td style='text-align: center;'>15.2</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>275.8</td>
-<td style='text-align: center;'>180</td>
-<td style='text-align: center;'>3.07</td>
-<td style='text-align: center;'>3.78</td>
-<td style='text-align: center;'>18</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>3</td>
+<td style="text-align: left;">
+Merc 450SLC
+</td>
+<td style="text-align: center;">
+15.2
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+275.8
+</td>
+<td style="text-align: center;">
+180
+</td>
+<td style="text-align: center;">
+3.07
+</td>
+<td style="text-align: center;">
+3.78
+</td>
+<td style="text-align: center;">
+18
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+3
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Cadillac Fleetwood</td>
-<td style='text-align: center;'>10.4</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>472</td>
-<td style='text-align: center;'>205</td>
-<td style='text-align: center;'>2.93</td>
-<td style='text-align: center;'>5.25</td>
-<td style='text-align: center;'>17.98</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Cadillac Fleetwood
+</td>
+<td style="text-align: center;">
+10.4
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+472
+</td>
+<td style="text-align: center;">
+205
+</td>
+<td style="text-align: center;">
+2.93
+</td>
+<td style="text-align: center;">
+5.25
+</td>
+<td style="text-align: center;">
+17.98
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Lincoln Continental</td>
-<td style='text-align: center;'>10.4</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>460</td>
-<td style='text-align: center;'>215</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>5.424</td>
-<td style='text-align: center;'>17.82</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Lincoln Continental
+</td>
+<td style="text-align: center;">
+10.4
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+460
+</td>
+<td style="text-align: center;">
+215
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+5.424
+</td>
+<td style="text-align: center;">
+17.82
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Chrysler Imperial</td>
-<td style='text-align: center;'>14.7</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>440</td>
-<td style='text-align: center;'>230</td>
-<td style='text-align: center;'>3.23</td>
-<td style='text-align: center;'>5.345</td>
-<td style='text-align: center;'>17.42</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Chrysler Imperial
+</td>
+<td style="text-align: center;">
+14.7
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+440
+</td>
+<td style="text-align: center;">
+230
+</td>
+<td style="text-align: center;">
+3.23
+</td>
+<td style="text-align: center;">
+5.345
+</td>
+<td style="text-align: center;">
+17.42
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Fiat 128</td>
-<td style='text-align: center;'>32.4</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>78.7</td>
-<td style='text-align: center;'>66</td>
-<td style='text-align: center;'>4.08</td>
-<td style='text-align: center;'>2.2</td>
-<td style='text-align: center;'>19.47</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>1</td>
+<td style="text-align: left;">
+Fiat 128
+</td>
+<td style="text-align: center;">
+32.4
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+78.7
+</td>
+<td style="text-align: center;">
+66
+</td>
+<td style="text-align: center;">
+4.08
+</td>
+<td style="text-align: center;">
+2.2
+</td>
+<td style="text-align: center;">
+19.47
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+1
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Honda Civic</td>
-<td style='text-align: center;'>30.4</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>75.7</td>
-<td style='text-align: center;'>52</td>
-<td style='text-align: center;'>4.93</td>
-<td style='text-align: center;'>1.615</td>
-<td style='text-align: center;'>18.52</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Honda Civic
+</td>
+<td style="text-align: center;">
+30.4
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+75.7
+</td>
+<td style="text-align: center;">
+52
+</td>
+<td style="text-align: center;">
+4.93
+</td>
+<td style="text-align: center;">
+1.615
+</td>
+<td style="text-align: center;">
+18.52
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Toyota Corolla</td>
-<td style='text-align: center;'>33.9</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>71.1</td>
-<td style='text-align: center;'>65</td>
-<td style='text-align: center;'>4.22</td>
-<td style='text-align: center;'>1.835</td>
-<td style='text-align: center;'>19.9</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>1</td>
+<td style="text-align: left;">
+Toyota Corolla
+</td>
+<td style="text-align: center;">
+33.9
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+71.1
+</td>
+<td style="text-align: center;">
+65
+</td>
+<td style="text-align: center;">
+4.22
+</td>
+<td style="text-align: center;">
+1.835
+</td>
+<td style="text-align: center;">
+19.9
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+1
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Toyota Corona</td>
-<td style='text-align: center;'>21.5</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>120.1</td>
-<td style='text-align: center;'>97</td>
-<td style='text-align: center;'>3.7</td>
-<td style='text-align: center;'>2.465</td>
-<td style='text-align: center;'>20.01</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>1</td>
+<td style="text-align: left;">
+Toyota Corona
+</td>
+<td style="text-align: center;">
+21.5
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+120.1
+</td>
+<td style="text-align: center;">
+97
+</td>
+<td style="text-align: center;">
+3.7
+</td>
+<td style="text-align: center;">
+2.465
+</td>
+<td style="text-align: center;">
+20.01
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+1
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Dodge Challenger</td>
-<td style='text-align: center;'>15.5</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>318</td>
-<td style='text-align: center;'>150</td>
-<td style='text-align: center;'>2.76</td>
-<td style='text-align: center;'>3.52</td>
-<td style='text-align: center;'>16.87</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Dodge Challenger
+</td>
+<td style="text-align: center;">
+15.5
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+318
+</td>
+<td style="text-align: center;">
+150
+</td>
+<td style="text-align: center;">
+2.76
+</td>
+<td style="text-align: center;">
+3.52
+</td>
+<td style="text-align: center;">
+16.87
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>AMC Javelin</td>
-<td style='text-align: center;'>15.2</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>304</td>
-<td style='text-align: center;'>150</td>
-<td style='text-align: center;'>3.15</td>
-<td style='text-align: center;'>3.435</td>
-<td style='text-align: center;'>17.3</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+AMC Javelin
+</td>
+<td style="text-align: center;">
+15.2
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+304
+</td>
+<td style="text-align: center;">
+150
+</td>
+<td style="text-align: center;">
+3.15
+</td>
+<td style="text-align: center;">
+3.435
+</td>
+<td style="text-align: center;">
+17.3
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Camaro Z28</td>
-<td style='text-align: center;'>13.3</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>350</td>
-<td style='text-align: center;'>245</td>
-<td style='text-align: center;'>3.73</td>
-<td style='text-align: center;'>3.84</td>
-<td style='text-align: center;'>15.41</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Camaro Z28
+</td>
+<td style="text-align: center;">
+13.3
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+350
+</td>
+<td style="text-align: center;">
+245
+</td>
+<td style="text-align: center;">
+3.73
+</td>
+<td style="text-align: center;">
+3.84
+</td>
+<td style="text-align: center;">
+15.41
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Pontiac Firebird</td>
-<td style='text-align: center;'>19.2</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>400</td>
-<td style='text-align: center;'>175</td>
-<td style='text-align: center;'>3.08</td>
-<td style='text-align: center;'>3.845</td>
-<td style='text-align: center;'>17.05</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>3</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Pontiac Firebird
+</td>
+<td style="text-align: center;">
+19.2
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+400
+</td>
+<td style="text-align: center;">
+175
+</td>
+<td style="text-align: center;">
+3.08
+</td>
+<td style="text-align: center;">
+3.845
+</td>
+<td style="text-align: center;">
+17.05
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Fiat X1-9</td>
-<td style='text-align: center;'>27.3</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>79</td>
-<td style='text-align: center;'>66</td>
-<td style='text-align: center;'>4.08</td>
-<td style='text-align: center;'>1.935</td>
-<td style='text-align: center;'>18.9</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>1</td>
+<td style="text-align: left;">
+Fiat X1-9
+</td>
+<td style="text-align: center;">
+27.3
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+79
+</td>
+<td style="text-align: center;">
+66
+</td>
+<td style="text-align: center;">
+4.08
+</td>
+<td style="text-align: center;">
+1.935
+</td>
+<td style="text-align: center;">
+18.9
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+1
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Porsche 914-2</td>
-<td style='text-align: center;'>26</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>120.3</td>
-<td style='text-align: center;'>91</td>
-<td style='text-align: center;'>4.43</td>
-<td style='text-align: center;'>2.14</td>
-<td style='text-align: center;'>16.7</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>5</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Porsche 914-2
+</td>
+<td style="text-align: center;">
+26
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+120.3
+</td>
+<td style="text-align: center;">
+91
+</td>
+<td style="text-align: center;">
+4.43
+</td>
+<td style="text-align: center;">
+2.14
+</td>
+<td style="text-align: center;">
+16.7
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+5
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Lotus Europa</td>
-<td style='text-align: center;'>30.4</td>
-<td style='text-align: center;'>4</td>
-<td style='text-align: center;'>95.1</td>
-<td style='text-align: center;'>113</td>
-<td style='text-align: center;'>3.77</td>
-<td style='text-align: center;'>1.513</td>
-<td style='text-align: center;'>16.9</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>5</td>
-<td style='text-align: center;'>2</td>
+<td style="text-align: left;">
+Lotus Europa
+</td>
+<td style="text-align: center;">
+30.4
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+95.1
+</td>
+<td style="text-align: center;">
+113
+</td>
+<td style="text-align: center;">
+3.77
+</td>
+<td style="text-align: center;">
+1.513
+</td>
+<td style="text-align: center;">
+16.9
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+5
+</td>
+<td style="text-align: center;">
+2
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Ford Pantera L</td>
-<td style='text-align: center;'>15.8</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>351</td>
-<td style='text-align: center;'>264</td>
-<td style='text-align: center;'>4.22</td>
-<td style='text-align: center;'>3.17</td>
-<td style='text-align: center;'>14.5</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>5</td>
-<td style='text-align: center;'>4</td>
+<td style="text-align: left;">
+Ford Pantera L
+</td>
+<td style="text-align: center;">
+15.8
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+351
+</td>
+<td style="text-align: center;">
+264
+</td>
+<td style="text-align: center;">
+4.22
+</td>
+<td style="text-align: center;">
+3.17
+</td>
+<td style="text-align: center;">
+14.5
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+5
+</td>
+<td style="text-align: center;">
+4
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Ferrari Dino</td>
-<td style='text-align: center;'>19.7</td>
-<td style='text-align: center;'>6</td>
-<td style='text-align: center;'>145</td>
-<td style='text-align: center;'>175</td>
-<td style='text-align: center;'>3.62</td>
-<td style='text-align: center;'>2.77</td>
-<td style='text-align: center;'>15.5</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>5</td>
-<td style='text-align: center;'>6</td>
+<td style="text-align: left;">
+Ferrari Dino
+</td>
+<td style="text-align: center;">
+19.7
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+145
+</td>
+<td style="text-align: center;">
+175
+</td>
+<td style="text-align: center;">
+3.62
+</td>
+<td style="text-align: center;">
+2.77
+</td>
+<td style="text-align: center;">
+15.5
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+5
+</td>
+<td style="text-align: center;">
+6
+</td>
 </tr>
 <tr>
-<td style='text-align: left;'>Maserati Bora</td>
-<td style='text-align: center;'>15</td>
-<td style='text-align: center;'>8</td>
-<td style='text-align: center;'>301</td>
-<td style='text-align: center;'>335</td>
-<td style='text-align: center;'>3.54</td>
-<td style='text-align: center;'>3.57</td>
-<td style='text-align: center;'>14.6</td>
-<td style='text-align: center;'>0</td>
-<td style='text-align: center;'>1</td>
-<td style='text-align: center;'>5</td>
-<td style='text-align: center;'>8</td>
+<td style="text-align: left;">
+Maserati Bora
+</td>
+<td style="text-align: center;">
+15
+</td>
+<td style="text-align: center;">
+8
+</td>
+<td style="text-align: center;">
+301
+</td>
+<td style="text-align: center;">
+335
+</td>
+<td style="text-align: center;">
+3.54
+</td>
+<td style="text-align: center;">
+3.57
+</td>
+<td style="text-align: center;">
+14.6
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+5
+</td>
+<td style="text-align: center;">
+8
+</td>
 </tr>
 <tr>
-<td style='border-bottom: 2px solid grey; text-align: left;'>Volvo 142E</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>21.4</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>4</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>121</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>109</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>4.11</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>2.78</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>18.6</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>1</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>1</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>4</td>
-<td style='border-bottom: 2px solid grey; text-align: center;'>2</td>
+<td style="border-bottom: 2px solid grey; text-align: left;">
+Volvo 142E
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+21.4
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+4
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+121
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+109
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+4.11
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+2.78
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+18.6
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+1
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+1
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+4
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+2
+</td>
 </tr>
 </tbody>
-</table> OK, so that works. How about <code>knitr::kable()</code>?</p>
+</table>
+<p>OK, so that works. How about <code>knitr::kable()</code>?</p>
 <pre class="r"><code>knitr::kable(mtcars, caption = &quot;This is the `mtcars` dataset.&quot;)</code></pre>
 <table>
 <caption><span id="tab:unnamed-chunk-4">Table 1: </span>This is the <code>mtcars</code> dataset.</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: right;">mpg</th>
-<th style="text-align: right;">cyl</th>
-<th style="text-align: right;">disp</th>
-<th style="text-align: right;">hp</th>
-<th style="text-align: right;">drat</th>
-<th style="text-align: right;">wt</th>
-<th style="text-align: right;">qsec</th>
-<th style="text-align: right;">vs</th>
-<th style="text-align: right;">am</th>
-<th style="text-align: right;">gear</th>
-<th style="text-align: right;">carb</th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+<th align="right">am</th>
+<th align="right">gear</th>
+<th align="right">carb</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Mazda RX4</td>
-<td style="text-align: right;">21.0</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">160.0</td>
-<td style="text-align: right;">110</td>
-<td style="text-align: right;">3.90</td>
-<td style="text-align: right;">2.620</td>
-<td style="text-align: right;">16.46</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160.0</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td>Mazda RX4 Wag</td>
-<td style="text-align: right;">21.0</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">160.0</td>
-<td style="text-align: right;">110</td>
-<td style="text-align: right;">3.90</td>
-<td style="text-align: right;">2.875</td>
-<td style="text-align: right;">17.02</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160.0</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td>Datsun 710</td>
-<td style="text-align: right;">22.8</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">108.0</td>
-<td style="text-align: right;">93</td>
-<td style="text-align: right;">3.85</td>
-<td style="text-align: right;">2.320</td>
-<td style="text-align: right;">18.61</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108.0</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td>Hornet 4 Drive</td>
-<td style="text-align: right;">21.4</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">258.0</td>
-<td style="text-align: right;">110</td>
-<td style="text-align: right;">3.08</td>
-<td style="text-align: right;">3.215</td>
-<td style="text-align: right;">19.44</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258.0</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td>Hornet Sportabout</td>
-<td style="text-align: right;">18.7</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">360.0</td>
-<td style="text-align: right;">175</td>
-<td style="text-align: right;">3.15</td>
-<td style="text-align: right;">3.440</td>
-<td style="text-align: right;">17.02</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360.0</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td>Valiant</td>
-<td style="text-align: right;">18.1</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">225.0</td>
-<td style="text-align: right;">105</td>
-<td style="text-align: right;">2.76</td>
-<td style="text-align: right;">3.460</td>
-<td style="text-align: right;">20.22</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225.0</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td>Duster 360</td>
-<td style="text-align: right;">14.3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">360.0</td>
-<td style="text-align: right;">245</td>
-<td style="text-align: right;">3.21</td>
-<td style="text-align: right;">3.570</td>
-<td style="text-align: right;">15.84</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
+<td align="right">14.3</td>
+<td align="right">8</td>
+<td align="right">360.0</td>
+<td align="right">245</td>
+<td align="right">3.21</td>
+<td align="right">3.570</td>
+<td align="right">15.84</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td>Merc 240D</td>
-<td style="text-align: right;">24.4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">146.7</td>
-<td style="text-align: right;">62</td>
-<td style="text-align: right;">3.69</td>
-<td style="text-align: right;">3.190</td>
-<td style="text-align: right;">20.00</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">2</td>
+<td align="right">24.4</td>
+<td align="right">4</td>
+<td align="right">146.7</td>
+<td align="right">62</td>
+<td align="right">3.69</td>
+<td align="right">3.190</td>
+<td align="right">20.00</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td>Merc 230</td>
-<td style="text-align: right;">22.8</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">140.8</td>
-<td style="text-align: right;">95</td>
-<td style="text-align: right;">3.92</td>
-<td style="text-align: right;">3.150</td>
-<td style="text-align: right;">22.90</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">2</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">140.8</td>
+<td align="right">95</td>
+<td align="right">3.92</td>
+<td align="right">3.150</td>
+<td align="right">22.90</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td>Merc 280</td>
-<td style="text-align: right;">19.2</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">167.6</td>
-<td style="text-align: right;">123</td>
-<td style="text-align: right;">3.92</td>
-<td style="text-align: right;">3.440</td>
-<td style="text-align: right;">18.30</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
+<td align="right">19.2</td>
+<td align="right">6</td>
+<td align="right">167.6</td>
+<td align="right">123</td>
+<td align="right">3.92</td>
+<td align="right">3.440</td>
+<td align="right">18.30</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td>Merc 280C</td>
-<td style="text-align: right;">17.8</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">167.6</td>
-<td style="text-align: right;">123</td>
-<td style="text-align: right;">3.92</td>
-<td style="text-align: right;">3.440</td>
-<td style="text-align: right;">18.90</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
+<td align="right">17.8</td>
+<td align="right">6</td>
+<td align="right">167.6</td>
+<td align="right">123</td>
+<td align="right">3.92</td>
+<td align="right">3.440</td>
+<td align="right">18.90</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td>Merc 450SE</td>
-<td style="text-align: right;">16.4</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">275.8</td>
-<td style="text-align: right;">180</td>
-<td style="text-align: right;">3.07</td>
-<td style="text-align: right;">4.070</td>
-<td style="text-align: right;">17.40</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
+<td align="right">16.4</td>
+<td align="right">8</td>
+<td align="right">275.8</td>
+<td align="right">180</td>
+<td align="right">3.07</td>
+<td align="right">4.070</td>
+<td align="right">17.40</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">3</td>
 </tr>
 <tr class="odd">
 <td>Merc 450SL</td>
-<td style="text-align: right;">17.3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">275.8</td>
-<td style="text-align: right;">180</td>
-<td style="text-align: right;">3.07</td>
-<td style="text-align: right;">3.730</td>
-<td style="text-align: right;">17.60</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
+<td align="right">17.3</td>
+<td align="right">8</td>
+<td align="right">275.8</td>
+<td align="right">180</td>
+<td align="right">3.07</td>
+<td align="right">3.730</td>
+<td align="right">17.60</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">3</td>
 </tr>
 <tr class="even">
 <td>Merc 450SLC</td>
-<td style="text-align: right;">15.2</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">275.8</td>
-<td style="text-align: right;">180</td>
-<td style="text-align: right;">3.07</td>
-<td style="text-align: right;">3.780</td>
-<td style="text-align: right;">18.00</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
+<td align="right">15.2</td>
+<td align="right">8</td>
+<td align="right">275.8</td>
+<td align="right">180</td>
+<td align="right">3.07</td>
+<td align="right">3.780</td>
+<td align="right">18.00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">3</td>
 </tr>
 <tr class="odd">
 <td>Cadillac Fleetwood</td>
-<td style="text-align: right;">10.4</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">472.0</td>
-<td style="text-align: right;">205</td>
-<td style="text-align: right;">2.93</td>
-<td style="text-align: right;">5.250</td>
-<td style="text-align: right;">17.98</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
+<td align="right">10.4</td>
+<td align="right">8</td>
+<td align="right">472.0</td>
+<td align="right">205</td>
+<td align="right">2.93</td>
+<td align="right">5.250</td>
+<td align="right">17.98</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td>Lincoln Continental</td>
-<td style="text-align: right;">10.4</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">460.0</td>
-<td style="text-align: right;">215</td>
-<td style="text-align: right;">3.00</td>
-<td style="text-align: right;">5.424</td>
-<td style="text-align: right;">17.82</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
+<td align="right">10.4</td>
+<td align="right">8</td>
+<td align="right">460.0</td>
+<td align="right">215</td>
+<td align="right">3.00</td>
+<td align="right">5.424</td>
+<td align="right">17.82</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td>Chrysler Imperial</td>
-<td style="text-align: right;">14.7</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">440.0</td>
-<td style="text-align: right;">230</td>
-<td style="text-align: right;">3.23</td>
-<td style="text-align: right;">5.345</td>
-<td style="text-align: right;">17.42</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
+<td align="right">14.7</td>
+<td align="right">8</td>
+<td align="right">440.0</td>
+<td align="right">230</td>
+<td align="right">3.23</td>
+<td align="right">5.345</td>
+<td align="right">17.42</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td>Fiat 128</td>
-<td style="text-align: right;">32.4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">78.7</td>
-<td style="text-align: right;">66</td>
-<td style="text-align: right;">4.08</td>
-<td style="text-align: right;">2.200</td>
-<td style="text-align: right;">19.47</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
+<td align="right">32.4</td>
+<td align="right">4</td>
+<td align="right">78.7</td>
+<td align="right">66</td>
+<td align="right">4.08</td>
+<td align="right">2.200</td>
+<td align="right">19.47</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td>Honda Civic</td>
-<td style="text-align: right;">30.4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">75.7</td>
-<td style="text-align: right;">52</td>
-<td style="text-align: right;">4.93</td>
-<td style="text-align: right;">1.615</td>
-<td style="text-align: right;">18.52</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">2</td>
+<td align="right">30.4</td>
+<td align="right">4</td>
+<td align="right">75.7</td>
+<td align="right">52</td>
+<td align="right">4.93</td>
+<td align="right">1.615</td>
+<td align="right">18.52</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td>Toyota Corolla</td>
-<td style="text-align: right;">33.9</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">71.1</td>
-<td style="text-align: right;">65</td>
-<td style="text-align: right;">4.22</td>
-<td style="text-align: right;">1.835</td>
-<td style="text-align: right;">19.90</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
+<td align="right">33.9</td>
+<td align="right">4</td>
+<td align="right">71.1</td>
+<td align="right">65</td>
+<td align="right">4.22</td>
+<td align="right">1.835</td>
+<td align="right">19.90</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td>Toyota Corona</td>
-<td style="text-align: right;">21.5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">120.1</td>
-<td style="text-align: right;">97</td>
-<td style="text-align: right;">3.70</td>
-<td style="text-align: right;">2.465</td>
-<td style="text-align: right;">20.01</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
+<td align="right">21.5</td>
+<td align="right">4</td>
+<td align="right">120.1</td>
+<td align="right">97</td>
+<td align="right">3.70</td>
+<td align="right">2.465</td>
+<td align="right">20.01</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td>Dodge Challenger</td>
-<td style="text-align: right;">15.5</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">318.0</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">2.76</td>
-<td style="text-align: right;">3.520</td>
-<td style="text-align: right;">16.87</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
+<td align="right">15.5</td>
+<td align="right">8</td>
+<td align="right">318.0</td>
+<td align="right">150</td>
+<td align="right">2.76</td>
+<td align="right">3.520</td>
+<td align="right">16.87</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td>AMC Javelin</td>
-<td style="text-align: right;">15.2</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">304.0</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">3.15</td>
-<td style="text-align: right;">3.435</td>
-<td style="text-align: right;">17.30</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
+<td align="right">15.2</td>
+<td align="right">8</td>
+<td align="right">304.0</td>
+<td align="right">150</td>
+<td align="right">3.15</td>
+<td align="right">3.435</td>
+<td align="right">17.30</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td>Camaro Z28</td>
-<td style="text-align: right;">13.3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">350.0</td>
-<td style="text-align: right;">245</td>
-<td style="text-align: right;">3.73</td>
-<td style="text-align: right;">3.840</td>
-<td style="text-align: right;">15.41</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
+<td align="right">13.3</td>
+<td align="right">8</td>
+<td align="right">350.0</td>
+<td align="right">245</td>
+<td align="right">3.73</td>
+<td align="right">3.840</td>
+<td align="right">15.41</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td>Pontiac Firebird</td>
-<td style="text-align: right;">19.2</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">400.0</td>
-<td style="text-align: right;">175</td>
-<td style="text-align: right;">3.08</td>
-<td style="text-align: right;">3.845</td>
-<td style="text-align: right;">17.05</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
+<td align="right">19.2</td>
+<td align="right">8</td>
+<td align="right">400.0</td>
+<td align="right">175</td>
+<td align="right">3.08</td>
+<td align="right">3.845</td>
+<td align="right">17.05</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td>Fiat X1-9</td>
-<td style="text-align: right;">27.3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">79.0</td>
-<td style="text-align: right;">66</td>
-<td style="text-align: right;">4.08</td>
-<td style="text-align: right;">1.935</td>
-<td style="text-align: right;">18.90</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
+<td align="right">27.3</td>
+<td align="right">4</td>
+<td align="right">79.0</td>
+<td align="right">66</td>
+<td align="right">4.08</td>
+<td align="right">1.935</td>
+<td align="right">18.90</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td>Porsche 914-2</td>
-<td style="text-align: right;">26.0</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">120.3</td>
-<td style="text-align: right;">91</td>
-<td style="text-align: right;">4.43</td>
-<td style="text-align: right;">2.140</td>
-<td style="text-align: right;">16.70</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">2</td>
+<td align="right">26.0</td>
+<td align="right">4</td>
+<td align="right">120.3</td>
+<td align="right">91</td>
+<td align="right">4.43</td>
+<td align="right">2.140</td>
+<td align="right">16.70</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td>Lotus Europa</td>
-<td style="text-align: right;">30.4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">95.1</td>
-<td style="text-align: right;">113</td>
-<td style="text-align: right;">3.77</td>
-<td style="text-align: right;">1.513</td>
-<td style="text-align: right;">16.90</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">2</td>
+<td align="right">30.4</td>
+<td align="right">4</td>
+<td align="right">95.1</td>
+<td align="right">113</td>
+<td align="right">3.77</td>
+<td align="right">1.513</td>
+<td align="right">16.90</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td>Ford Pantera L</td>
-<td style="text-align: right;">15.8</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">351.0</td>
-<td style="text-align: right;">264</td>
-<td style="text-align: right;">4.22</td>
-<td style="text-align: right;">3.170</td>
-<td style="text-align: right;">14.50</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
+<td align="right">15.8</td>
+<td align="right">8</td>
+<td align="right">351.0</td>
+<td align="right">264</td>
+<td align="right">4.22</td>
+<td align="right">3.170</td>
+<td align="right">14.50</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td>Ferrari Dino</td>
-<td style="text-align: right;">19.7</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">145.0</td>
-<td style="text-align: right;">175</td>
-<td style="text-align: right;">3.62</td>
-<td style="text-align: right;">2.770</td>
-<td style="text-align: right;">15.50</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">6</td>
+<td align="right">19.7</td>
+<td align="right">6</td>
+<td align="right">145.0</td>
+<td align="right">175</td>
+<td align="right">3.62</td>
+<td align="right">2.770</td>
+<td align="right">15.50</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td>Maserati Bora</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">301.0</td>
-<td style="text-align: right;">335</td>
-<td style="text-align: right;">3.54</td>
-<td style="text-align: right;">3.570</td>
-<td style="text-align: right;">14.60</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">8</td>
+<td align="right">15.0</td>
+<td align="right">8</td>
+<td align="right">301.0</td>
+<td align="right">335</td>
+<td align="right">3.54</td>
+<td align="right">3.570</td>
+<td align="right">14.60</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">8</td>
 </tr>
 <tr class="even">
 <td>Volvo 142E</td>
-<td style="text-align: right;">21.4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">121.0</td>
-<td style="text-align: right;">109</td>
-<td style="text-align: right;">4.11</td>
-<td style="text-align: right;">2.780</td>
-<td style="text-align: right;">18.60</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">2</td>
+<td align="right">21.4</td>
+<td align="right">4</td>
+<td align="right">121.0</td>
+<td align="right">109</td>
+<td align="right">4.11</td>
+<td align="right">2.780</td>
+<td align="right">18.60</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">2</td>
 </tr>
 </tbody>
 </table>
 <p>Looks nice.</p>
-</section>
-<section id="alert-notes-and-warnings" class="level2">
+</div>
+<div id="alert-notes-and-warnings" class="section level2">
 <h2>Alert notes and warnings</h2>
 <p>The theme I’m using, <code>academic</code>, has hooks for alerts. The syntax looks like this:</p>
 <pre><code>{{% alert note %}}
@@ -1330,16 +2125,17 @@ Here is a warning note...
 
 </div>
 
-</section>
-<section id="tweets" class="level2">
+</div>
+<div id="tweets" class="section level2">
 <h2>Tweets</h2>
-<p>It is sometimes useful to include Twitter cards in posts. Here’s a tweet card using the <code>blogdown::shortcode()</code> command:</p>
+<p>It is sometimes useful to include Twitter cards in posts.
+Here’s a tweet card using the <code>blogdown::shortcode()</code> command:</p>
 <pre class="r"><code>blogdown::shortcode(&#39;tweet&#39;, &#39;842100683650273281&#39;)</code></pre>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Five Things You Didn’t Realize Were Funded by the National Endowment for the Humanities: <a href="https://t.co/ZsDhqDRJQD">https://t.co/ZsDhqDRJQD</a></p>&mdash; Rob Townsend (@rbthisted) <a href="https://twitter.com/rbthisted/status/842100683650273281?ref_src=twsrc%5Etfw">March 15, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-</section>
-<section id="plotting" class="level2">
+</div>
+<div id="plotting" class="section level2">
 <h2>Plotting</h2>
 <p>Let’s make a simple plot and see where the image file ends up.</p>
 <pre class="r"><code>mtcars %&gt;% 
@@ -1353,8 +2149,8 @@ Figure 1: Basic plot using <code>ggplot2</code>.
 </p>
 </div>
 <p>Plots are generated and then copied to the <code>/static/posts/&lt;slug-name&gt;/</code> directory and the plot is named by the code chunk’s handle.</p>
-</section>
-<section id="images" class="level2">
+</div>
+<div id="images" class="section level2">
 <h2>Images</h2>
 <p>Adding images from other sources in Rmarkdown documents can be acheived through markdown directly with this basic syntax.</p>
 <pre class="markdown"><code>![](../path/image.png)</code></pre>
@@ -1374,8 +2170,8 @@ display(img)</code></pre>
 Figure 2: This is a tortoise generated by <code>EBImage</code>.
 </p>
 </div>
-</section>
-<section id="citations" class="level2">
+</div>
+<div id="citations" class="section level2">
 <h2>Citations</h2>
 <p>You can even add citations through the <code>citr</code> package which will facilitate creating citations throug the use of the <code>Tools &gt; Addin</code> dropdown menu. Just create a valid path to a <code>.bib</code> bibliography file in the YAML section of the <code>.Rmd</code> document.</p>
 <pre class="yaml"><code>---
@@ -1383,22 +2179,22 @@ bibliography: references.bib
 ---</code></pre>
 <p>Load the library and then use the dropdown tool to generate the citation syntax for markdown.</p>
 <pre class="r"><code>library(citr)</code></pre>
-<p>Here’s a citation <span class="citation" data-cites="Gries2013a">(Gries 2013)</span></p>
-</section>
-<section id="references" class="level2 unnumbered">
+<p>Here’s a citation <span class="citation">(Gries 2013)</span></p>
+</div>
+<div id="references" class="section level2 unnumbered">
 <h2>References</h2>
 <div id="refs" class="references">
 <div id="ref-Gries2013a">
 <p>Gries, ST. 2013. <em>Statistics for Linguistics with R. A Practical Introduction</em>. 2nd revise.</p>
 </div>
 </div>
-</section>
-<section class="footnotes">
+</div>
+<div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>Unfortunately the <code>DT:datatable()</code> function does not work with this theme as of yet.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
-</section>
+</div>
 
       </div>
 
