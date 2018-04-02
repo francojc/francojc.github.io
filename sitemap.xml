@@ -5,34 +5,7 @@
     
     <url>
     
-      <loc>/2018/02/12/quantitative-language-research-why-frequency-matters/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/2018/02/05/creating-r-packages/</loc>
-      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/2017/12/15/curate-language-data-working-with-linguistic-annotations/</loc>
-      <lastmod>2017-12-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/2017/12/01/curate-language-data-organizing-meta-data/</loc>
+      <loc>https://francojc.github.io/2017/12/01/curate-language-data-organizing-meta-data/</loc>
       <lastmod>2017-12-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -41,7 +14,7 @@
     
     <url>
     
-      <loc>/2017/11/02/acquiring-data-for-language-research-web-scraping/</loc>
+      <loc>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -50,7 +23,7 @@
     
     <url>
     
-      <loc>/2017/10/23/acquiring-data-for-language-research-package-interfaces/</loc>
+      <loc>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
     </url>
     
@@ -59,7 +32,7 @@
     
     <url>
     
-      <loc>/2017/10/20/acquiring-data-for-language-research-direct-downloads/</loc>
+      <loc>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</loc>
       <lastmod>2017-10-20T00:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +41,7 @@
     
     <url>
     
-      <loc>/2017/10/04/data-for-language-research-types-and-sources/</loc>
+      <loc>https://francojc.github.io/2017/10/04/data-for-language-research-types-and-sources/</loc>
       <lastmod>2017-10-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -77,7 +50,7 @@
     
     <url>
     
-      <loc>/2017/09/15/introduction-to-statistical-thinking/</loc>
+      <loc>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</loc>
       <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -86,7 +59,7 @@
     
     <url>
     
-      <loc>/2017/08/31/project-management-for-scalable-data-analysis/</loc>
+      <loc>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</loc>
       <lastmod>2017-08-31T00:00:00+00:00</lastmod>
     </url>
     
@@ -95,7 +68,7 @@
     
     <url>
     
-      <loc>/2017/08/14/getting-started-with-r-and-rstudio/</loc>
+      <loc>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</loc>
       <lastmod>2017-08-14T00:00:00+00:00</lastmod>
     </url>
     
@@ -104,7 +77,7 @@
     
     <url>
     
-      <loc>/2017/08/03/introducing-the-recipe-series/</loc>
+      <loc>https://francojc.github.io/2017/08/03/introducing-the-recipe-series/</loc>
       <lastmod>2017-08-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -113,7 +86,7 @@
     
     <url>
     
-      <loc>/project/activ-es/</loc>
+      <loc>https://francojc.github.io/project/activ-es/</loc>
       <lastmod>2017-07-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -122,7 +95,7 @@
     
     <url>
     
-      <loc>/2017/07/24/testing-features-in-blogdown/</loc>
+      <loc>https://francojc.github.io/2017/07/24/testing-features-in-blogdown/</loc>
       <lastmod>2017-07-24T00:00:00+00:00</lastmod>
     </url>
     
@@ -131,7 +104,7 @@
     
     <url>
     
-      <loc>/2017/07/23/hello-world/</loc>
+      <loc>https://francojc.github.io/2017/07/23/hello-world/</loc>
       <lastmod>2017-07-23T00:00:00+00:00</lastmod>
     </url>
     
@@ -140,7 +113,7 @@
     
     <url>
     
-      <loc>/talk/quantitative-approaches-to-language-research/</loc>
+      <loc>https://francojc.github.io/talk/quantitative-approaches-to-language-research/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
     
@@ -149,7 +122,7 @@
     
     <url>
     
-      <loc>/tags/academic/</loc>
+      <loc>https://francojc.github.io/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -158,7 +131,7 @@
     
     <url>
     
-      <loc>/post/</loc>
+      <loc>https://francojc.github.io/post/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -167,7 +140,7 @@
     
     <url>
     
-      <loc>/publication/</loc>
+      <loc>https://francojc.github.io/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -176,7 +149,7 @@
     
     <url>
     
-      <loc>/talk/</loc>
+      <loc>https://francojc.github.io/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -185,7 +158,7 @@
     
     <url>
     
-      <loc>/project/dslr/</loc>
+      <loc>https://francojc.github.io/project/dslr/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -194,7 +167,7 @@
     
     <url>
     
-      <loc>/2016/03/08/mapping-us-census-data-and-adding-twitter-posts/</loc>
+      <loc>https://francojc.github.io/2016/03/08/mapping-us-census-data-and-adding-twitter-posts/</loc>
       <lastmod>2016-03-08T00:00:00+00:00</lastmod>
     </url>
     
@@ -203,7 +176,7 @@
     
     <url>
     
-      <loc>/2016/02/06/mapping-us-census-data/</loc>
+      <loc>https://francojc.github.io/2016/02/06/mapping-us-census-data/</loc>
       <lastmod>2016-02-06T00:00:00+00:00</lastmod>
     </url>
     
@@ -212,7 +185,7 @@
     
     <url>
     
-      <loc>/publication/spanish-diacritic-error-detection/</loc>
+      <loc>https://francojc.github.io/publication/spanish-diacritic-error-detection/</loc>
       <lastmod>2016-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -221,7 +194,7 @@
     
     <url>
     
-      <loc>/2015/08/15/generating-annotated-text-in-shiny/</loc>
+      <loc>https://francojc.github.io/2015/08/15/generating-annotated-text-in-shiny/</loc>
       <lastmod>2015-08-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -230,7 +203,7 @@
     
     <url>
     
-      <loc>/2015/08/12/creating-hexbin-plots/</loc>
+      <loc>https://francojc.github.io/2015/08/12/creating-hexbin-plots/</loc>
       <lastmod>2015-08-12T00:00:00+00:00</lastmod>
     </url>
     
@@ -239,7 +212,7 @@
     
     <url>
     
-      <loc>/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</loc>
+      <loc>https://francojc.github.io/2015/04/04/keyword-analysis-of-state-of-the-union-speeches/</loc>
       <lastmod>2015-04-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -248,7 +221,7 @@
     
     <url>
     
-      <loc>/2015/03/01/web-scraping-with-rvest-in-r/</loc>
+      <loc>https://francojc.github.io/2015/03/01/web-scraping-with-rvest-in-r/</loc>
       <lastmod>2015-03-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -257,7 +230,7 @@
     
     <url>
     
-      <loc>/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</loc>
+      <loc>https://francojc.github.io/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</loc>
       <lastmod>2015-02-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -266,7 +239,7 @@
     
     <url>
     
-      <loc>/publication/kernel-density-estimation/</loc>
+      <loc>https://francojc.github.io/publication/kernel-density-estimation/</loc>
       <lastmod>2015-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -275,7 +248,7 @@
     
     <url>
     
-      <loc>/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</loc>
+      <loc>https://francojc.github.io/2014/12/19/publishing-rmarkdown-to-wordpress-or-jekyll/</loc>
       <lastmod>2014-12-19T00:00:00+00:00</lastmod>
     </url>
     
@@ -284,7 +257,7 @@
     
     <url>
     
-      <loc>/2014/12/17/access-twitter-posts-by-country/</loc>
+      <loc>https://francojc.github.io/2014/12/17/access-twitter-posts-by-country/</loc>
       <lastmod>2014-12-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -293,7 +266,7 @@
     
     <url>
     
-      <loc>/2014/05/24/activ-es-a-comparable-cross-dialect-corpus-of-everyday-spanish-from-argentina-mexico-and-spain/</loc>
+      <loc>https://francojc.github.io/2014/05/24/activ-es-a-comparable-cross-dialect-corpus-of-everyday-spanish-from-argentina-mexico-and-spain/</loc>
       <lastmod>2014-05-24T00:00:00+00:00</lastmod>
     </url>
     
@@ -302,7 +275,7 @@
     
     <url>
     
-      <loc>/publication/actives-a-comparable-cross-dialect-corpus/</loc>
+      <loc>https://francojc.github.io/publication/actives-a-comparable-cross-dialect-corpus/</loc>
       <lastmod>2014-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -311,7 +284,7 @@
     
     <url>
     
-      <loc>/publication/diacritic-error-detection-and-restoration/</loc>
+      <loc>https://francojc.github.io/publication/diacritic-error-detection-and-restoration/</loc>
       <lastmod>2013-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -320,7 +293,7 @@
     
     <url>
     
-      <loc>/publication/weighted-and-unweighted-transducers/</loc>
+      <loc>https://francojc.github.io/publication/weighted-and-unweighted-transducers/</loc>
       <lastmod>2013-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -329,7 +302,7 @@
     
     <url>
     
-      <loc>/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</loc>
+      <loc>https://francojc.github.io/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</loc>
       <lastmod>2011-09-11T00:00:00+00:00</lastmod>
     </url>
     
@@ -338,7 +311,7 @@
     
     <url>
     
-      <loc>/2011/09/09/install-vislcg3-tools-on-mac-os-x/</loc>
+      <loc>https://francojc.github.io/2011/09/09/install-vislcg3-tools-on-mac-os-x/</loc>
       <lastmod>2011-09-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -347,7 +320,7 @@
     
     <url>
     
-      <loc>/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</loc>
+      <loc>https://francojc.github.io/2011/08/26/create-an-ssh-tunnel-for-a-remote-mysql-database/</loc>
       <lastmod>2011-08-26T00:00:00+00:00</lastmod>
     </url>
     
@@ -356,7 +329,7 @@
     
     <url>
     
-      <loc>/2011/08/09/setting-up-rstudio-server-with-apache2-proxy/</loc>
+      <loc>https://francojc.github.io/2011/08/09/setting-up-rstudio-server-with-apache2-proxy/</loc>
       <lastmod>2011-08-09T00:00:00+00:00</lastmod>
     </url>
     
@@ -365,7 +338,7 @@
     
     <url>
     
-      <loc>/2011/08/03/word-clouds-with-wordle/</loc>
+      <loc>https://francojc.github.io/2011/08/03/word-clouds-with-wordle/</loc>
       <lastmod>2011-08-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -374,7 +347,7 @@
     
     <url>
     
-      <loc>/1/01/01/</loc>
+      <loc>https://francojc.github.io/1/01/01/</loc>
     </url>
     
   
@@ -382,7 +355,7 @@
     
     <url>
     
-      <loc>/publication_types/1/</loc>
+      <loc>https://francojc.github.io/publication_types/1/</loc>
       <lastmod>2015-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -392,7 +365,7 @@
     
     <url>
     
-      <loc>/publication_types/6/</loc>
+      <loc>https://francojc.github.io/publication_types/6/</loc>
       <lastmod>2016-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -402,7 +375,7 @@
     
     <url>
     
-      <loc>/tags/activ-es/</loc>
+      <loc>https://francojc.github.io/tags/activ-es/</loc>
       <lastmod>2014-05-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -412,7 +385,7 @@
     
     <url>
     
-      <loc>/tags/api/</loc>
+      <loc>https://francojc.github.io/tags/api/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -422,7 +395,7 @@
     
     <url>
     
-      <loc>/tags/activ-es/</loc>
+      <loc>https://francojc.github.io/tags/activ-es/</loc>
       <lastmod>2014-05-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -432,7 +405,7 @@
     
     <url>
     
-      <loc>/tags/apache/</loc>
+      <loc>https://francojc.github.io/tags/apache/</loc>
       <lastmod>2011-08-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -442,7 +415,7 @@
     
     <url>
     
-      <loc>/categories/</loc>
+      <loc>https://francojc.github.io/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -451,7 +424,7 @@
     
     <url>
     
-      <loc>/tags/census/</loc>
+      <loc>https://francojc.github.io/tags/census/</loc>
       <lastmod>2016-03-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -461,17 +434,7 @@
     
     <url>
     
-      <loc>/tags/cognitive-science/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/constraint-grammars/</loc>
+      <loc>https://francojc.github.io/tags/constraint-grammars/</loc>
       <lastmod>2011-09-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -481,7 +444,7 @@
     
     <url>
     
-      <loc>/tags/control-statements/</loc>
+      <loc>https://francojc.github.io/tags/control-statements/</loc>
       <lastmod>2017-10-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -491,17 +454,7 @@
     
     <url>
     
-      <loc>/tags/corpora/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/corpora/</loc>
+      <loc>https://francojc.github.io/categories/corpora/</loc>
       <lastmod>2014-05-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -511,7 +464,17 @@
     
     <url>
     
-      <loc>/tags/corpus-development/</loc>
+      <loc>https://francojc.github.io/tags/corpora/</loc>
+      <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/corpus-development/</loc>
       <lastmod>2017-07-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -521,7 +484,7 @@
     
     <url>
     
-      <loc>/tags/corpus-linguistics/</loc>
+      <loc>https://francojc.github.io/tags/corpus-linguistics/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -531,7 +494,7 @@
     
     <url>
     
-      <loc>/tags/custom-functions/</loc>
+      <loc>https://francojc.github.io/tags/custom-functions/</loc>
       <lastmod>2017-10-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -541,7 +504,7 @@
     
     <url>
     
-      <loc>/tags/data/</loc>
+      <loc>https://francojc.github.io/tags/data/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -551,7 +514,7 @@
     
     <url>
     
-      <loc>/tags/data-frames/</loc>
+      <loc>https://francojc.github.io/tags/data-frames/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -561,7 +524,7 @@
     
     <url>
     
-      <loc>/tags/database/</loc>
+      <loc>https://francojc.github.io/tags/database/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -571,7 +534,7 @@
     
     <url>
     
-      <loc>/tags/dataset/</loc>
+      <loc>https://francojc.github.io/tags/dataset/</loc>
       <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -581,7 +544,7 @@
     
     <url>
     
-      <loc>/tags/dslr/</loc>
+      <loc>https://francojc.github.io/tags/dslr/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -591,7 +554,7 @@
     
     <url>
     
-      <loc>/tags/fish/</loc>
+      <loc>https://francojc.github.io/categories/fish/</loc>
       <lastmod>2015-02-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -601,7 +564,7 @@
     
     <url>
     
-      <loc>/categories/fish/</loc>
+      <loc>https://francojc.github.io/tags/fish/</loc>
       <lastmod>2015-02-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -611,7 +574,7 @@
     
     <url>
     
-      <loc>/tags/ggplot2/</loc>
+      <loc>https://francojc.github.io/tags/ggplot2/</loc>
       <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -621,8 +584,8 @@
     
     <url>
     
-      <loc>/tags/git/</loc>
-      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/git/</loc>
+      <lastmod>2017-08-31T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -631,8 +594,8 @@
     
     <url>
     
-      <loc>/tags/github/</loc>
-      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/github/</loc>
+      <lastmod>2017-08-31T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -641,7 +604,7 @@
     
     <url>
     
-      <loc>/tags/gutenbergr/</loc>
+      <loc>https://francojc.github.io/tags/gutenbergr/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -651,7 +614,7 @@
     
     <url>
     
-      <loc>/tags/hexbin/</loc>
+      <loc>https://francojc.github.io/tags/hexbin/</loc>
       <lastmod>2015-08-12T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -661,7 +624,7 @@
     
     <url>
     
-      <loc>/tags/homebrew/</loc>
+      <loc>https://francojc.github.io/tags/homebrew/</loc>
       <lastmod>2011-09-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -671,7 +634,7 @@
     
     <url>
     
-      <loc>/tags/html/</loc>
+      <loc>https://francojc.github.io/tags/html/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -681,7 +644,7 @@
     
     <url>
     
-      <loc>/tags/jekyll/</loc>
+      <loc>https://francojc.github.io/tags/jekyll/</loc>
       <lastmod>2014-12-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -691,7 +654,7 @@
     
     <url>
     
-      <loc>/tags/keywords/</loc>
+      <loc>https://francojc.github.io/tags/keywords/</loc>
       <lastmod>2015-04-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -701,27 +664,7 @@
     
     <url>
     
-      <loc>/tags/lemma/</loc>
-      <lastmod>2017-12-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/linguistics/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/mac-os-x/</loc>
+      <loc>https://francojc.github.io/categories/mac-os-x/</loc>
       <lastmod>2015-02-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -731,17 +674,7 @@
     
     <url>
     
-      <loc>/tags/machine-learning/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/machine-learning/</loc>
+      <loc>https://francojc.github.io/tags/machine-learning/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -751,7 +684,7 @@
     
     <url>
     
-      <loc>/tags/magrittr/</loc>
+      <loc>https://francojc.github.io/tags/magrittr/</loc>
       <lastmod>2015-04-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -761,7 +694,7 @@
     
     <url>
     
-      <loc>/tags/mapping/</loc>
+      <loc>https://francojc.github.io/tags/mapping/</loc>
       <lastmod>2016-03-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -771,8 +704,8 @@
     
     <url>
     
-      <loc>/tags/meta-data/</loc>
-      <lastmod>2017-12-15T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/meta-data/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -781,8 +714,8 @@
     
     <url>
     
-      <loc>/tags/models/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/models/</loc>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -791,7 +724,7 @@
     
     <url>
     
-      <loc>/categories/mysql/</loc>
+      <loc>https://francojc.github.io/categories/mysql/</loc>
       <lastmod>2011-08-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -801,7 +734,7 @@
     
     <url>
     
-      <loc>/tags/pos-tagging/</loc>
+      <loc>https://francojc.github.io/tags/pos-tagging/</loc>
       <lastmod>2011-09-11T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -811,27 +744,7 @@
     
     <url>
     
-      <loc>/tags/packages/</loc>
-      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/part-of-speech/</loc>
-      <lastmod>2017-12-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/plot/</loc>
+      <loc>https://francojc.github.io/tags/plot/</loc>
       <lastmod>2017-07-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -841,7 +754,7 @@
     
     <url>
     
-      <loc>/tags/plot.ly/</loc>
+      <loc>https://francojc.github.io/tags/plot.ly/</loc>
       <lastmod>2016-03-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -851,7 +764,7 @@
     
     <url>
     
-      <loc>/project/</loc>
+      <loc>https://francojc.github.io/project/</loc>
       <lastmod>2017-07-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -861,7 +774,7 @@
     
     <url>
     
-      <loc>/publication_types/</loc>
+      <loc>https://francojc.github.io/publication_types/</loc>
       <lastmod>2015-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -871,7 +784,17 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
+      <loc>https://francojc.github.io/categories/r/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/r/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -881,17 +804,7 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/r-markdown/</loc>
+      <loc>https://francojc.github.io/tags/r-markdown/</loc>
       <lastmod>2017-07-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -901,7 +814,7 @@
     
     <url>
     
-      <loc>/tags/r-projects/</loc>
+      <loc>https://francojc.github.io/tags/r-projects/</loc>
       <lastmod>2017-08-31T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -911,7 +824,7 @@
     
     <url>
     
-      <loc>/tags/rstudio/</loc>
+      <loc>https://francojc.github.io/tags/rstudio/</loc>
       <lastmod>2017-08-31T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -921,7 +834,7 @@
     
     <url>
     
-      <loc>/categories/rstudio-server/</loc>
+      <loc>https://francojc.github.io/categories/rstudio-server/</loc>
       <lastmod>2011-08-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -931,7 +844,7 @@
     
     <url>
     
-      <loc>/tags/readtext/</loc>
+      <loc>https://francojc.github.io/tags/readtext/</loc>
       <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -941,17 +854,7 @@
     
     <url>
     
-      <loc>/categories/recipe/</loc>
-      <lastmod>2017-12-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/regular-expressions/</loc>
+      <loc>https://francojc.github.io/categories/recipe/</loc>
       <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -961,7 +864,17 @@
     
     <url>
     
-      <loc>/tags/remote/</loc>
+      <loc>https://francojc.github.io/tags/regular-expressions/</loc>
+      <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/remote/</loc>
       <lastmod>2011-08-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -971,17 +884,7 @@
     
     <url>
     
-      <loc>/tags/repositories/</loc>
-      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/reproducible-research/</loc>
+      <loc>https://francojc.github.io/tags/repositories/</loc>
       <lastmod>2017-10-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -991,7 +894,17 @@
     
     <url>
     
-      <loc>/tags/rfr/</loc>
+      <loc>https://francojc.github.io/tags/reproducible-research/</loc>
+      <lastmod>2017-10-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://francojc.github.io/tags/rfr/</loc>
       <lastmod>2015-04-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1001,7 +914,7 @@
     
     <url>
     
-      <loc>/tags/rvest/</loc>
+      <loc>https://francojc.github.io/tags/rvest/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1011,7 +924,7 @@
     
     <url>
     
-      <loc>/tags/sotu/</loc>
+      <loc>https://francojc.github.io/tags/sotu/</loc>
       <lastmod>2015-03-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1021,7 +934,7 @@
     
     <url>
     
-      <loc>/categories/shiny/</loc>
+      <loc>https://francojc.github.io/categories/shiny/</loc>
       <lastmod>2015-08-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1031,7 +944,7 @@
     
     <url>
     
-      <loc>/tags/spanish/</loc>
+      <loc>https://francojc.github.io/tags/spanish/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1041,7 +954,7 @@
     
     <url>
     
-      <loc>/tags/ssh/</loc>
+      <loc>https://francojc.github.io/tags/ssh/</loc>
       <lastmod>2011-08-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1051,7 +964,7 @@
     
     <url>
     
-      <loc>/tags/stat_sum/</loc>
+      <loc>https://francojc.github.io/tags/stat_sum/</loc>
       <lastmod>2015-08-12T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1061,8 +974,8 @@
     
     <url>
     
-      <loc>/tags/statistics/</loc>
-      <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+      <loc>https://francojc.github.io/tags/statistics/</loc>
+      <lastmod>2017-09-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -1071,17 +984,7 @@
     
     <url>
     
-      <loc>/tags/syntactic-structure/</loc>
-      <lastmod>2017-12-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/table/</loc>
+      <loc>https://francojc.github.io/tags/table/</loc>
       <lastmod>2017-07-24T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1091,7 +994,7 @@
     
     <url>
     
-      <loc>/tags/</loc>
+      <loc>https://francojc.github.io/tags/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1101,7 +1004,7 @@
     
     <url>
     
-      <loc>/tags/text-analysis/</loc>
+      <loc>https://francojc.github.io/tags/text-analysis/</loc>
       <lastmod>2015-04-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1111,7 +1014,7 @@
     
     <url>
     
-      <loc>/tags/text-classification/</loc>
+      <loc>https://francojc.github.io/tags/text-classification/</loc>
       <lastmod>2015-08-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1121,7 +1024,7 @@
     
     <url>
     
-      <loc>/tags/tidy/</loc>
+      <loc>https://francojc.github.io/tags/tidy/</loc>
       <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1131,7 +1034,7 @@
     
     <url>
     
-      <loc>/tags/tidytext/</loc>
+      <loc>https://francojc.github.io/tags/tidytext/</loc>
       <lastmod>2017-12-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1141,7 +1044,7 @@
     
     <url>
     
-      <loc>/tags/tidyverse/</loc>
+      <loc>https://francojc.github.io/tags/tidyverse/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1151,7 +1054,7 @@
     
     <url>
     
-      <loc>/tags/tm/</loc>
+      <loc>https://francojc.github.io/tags/tm/</loc>
       <lastmod>2015-04-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1161,7 +1064,7 @@
     
     <url>
     
-      <loc>/tags/treetagger/</loc>
+      <loc>https://francojc.github.io/tags/treetagger/</loc>
       <lastmod>2011-09-11T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1171,7 +1074,7 @@
     
     <url>
     
-      <loc>/tags/twitter/</loc>
+      <loc>https://francojc.github.io/tags/twitter/</loc>
       <lastmod>2014-12-17T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1181,7 +1084,7 @@
     
     <url>
     
-      <loc>/categories/unix/</loc>
+      <loc>https://francojc.github.io/categories/unix/</loc>
       <lastmod>2015-02-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1191,7 +1094,7 @@
     
     <url>
     
-      <loc>/tags/vectorization/</loc>
+      <loc>https://francojc.github.io/tags/vectorization/</loc>
       <lastmod>2017-10-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1201,7 +1104,7 @@
     
     <url>
     
-      <loc>/tags/vectors/</loc>
+      <loc>https://francojc.github.io/tags/vectors/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1211,7 +1114,7 @@
     
     <url>
     
-      <loc>/tags/vislcg3/</loc>
+      <loc>https://francojc.github.io/tags/vislcg3/</loc>
       <lastmod>2011-09-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1221,7 +1124,7 @@
     
     <url>
     
-      <loc>/tags/web-scraping/</loc>
+      <loc>https://francojc.github.io/tags/web-scraping/</loc>
       <lastmod>2017-11-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1231,7 +1134,7 @@
     
     <url>
     
-      <loc>/tags/webscraping/</loc>
+      <loc>https://francojc.github.io/tags/webscraping/</loc>
       <lastmod>2015-03-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1241,7 +1144,7 @@
     
     <url>
     
-      <loc>/categories/windows/</loc>
+      <loc>https://francojc.github.io/categories/windows/</loc>
       <lastmod>2011-09-11T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1251,7 +1154,7 @@
     
     <url>
     
-      <loc>/tags/wordcloud/</loc>
+      <loc>https://francojc.github.io/tags/wordcloud/</loc>
       <lastmod>2015-04-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1261,7 +1164,7 @@
     
     <url>
     
-      <loc>/tags/wordle/</loc>
+      <loc>https://francojc.github.io/tags/wordle/</loc>
       <lastmod>2011-08-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -1271,7 +1174,7 @@
     
     <url>
     
-      <loc>/</loc>
+      <loc>https://francojc.github.io/</loc>
       <lastmod>2017-10-15T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
