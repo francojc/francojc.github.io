@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks on francojc ⟲</title>
-    <link>https://francojc.github.io/talk/</link>
+    <link>/talk/</link>
     <description>Recent content in Talks on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Jerid Francom</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://francojc.github.io/talk/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Quantitative Approaches to Language Research: Why Frequency Matters</title>
-      <link>https://francojc.github.io/talk/quantitative-approaches-to-language-research/</link>
+      <link>/talk/quantitative-approaches-to-language-research/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
-      <guid>https://francojc.github.io/talk/quantitative-approaches-to-language-research/</guid>
+      <guid>/talk/quantitative-approaches-to-language-research/</guid>
       <description> -- </description>
     </item>
     
