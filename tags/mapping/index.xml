@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mapping on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/mapping/</link>
+    <description>Recent content in Mapping on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Tue, 08 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/mapping/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mapping US Census data and adding Twitter posts</title>
+      <link>https://francojc.github.io/2016/03/08/mapping-us-census-data-and-adding-twitter-posts/</link>
+      <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2016/03/08/mapping-us-census-data-and-adding-twitter-posts/</guid>
+      <description>Not all tweets have geolocation information available. Accessing the Twitter API via the streamR package particular parameters can be set to only include those tweets with geolocation enabled. You can also specify a bounding box to further filter the geographic area from which you would like to draw your sample tweets. Now, the bounding box is going to be just that, a box. And we are dealing with polygons.</description>
+    </item>
+    
+  </channel>
+</rss>

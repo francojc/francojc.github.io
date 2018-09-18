@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rvest on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/rvest/</link>
+    <description>Recent content in Rvest on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/rvest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Acquiring data for language research (3/3): web scraping </title>
+      <link>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</guid>
+      <description>Web scraping There are many resources available through direct downloads from repositories and individual sites and R package interfaces to web resources with APIs, but these resources are relatively limited to the amount of public-facing textual data recorded on the web. In the case that you want to acquire data from webpages R can be used to access the web programmatically through a process known as web scraping. The complexity of web scrapes can vary but in general it requires more advanced knowledge of R as well as the structure of the language of the web: HTML (Hypertext Markup Language).</description>
+    </item>
+    
+    <item>
+      <title>Web scraping with `rvest` in R</title>
+      <link>https://francojc.github.io/2015/03/01/web-scraping-with-rvest-in-r/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2015/03/01/web-scraping-with-rvest-in-r/</guid>
+      <description>In this ExploRation, I will demonstrate how to scrape text data from the web with R. This particular example aims to collect a series of State of the Union (SOTU) speeches [1947-present] from http://www.presidency.ucsb.edu/ and write the plain-text contents to disc. The bulk of the work will be done with the recently released rvest package. The scripting will also employ the magrittr package for writing legible code.
+To get started first we identify the sub-page .</description>
+    </item>
+    
+  </channel>
+</rss>

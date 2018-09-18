@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recipe on francojc ⟲</title>
+    <link>https://francojc.github.io/categories/recipe/</link>
+    <description>Recent content in Recipe on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/categories/recipe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Curate language data (1/2): organizing meta-data</title>
+      <link>https://francojc.github.io/2017/12/01/curate-language-data-organizing-meta-data/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/12/01/curate-language-data-organizing-meta-data/</guid>
+      <description>When working with raw data, whether is comes from a corpus repository, web download, or a web scrape, it is important to recognize that the attributes that we want to organize can be stored or represented in various formats. The three I will cover here have to do with meta-data that is: (1) contained in the file name of a set of corpus files, (2) embedded in the corpus documents inline with the corpus text, and (3) stored separate from the the text data.</description>
+    </item>
+    
+    <item>
+      <title>Acquiring data for language research (3/3): web scraping </title>
+      <link>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</guid>
+      <description>Web scraping There are many resources available through direct downloads from repositories and individual sites and R package interfaces to web resources with APIs, but these resources are relatively limited to the amount of public-facing textual data recorded on the web. In the case that you want to acquire data from webpages R can be used to access the web programmatically through a process known as web scraping. The complexity of web scrapes can vary but in general it requires more advanced knowledge of R as well as the structure of the language of the web: HTML (Hypertext Markup Language).</description>
+    </item>
+    
+    <item>
+      <title>Acquiring data for language research (2/3): package interfaces</title>
+      <link>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</guid>
+      <description>Package interfaces A convenient alternative method for acquiring data in R is through package interfaces to web services. These interfaces are built using R code to make connections with resources on the web through Automatic Programming Interfaces (APIs). Websites such as Project Gutenberg, Twitter, Facebook, and many others provide APIs to allow access to their data under certain conditions, some more limiting for data collection than others. Programmers (like you!</description>
+    </item>
+    
+    <item>
+      <title>Acquiring data for language research (1/3): direct downloads</title>
+      <link>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</link>
+      <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</guid>
+      <description>There are three main ways to acquire corpus data using R that I will introduce you to: direct download, package interfaces, and web scraping. In this post we will start by directly downloading a corpus as it is the most straightforward process for the novice R programmer and incurs the least number of steps. Along the way I will introduce some key R coding concepts including control statements and custom functions.</description>
+    </item>
+    
+    <item>
+      <title>Data for language research -types and sources</title>
+      <link>https://francojc.github.io/2017/10/04/data-for-language-research-types-and-sources/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/10/04/data-for-language-research-types-and-sources/</guid>
+      <description>In this Recipe you will learn about the types of data available for language research and where to find data. The goal, then, is to introduce you to the landscape of language data available and provide a general overview of the characteristics of language data from a variety of sources providing you with resources to begin your own quantitative investigations.
+Data for language research Language research can include data from a variety of sources, linguistic and non-linguistic, that record observations about the world.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to statistical thinking</title>
+      <link>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/09/15/introduction-to-statistical-thinking/</guid>
+      <description>Before we begin working on the specifics of our data project, it is important to have a clear understanding of some of the basic concepts that need to be in place to guide our work. In this post I will cover some of these topics including the importance of identifying a research question, how different statistical approaches relate to different types of research, and understanding data from a sampling and organizational standpoint.</description>
+    </item>
+    
+    <item>
+      <title>Project management for scalable data analysis</title>
+      <link>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</guid>
+      <description>Project management This post can really be seen as an extension of the last post Getting started with R and RStudio in that we will be getting to know some more advanced, but indispensable features of RStudio. These features, in combination with some organizational and programming strategies, will enable us to conduct efficient data analysis and set the stage for research is is both scalable and ready for sharing with either collaborators or the research community.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with R and RStudio</title>
+      <link>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</link>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</guid>
+      <description>Why R? The R programming language is free software developed with an eye towards statistical computing and data visualization that has has taken off in popularity over the last decade and is now finds itself among the most used programming languages, in general and is often the go-to language for data science.
+So what’s all the fuss about? Among the things that you will come to love about R, you will be hard pressed to find a more active community surrounding a programming language.</description>
+    </item>
+    
+    <item>
+      <title>Introducing the Recipe series</title>
+      <link>https://francojc.github.io/2017/08/03/introducing-the-recipe-series/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/03/introducing-the-recipe-series/</guid>
+      <description>The Recipe series: an overview My goal in this series is to explore the ‘why’ and the ‘how’ of doing quantitative language research. The content of this series will, in large part, overlap with resources available on doing Data Science, generally (see (Wickham and Grolemund 2017)), or in field-specific areas and domains (Beckerman, Childs, and Petchey 2017; Hodeghatta and Nayak 2016; Perlin 2017). However, this series will focus exclusively on issues and methods concerning language data and linguistic analyses through practical data sources and realistic examples.</description>
+    </item>
+    
+  </channel>
+</rss>

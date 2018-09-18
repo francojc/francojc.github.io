@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Table on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/table/</link>
+    <description>Recent content in Table on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Mon, 24 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/table/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing features in `blogdown`</title>
+      <link>https://francojc.github.io/2017/07/24/testing-features-in-blogdown/</link>
+      <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/07/24/testing-features-in-blogdown/</guid>
+      <description>This is a post to test the functionality of blogdown. We are going to look at how various types of outputs are rendered and do some tweaking to get things to work right. The hope is to get an idea of what the best practices for creating posts and pages is when working with this software.
+Tables Here’s some more code working with tables with different functions.</description>
+    </item>
+    
+  </channel>
+</rss>

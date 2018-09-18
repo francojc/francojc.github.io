@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Projects on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/r-projects/</link>
+    <description>Recent content in R Projects on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Thu, 31 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/r-projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project management for scalable data analysis</title>
+      <link>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</guid>
+      <description>Project management This post can really be seen as an extension of the last post Getting started with R and RStudio in that we will be getting to know some more advanced, but indispensable features of RStudio. These features, in combination with some organizational and programming strategies, will enable us to conduct efficient data analysis and set the stage for research is is both scalable and ready for sharing with either collaborators or the research community.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordle on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/wordle/</link>
+    <description>Recent content in Wordle on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Wed, 03 Aug 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/wordle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Word clouds with Wordle</title>
+      <link>https://francojc.github.io/2011/08/03/word-clouds-with-wordle/</link>
+      <pubDate>Wed, 03 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2011/08/03/word-clouds-with-wordle/</guid>
+      <description>While searching for code examples in R for creating word clouds, I stumbled across this neat tool to create on-the-fly word clouds. Wordle provides a clean and basic interface to creating your own wordle or browsing others made on the site.
+Here’s a cloud I created based on the Mexican film Y tu mamá también from 2001.
+You can create your own wordle here</description>
+    </item>
+    
+  </channel>
+</rss>

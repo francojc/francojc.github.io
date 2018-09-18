@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fish on francojc ⟲</title>
+    <link>https://francojc.github.io/categories/fish/</link>
+    <description>Recent content in Fish on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Mon, 02 Feb 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/categories/fish/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Selecting and copying a random subset of files in the Fish shell</title>
+      <link>https://francojc.github.io/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</link>
+      <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2015/02/02/selecting-and-copying-a-random-subset-of-files-in-the-fish-shell/</guid>
+      <description>I&amp;rsquo;ve recently switched from bash to fish for my shell in UNIX. In this Note-to-self I want to document copying a random sample of files that fit certain characteristics to another directory using fish. Specifically, I select 200 files from the ACTIV-ES corpus from years 2000-present and copy them to a new directory.
+The files look like this:
+... es_Argentina_1996_Bromato-de-armonio_video-movie_Comedy_333189.run es_Argentina_1996_Moebius_movie_Sci-Fi_117069.run es_Argentina_1997_La-furia_movie_Action_202362.run es_Argentina_1998_Diario-para-un-cuento_movie_Drama_177705.run es_Argentina_1999_La-venganza_movie_Action_226587.run es_Argentina_2000_Nueve-reinas_movie_Crime_247586.run es_Argentina_2001_El-hijo-de-la-novia_movie_Comedy_292542.run es_Argentina_2002_Angel_tv-movie_n_315769.run es_Argentina_2002_Ciudad-de-María_movie_Documentary_317252.run es_Argentina_2002_Mercano,-el-marciano_movie_Animation_283476.run es_Argentina_2002_Tres-pájaros_movie_Adventure_341625.run es_Argentina_2002_Valentín_movie_Comedy_296915.</description>
+    </item>
+    
+  </channel>
+</rss>

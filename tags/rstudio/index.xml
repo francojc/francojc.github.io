@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RStudio on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/rstudio/</link>
+    <description>Recent content in RStudio on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Thu, 31 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project management for scalable data analysis</title>
+      <link>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</guid>
+      <description>Project management This post can really be seen as an extension of the last post Getting started with R and RStudio in that we will be getting to know some more advanced, but indispensable features of RStudio. These features, in combination with some organizational and programming strategies, will enable us to conduct efficient data analysis and set the stage for research is is both scalable and ready for sharing with either collaborators or the research community.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with R and RStudio</title>
+      <link>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</link>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</guid>
+      <description>Why R? The R programming language is free software developed with an eye towards statistical computing and data visualization that has has taken off in popularity over the last decade and is now finds itself among the most used programming languages, in general and is often the go-to language for data science.
+So what’s all the fuss about? Among the things that you will come to love about R, you will be hard pressed to find a more active community surrounding a programming language.</description>
+    </item>
+    
+    <item>
+      <title>Introducing the Recipe series</title>
+      <link>https://francojc.github.io/2017/08/03/introducing-the-recipe-series/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2017/08/03/introducing-the-recipe-series/</guid>
+      <description>The Recipe series: an overview My goal in this series is to explore the ‘why’ and the ‘how’ of doing quantitative language research. The content of this series will, in large part, overlap with resources available on doing Data Science, generally (see (Wickham and Grolemund 2017)), or in field-specific areas and domains (Beckerman, Childs, and Petchey 2017; Hodeghatta and Nayak 2016; Perlin 2017). However, this series will focus exclusively on issues and methods concerning language data and linguistic analyses through practical data sources and realistic examples.</description>
+    </item>
+    
+  </channel>
+</rss>

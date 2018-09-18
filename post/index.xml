@@ -18,7 +18,7 @@
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/12/01/curate-language-data-organizing-meta-data/</guid>
-      <description></description>
+      <description>When working with raw data, whether is comes from a corpus repository, web download, or a web scrape, it is important to recognize that the attributes that we want to organize can be stored or represented in various formats. The three I will cover here have to do with meta-data that is: (1) contained in the file name of a set of corpus files, (2) embedded in the corpus documents inline with the corpus text, and (3) stored separate from the the text data.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/11/02/acquiring-data-for-language-research-web-scraping/</guid>
-      <description></description>
+      <description>Web scraping There are many resources available through direct downloads from repositories and individual sites and R package interfaces to web resources with APIs, but these resources are relatively limited to the amount of public-facing textual data recorded on the web. In the case that you want to acquire data from webpages R can be used to access the web programmatically through a process known as web scraping. The complexity of web scrapes can vary but in general it requires more advanced knowledge of R as well as the structure of the language of the web: HTML (Hypertext Markup Language).</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/10/23/acquiring-data-for-language-research-package-interfaces/</guid>
-      <description></description>
+      <description>Package interfaces A convenient alternative method for acquiring data in R is through package interfaces to web services. These interfaces are built using R code to make connections with resources on the web through Automatic Programming Interfaces (APIs). Websites such as Project Gutenberg, Twitter, Facebook, and many others provide APIs to allow access to their data under certain conditions, some more limiting for data collection than others. Programmers (like you!</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/10/20/acquiring-data-for-language-research-direct-downloads/</guid>
-      <description></description>
+      <description>There are three main ways to acquire corpus data using R that I will introduce you to: direct download, package interfaces, and web scraping. In this post we will start by directly downloading a corpus as it is the most straightforward process for the novice R programmer and incurs the least number of steps. Along the way I will introduce some key R coding concepts including control statements and custom functions.</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ Data for language research Language research can include data from a variety of 
       <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/08/31/project-management-for-scalable-data-analysis/</guid>
-      <description></description>
+      <description>Project management This post can really be seen as an extension of the last post Getting started with R and RStudio in that we will be getting to know some more advanced, but indispensable features of RStudio. These features, in combination with some organizational and programming strategies, will enable us to conduct efficient data analysis and set the stage for research is is both scalable and ready for sharing with either collaborators or the research community.</description>
     </item>
     
     <item>
@@ -82,7 +82,8 @@ Data for language research Language research can include data from a variety of 
       <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/08/14/getting-started-with-r-and-rstudio/</guid>
-      <description></description>
+      <description>Why R? The R programming language is free software developed with an eye towards statistical computing and data visualization that has has taken off in popularity over the last decade and is now finds itself among the most used programming languages, in general and is often the go-to language for data science.
+So what’s all the fuss about? Among the things that you will come to love about R, you will be hard pressed to find a more active community surrounding a programming language.</description>
     </item>
     
     <item>
@@ -100,7 +101,8 @@ Data for language research Language research can include data from a variety of 
       <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2017/07/24/testing-features-in-blogdown/</guid>
-      <description></description>
+      <description>This is a post to test the functionality of blogdown. We are going to look at how various types of outputs are rendered and do some tweaking to get things to work right. The hope is to get an idea of what the best practices for creating posts and pages is when working with this software.
+Tables Here’s some more code working with tables with different functions.</description>
     </item>
     
     <item>
@@ -138,7 +140,8 @@ In this exploRation I will provide a tutorial on 1) how to acquire the US census
       <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/2015/08/15/generating-annotated-text-in-shiny/</guid>
-      <description></description>
+      <description>I’ve been working on a Shiny web app to visualize the results from a text classification algorithm. Specifically, the app aims to classify a particular document in Spanish as either approximating the usage from one of three Spanish subvarieties: Argentine, Mexican, and Peninsular.
+In addition to an overall classification, and returning the corresponding probability score, I also want to be able to see how the individual features in the text contribute to the classification.</description>
     </item>
     
     <item>

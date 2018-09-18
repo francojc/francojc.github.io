@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TreeTagger on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/treetagger/</link>
+    <description>Recent content in TreeTagger on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Sun, 11 Sep 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/treetagger/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install graphical interface for TreeTagger on Windows</title>
+      <link>https://francojc.github.io/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</link>
+      <pubDate>Sun, 11 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2011/09/11/install-graphical-interface-for-treetagger-on-windows/</guid>
+      <description>Here&amp;rsquo;s a slimmed down step-by-step instruction list on how to install the TreeTagger graphical interface on a Windows machine.
+ Download the Tree-Tagger software for Windows. Unzip this file into your C:\Program files\ directory. Using WinZip, make sure you have the &amp;ldquo;Use folder names&amp;rdquo; box ticked and extract all files. Download the parameter file(s) that you need and extract them into the subdirectory C:\Program Files\TreeTagger\lib. Download and drop the graphical interface executable files (tagger and training programs) in the C:\Program Files\TreeTagger\bin subdirectory.</description>
+    </item>
+    
+  </channel>
+</rss>

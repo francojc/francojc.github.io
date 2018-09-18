@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stat_sum on francojc ⟲</title>
+    <link>https://francojc.github.io/tags/stat_sum/</link>
+    <description>Recent content in Stat_sum on francojc ⟲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Jerid Francom</copyright>
+    <lastBuildDate>Wed, 12 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://francojc.github.io/tags/stat_sum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating hexbin plots</title>
+      <link>https://francojc.github.io/2015/08/12/creating-hexbin-plots/</link>
+      <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/2015/08/12/creating-hexbin-plots/</guid>
+      <description>I was just browsing the web today and stumbled on an overview of data visualization in R. As I was scrolling the page something caught my eye: a hexbin plot. I had never heard of such a plot before.
+To create a hexbin plot in base R with plot() you need to install the hexbin package.
+install.packages(&amp;quot;hexbin&amp;quot;) Then you can load the library and create your hexbin object setting x and y.</description>
+    </item>
+    
+  </channel>
+</rss>
