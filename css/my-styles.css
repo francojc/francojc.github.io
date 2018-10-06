@@ -8,6 +8,7 @@ html {
   color: rgba(0,0,0,0.8);
   line-height: 1.65;
 }
+
 @media screen and (min-width: 58em) {
   html {
     font-size: 18px;
@@ -15,6 +16,7 @@ html {
 }
 
 h3 {
+  font-family: 'Merriweather', serif;
   font-weight: normal;
 }
 
@@ -22,7 +24,8 @@ h3 {
  *  Navigation
  **************************************************/
 
-nav#navbar-main li {
+.dropdown-menu,
+nav#navbar-main li.nav-item {
   font-size: 20px; /* JCF: increased from default 16px */
 }
 
