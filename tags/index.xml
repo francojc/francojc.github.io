@@ -85,6 +85,15 @@
     </item>
     
     <item>
+      <title>Hugo</title>
+      <link>https://francojc.github.io/tags/hugo/</link>
+      <pubDate>Sun, 23 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jekyll</title>
       <link>https://francojc.github.io/tags/jekyll/</link>
       <pubDate>Fri, 19 Dec 2014 00:00:00 +0000</pubDate>
@@ -180,15 +189,6 @@
       <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://francojc.github.io/tags/census/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>constraint grammars</title>
-      <link>https://francojc.github.io/tags/constraint-grammars/</link>
-      <pubDate>Fri, 09 Sep 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://francojc.github.io/tags/constraint-grammars/</guid>
       <description></description>
     </item>
     
