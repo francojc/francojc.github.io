@@ -6,7 +6,7 @@
     <description>Recent content in Homes on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Jerid Francom</copyright>
+    <copyright>Copyright 2018 by Jerid Francom</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://francojc.github.io/home/index.xml" rel="self" type="application/rss+xml" />
@@ -114,6 +114,15 @@ Spanish
       
       <guid>https://francojc.github.io/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Blogs I follow</title>
+      <link>https://francojc.github.io/home/blogs/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://francojc.github.io/home/blogs/</guid>
+      <description> R-bloggers Tidyverse Julia Silge Rachel Tatman  </description>
     </item>
     
   </channel>

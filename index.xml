@@ -6,7 +6,7 @@
     <description>Recent content in francojc ⟲ on francojc ⟲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Jerid Francom</copyright>
+    <copyright>Copyright 2018 by Jerid Francom</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
@@ -3490,44 +3490,6 @@ Figure 30: Workspace files &lt;code&gt;.RData&lt;/code&gt; and &lt;code&gt;.Rhis
 &lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;Think of Steve Jobs’ famous sound bite: ‘There’s an app for that’, just replace ‘app’ with ‘package’ in the case of R.&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;Don’t fret over some of the terminology here, we will come back to these terms later on with detailed description and examples.&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Introducing the Recipe series</title>
-      <link>https://francojc.github.io/2017/08/03/introducing-the-recipe-series/</link>
-      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://francojc.github.io/2017/08/03/introducing-the-recipe-series/</guid>
-      <description>&lt;link href=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/css/pagedtable.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://francojc.github.io/rmarkdown-libs/pagedtable/js/pagedtable.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;div id=&#34;the-recipe-series-an-overview&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Recipe series: an overview&lt;/h2&gt;
-&lt;p&gt;My goal in this series is to explore the ‘why’ and the ‘how’ of doing quantitative language research. The content of this series will, in large part, overlap with resources available on doing Data Science, generally (see &lt;span class=&#34;citation&#34;&gt;(Wickham and Grolemund 2017)&lt;/span&gt;), or in field-specific areas and domains &lt;span class=&#34;citation&#34;&gt;(Beckerman, Childs, and Petchey 2017; Hodeghatta and Nayak 2016; Perlin 2017)&lt;/span&gt;. However, this series will focus exclusively on issues and methods concerning language data and linguistic analyses through practical data sources and realistic examples.&lt;/p&gt;
-&lt;p&gt;I will assume little computing, programming, or statistical knowledge, but I hope to provide useful information for even the more experienced researchers and practicioners. Doing quantitative language research does not require programming skills, as there are many tools and &lt;a href=&#34;https://en.wikipedia.org/wiki/Graphical_user_interface&#34;&gt;graphical user interfaces&lt;/a&gt; (GUI) available to do basic to even quite complex language analyses without these skills, but programming, for most practicing data scientists, is a more efficient and effective strategy for approaching data analysis. This series will make use of the &lt;a href=&#34;https://www.r-project.org/about.html&#34;&gt;R programming language&lt;/a&gt; and the powerful &lt;a href=&#34;https://en.wikipedia.org/wiki/Integrated_development_environment&#34;&gt;Integrated Development Environment&lt;/a&gt; (IDE) &lt;a href=&#34;https://www.rstudio.com/products/RStudio/&#34;&gt;RStudio&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Through R and RStudio I will cover organizational topics like software installation, accessing files, and project management all the way through reporting results and creating reproducible research. Along the way I will cover the fundamental concepts and methods for statistical language analysis including data acquisition, preparation, transformation, and visualization as well as data modeling for hypothesis testing and exploratory and predictive analysis.&lt;/p&gt;
-&lt;p&gt;As a primary goal this series represents an effort to document and share the knowledge and skills I have acquired over the years with those that have an interest in quantitative language and/or programming with R. There is, however, a second, more selfish goal: I aim to learn a lot in the process through consolidating and conveying my knowledge as well as recieving comments, feedback, and corrections from the community. To this end, please don’t hesitate to contact me with ideas for posts or suggestions or alternative approaches to existing posts.&lt;/p&gt;
-&lt;p&gt;OK. With that in mind, let’s get staRted!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-Beckerman2017&#34;&gt;
-&lt;p&gt;Beckerman, Andrew P., Dylan Z. Childs, and Owen L. Petchey. 2017. &lt;em&gt;Getting Started with R: An Introduction for Biologists&lt;/em&gt;. Second edi. Oxford University Press.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-Hodeghatta2016&#34;&gt;
-&lt;p&gt;Hodeghatta, Umesh R, and Umesha Nayak. 2016. &lt;em&gt;Business Analytics Using R - A Practical Approach&lt;/em&gt;. First edit. Apress.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-Perlin2017&#34;&gt;
-&lt;p&gt;Perlin, Marcelo S. 2017. &lt;em&gt;Processing and Analyzing Financial Data with R&lt;/em&gt;. First edit. Agencia Brasileira de ISBN.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-Wickham2017&#34;&gt;
-&lt;p&gt;Wickham, Hadley, and Garrett Grolemund. 2017. &lt;em&gt;R for Data Science&lt;/em&gt;. First edit. O’Reilly Media. &lt;a href=&#34;http://r4ds.had.co.nz/&#34; class=&#34;uri&#34;&gt;http://r4ds.had.co.nz/&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
