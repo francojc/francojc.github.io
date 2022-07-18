@@ -1,7 +1,7 @@
 ---
 title: "Jerid Francom"
 description: |
-  Associate Professor of Spanish & Linguistics | Wake Forest University
+  Associate Professor of Spanish and Linguistics | Wake Forest University
 about:
   template: solana
   image: francom-map.jpeg
