@@ -1,0 +1,22 @@
+---
+title: "ACTIV-ES corpus: initial release"
+description: |
+  ACTIV-ES: a comparable, cross-dialect corpus of 'everyday' Spanish from Argentina,
+  Mexico, and Spain
+author: "Jerid Francom"
+date: "2014-05-24"
+categories: [corpora, spanish, projects]
+---
+
+:::{.column-margin}
+![](activ-es.jpg)
+:::
+
+The first release of the ACTIV-ES Spanish dialect corpus based on TV/film transcripts is now available on [GitHub](https://github.com/francojc/activ-es).
+
+It includes 3,460,172 total tokens (Argentina: 1,103,039 Mexico: 976,192 Spain: 1,380,941) and comes in running text and word list (1:5 gram) formats. Each format has both a plain text and part-of-speech tagged version.
+
+For more information about the development and evaluation of this resource you can download our paper "[ACTIV-ES: a comparable cross-dialect corpus of everday Spanish from Argentina, Mexico, and Spain](http://www.lrec-conf.org/proceedings/lrec2014/pdf/691_Paper.pdf)" at the [Ninth Annual Language Resources and Evaluation Conference (LREC 2014)](http://lrec2014.lrec-conf.org/en/)
+
+
+

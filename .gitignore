@@ -1,7 +1,4 @@
-# Files
-
 .DS_Store
-
-# Directories
-post/data/
-post/images/
+.Rproj.user
+/.quarto/
+/_site/

@@ -1,0 +1,69 @@
+---
+title: "Jerid Francom"
+description: |
+  Associate Professor of Spanish & Linguistics | Wake Forest University
+about:
+  template: solana
+  image: francom-map.jpeg
+  image-width: 10em
+  image-shape: rounded
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/jeridfrancom
+    - icon: github
+      text: Github
+      href: https://github.com/francojc
+---
+
+Jerid Francom's research focuses on the use of large-scale language archives (corpora) from a variety of sources (news, social media, and other internet sources) to better understand the linguistic and cultural similarities and differences between language varieties for both scholarly and pedagogical projects.
+
+He has published on topics including the development, annotation, and evaluation of linguistic corpora and analyzed corpora through corpus, psycholinguistic, and computational methodologies. He also has experience working with and teaching statistical programming with R.
+
+::: panel-tabset
+## Education
+
+2009 \| PhD Linguistics & Cognitive Science\
+University of Arizona \| Tucson, AZ
+
+2004 \| MA Hispanic Linguistics\
+University of Arizona \| Tucson, AZ
+
+1998 \| BA History\
+University of Arizona \| Tucson, AZ
+
+## Experience
+
+Associate Professor\
+Department of Spanish, Wake Forest University\
+2015-present
+
+Assistant Professor\
+Department of Romance Languages, Wake Forest University\
+2009-2015
+
+## Teaching
+
+Recent courses:
+
+-   Spanish 322: Spanish Pronunciation and Dialect Variation
+-   Linguistics 150: Introduction to Linguistics
+-   Linguistics 380: Language Use and Technology
+-   Spanish 309: Spanish Grammar and Composition
+
+## Research
+
+Recent publications:
+
+-   Francom, J. (2022). [Corpus Studies of Syntax](https://www.cambridge.org/us/academic/subjects/languages-linguistics/grammar-and-syntax/cambridge-handbook-experimental-syntax). In *G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp. 687--713).* Cambridge University Press.
+
+Current projects:
+
+-   'Text as Data'. Textbook for advanced undergraduate and graduate students covering the conceptual foundations, key statistical methods, and practical programming skills for analyzing language from text.
+
+## Contact
+
+Email: francojc\@wfu.edu\
+Phone: +1-336-758-4868\
+Mail: 323 Greene Hall \| Wake Forest University \| Winston-Salem, NC, 27103
+:::

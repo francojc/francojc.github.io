@@ -1,3 +1,0 @@
-blogdown::html_page:
-  toc: false
-  df_print: paged
