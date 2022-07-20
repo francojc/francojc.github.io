@@ -4,6 +4,9 @@ project:
 
 website:
   title: "⟲ francojc"
+  favicon: "favicon.png"
+  google-analytics: "G-C6T0ESR1RW"
+  site-url: https://francojc.github.io/
   search:
     location: navbar
     type: textbox
