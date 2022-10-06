@@ -1,6 +1,7 @@
 project:
   type: website
-  port: 4200
+  preview:
+    port: 4200
 
 website:
   title: "⟲ francojc"

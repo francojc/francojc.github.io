@@ -59,7 +59,7 @@ Recent publications:
 
 Current projects:
 
--   'Text as Data'. Textbook for advanced undergraduate and graduate students covering the conceptual foundations, key statistical methods, and practical programming skills for analyzing language from text.
+-   'An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R'. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics.
 
 ## Contact
 
@@ -67,3 +67,9 @@ Email: francojc\@wfu.edu\
 Phone: +1-336-758-4868\
 Mail: 323 Greene Hall \| Wake Forest University \| Winston-Salem, NC, 27103
 :::
+
+				
+			
+		
+
+	
