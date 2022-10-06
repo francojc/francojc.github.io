@@ -59,7 +59,7 @@ Recent publications:
 
 Current projects:
 
--   'An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R'. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics.
+-   'An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R'. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics. (Under contract with Routledge Press)
 
 ## Contact
 
