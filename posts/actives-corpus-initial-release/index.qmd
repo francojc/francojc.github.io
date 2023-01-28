@@ -3,7 +3,6 @@ title: "ACTIV-ES corpus: initial release"
 description: |
   ACTIV-ES: a comparable, cross-dialect corpus of 'everyday' Spanish from Argentina,
   Mexico, and Spain
-author: "Jerid Francom"
 date: "2014-05-24"
 categories: [corpora, spanish, projects]
 ---

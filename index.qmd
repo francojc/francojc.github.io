@@ -4,7 +4,7 @@ description: |
   Associate Professor of Spanish and Linguistics | Wake Forest University
 about:
   template: solana
-  image: francom-map.jpeg
+  image: francom-bw.png
   image-width: 10em
   image-shape: rounded
   links:
