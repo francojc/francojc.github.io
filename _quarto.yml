@@ -16,7 +16,7 @@ website:
       theme: clean
       openSidebar: false
   navbar:
-    background: primary
+    background: dark
     left:
       - text: "Home"
         file: index.qmd
@@ -29,15 +29,13 @@ website:
       - icon: github
         href: https://github.com/francojc
 
-  page-footer: "Copyright 2022, Jerid Francom"
+  page-footer: "Copyright 2023, Jerid Francom"
 
 format:
   html:
-    theme: cosmo
+    theme: journal
+    fontsize: 1.1em
     css: styles.css
     toc: true
     code-copy: true
     code-overflow: wrap
-
-editor: visual
-
