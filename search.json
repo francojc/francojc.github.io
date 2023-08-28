@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
+    "section": "",
+    "text": "R in Visual Studio Code\n\n\n\n\n\n\n\nr\n\n\nvscode\n\n\ncoding\n\n\npackages\n\n\n\n\nThis article describes how to set up R in Visual Studio Code.\n\n\n\n\n\n\nAug 27, 2023\n\n\nJerid Francom\n\n\n\n\n\n\n  \n\n\n\n\nACTIV-ES corpus: initial release\n\n\n\n\n\n\n\ncorpora\n\n\nspanish\n\n\nprojects\n\n\n\n\nACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain\n\n\n\n\n\n\nMay 24, 2014\n\n\nJerid Francom\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/actives-corpus-initial-release/index.html",
+    "href": "posts/actives-corpus-initial-release/index.html",
+    "title": "ACTIV-ES corpus: initial release",
+    "section": "",
+    "text": "The first release of the ACTIV-ES Spanish dialect corpus based on TV/film transcripts is now available on GitHub.\nIt includes 3,460,172 total tokens (Argentina: 1,103,039 Mexico: 976,192 Spain: 1,380,941) and comes in running text and word list (1:5 gram) formats. Each format has both a plain text and part-of-speech tagged version.\nFor more information about the development and evaluation of this resource you can download our paper “ACTIV-ES: a comparable cross-dialect corpus of everday Spanish from Argentina, Mexico, and Spain” at the Ninth Annual Language Resources and Evaluation Conference (LREC 2014)\n\n\n\nCitationBibTeX citation:@online{francom2014,\n  author = {Francom, Jerid},\n  title = {ACTIV-ES Corpus: Initial Release},\n  date = {2014-05-24},\n  url = {https://francojc.github.io//posts/actives-corpus-initial-release},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFrancom, Jerid. 2014. “ACTIV-ES Corpus: Initial Release.”\nMay 24, 2014. https://francojc.github.io//posts/actives-corpus-initial-release."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Jerid Francom",
@@ -7,11 +21,60 @@
     "text": "Jerid Francom’s research focuses on the use of large-scale language archives (corpora) from a variety of sources (news, social media, and other internet sources) to better understand the linguistic and cultural similarities and differences between language varieties for both scholarly and pedagogical projects.\nHe has published on topics including the development, annotation, and evaluation of linguistic corpora and analyzed corpora through corpus, psycholinguistic, and computational methodologies. He also has experience working with and teaching statistical programming with R.\n\nEducationExperienceTeachingResearchContact\n\n\n2009 | PhD Linguistics & Cognitive Science\nUniversity of Arizona | Tucson, AZ\n2004 | MA Hispanic Linguistics\nUniversity of Arizona | Tucson, AZ\n1998 | BA History\nUniversity of Arizona | Tucson, AZ\n\n\nAssociate Professor\nDepartment of Spanish, Wake Forest University\n2015-present\nAssistant Professor\nDepartment of Romance Languages, Wake Forest University\n2009-2015\n\n\nRecent courses:\n\nSpanish 111: Elementary Spanish I\nSpanish 309: Spanish Grammar and Composition\nSpanish 322: Spanish Pronunciation and Dialect Variation\nLinguistics 150: Introduction to Linguistics\nLinguistics 330: Introduction to Psycholinguistics and Language Acquisition\nLinguistics 380: Language Use and Technology\n\n\n\nRecent publications:\n\nFrancom, J. (2022). Corpus Studies of Syntax. In G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp. 687–713). Cambridge University Press.\n\nCurrent projects:\n\n‘An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R’. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics. (Under contract with Routledge Press)\n\n\n\nEmail: francojc@wfu.edu\nPhone: +1-336-758-4868\nMail: 323 Greene Hall | Wake Forest University | Winston-Salem, NC, 27103"
   },
   {
-    "objectID": "posts/actives-corpus-initial-release/index.html",
-    "href": "posts/actives-corpus-initial-release/index.html",
-    "title": "ACTIV-ES corpus: initial release",
+    "objectID": "posts/r-in-vscode/index.html",
+    "href": "posts/r-in-vscode/index.html",
+    "title": "R in Visual Studio Code",
     "section": "",
-    "text": "The first release of the ACTIV-ES Spanish dialect corpus based on TV/film transcripts is now available on GitHub.\nIt includes 3,460,172 total tokens (Argentina: 1,103,039 Mexico: 976,192 Spain: 1,380,941) and comes in running text and word list (1:5 gram) formats. Each format has both a plain text and part-of-speech tagged version.\nFor more information about the development and evaluation of this resource you can download our paper “ACTIV-ES: a comparable cross-dialect corpus of everday Spanish from Argentina, Mexico, and Spain” at the Ninth Annual Language Resources and Evaluation Conference (LREC 2014)\n\n\n\nCitationBibTeX citation:@online{francom2014,\n  author = {Jerid Francom},\n  title = {ACTIV-ES Corpus: Initial Release},\n  date = {2014-05-24},\n  url = {https://francojc.github.io//posts/actives-corpus-initial-release},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nJerid Francom. 2014. “ACTIV-ES Corpus: Initial Release.”\nMay 24, 2014. https://francojc.github.io//posts/actives-corpus-initial-release."
+    "text": "TL;DR: As a long time R and RStudio fan it was going to take a fantastic IDE to get me to switch. Visual Studio Code is such an IDE. It is a free, open-source, cross-platform code editor that’s strengths are in its extensibility and customizability, integration with Git and GitHub, its support for a wide variety of programming languages (beyond R), and the epic GitHub Copilot AI code completion extension. It’s only main drawback is the (current) lack of a great Zotero citation extension for academic writing."
+  },
+  {
+    "objectID": "posts/r-in-vscode/index.html#visual-studio-code-and-r",
+    "href": "posts/r-in-vscode/index.html#visual-studio-code-and-r",
+    "title": "R in Visual Studio Code",
+    "section": "Visual Studio Code and R",
+    "text": "Visual Studio Code and R\n\n\n\nTo get started you will need to download and install Visual Studio Code. It is available for Windows, Mac, and Linux. If you are working on a Mac or Linux, you can install it using Homebrew.\nbrew install --cask visual-studio-code\nOnce you have installed Visual Studio Code, you will want to install the R Extension. You can do this by clicking on the Extensions icon in the left sidebar and searching for “R”.\nYou will need to add the languageserver package in R. You can do this by running the following code in the R console.\ninstall.packages(\"languageserver\")\nNext if you want to use Quarto for literate programming, you should install the Quarto extension. This will allow you to preview your Quarto documents in Visual Studio Code. It also provides syntax highlighting for Quarto documents and suggestions.\nNot a requirement, but I highly recommend installing the Radian console. It is a much better console than the default R console. You can install it by running the following code in a terminal.\npip install -U radian\nIf you plan to use Radian instead of the default R terminal, you will need to know where it is located on your computer. You can find this by running the following code in the terminal.\nwhich radian\nCopy the path to the Radian executable, you will need it later on. It most likely will look something like this.\n/usr/local/bin/radian\nThat’s it! You are now ready to start using and customizing R in Visual Studio Code."
+  },
+  {
+    "objectID": "posts/r-in-vscode/index.html#using-r-in-visual-studio-code",
+    "href": "posts/r-in-vscode/index.html#using-r-in-visual-studio-code",
+    "title": "R in Visual Studio Code",
+    "section": "Using R in Visual Studio Code",
+    "text": "Using R in Visual Studio Code\nNow working with R in Visual Studio Code is a little different than working with RStudio with the default setup described in the previous section. To enable the full functionality of R in Visual Studio Code, you will need to change some settings and install some extensions. These are optional, but I highly recommend them.\n\nSettings\nTo change the settings in Visual Studio Code, click on the gear icon in the bottom left corner of the window. This will open the Settings window. You can also open the Settings window by pressing Command + , on a Mac or Ctrl + , on Windows.\nNow you can sift through the settings and change them. Or you can open the JSON file by clicking on the icon in the top right corner of the Settings window. This will open the settings.json file.\nHere are a few settings that I recommend changing.\n\n\nR Terminal\n\nChange the default R terminal to Radian.\nEnable the bracketed paste mode. This will allow you to paste code into the R console without it automatically running. This is useful if you want to paste multiple lines of code into the console at once.\nRemove leading comments from R code. This will remove the # from the beginning of each line of code when you send or paste code.\nUse the httpgd package for viewing plots in a VS Code window or in the browser.\n\nHere are the settings to add to the settings.json file:\n{\n  \"r.rterm.mac\": \"/usr/local/bin/radian\",\n  \"r.bracketedPaste\": true,\n  \"r.removeLeadingComments\": true,\n  \"r.plot.useHttpgd\": true\n}\n\n\nEditor\nThe editor pan is where you will spend most of your time. Some key productivity features to enable are:\n\nEnable word wrap. This will wrap long lines of code so that you don’t have to scroll horizontally.\nEnable formatters for R and Quarto. This will automatically format your code when you save the file, or you can format the code manually by pressing Option + Shift + F on a Mac or Ctrl + Shift + F on Windows.\n\nHere are the settings to add to the settings.json file:\n{\n  \"editor.wordWrap\": \"wordWrapColumn\",\n  \"[r]\": {\n    \"editor.defaultFormatter\": \"REditorSupport.r\"\n  },\n  \"[quarto]\": {\n    \"editor.defaultFormatter\": \"quarto.quarto\"\n  }\n}"
+  },
+  {
+    "objectID": "posts/r-in-vscode/index.html#github",
+    "href": "posts/r-in-vscode/index.html#github",
+    "title": "R in Visual Studio Code",
+    "section": "GitHub",
+    "text": "GitHub\nIf you are using GitHub, you can integrate it with Visual Studio Code. This will allow you to clone repositories, create new repositories, commit changes, and push changes to GitHub all from within Visual Studio Code.\nInitializating Git in Visual Studio Code is easy. Just click on the Git icon in the left sidebar and follow the prompts.\nIf you want more functionality, you can install the GitLens extension. This will allow you to see the Git history of a file, see who made changes to a file, and see the changes that were made to a file. If you are new to Git, this is probably more information that you need. But if you are a Git power user, this extension is a must."
+  },
+  {
+    "objectID": "posts/r-in-vscode/index.html#github-copilot",
+    "href": "posts/r-in-vscode/index.html#github-copilot",
+    "title": "R in Visual Studio Code",
+    "section": "GitHub Copilot",
+    "text": "GitHub Copilot\nThe GitHub Copilot extension is a game changer. It is an AI code completion extension that uses machine learning to suggest code as you type. It is powered by OpenAI Codex, a new AI system created by OpenAI. Copilot is not perfect, but it is pretty darn good and can save you a lot of time by getting code scaffolding in place.\nIt is a paid extension, but if you are a student or educator, you can get it for free by joining an educational program."
+  },
+  {
+    "objectID": "posts/r-in-vscode/index.html#zotero-and-academic-writing",
+    "href": "posts/r-in-vscode/index.html#zotero-and-academic-writing",
+    "title": "R in Visual Studio Code",
+    "section": "Zotero and Academic Writing",
+    "text": "Zotero and Academic Writing\nIf you are an academic writer, you will want to use Zotero for managing your references. Zotero is a free and open-source reference management software that is available for Windows, Mac, and Linux. It is a great tool for managing your references and creating bibliographies.\nIntegration with VS Code is wanting a bit. I currently have the Citation Picker for Zotero extension installed, but I tend to use the autocomplete feature from the Quarto extension in combination with a BetterBibTeX exported .bib file."
+  },
+  {
+    "objectID": "posts/r-in-vscode/index.html#summing-up",
+    "href": "posts/r-in-vscode/index.html#summing-up",
+    "title": "R in Visual Studio Code",
+    "section": "Summing up",
+    "text": "Summing up\nVisual Studio Code is a fantastic IDE for R. It is free, open-source, cross-platform, and highly extensible. It is a great tool for R developers and data scientists. It is also a great tool for academic writers. It requires more setup than RStudio, but if you are willing to put in the time, it is well worth it."
+  },
+  {
+    "objectID": "posts/r-in-vscode/index.html#resources",
+    "href": "posts/r-in-vscode/index.html#resources",
+    "title": "R in Visual Studio Code",
+    "section": "Resources",
+    "text": "Resources\nHere is a list of my (current) extensions and settings.\n\nExtensions\natommaterial.a-file-icon-vscode\nchristian-kohler.path-intellisense\neamodio.gitlens\nesbenp.prettier-vscode\nfoxundermoon.shell-format\ngenieai.chatgpt-vscode\nGitHub.copilot\nGitHub.copilot-chat\nGrapeCity.gc-excelviewer\nGruntfuggly.todo-tree\nhediet.vscode-drawio\nJames-Yu.latex-workshop\nmblode.zotero\nmechatroner.rainbow-csv\nms-azuretools.vscode-docker\nms-python.python\nms-python.vscode-pylance\nms-vscode-remote.remote-containers\noderwat.indent-rainbow\npeakchen90.open-html-in-browser\nPKief.material-icon-theme\nquarto.quarto\nREditorSupport.r\nvalentjn.vscode-ltex\nyzhang.markdown-all-in-one\n\n\nSettings\n{\n  // GENERAL SETTINGS\n  \"security.workspace.trust.enabled\": false,\n  \"workbench.startupEditor\": \"none\",\n  \"workbench.sideBar.location\": \"right\",\n  \"workbench.editor.enablePreview\": false,\n  \"workbench.tree.indent\": 10,\n  \"workbench.iconTheme\": \"material-icon-theme\",\n  \"explorer.confirmDelete\": false,\n  \"window.commandCenter\": true,\n  // TERMINAL SETTINGS\n  \"terminal.integrated.profiles.osx\": {\n    \"bash\": {\n      \"path\": \"bash\",\n      \"args\": [\"-l\"],\n      \"icon\": \"terminal-bash\",\n      \"color\": \"terminal.ansiWhite\"\n    },\n    \"zsh\": {\n      \"path\": \"zsh\",\n      \"args\": [\"-l\"],\n      \"icon\": \"code\",\n      \"color\": \"terminal.ansiRed\"\n    },\n    \"fish\": {\n      \"path\": \"fish\",\n      \"args\": [\"-l\"],\n      \"icon\": \"arrow-circle-right\",\n      \"color\": \"terminal.ansiGreen\"\n    },\n    \"JavaScript Debug Terminal\": null\n  },\n  \"terminal.integrated.copyOnSelection\": true,\n  \"terminal.integrated.tabs.enabled\": true,\n  \"terminal.integrated.tabs.location\": \"left\",\n  \"terminal.integrated.lineHeight\": 1.1,\n  \"terminal.integrated.cursorStyle\": \"line\",\n  \"terminal.integrated.cursorBlinking\": true,\n  \"terminal.integrated.tabs.defaultColor\": \"terminal.ansiBlue\",\n  // R, QUARTO SETTINGS\n  \"r.rterm.mac\": \"/usr/local/bin/radian\",\n  \"r.rpath.mac\": \"/usr/local/bin/R\",\n  \"r.bracketedPaste\": true,\n  \"r.removeLeadingComments\": true,\n  \"r.plot.useHttpgd\": true,\n  \"quarto.render.previewType\": \"external\",\n  \"quarto.visualEditor.defaultListSpacing\": \"tight\",\n  // GIT SETTINGS\n  \"git.confirmSync\": false,\n  \"git.openRepositoryInParentFolders\": \"always\",\n  \"gitlens.currentLine.enabled\": false,\n  // EDITOR SETTINGS\n  \"editor.minimap.enabled\": false,\n  \"editor.tabSize\": 2,\n  \"editor.accessibilitySupport\": \"off\",\n  \"files.autoSave\": \"onFocusChange\",\n  \"editor.quickSuggestions\": {\n    \"other\": \"off\",\n    \"comments\": \"off\",\n    \"strings\": \"off\"\n  },\n  \"editor.suggest.showSnippets\": false,\n  \"editor.suggest.localityBonus\": true,\n  \"[quarto]\": {\n    \"editor.defaultFormatter\": \"quarto.quarto\",\n    \"editor.wordWrap\": \"wordWrapColumn\",\n    \"editor.snippetSuggestions\": \"top\"\n  },\n  \"[rmd]\": {\n    \"editor.defaultFormatter\": \"REditorSupport.r\",\n    \"editor.wordWrap\": \"wordWrapColumn\",\n    \"editor.snippetSuggestions\": \"top\"\n  },\n  \"[r]\": {\n    \"editor.defaultFormatter\": \"REditorSupport.r\",\n    \"editor.wordWrap\": \"wordWrapColumn\",\n    \"editor.snippetSuggestions\": \"top\"\n  },\n  \"[jsonc]\": {\n    \"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n  },\n  \"[md]\": {\n    \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",\n    \"editor.wordWrap\": \"wordWrapColumn\",\n    \"editor.snippetSuggestions\": \"top\"\n  },\n  \"[html]\": {\n    \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",\n    \"editor.wordWrap\": \"wordWrapColumn\",\n    \"editor.snippetSuggestions\": \"top\"\n  },\n  \"[yaml]\": {\n    \"editor.defaultFormatter\": \"quarto.quarto\"\n  },\n  \"[python]\": {\n    \"diffEditor.ignoreTrimWhitespace\": false,\n    \"gitlens.codeLens.symbolScopes\": [\n      \"!Module\"\n    ],\n    \"editor.wordBasedSuggestions\": false,\n    \"editor.formatOnType\": true\n  },\n  \"[json]\": {\n    \"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n  },\n  // AI SETTINGS\n  \"github.copilot.enable\": {\n    \"quarto\": true,\n    \"*\": true\n  },\n  \"genieai.personalizedName\": \"Simon\",\n  \"genieai.openai.model\": \"gpt-3.5-turbo\",\n  \"genieai.openai.temperature\": 0.8,\n  \"genieai.enableConversationHistory\": true,\n  \"genieai.telemetry.disable\": true,\n  // MISC SETTINGS\n  \"todo-tree.highlights.useColourScheme\": true,\n  \"todo-tree.highlights.backgroundColourScheme\": [\n    \"darkred\",\n    \"orange\",\n    \"lightblue\",\n    \"red\",\n    \"blue\",\n    \"lightgreen\",\n    \"green\"\n  ],\n  \"todo-tree.highlights.foregroundColourScheme\": [\n    \"white\",\n    \"black\",\n    \"black\",\n    \"white\",\n    \"white\",\n    \"black\",\n    \"black\"\n  ],\n  \"indentRainbow.indicatorStyle\": \"light\",\n  \"indentRainbow.lightIndicatorStyleLineWidth\": 2,\n  \"window.zoomLevel\": 0\n}"
   },
   {
     "objectID": "about.html",
@@ -19,12 +82,5 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Posts",
-    "section": "",
-    "text": "ACTIV-ES corpus: initial release\n\n\n\n\n\n\n\ncorpora\n\n\nspanish\n\n\nprojects\n\n\n\n\nACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain\n\n\n\n\n\n\nMay 24, 2014\n\n\nJerid Francom\n\n\n\n\n\n\nNo matching items"
   }
 ]
