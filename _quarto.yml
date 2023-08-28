@@ -24,10 +24,12 @@ website:
       - text: "Vitae"
         file: vitae.pdf
     right:
-      - icon: twitter
-        href: https://twitter.com
+      - icon: mastodon
+        href: https://fosstodon.org/@jeridfrancom
       - icon: github
         href: https://github.com/francojc
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=EbkQkKIAAAAJ&hl=en
 
   page-footer: '<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a> Jerid Francom'
 

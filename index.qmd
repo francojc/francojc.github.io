@@ -8,12 +8,15 @@ about:
   image-width: 10em
   image-shape: rounded
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/jeridfrancom
+    - icon: mastodon
+      text: Mastodon
+      href: https://fosstodon.org/@jeridfrancom
     - icon: github
       text: Github
       href: https://github.com/francojc
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=EbkQkKIAAAAJ&hl=en
 ---
 
 Jerid Francom's research focuses on the use of large-scale language archives (corpora) from a variety of sources (news, social media, and other internet sources) to better understand the linguistic and cultural similarities and differences between language varieties for both scholarly and pedagogical projects.
