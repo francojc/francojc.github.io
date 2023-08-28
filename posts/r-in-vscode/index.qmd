@@ -1,0 +1,305 @@
+---
+title: "R in Visual Studio Code"
+description: |
+  This article describes how to set up R in Visual Studio Code.
+date: "2023-08-27"
+categories: [r, vscode, coding, packages]
+---
+
+**TL;DR:** As a long time [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/) fan it was going to take a fantastic IDE to get me to switch. [Visual Studio Code](https://code.visualstudio.com/) is such an IDE. It is a free, open-source, cross-platform code editor that's strengths are in its extensibility and customizability, integration with Git and GitHub, its support for a wide variety of programming languages (beyond R), and the epic GitHub Copilot AI code completion extension. It's only main drawback is the (current) lack of a great Zotero citation extension for academic writing.
+
+## Visual Studio Code and R
+
+:::{.column-margin}
+![](vscode-icon.png){width=50%}
+:::
+
+To get started you will need to download and install [Visual Studio Code](https://code.visualstudio.com/). It is available for Windows, Mac, and Linux. If you are working on a Mac or Linux, you can install it using [Homebrew](https://brew.sh/). 
+
+```bash
+brew install --cask visual-studio-code
+```
+
+Once you have installed Visual Studio Code, you will want to install the [R Extension](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r). You can do this by clicking on the Extensions icon in the left sidebar and searching for "R".
+
+You will need to add the `languageserver` package in R. You can do this by running the following code in the R console.
+
+```r
+install.packages("languageserver")
+```
+
+Next if you want to use [Quarto](https://quarto.org/) for literate programming, you should install the [Quarto extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto). This will allow you to preview your Quarto documents in Visual Studio Code. It also provides syntax highlighting for Quarto documents and suggestions.
+
+Not a requirement, but I highly recommend installing the Radian console. It is a much better console than the default R console. You can install it by running the following code in a terminal.
+
+```bash
+pip install -U radian
+```
+
+If you plan to use Radian instead of the default R terminal, you will need to know where it is located on your computer. You can find this by running the following code in the terminal.
+
+```bash
+which radian
+```
+
+Copy the path to the Radian executable, you will need it later on. It most likely will look something like this.
+
+```bash
+/usr/local/bin/radian
+```
+
+That's it! You are now ready to start using and customizing R in Visual Studio Code.
+
+## Using R in Visual Studio Code
+
+Now working with R in Visual Studio Code is a little different than working with RStudio with the default setup described in the previous section. To enable the full functionality of R in Visual Studio Code, you will need to change some settings and install some extensions. These are optional, but I highly recommend them.
+
+### Settings
+
+To change the settings in Visual Studio Code, click on the gear icon in the bottom left corner of the window. This will open the Settings window. You can also open the Settings window by pressing `Command + ,` on a Mac or `Ctrl + ,` on Windows. 
+
+Now you can sift through the settings and change them. Or you can open the JSON file by clicking on the icon in the top right corner of the Settings window. This will open the `settings.json` file. 
+
+Here are a few settings that I recommend changing.
+
+### R Terminal 
+
+- Change the default R terminal to Radian. 
+- Enable the bracketed paste mode. This will allow you to paste code into the R console without it automatically running. This is useful if you want to paste multiple lines of code into the console at once.
+- Remove leading comments from R code. This will remove the `#` from the beginning of each line of code when you send or paste code. 
+- Use the `httpgd` package for viewing plots in a VS Code window or in the browser. 
+
+Here are the settings to add to the `settings.json` file:
+
+```json
+{
+  "r.rterm.mac": "/usr/local/bin/radian",
+  "r.bracketedPaste": true,
+  "r.removeLeadingComments": true,
+  "r.plot.useHttpgd": true
+}
+```
+
+### Editor
+
+The editor pan is where you will spend most of your time. Some key productivity features to enable are:
+
+- Enable word wrap. This will wrap long lines of code so that you don't have to scroll horizontally.
+- Enable formatters for R and Quarto. This will automatically format your code when you save the file, or you can format the code manually by pressing `Option + Shift + F` on a Mac or `Ctrl + Shift + F` on Windows.
+
+Here are the settings to add to the `settings.json` file:
+
+```json
+{
+  "editor.wordWrap": "wordWrapColumn",
+  "[r]": {
+    "editor.defaultFormatter": "REditorSupport.r"
+  },
+  "[quarto]": {
+    "editor.defaultFormatter": "quarto.quarto"
+  }
+}
+```
+
+## GitHub
+
+If you are using [GitHub](https://github.com), you can integrate it with Visual Studio Code. This will allow you to clone repositories, create new repositories, commit changes, and push changes to GitHub all from within Visual Studio Code.
+
+Initializating Git in Visual Studio Code is easy. Just click on the Git icon in the left sidebar and follow the prompts. 
+
+If you want more functionality, you can install the [GitLens extension](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens). This will allow you to see the Git history of a file, see who made changes to a file, and see the changes that were made to a file. If you are new to Git, this is probably more information that you need. But if you are a Git power user, this extension is a must.
+
+## GitHub Copilot
+
+The [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) is a game changer. It is an AI code completion extension that uses machine learning to suggest code as you type. It is powered by OpenAI Codex, a new AI system created by OpenAI. Copilot is not perfect, but it is pretty darn good and can save you a lot of time by getting code scaffolding in place. 
+
+It is a paid extension, but if you are a student or educator, you can get it for free by [joining an educational program](https://education.github.com/pack/join). 
+
+
+## Zotero and Academic Writing
+
+If you are an academic writer, you will want to use [Zotero](https://www.zotero.org/) for managing your references. Zotero is a free and open-source reference management software that is available for Windows, Mac, and Linux. It is a great tool for managing your references and creating bibliographies. 
+
+Integration with VS Code is wanting a bit. I currently have the [Citation Picker for Zotero](https://marketplace.visualstudio.com/items?itemName=mblode.zotero) extension installed, but I tend to use the autocomplete feature from the Quarto extension in combination with a [BetterBibTeX](https://retorque.re/zotero-better-bibtex/) exported `.bib` file.
+
+## Summing up
+
+Visual Studio Code is a fantastic IDE for R. It is free, open-source, cross-platform, and highly extensible. It is a great tool for R developers and data scientists. It is also a great tool for academic writers. It requires more setup than RStudio, but if you are willing to put in the time, it is well worth it.
+
+## Resources
+
+Here is a list of my (current) extensions and settings. 
+
+### Extensions
+
+```text
+atommaterial.a-file-icon-vscode
+christian-kohler.path-intellisense
+eamodio.gitlens
+esbenp.prettier-vscode
+foxundermoon.shell-format
+genieai.chatgpt-vscode
+GitHub.copilot
+GitHub.copilot-chat
+GrapeCity.gc-excelviewer
+Gruntfuggly.todo-tree
+hediet.vscode-drawio
+James-Yu.latex-workshop
+mblode.zotero
+mechatroner.rainbow-csv
+ms-azuretools.vscode-docker
+ms-python.python
+ms-python.vscode-pylance
+ms-vscode-remote.remote-containers
+oderwat.indent-rainbow
+peakchen90.open-html-in-browser
+PKief.material-icon-theme
+quarto.quarto
+REditorSupport.r
+valentjn.vscode-ltex
+yzhang.markdown-all-in-one
+```
+
+### Settings
+
+```json
+{
+  // GENERAL SETTINGS
+  "security.workspace.trust.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "right",
+  "workbench.editor.enablePreview": false,
+  "workbench.tree.indent": 10,
+  "workbench.iconTheme": "material-icon-theme",
+  "explorer.confirmDelete": false,
+  "window.commandCenter": true,
+  // TERMINAL SETTINGS
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash",
+      "color": "terminal.ansiWhite"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"],
+      "icon": "code",
+      "color": "terminal.ansiRed"
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"],
+      "icon": "arrow-circle-right",
+      "color": "terminal.ansiGreen"
+    },
+    "JavaScript Debug Terminal": null
+  },
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiBlue",
+  // R, QUARTO SETTINGS
+  "r.rterm.mac": "/usr/local/bin/radian",
+  "r.rpath.mac": "/usr/local/bin/R",
+  "r.bracketedPaste": true,
+  "r.removeLeadingComments": true,
+  "r.plot.useHttpgd": true,
+  "quarto.render.previewType": "external",
+  "quarto.visualEditor.defaultListSpacing": "tight",
+  // GIT SETTINGS
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  "gitlens.currentLine.enabled": false,
+  // EDITOR SETTINGS
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.accessibilitySupport": "off",
+  "files.autoSave": "onFocusChange",
+  "editor.quickSuggestions": {
+    "other": "off",
+    "comments": "off",
+    "strings": "off"
+  },
+  "editor.suggest.showSnippets": false,
+  "editor.suggest.localityBonus": true,
+  "[quarto]": {
+    "editor.defaultFormatter": "quarto.quarto",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.snippetSuggestions": "top"
+  },
+  "[rmd]": {
+    "editor.defaultFormatter": "REditorSupport.r",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.snippetSuggestions": "top"
+  },
+  "[r]": {
+    "editor.defaultFormatter": "REditorSupport.r",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.snippetSuggestions": "top"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[md]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.snippetSuggestions": "top"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.snippetSuggestions": "top"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "quarto.quarto"
+  },
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.codeLens.symbolScopes": [
+      "!Module"
+    ],
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnType": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // AI SETTINGS
+  "github.copilot.enable": {
+    "quarto": true,
+    "*": true
+  },
+  "genieai.personalizedName": "Simon",
+  "genieai.openai.model": "gpt-3.5-turbo",
+  "genieai.openai.temperature": 0.8,
+  "genieai.enableConversationHistory": true,
+  "genieai.telemetry.disable": true,
+  // MISC SETTINGS
+  "todo-tree.highlights.useColourScheme": true,
+  "todo-tree.highlights.backgroundColourScheme": [
+    "darkred",
+    "orange",
+    "lightblue",
+    "red",
+    "blue",
+    "lightgreen",
+    "green"
+  ],
+  "todo-tree.highlights.foregroundColourScheme": [
+    "white",
+    "black",
+    "black",
+    "white",
+    "white",
+    "black",
+    "black"
+  ],
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 2,
+  "window.zoomLevel": 0
+}
+```

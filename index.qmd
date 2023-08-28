@@ -53,16 +53,15 @@ Recent courses:
 -   Linguistics 330: Introduction to Psycholinguistics and Language Acquisition
 -   Linguistics 380: Language Use and Technology
 
-
 ## Research
 
 Recent publications:
 
--   Francom, J. (2022). [Corpus Studies of Syntax](https://www.cambridge.org/us/academic/subjects/languages-linguistics/grammar-and-syntax/cambridge-handbook-experimental-syntax). In *G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp. 687--713).* Cambridge University Press.
+- Francom, J. (2022). [Corpus Studies of Syntax](https://www.cambridge.org/us/academic/subjects/languages-linguistics/grammar-and-syntax/cambridge-handbook-experimental-syntax). In *G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp. 687--713).* Cambridge University Press.
 
 Current projects:
 
--   'An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R'. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics. (Under contract with Routledge Press)
+- 'An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R'. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics. (Under contract with Routledge Press)
 
 ## Contact
 
@@ -70,7 +69,4 @@ Email: francojc\@wfu.edu\
 Phone: +1-336-758-4868\
 Mail: 323 Greene Hall \| Wake Forest University \| Winston-Salem, NC, 27103
 :::
-
-		
-
 	
