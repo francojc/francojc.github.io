@@ -36,6 +36,7 @@
           rmarkdown
           usethis
           # Project
+          cranlogs
           tidyverse
         ];
 
