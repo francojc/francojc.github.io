@@ -11,7 +11,6 @@ draft: true
 
 I recently discovered the `rix` package, which is a tool for creating and sharing computing environments for R.
 
-
 ## History
 
 The `rix` package is built to interface the Nix package manager with R. Nix is a powerful package manager for Linux and other Unix systems that makes package management reliable and reproducible. If you are familiar with Docker and `renv`, you can think of `rix` as a combination of the two with some additional features.
