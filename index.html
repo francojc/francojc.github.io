@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Associate Professor of Spanish and Linguistics | Wake Forest University">
 
-<title>⟲ francojc - Jerid Francom</title>
+<title>Jerid Francom – ⟲ francojc</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,7 +104,7 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -140,7 +140,7 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -151,7 +151,7 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-solana column-body content">
+<div class="quarto-about-solana column-body">
   <div class="about-entity">
     <div class="entity-contents">
       <header id="title-block-header" class="quarto-title-block default">
@@ -205,6 +205,7 @@ Department of Romance Languages, Wake Forest University<br>
 <p>Recent courses:</p>
 <ul>
 <li>Spanish 111: Elementary Spanish I</li>
+<li>Spanish 212: Exploring the Hispanic World</li>
 <li>Spanish 309: Spanish Grammar and Composition</li>
 <li>Spanish 322: Spanish Pronunciation and Dialect Variation</li>
 <li>Linguistics 150: Intro to Linguistics</li>
@@ -215,11 +216,13 @@ Department of Romance Languages, Wake Forest University<br>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p>Recent publications:</p>
 <ul>
+<li>Francom, J. (2025). <a href="https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265">An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R</a>. Routledge.</li>
 <li>Francom, J. (2022). <a href="https://www.cambridge.org/us/academic/subjects/languages-linguistics/grammar-and-syntax/cambridge-handbook-experimental-syntax">Corpus Studies of Syntax</a>. In <em>G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp.&nbsp;687–713).</em> Cambridge University Press.</li>
 </ul>
 <p>Current projects:</p>
 <ul>
-<li>‘An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R’. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics. (Under contract with Routledge Press)</li>
+<li><code>qtkit</code>: An R package for quantitative text analysis. <a href="https://cran.rstudio.com/web/packages/qtkit/">CRAN</a>, <a href="https://qtalr.r-universe.dev/qtkit">R-Universe</a>, <a href="https://github.com/qtalr/qtkit">Github</a><br>
+<a href="https://cran.rstudio.com/web/packages/qtkit/index.html"><img src="https://cranlogs.r-pkg.org/badges/last-month/qtkit.png" class="img-fluid"></a></li>
 </ul>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
@@ -266,18 +269,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -309,7 +301,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/francojc\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -344,7 +376,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

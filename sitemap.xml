@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://francojc.github.io/about.html</loc>
-    <lastmod>2024-02-04T16:46:53.076Z</lastmod>
-  </url>
-  <url>
-    <loc>https://francojc.github.io/posts/r-in-vscode/index.html</loc>
-    <lastmod>2024-02-04T16:46:53.080Z</lastmod>
-  </url>
-  <url>
     <loc>https://francojc.github.io/posts.html</loc>
-    <lastmod>2024-02-04T16:46:53.076Z</lastmod>
+    <lastmod>2024-06-05T00:47:39.794Z</lastmod>
   </url>
   <url>
     <loc>https://francojc.github.io/index.html</loc>
-    <lastmod>2024-02-04T16:46:53.076Z</lastmod>
+    <lastmod>2024-08-08T14:55:18.329Z</lastmod>
   </url>
   <url>
     <loc>https://francojc.github.io/posts/actives-corpus-initial-release/index.html</loc>
-    <lastmod>2024-02-04T16:46:53.080Z</lastmod>
+    <lastmod>2024-06-05T00:47:40.873Z</lastmod>
+  </url>
+  <url>
+    <loc>https://francojc.github.io/posts/r-in-vscode/index.html</loc>
+    <lastmod>2024-06-05T00:47:40.916Z</lastmod>
+  </url>
+  <url>
+    <loc>https://francojc.github.io/about.html</loc>
+    <lastmod>2024-06-05T00:47:39.759Z</lastmod>
   </url>
 </urlset>
