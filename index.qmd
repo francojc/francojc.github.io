@@ -67,7 +67,7 @@ Recent publications:
 Current projects:
 
 - `qtkit`: An R package for quantitative text analysis. [CRAN](https://cran.rstudio.com/web/packages/qtkit/), [R-Universe](https://qtalr.r-universe.dev/qtkit), [Github](https://github.com/qtalr/qtkit) \
-[![](https://cranlogs.r-pkg.org/badges/last-month/qtkit)](https://cran.rstudio.com/web/packages/qtkit/index.html)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/qtkit)](https://cran.rstudio.com/web/packages/qtkit/index.html)
 
 
 ## Contact
