@@ -49,22 +49,26 @@ Department of Romance Languages, Wake Forest University\
 
 Recent courses:
 
--   Spanish 111: Elementary Spanish I
--   Spanish 309: Spanish Grammar and Composition
--   Spanish 322: Spanish Pronunciation and Dialect Variation
--   Linguistics 150: Intro to Linguistics
--   Linguistics 330: Intro to Psycholinguistics and Language Acquisition
--   Linguistics 380/680: Quantitative Text Analysis
+- Spanish 111: Elementary Spanish I
+- Spanish 212: Exploring the Hispanic World
+- Spanish 309: Spanish Grammar and Composition
+- Spanish 322: Spanish Pronunciation and Dialect Variation
+- Linguistics 150: Intro to Linguistics
+- Linguistics 330: Intro to Psycholinguistics and Language Acquisition
+- Linguistics 380/680: Quantitative Text Analysis
 
 ## Research
 
 Recent publications:
 
+- Francom, J. (2025). [An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R](https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265). Routledge.
 - Francom, J. (2022). [Corpus Studies of Syntax](https://www.cambridge.org/us/academic/subjects/languages-linguistics/grammar-and-syntax/cambridge-handbook-experimental-syntax). In *G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp. 687--713).* Cambridge University Press.
 
 Current projects:
 
-- 'An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research using R'. The intended readership for this textbook is primarily undergraduate students but is also applicable to graduate students and researchers looking to expand their methodological toolbox. This textbook aims to meet the growing interest in quantitative data analysis methods taking hold across linguistics. (Under contract with Routledge Press)
+- `qtkit`: An R package for quantitative text analysis. [CRAN](https://cran.rstudio.com/web/packages/qtkit/), [R-Universe](https://qtalr.r-universe.dev/qtkit), [Github](https://github.com/qtalr/qtkit) \
+[![](https://cranlogs.r-pkg.org/badges/last-month/qtkit)](https://cran.rstudio.com/web/packages/qtkit/index.html)
+
 
 ## Contact
 
