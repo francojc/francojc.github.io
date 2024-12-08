@@ -74,3 +74,5 @@ Email: francojc\@wfu.edu\
 Phone: +1-336-758-4868\
 Mail: 323 Greene Hall \| Wake Forest University \| Winston-Salem, NC, 27103
 :::
+
+<a rel="me" href="https://fosstodon.org/@jeridfrancom" class="hidden-link">Mastodon</a>
