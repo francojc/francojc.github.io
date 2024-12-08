@@ -7,3 +7,5 @@
 *_cache
 .direnv
 .envrc
+.aider*
+.env
