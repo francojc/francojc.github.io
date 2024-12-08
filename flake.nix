@@ -43,10 +43,8 @@
         # Texlive packages
         texlivePackages = with pkgs; [
           (texlive.combine {
-            inherit (texlive) scheme-small
+            inherit (texlive) scheme-small;
               # Add texlive packages here
-
-              ;
           })
         ];
 
@@ -57,9 +55,8 @@
           name = "r-dev";
           buildInputs = allPackages;
           shellHook = ''
-            export R_LIBS_USER=$PWD/R/Library; mkdir -p $R_LIBS_USER;
-            echo "R development environment loaded"
-            echo "Available tools: R, radian, quarto, ..."
+            export R_LIBS_USER=$PWD/R/library;
+            mkdir -p "$R_LIBS_USER";
           '';
         };
       });
