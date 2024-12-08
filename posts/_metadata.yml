@@ -3,36 +3,31 @@
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: auto
-
 # Enable banner style title blocks
-title-block-banner:
-  false
-
-  # Provide author information
+title-block-banner: false
+# Provide author information
 author:
   - name: Jerid Francom
     email: francojc@wfu.edu
     affiliation: Wake Forest University
     url: https://francojc.github.io
-
-citation: true # Enable citation support
-
+# Enable citation support
+citation: true
+# Add the meta tag for Mastodon attribution
+metadata:
+  fediverse:creator: '@jeridfrancom@fosstodon.org'
 # Default for table of contents
 toc: true
 toc-title: Table of contents
 toc-location: left
-
-code-copy: true # Default for code copy button
-
+# Default for code copy button
+code-copy: true
 # Default for code overflow
 code-overflow: wrap
-
 # Default for code highlighting
 code-highlighting: true
-
 # Default for code line numbers
 code-line-numbers: true
-
 execute:
   echo: true
   cache: true
