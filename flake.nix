@@ -14,11 +14,6 @@
 
         # Base packages
         basePackages = with pkgs; [
-          bashInteractive
-          gettext
-          gh
-          git
-          pandoc
           quarto
           R
           radianWrapper
@@ -44,7 +39,7 @@
         texlivePackages = with pkgs; [
           (texlive.combine {
             inherit (texlive) scheme-small;
-              # Add texlive packages here
+            # Add texlive packages here
           })
         ];
 
