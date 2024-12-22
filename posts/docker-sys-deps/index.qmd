@@ -7,11 +7,11 @@ categories: [r, docker, renv, computing-environments]
 draft: true
 ---
 
-Docker is great for creating reproducible computing environments. However, it can be a bit of a pain to install system-level dependencies. This is where `renv` comes in. `renv` is a package that helps manage R packages and versions. However, it doesn't manage system-level dependencies.
+Docker is great for creating reproducible computing environments. However, it can be a bit of a pain to install system-level dependencies. This is where {renv} comes in. {renv} is a package that helps manage R packages and versions. However, it doesn't manage system-level dependencies.
 
 `pak` is a package that helps manage system-level dependencies. However, it doesn't work with `renv`, easily. ....
 
-`remotes` has a function called `system_requirements()` that can be used to discover system-level dependencies. Once you know what the dependiencies are, you can
+{remotes} has a function called `system_requirements()` that can be used to discover system-level dependencies. Once you know what the dependiencies are, you can
 
 - install them manually before running `renv::restore()` on your `renv.lock` file.
 - add the system-level dependencies to a `Dockerfile` and build a new image for your computing environment
@@ -26,7 +26,6 @@ lsb_release -a
 ```
 
 ```r
-
 os <- "ubuntu"
 os_release <- "20.04"
 
@@ -36,5 +35,4 @@ cli_deps <- remotes::system_requirements(os, os_release, package = packages)
 
 cli_deps |>
   paste(collapse = "; ")
-
 ```

@@ -2,7 +2,7 @@
 title: "Create computing environments with `rix`"
 description: |
   This post describes my first steps using the `rix` package for developing and sharing computing environments.
-date: "2024-02-04"
+date: "2024-12-24"
 categories: [r, rix, computing-environments]
 draft: true
 ---
@@ -21,9 +21,10 @@ The Nix software repository is large (some 80+, including CRAN). It also contain
 
 It is possible to create Nix expressions (build templates) for R packages and environments without with only `rix` installed. Let's go through the basics of creating a Nix expression with `rix`.
 
-Install `rix` from the author's R-universe repository and load it.
+Install `rix` from CRAN or the author's R-universe repository and load it.
 
 ```r
+install.packages("rix") # Now available on CRAN
 install.packages("rix", repos = "https://b-rodrigues.r-universe.dev")
 library(rix)
 ```
