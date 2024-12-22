@@ -2,6 +2,7 @@
 .Rproj.user
 /.quarto/
 /_site/
+/_freeze/
 .Rhistory
 *.code-workspace
 *_cache
