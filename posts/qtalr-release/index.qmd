@@ -1,0 +1,17 @@
+---
+title: "Textbook and companion resources released"
+description: |
+  This posts announces the release of my textbook including the companion website and the `qtkit` R package.
+date: "2024-12-22"
+categories: [r, qtalr, qtkit]
+---
+
+![](./cover.png){style="width: 25%; float: right; margin-left: 1em; margin-bottom: 1em;"}
+
+I am pleased to announce the release of my textbook "An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R" [@Francom2024]. The book is available from [Routledge](https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265) or as a web book at [https://qtalr.com/](https://qtalr.com/). The book is designed to be a practical guide to quantitative text analysis for linguists. The book covers the basics of text analysis, including data preparation, text processing, and analysis. The book also covers more advanced topics such as machine learning and text classification. The book is designed to be accessible to linguists with no prior experience in quantitative text analysis.
+
+In addition to the main content, each chapter includes interactive R exercises via {swirl}, additional implementation examples, and lab exercises. More information about the resources can be found on the companion website [https://qtalr.com/resources/](https://qtalr.com/resources/). The companion website also includes additional guides and instructor resources.
+
+To facilitate the use of the book, I have also released the {qtkit} R package. The package includes all the functions used in the book. The package is available on [CRAN](https://cran.r-project.org/package=qtkit) and [GitHub](https://github.com/qtalr/qtkit). The package documentation is available at [https://qtalr.com/qtkit/](https://qtalr.com/qtkit/).
+
+
