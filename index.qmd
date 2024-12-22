@@ -8,15 +8,16 @@ about:
   image-width: 10em
   image-shape: rounded
   links:
-    - icon: mastodon
-      text: Mastodon
-      href: https://fosstodon.org/@jeridfrancom
-    - icon: github
-      text: Github
-      href: https://github.com/francojc
-    - icon: mortarboard-fill
-      text: Google Scholar
-      href: https://scholar.google.com/citations?user=EbkQkKIAAAAJ&hl=en
+      - text: '{{< fa brands bluesky >}} Bluesky'
+        href: https://bsky.app/profile/jcolef.bsky.social
+      - text: '{{< fa brands mastodon >}} Mastodon'
+        href: https://fosstodon.org/@jeridfrancom
+      - text: '{{< fa brands github >}} GitHub'
+        href: https://github.com/francojc
+      - text: '{{< fa graduation-cap >}} Google Scholar'
+        href: https://scholar.google.com/citations?user=EbkQkKIAAAAJ&hl=en
+      - text: '{{< fa brands orcid >}} ORCID'
+        href: https://orcid.org/0000-0001-5972-6330
 ---
 
 Jerid Francom's research focuses on the use of large-scale language archives (corpora) from a variety of sources (news, social media, and other internet sources) to better understand the linguistic and cultural similarities and differences between language varieties for both scholarly and pedagogical projects.
@@ -55,18 +56,18 @@ Recent courses:
 - Spanish 322: Spanish Pronunciation and Dialect Variation
 - Linguistics 150: Intro to Linguistics
 - Linguistics 330: Intro to Psycholinguistics and Language Acquisition
-- Linguistics 380/680: Quantitative Text Analysis
+- Linguistics 380/680: [Quantitative Text Analysis](https://lin-380-s24.github.io/)
 
 ## Research
 
 Recent publications:
 
-- Francom, J. (2025). [An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R](https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265). Routledge.
+- Francom, J. (2024). [An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R](https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265). Routledge.
 - Francom, J. (2022). [Corpus Studies of Syntax](https://www.cambridge.org/us/academic/subjects/languages-linguistics/grammar-and-syntax/cambridge-handbook-experimental-syntax). In *G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp. 687--713).* Cambridge University Press.
 
 Current projects:
 
-- `qtkit`: An R package for quantitative text analysis. [CRAN](https://cran.r-project.org/package=qtkit), [R-Universe](https://qtalr.r-universe.dev/qtkit), [GitHub](https://github.com/qtalr/qtkit)
+- `qtkit`: An R package for quantitative text analysis. [CRAN](https://cran.r-project.org/package=qtkit), [R-Universe](https://qtalr.r-universe.dev/qtkit), [GitHub](https://github.com/qtalr/qtkit), [nixpkgs](https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=qtkit)
 
 ## Contact
 

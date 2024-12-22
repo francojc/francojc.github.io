@@ -2,11 +2,10 @@ project:
   type: website
   preview:
     port: 4200
-
 website:
-  title: "⟲ francojc"
-  favicon: "favicon.png"
-  google-analytics: "G-C6T0ESR1RW"
+  title: '⟲ francojc'
+  favicon: 'favicon.png'
+  google-analytics: 'G-C6T0ESR1RW'
   site-url: https://francojc.github.io/
   search:
     location: navbar
@@ -18,22 +17,16 @@ website:
   navbar:
     background: dark
     left:
-      - text: "Home"
+      - text: 'Home'
         file: index.qmd
       - posts.qmd
-      - text: "Vitae"
+      - text: 'Vitae'
         file: vitae.pdf
-    right:
-      - icon: mastodon
-        href: https://fosstodon.org/@jeridfrancom
-      - icon: github
-        href: https://github.com/francojc
-      - icon: mortarboard-fill
-        href: https://scholar.google.com/citations?user=EbkQkKIAAAAJ&hl=en
-
-  page-footer: '<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a> Jerid Francom'
-
-
+  page-footer: |
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+    <img alt="Creative Commons License" style="border-width:0"
+    src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a>
+    Jerid Francom
 format:
   html:
     theme: journal
