@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/qtalr-release/index.html",
       "/posts/r-in-vscode/index.html",
       "/posts/actives-corpus-initial-release/index.html"
     ]

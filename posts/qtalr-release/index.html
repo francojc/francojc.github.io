@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jerid Francom">
-<meta name="dcterms.date" content="2014-05-24">
-<meta name="description" content="ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain">
+<meta name="dcterms.date" content="2024-12-22">
+<meta name="description" content="This posts announces the release of my textbook including the companion website and the qtkit R package.">
 
-<title>ACTIV-ES corpus: initial release – ⟲ francojc</title>
+<title>Textbook and companion resources released – ⟲ francojc</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -142,21 +162,21 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ACTIV-ES corpus: initial release</h1>
+<h1 class="title">Textbook and companion resources released</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">corpora</div>
-    <div class="quarto-category">spanish</div>
-    <div class="quarto-category">projects</div>
+    <div class="quarto-category">r</div>
+    <div class="quarto-category">qtalr</div>
+    <div class="quarto-category">qtkit</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    <p>ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain</p>
+    <p>This posts announces the release of my textbook including the companion website and the <code>qtkit</code> R package.</p>
   </div>
 </div>
 
@@ -180,7 +200,7 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 24, 2014</p>
+      <p class="date">December 22, 2024</p>
     </div>
   </div>
   
@@ -192,25 +212,28 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
 </header>
 
 
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="activ-es.jpg" class="img-fluid"></p>
-</div></div><p>The first release of the ACTIV-ES Spanish dialect corpus based on TV/film transcripts is now available on <a href="https://github.com/francojc/activ-es">GitHub</a>.</p>
-<p>It includes 3,460,172 total tokens (Argentina: 1,103,039 Mexico: 976,192 Spain: 1,380,941) and comes in running text and word list (1:5 gram) formats. Each format has both a plain text and part-of-speech tagged version.</p>
-<p>For more information about the development and evaluation of this resource you can download our paper “<a href="http://www.lrec-conf.org/proceedings/lrec2014/pdf/691_Paper.pdf">ACTIV-ES: a comparable cross-dialect corpus of everday Spanish from Argentina, Mexico, and Spain</a>” at the <a href="http://lrec2014.lrec-conf.org/en/">Ninth Annual Language Resources and Evaluation Conference (LREC 2014)</a></p>
+<p><img src="./cover.png" class="img-fluid" style="width: 25%; float: right; margin-left: 1em; margin-bottom: 1em;"></p>
+<p>I am pleased to announce the release of my textbook “An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R” <span class="citation" data-cites="Francom2024">(<a href="#ref-Francom2024" role="doc-biblioref">Francom 2024</a>)</span>. The book is available from <a href="https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265">Routledge</a> or as a web book at <a href="https://qtalr.com/">https://qtalr.com/</a>. The book is designed to be a practical guide to quantitative text analysis for linguists. The book covers the basics of text analysis, including data preparation, text processing, and analysis. The book also covers more advanced topics such as machine learning and text classification. The book is designed to be accessible to linguists with no prior experience in quantitative text analysis.</p>
+<p>In addition to the main content, each chapter includes interactive R exercises via {swirl}, additional implementation examples, and lab exercises. More information about the resources can be found on the companion website <a href="https://qtalr.com/resources/">https://qtalr.com/resources/</a>. The companion website also includes additional guides and instructor resources.</p>
+<p>To facilitate the use of the book, I have also released the {qtkit} R package. The package includes all the functions used in the book. The package is available on <a href="https://cran.r-project.org/package=qtkit">CRAN</a> and <a href="https://github.com/qtalr/qtkit">GitHub</a>. The package documentation is available at <a href="https://qtalr.com/qtkit/">https://qtalr.com/qtkit/</a>.</p>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{francom2014,
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Francom2024" class="csl-entry" role="listitem">
+Francom, Jerid. 2024. <em>An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using <span>R</span></em>. Routledge. <a href="https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265">https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265</a>.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{francom2024,
   author = {Francom, Jerid},
-  title = {ACTIV-ES Corpus: Initial Release},
-  date = {2014-05-24},
-  url = {https://francojc.github.io/posts/actives-corpus-initial-release/},
+  title = {Textbook and Companion Resources Released},
+  date = {2024-12-22},
+  url = {https://francojc.github.io/posts/qtalr-release/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-francom2014" class="csl-entry quarto-appendix-citeas" role="listitem">
-Francom, Jerid. 2014. <span>“ACTIV-ES Corpus: Initial Release.”</span>
-May 24, 2014. <a href="https://francojc.github.io/posts/actives-corpus-initial-release/">https://francojc.github.io/posts/actives-corpus-initial-release/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-francom2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Francom, Jerid. 2024. <span>“Textbook and Companion Resources
+Released.”</span> December 22, 2024. <a href="https://francojc.github.io/posts/qtalr-release/">https://francojc.github.io/posts/qtalr-release/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
