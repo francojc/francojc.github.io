@@ -6,53 +6,66 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { nixpkgs, flake-utils, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {inherit system;};
 
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
+      # Base packages
+      basePackages = with pkgs; [
+        R
+        pandoc
+        quarto
+        radianWrapper
+      ];
 
-        # Base packages
-        basePackages = with pkgs; [
-          quarto
-          R
-          radianWrapper
-        ];
+      # R packages
+      rPackages = with pkgs.rPackages; [
+        # Utils
+        devtools
+        knitr
+        languageserver
+        pak
+        renv
+        rlang
+        rmarkdown
+        usethis
+        # Project
+        cranlogs
+        tidyverse
+      ];
 
-        # R packages
-        rPackages = with pkgs.rPackages; [
-          # Utils
-          devtools
-          knitr
-          languageserver
-          pak
-          renv
-          rlang
-          rmarkdown
-          usethis
-          # Project
-          cranlogs
-          tidyverse
-        ];
+      # Texlive packages
+      texlivePackages = with pkgs.texlive; [
+        (combine {
+          inherit
+            scheme-medium
+            datetime
+            ebgaramond
+            ebgaramond-maths
+            fmtcount
+            fontawesome5
+            lastpage
+            lualatex-math
+            orcidlink
+            sectsty
+            ;
+        })
+      ];
 
-        # Texlive packages
-        texlivePackages = with pkgs; [
-          (texlive.combine {
-            inherit (texlive) scheme-small;
-            # Add texlive packages here
-          })
-        ];
-
-        allPackages = basePackages ++ rPackages ++ texlivePackages;
-      in
-      {
-        devShell = pkgs.mkShell {
-          name = "r-dev";
-          buildInputs = allPackages;
-          shellHook = ''
-            export R_LIBS_USER=$PWD/R/library;
-            mkdir -p "$R_LIBS_USER";
-          '';
-        };
-      });
+      allPackages = basePackages ++ rPackages ++ texlivePackages;
+    in {
+      devShell = pkgs.mkShell {
+        name = "r-dev";
+        buildInputs = allPackages;
+        shellHook = ''
+          export R_LIBS_USER=$PWD/R/library;
+          mkdir -p "$R_LIBS_USER";
+        '';
+      };
+    });
 }

@@ -1,0 +1,65 @@
+---
+title: CV
+date: last-modified
+date-format: iso
+
+author: "Jerid C. Francom"
+address: "Winston-Salem, NC"
+
+email: francojc@wfu.edu
+github: francojc
+orcid: 0000-0001-5972-6330
+
+fontsize: 12pt
+fontawesome: yes
+
+# Use multilib extension
+filters:
+  - multibib
+
+# No Yaml validation
+validate-yaml: false
+
+# Bibliography files
+nocite: '@*'
+bibliography:
+  main: main.bib
+  app: apps.bib
+  chptrs: chapters.bib
+# csl: apa-csv.csl
+
+citeproc: false
+
+format:
+  html:
+    toc: true
+  quarto-cv-pdf: default
+css: cv.css
+---
+
+<!-- Example: https://alexespinosaco.github.io/aerovagante/2024-02-18-cv/ -->
+
+# Education
+
+**Ph.D. in Computer Science** (2019) \hfill [inicio-fin]{.cvfloat}
+
+**M.S. in Computer Science** (2016)
+
+# Articles
+
+::: {#refs-main}
+:::
+
+# Books
+
+::: {#refs-app}
+:::
+
+# Book Chapters
+
+::: {#refs-chptrs}
+:::
+
+# Presentations
+
+...
