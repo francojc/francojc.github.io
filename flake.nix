@@ -36,6 +36,7 @@
         usethis
         # Project
         cranlogs
+        scholar
         tidyverse
       ];
 

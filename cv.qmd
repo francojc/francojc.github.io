@@ -1,7 +1,7 @@
 ---
-title: CV
-date: last-modified
-date-format: iso
+title: Curriculum Vitae
+date: 2025-01-06
+date-format: medium
 
 author: "Jerid C. Francom"
 address: "Winston-Salem, NC"
@@ -23,9 +23,10 @@ validate-yaml: false
 # Bibliography files
 nocite: '@*'
 bibliography:
+  books: books.bib
+  chapters: chapters.bib
   main: main.bib
-  app: apps.bib
-  chptrs: chapters.bib
+  talks: talks.bib
 # csl: apa-csv.csl
 
 citeproc: false
@@ -39,27 +40,216 @@ css: cv.css
 
 <!-- Example: https://alexespinosaco.github.io/aerovagante/2024-02-18-cv/ -->
 
+# Experience
+
+Associate Chair\
+*Department of Spanish and Italian, Wake Forest University* \hfill [2019-2022]{.cvfloat}
+
+Program Director\
+*Interdisciplinary Linguistics Minor, Wake Forest University* \hfill [2016-2019]{.cvfloat}
+
+Associate Professor\
+*Department of Romance Languages, Wake Forest University* \hfill [2015-present]{.cvfloat}
+
+Research Consultant\
+*Center for the Advanced Study of Language, University of Maryland* \hfill [2012-2013]{.cvfloat}
+
+Assistant Professor\
+*Department of Romance Languages, Wake Forest University* \hfill [2009-2015]{.cvfloat}
+
+Research Assistant\
+*National Science Foundation ADVANCE program, University of Arizona* \hfill [2008-2009]{.cvfloat}
+
+Graduate Instructor\
+*Department of Linguistics, University of Arizona* \hfill [2008]{.cvfloat}
+
+Research Assistant\
+*PsyCol Computational Psycholinguistics Laboratory, University of Arizona* \hfill [2007-2008]{.cvfloat}
+
+Intructional Technology Liason\
+*College of Humanities Instructional Computing, University of Arizona* \hfill [2005-2008]{.cvfloat}
+
+Graduate Instructor\
+*Department of Spanish & Portuguese / Linguistics, University of Arizona* \hfill [2001-2007]{.cvfloat}
+
+Translator/ Bilingual Liason\
+*English-Spanish, Amphitheater Public Schools, Tucson, Arizona* \hfill [1999-2000]{.cvfloat}
+
+English as a Second Language Instructor\
+*Barcelona, Spain* \hfill [1998-1999]{.cvfloat}
+
+
 # Education
 
-**Ph.D. in Computer Science** (2019) \hfill [inicio-fin]{.cvfloat}
+PhD Linguistics & Cognitive Science \hfill [2004-2009]{.cvfloat}\
+*University of Arizona* \
+Co-chairs: Janet Nicol & Simin Karimi\
+Dissertation: *Experimental Syntax: exploring the effect of repeated exposure to anomalous syntactic structure – evidence from rating and reading tasks.* [[link](https://repository.arizona.edu/bitstream/handle/10150/195817/azu_etd_10544_sip1_m.pdf?sequence=1)]
 
-**M.S. in Computer Science** (2016)
+MA Hispanic Linguistics \hfill [2001-2004]{.cvfloat}\
+*University of Arizona*\
+Chair: Antxon Olarrea\
+Thesis: *Adjective small clauses and free-word order in Spanish* [[link](https://repository.arizona.edu/bitstream/handle/10150/292076/azu_td_1420281_sip1_m.pdf?sequence=1)]
 
-# Articles
+Certificate in English Language Teaching to Adults (CELTA) \hfill [1998]{.cvfloat}\
+*University of Cambridge*
+
+BA History \hfill [1996-1998]{.cvfloat}\
+*University of Arizona*\
+Outstanding research paper: *Crime and castigation —prohibition in Tucson*
+
+# Scholarship
+
+```{r}
+#| label: summary
+#| echo: false
+
+library(scholar)
+
+id <- "EbkQkKIAAAAJ&hl" # Jerid Francom
+profile <- get_profile(id)
+citations <- profile$total_cites
+h.index <- profile$h_index
+```
+
+`r citations` total citations\
+h-index `r h.index`
+
+## Books
+
+::: {#refs-books}
+:::
+
+## Book Chapters
+
+::: {#refs-chapters}
+:::
+## Refereed Articles
 
 ::: {#refs-main}
 :::
 
-# Books
+## Presentations
 
-::: {#refs-app}
+::: {#refs-talks}
 :::
 
-# Book Chapters
+# Teaching
 
-::: {#refs-chptrs}
-:::
+## Undergraduate
 
-# Presentations
+### Courses
 
-...
+- Spanish 111. Elementary Spanish I
+- Spanish 113. Intensive Elementary Spanish
+- Spanish 153. Intermediate Spanish
+- Spanish 154. Accelerated Intermediate Spanish
+- Spanish 212. Exploring the Hispanic World
+- Spanish 309. Spanish Grammar and Composition
+- Spanish 322. Spanish Pronunciation and Dialect Variation
+- Spanish 320. Introduction to Hispanic Linguistics
+
+- Linguistics 150. Introduction to Linguistics
+- Linguistics 330. Psycholinguistics and Language Acquisition
+- Linguistics 380. Quantitative Text Analysis
+- Linguistics 383. Language Engineering: Localization and Terminology
+
+### Advising
+
+- 2021-present. Lower-division undergraduate advising
+- 2017-2022. Spanish major and minor advising
+- 2016-2019. Linguistics minor advising
+- 2010-2016. Lower-division undergraduate advising
+
+### Honors thesis advisees
+
+- 2016. Madeline Nelson. 'Linguistic Revitalization: the case of Catalan'
+
+## Graduate
+
+### Courses
+
+- Linguistics 680. Language Use and Technology.
+- Spanish 629. Introduction to Hispanic Linguistics.
+- Translation 785. Applied Research Project.
+
+### Thesis advisees
+
+- 2021. Dustin Rosh. 'An Investigation in the Sociolinguistic Landscape and Diversity of Spain'
+
+- 2017. Ying Ma. 'Explicitation via the use of connectives in English-Chinese translation: A corpus-based study'
+
+- 2016. Melissa Gelinas. 'Translating Non-Standard Dialects in Literature: The Slippery Slope of Localization'
+
+- 2016. Ryan Sefcovic. 'The Power of the Translator: Linguistic Devices Used to Manipulate the Reader'
+
+- 2016. Anna Tal. 'Translating Culture-Specific References in Alberto Granado’s Autobiographical Work 'Con el Che Guevara: de Córdoba a La Habana''
+
+- 2015. Chaowei Zhu. 'Transitional universal not applicable? A case study of parallel translational Chinese-English literary corpus'
+
+- 2014. Jordan Van Horn. 'Language Use and Cognitive Flexibility'
+
+- 2013. Derek Cotter. 'Video Remote Interpreting and the Driving Forces for its Adoption in Healthcare Facilities'
+
+- 2013. Lauren Reese. 'The Varying Degree of Interpreter Mediation'
+
+# Grants
+
+## External
+
+- 2017. National Science Foundation (NSF). *Improving Scientific Writing In Undergraduate STEM Classrooms: A Training Program for Students and Teaching Assistants Aided By Information Extraction Technology* Co-Primary Investigator. ([1712423](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1712423&HistoricalAwards=false))
+
+- 2011. National Endowment for the Humanities (NEH). *ACTIV-ES: a novel Spanish language corpus for linguistic and cultural comparisons between communities of the Hispanic world* Primary Investigator. ([HD 51432-11](https://securegrants.neh.gov/publicquery/main.aspx?f=1&gn=HD-51432-11))
+
+- 2003.	Tinker Foundation Incorporated (TFI). Field Research Grant. Research in Barcelona, Spain. Primary Investigator. *The Role of Community in Language Maintenance and Shift in Barcelona, Spain*
+
+- 2002.	U.S. Department of Education. Foreign Language and Area Studies (FLAS) Fellow. Universidade Federal de Ceará, Fortaleza, Brazil.
+
+## Internal
+
+- 2016. Reynolds Research Leave. Office of the Dean. *Data Science for Linguists: concepts through code in R* Wake Forest University.
+
+- 2016. Mid-Career Faculty Development Program. Office of the Dean. Wake Forest University.
+
+- 2015. Office of the Provost's Summer Grants for Exploration of Educational Technology. *Student-directed composition assessment using web-based text analysis in RStudio's Shiny* Wake Forest University.
+
+- 2014.	Office of the Provost's Summer Grants for Exploration of Educational Technology. *Novel perspectives in language research and teaching through 'big data' and high-performance computing* Wake Forest University.
+
+- 2013.	Archie Fund for the Arts and the Humanities Grant. *Evaluating the ACTIV-ES corpus: a Spanish language corpus for three linguistically, culturally, and geographically distinct communities of the Hispanic world* Wake Forest University.
+
+- 2013.	Office of the Provost's Summer Grants for Exploration of Educational Technology. *Exploring voting-based QA systems to build out-of-class learning communities and robust student-centered knowledge-bases* Wake Forest University.
+
+- 2011.	Office of the Provost's Summer Grants for Exploration of Educational Technology. *Creating Highly Interactive Classroom Experiences in a Distance-learning Paradigm* Wake Forest University.
+
+- 2011.	Archie Fund for the Arts and the Humanities Grant. *SpanMorph and SpanSyn: an international collaborative effort to create open-source language resources for the morphological and syntactic analysis of Spanish* Wake Forest University.
+
+- 2010.	Office of the Provost's Summer Grants for Exploration of Educational Technology. *Real-world Examples in Real Time* Wake Forest University.
+
+# Professional development
+
+- 2014.	Lisbon Machine Learning School (LxMLS). Instituto Superior Técnico, Instituto de Telecomunicações. Lisbon, Portugal. July 22-29, 2014
+
+- 2013.	Corpus Linguistics and Statistics for Linguists with R. Georgia State University, Atlanta, GA. July 31-August 14, 2013
+
+- 2012.	Sakai Workshop I/II. Teaching and Learning Center. Wake Forest University.
+
+- 2012.	Scholarly Writing Workshop. Research \& Sponsored Programs. Wake Forest University.
+
+- 2011.	It's not all about the money: Applying for Grants and Fellowships in the Humanities. Professional Development Center. Wake Forest University.
+
+- 2011.	eBooks made easy. Professional Development Center. Wake Forest University.
+
+- 2011. Quality Circle. Professional Development Center. Wake Forest University.
+
+- 2010.	The Winning Grants Seminar. Research \& Sponsored Programs. Wake Forest University.
+
+
+# Languages
+
+## Natural
+
+English (native), Spanish (near-native), Portuguese (intermediate)
+
+## Programming
+
+R, Bash, Fish, SQL, Perl, Python, DMDX
