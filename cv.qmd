@@ -1,6 +1,6 @@
 ---
 title: Curriculum Vitae
-date: 2025-01-06
+date: last-modified
 date-format: medium
 
 author: "Jerid C. Francom"
