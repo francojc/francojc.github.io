@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(rm:*)",
-      "Bash(git fsck:*)"
+      "Bash(git fsck:*)",
+      "Bash(git gc:*)",
+      "Bash(direnv allow:*)"
     ],
     "deny": []
   }

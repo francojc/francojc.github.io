@@ -54,6 +54,7 @@
             lualatex-math
             orcidlink
             sectsty
+            svn-prov
             ;
         })
       ];

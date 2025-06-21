@@ -1,13 +1,13 @@
 ---
 title: "Adding system dependencies to a computing environment"
 description: |
-  This post describes adventures in trying to use `renv` to manage system dependencies in a computing environment, only to find that system-level dependencies need to be installed manually.
+  This post describes adventures in trying to use {renv} to manage system dependencies in a computing environment, only to find that system-level dependencies need to be installed manually, or more conveniently with {remotes}.
 date: "2024-04-09"
 categories: [r, docker, renv, computing-environments]
 draft: true
 ---
 
-Docker is great for creating reproducible computing environments. However, it can be a bit of a pain to install system-level dependencies. This is where {renv} comes in. {renv} is a package that helps manage R packages and versions. However, it doesn't manage system-level dependencies.
+Docker is great for creating reproducible computing environments for R development. However, it can be a bit of a pain to install system-level dependencies. This is where {renv} comes in. {renv} is a package that helps manage R packages and versions. However, it doesn't manage system-level dependencies.
 
 `pak` is a package that helps manage system-level dependencies. However, it doesn't work with `renv`, easily. ....
 
