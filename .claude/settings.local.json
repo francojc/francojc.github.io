@@ -4,7 +4,9 @@
       "Bash(rm:*)",
       "Bash(git fsck:*)",
       "Bash(git gc:*)",
-      "Bash(direnv allow:*)"
+      "Bash(direnv allow:*)",
+      "Bash(find:*)",
+      "Bash(nix flake:*)"
     ],
     "deny": []
   }
