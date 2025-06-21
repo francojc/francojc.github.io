@@ -28,7 +28,7 @@ code-overflow: wrap
 code-highlighting: true
 # Default for code line numbers
 code-line-numbers: true
-bibliography: bibliography.bib
+bibliography: ../assets/bibliography/bibliography.bib
 execute:
   echo: true
   cache: true

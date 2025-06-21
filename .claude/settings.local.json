@@ -6,7 +6,12 @@
       "Bash(git gc:*)",
       "Bash(direnv allow:*)",
       "Bash(find:*)",
-      "Bash(nix flake:*)"
+      "Bash(nix flake:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(quarto render:*)",
+      "Bash(ls:*)",
+      "Bash(touch:*)"
     ],
     "deny": []
   }

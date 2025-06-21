@@ -4,7 +4,7 @@ project:
     port: 4200
 website:
   title: '⟲ francojc'
-  favicon: 'favicon.png'
+  favicon: 'assets/images/favicon.png'
   google-analytics: 'G-C6T0ESR1RW'
   site-url: https://francojc.github.io/
   search:
@@ -31,7 +31,7 @@ format:
   html:
     theme: journal
     fontsize: 1.1em
-    css: styles.css
+    css: assets/css/styles.css
     toc: true
     code-copy: true
     code-overflow: wrap

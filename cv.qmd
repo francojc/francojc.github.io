@@ -23,10 +23,10 @@ validate-yaml: false
 # Bibliography files
 nocite: '@*'
 bibliography:
-  books: books.bib
-  chapters: chapters.bib
-  main: main.bib
-  talks: talks.bib
+  books: assets/bibliography/books.bib
+  chapters: assets/bibliography/chapters.bib
+  main: assets/bibliography/main.bib
+  talks: assets/bibliography/talks.bib
 # csl: apa-csv.csl
 
 citeproc: false
@@ -35,7 +35,7 @@ format:
   html:
     toc: true
   quarto-cv-pdf: default
-css: cv.css
+css: assets/css/cv.css
 ---
 
 <!-- Example: https://alexespinosaco.github.io/aerovagante/2024-02-18-cv/ -->

@@ -31,6 +31,7 @@
         languageserver
         pak
         renv
+        rix
         rlang
         rmarkdown
         usethis
