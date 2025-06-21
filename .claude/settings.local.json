@@ -11,7 +11,8 @@
       "Bash(mv:*)",
       "Bash(quarto render:*)",
       "Bash(ls:*)",
-      "Bash(touch:*)"
+      "Bash(touch:*)",
+      "Bash(open _site/cv.pdf)"
     ],
     "deny": []
   }

@@ -2,6 +2,7 @@
 title: Curriculum Vitae
 date: today 
 date-format: medium
+updated: true
 
 author: "Jerid C. Francom"
 address: "Winston-Salem, NC"
