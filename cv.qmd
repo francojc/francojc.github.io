@@ -3,6 +3,7 @@ title: Curriculum Vitae
 date: today 
 date-format: "MMM. d, YYYY"
 updated: true
+# UPDATE this date when you update the CV
 rdateformat: "Jun. 21, 2025"
 
 author: "Jerid C. Francom"
