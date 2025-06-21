@@ -25,7 +25,7 @@
 
       # R packages
       rPackages = with pkgs.rPackages; [
-        # Utils
+        cranlogs
         devtools
         knitr
         languageserver
@@ -34,11 +34,9 @@
         rix
         rlang
         rmarkdown
-        usethis
-        # Project
-        cranlogs
         scholar
         tidyverse
+        usethis
       ];
 
       # Texlive packages
