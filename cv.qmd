@@ -156,8 +156,8 @@ h-index `r h.index`
 
 ### Advising
 
-- 2021-present. Lower-division undergraduate advising
-- 2017-2022. Spanish major and minor advising
+- 2017-2022, 2025-present. Spanish major and minor advising
+- 2021-2024. Lower-division undergraduate advising
 - 2016-2019. Linguistics minor advising
 - 2010-2016. Lower-division undergraduate advising
 
@@ -248,8 +248,8 @@ h-index `r h.index`
 
 ## Natural
 
-English (native), Spanish (near-native), Portuguese (intermediate)
+English (native), Spanish (near-native), Portuguese (beginner)
 
 ## Programming
 
-R, Bash, Fish, SQL, Perl, Python, DMDX
+R, Bash, Nix, Python, Lua 
