@@ -1,8 +1,9 @@
 ---
 title: Curriculum Vitae
 date: today 
-date-format: medium
+date-format: "MMM. d, yyyy"
 updated: true
+rdateformat: "Jun. 21, 2025"
 
 author: "Jerid C. Francom"
 address: "Winston-Salem, NC"
@@ -38,8 +39,6 @@ format:
   quarto-cv-pdf: default
 css: assets/css/cv.css
 ---
-
-<!-- Example: https://alexespinosaco.github.io/aerovagante/2024-02-18-cv/ -->
 
 # Experience
 
