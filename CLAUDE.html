@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Posts – ⟲ francojc</title>
+<title>claude – ⟲ francojc</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +66,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,35 +102,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-C6T0ESR1RW"></script>
 
 <script type="text/javascript">
@@ -120,35 +124,6 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -175,7 +150,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
@@ -190,147 +165,173 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y29kaW5n">coding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29ycG9yYQ==">corpora <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGFja2FnZXM=">packages <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvamVjdHM=">projects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cXRhbHI=">qtalr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cXRraXQ=">qtkit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cg==">r <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3BhbmlzaA==">spanish <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dnNjb2Rl">vscode <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#claude.md" id="toc-claude.md" class="nav-link active" data-scroll-target="#claude.md">CLAUDE.md</a>
+  <ul class="collapse">
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview">Project Overview</a></li>
+  <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a></li>
+  <li><a href="#development-environment" id="toc-development-environment" class="nav-link" data-scroll-target="#development-environment">Development Environment</a></li>
+  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands">Common Commands</a></li>
+  <li><a href="#content-structure" id="toc-content-structure" class="nav-link" data-scroll-target="#content-structure">Content Structure</a></li>
+  <li><a href="#extensions-and-dependencies" id="toc-extensions-and-dependencies" class="nav-link" data-scroll-target="#extensions-and-dependencies">Extensions and Dependencies</a></li>
+  <li><a href="#styling-and-customization" id="toc-styling-and-customization" class="nav-link" data-scroll-target="#styling-and-customization">Styling and Customization</a></li>
+  <li><a href="#content-guidelines" id="toc-content-guidelines" class="nav-link" data-scroll-target="#content-guidelines">Content Guidelines</a></li>
+  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization">File Organization</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Posts</h1>
-</div>
-
-
-
-<div class="quarto-title-meta column-page-left">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<section id="claude.md" class="level1">
+<h1>CLAUDE.md</h1>
+<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+<section id="project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
+<p>This is Dr.&nbsp;Jerid Francom’s academic website built with Quarto. It serves as a personal homepage, blog, and CV for a linguistics professor specializing in corpus linguistics, computational linguistics, and Hispanic linguistics.</p>
+</section>
+<section id="architecture" class="level2">
+<h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
+<p><strong>Website Type</strong>: Quarto website project with academic focus <strong>Core Structure</strong>:</p>
+<ul>
+<li><code>index.qmd</code> - Homepage with tabbed layout (Education, Experience, Teaching, Research, Contact)</li>
+<li><code>cv.qmd</code> - Academic CV with multiple bibliography sources and PDF generation</li>
+<li><code>posts/</code> - Blog posts directory with individual post folders</li>
+<li><code>_extensions/</code> - Quarto extensions for CV formatting and FontAwesome icons</li>
+<li>Bibliography files: <code>main.bib</code>, <code>books.bib</code>, <code>chapters.bib</code>, <code>talks.bib</code></li>
+</ul>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>Multi-format CV generation (HTML + PDF via LaTeX)</li>
+<li>Blog posts with academic citations</li>
+<li>Custom CSS styling</li>
+<li>FontAwesome icon integration</li>
+<li>Google Analytics tracking</li>
+<li>Hypothesis commenting system</li>
+</ul>
+</section>
+<section id="development-environment" class="level2">
+<h2 class="anchored" data-anchor-id="development-environment">Development Environment</h2>
+<p><strong>Primary Setup</strong>: Nix flake-based development environment</p>
+<ul>
+<li>R with Quarto for content creation and rendering</li>
+<li>TeX Live for PDF generation</li>
+<li>Radian wrapper for enhanced R console</li>
+</ul>
+<p><strong>Environment Activation</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">direnv</span> allow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="common-commands" class="level2">
+<h2 class="anchored" data-anchor-id="common-commands">Common Commands</h2>
+<p><strong>Development Server</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Runs on port 4200 as configured in _quarto.yml</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Build Website</strong>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Render Specific Document</strong>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render index.qmd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render cv.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>CV PDF Generation</strong>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render cv.qmd <span class="at">--to</span> quarto-cv-pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="content-structure" class="level2">
+<h2 class="anchored" data-anchor-id="content-structure">Content Structure</h2>
+<p><strong>Homepage (<code>index.qmd</code>)</strong>:</p>
+<ul>
+<li>Uses Solana template with personal photo</li>
+<li>Tabbed content sections (Education, Experience, Teaching, Research, Contact)</li>
+<li>Social media and academic profile links</li>
+</ul>
+<p><strong>CV (<code>cv.qmd</code>)</strong>:</p>
+<ul>
+<li>Multiple bibliography sources using multibib extension</li>
+<li>Custom LaTeX formatting via quarto-cv extension</li>
+<li>Date floats for chronological information</li>
+<li>Dual output formats (HTML + PDF)</li>
+</ul>
+<p><strong>Blog Posts (<code>posts/</code>)</strong>:</p>
+<ul>
+<li>Individual folders per post with <code>index.qmd</code></li>
+<li>Shared metadata in <code>_metadata.yml</code></li>
+<li>Academic citations enabled</li>
+<li>Code execution with caching</li>
+<li>Fediverse creator attribution</li>
+</ul>
+<p><strong>Bibliography Management</strong>:</p>
+<ul>
+<li><code>main.bib</code> - Primary academic publications</li>
+<li><code>books.bib</code> - Book publications</li>
+<li><code>chapters.bib</code> - Book chapters</li>
+<li><code>talks.bib</code> - Conference presentations</li>
+<li>Used with <code>nocite: '@*'</code> to include all references</li>
+</ul>
+</section>
+<section id="extensions-and-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="extensions-and-dependencies">Extensions and Dependencies</h2>
+<p><strong>Quarto Extensions</strong>:</p>
+<ul>
+<li><code>mps9506/quarto-cv</code> - Academic CV formatting</li>
+<li><code>pandoc-ext/multibib</code> - Multiple bibliography support</li>
+<li><code>quarto-ext/fontawesome</code> - Icon support</li>
+</ul>
+<p><strong>R Packages</strong> (from flake.nix):</p>
+<ul>
+<li>tidyverse, knitr, rmarkdown - Core R workflow</li>
+<li>cranlogs, scholar - Academic metrics</li>
+<li>devtools, pak, renv - Development tools</li>
+</ul>
+<p><strong>TeX Packages</strong>:</p>
+<ul>
+<li>Custom scheme with academic fonts (EB Garamond)</li>
+<li>FontAwesome support for icons</li>
+<li>ORCID integration</li>
+</ul>
+</section>
+<section id="styling-and-customization" class="level2">
+<h2 class="anchored" data-anchor-id="styling-and-customization">Styling and Customization</h2>
+<p><strong>Themes</strong>:</p>
+<ul>
+<li>HTML: Bootstrap “journal” theme with custom CSS (<code>styles.css</code>, <code>cv.css</code>)</li>
+<li>Font size: 1.1em for improved readability</li>
+</ul>
+<p><strong>Academic Features</strong>:</p>
+<ul>
+<li>Citation support throughout</li>
+<li>Code syntax highlighting and copy buttons</li>
+<li>Table of contents for longer documents</li>
+<li>Creative Commons licensing footer</li>
+</ul>
+</section>
+<section id="content-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="content-guidelines">Content Guidelines</h2>
+<p><strong>Posts</strong>: Academic blog posts with R code examples, package announcements, and methodological discussions <strong>CV</strong>: Comprehensive academic record with automatic bibliography inclusion <strong>Homepage</strong>: Professional presentation with research focus and contact information</p>
+</section>
+<section id="file-organization" class="level2">
+<h2 class="anchored" data-anchor-id="file-organization">File Organization</h2>
+<ul>
+<li>Root-level <code>.qmd</code> files for main pages</li>
+<li><code>posts/</code> directory with subdirectories per post</li>
+<li><code>_extensions/</code> for Quarto extensions</li>
+<li>Bibliography files in root directory</li>
+<li>Assets (images, CSS) in root or alongside content</li>
+</ul>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ciUyQ3F0YWxyJTJDcXRraXQ=" data-listing-date-sort="1734843600000" data-listing-file-modified-sort="1750521053822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185">
-<div class="thumbnail"><a href="./posts/qtalr-release/index.html" class="no-external">
+</section>
+</section>
 
-<p class="card-img-top"><img src="posts/qtalr-release/cover.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/qtalr-release/index.html" class="no-external">Textbook and companion resources released</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cg=='); return false;">r</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cXRhbHI='); return false;">qtalr</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cXRraXQ='); return false;">qtkit</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/qtalr-release/index.html" class="no-external">
-<p>This posts announces the release of my textbook including the companion website and the <code>qtkit</code> R package.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/qtalr-release/index.html" class="no-external">
-<div class="listing-date">
-Dec 22, 2024
-</div>
-<div class="listing-author">
-Jerid Francom
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ciUyQ3ZzY29kZSUyQ2NvZGluZyUyQ3BhY2thZ2Vz" data-listing-date-sort="1693108800000" data-listing-file-modified-sort="1750521053822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1610">
-<div class="thumbnail"><a href="./posts/r-in-vscode/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/r-in-vscode/vscode-icon.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/r-in-vscode/index.html" class="no-external">R in Visual Studio Code</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cg=='); return false;">r</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dnNjb2Rl'); return false;">vscode</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kaW5n'); return false;">coding</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGFja2FnZXM='); return false;">packages</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/r-in-vscode/index.html" class="no-external">
-<p>This article describes how to set up R in Visual Studio Code.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/r-in-vscode/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2023
-</div>
-<div class="listing-author">
-Jerid Francom
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Y29ycG9yYSUyQ3NwYW5pc2glMkNwcm9qZWN0cw==" data-listing-date-sort="1400904000000" data-listing-file-modified-sort="1750521053800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89">
-<div class="thumbnail"><a href="./posts/actives-corpus-initial-release/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/actives-corpus-initial-release/activ-es.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/actives-corpus-initial-release/index.html" class="no-external">ACTIV-ES corpus: initial release</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29ycG9yYQ=='); return false;">corpora</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3BhbmlzaA=='); return false;">spanish</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvamVjdHM='); return false;">projects</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/actives-corpus-initial-release/index.html" class="no-external">
-<p>ACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/actives-corpus-initial-release/index.html" class="no-external">
-<div class="listing-date">
-May 24, 2014
-</div>
-<div class="listing-author">
-Jerid Francom
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
