@@ -12,7 +12,9 @@
       "Bash(quarto render:*)",
       "Bash(ls:*)",
       "Bash(touch:*)",
-      "Bash(open _site/cv.pdf)"
+      "Bash(open _site/cv.pdf)",
+      "mcp__zen__chat",
+      "mcp__zen__consensus"
     ],
     "deny": []
   }
