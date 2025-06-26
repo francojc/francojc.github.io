@@ -13,9 +13,10 @@
       "Bash(ls:*)",
       "Bash(touch:*)",
       "Bash(open _site/cv.pdf)",
-      "mcp__zen__chat",
-      "mcp__zen__consensus"
+      "mcp__zen__*",
+      "mcp__google_workspace__*"
     ],
     "deny": []
   }
 }
+
