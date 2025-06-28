@@ -14,9 +14,9 @@
       "Bash(touch:*)",
       "Bash(open _site/cv.pdf)",
       "mcp__zen__*",
-      "mcp__google_workspace__*"
+      "mcp__google_workspace__*",
+      "mcp__google_workspace__draft_gmail_message"
     ],
     "deny": []
   }
 }
-
