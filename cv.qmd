@@ -29,9 +29,9 @@ bibliography:
   chapters: assets/bibliography/chapters.bib
   main: assets/bibliography/main.bib
   talks: assets/bibliography/talks.bib
-# csl: apa-csv.csl
+csl: apa-cv.csl
 
-citeproc: false
+citeproc: true
 
 format:
   html:
