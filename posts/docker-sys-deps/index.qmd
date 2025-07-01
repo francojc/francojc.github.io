@@ -1,38 +1,559 @@
 ---
-title: "Adding system dependencies to a computing environment"
+title: "Managing System Dependencies in Dockerized R Environments"
 description: |
-  This post describes adventures in trying to use {renv} to manage system dependencies in a computing environment, only to find that system-level dependencies need to be installed manually, or more conveniently with {remotes}.
+  A practical guide to handling system-level dependencies when using Docker for R development. Learn the recommended Rocker Project approach and manual fallback strategies for packages like {sf} that require external libraries.
 date: "2024-04-09"
-categories: [r, docker, renv, computing-environments]
+categories: [r, docker, renv, rocker, computing-environments]
 draft: true
 ---
 
-Docker is great for creating reproducible computing environments for R development. However, it can be a bit of a pain to install system-level dependencies. This is where {renv} comes in. {renv} is a package that helps manage R packages and versions. However, it doesn't manage system-level dependencies.
+## The Problem: When R Packages Need More Than R
 
-`pak` is a package that helps manage system-level dependencies. However, it doesn't work with `renv`, easily. ....
-
-{remotes} has a function called `system_requirements()` that can be used to discover system-level dependencies. Once you know what the dependiencies are, you can
-
-- install them manually before running `renv::restore()` on your `renv.lock` file.
-- add the system-level dependencies to a `Dockerfile` and build a new image for your computing environment
-- copy a script into the `Dockerfile` that installs the system-level dependencies when the container is started.
-
-Looking into `remotes` and `renv` to manage system dependencies in a computing environment.
-
-First you need to know what OS and version you are using. You can find this out by running the following command in the terminal:
-
-```bash
-lsb_release -a
-```
+Imagine you're building a spatial analysis application in R using Docker. You've carefully set up your `renv.lock` file, created a Dockerfile, and you're ready to deploy. Then this happens:
 
 ```r
+# Inside your Docker container
+install.packages("sf")
+```
+
+```
+Installing package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/sf_1.0-14.tar.gz'
+Content type 'application/x-gzip' length 3531910 bytes (3.4 MB)
+==================================================
+downloaded 3.4 MB
+
+* installing *source* package 'sf' ...
+** package 'sf' successfully unpacked and MD5 sums checked
+** using staged installation
+configure: error: gdal-config not found or not executable.
+ERROR: configuration failed for package 'sf'
+```
+
+Frustrating, right? The {sf} package needs GDAL, GEOS, and PROJ libraries installed at the system level—something that `renv::restore()` can't handle. This is a common pain point when containerizing R applications.
+
+## Understanding the Dependency Landscape
+
+Before diving into solutions, let's clarify the two types of dependencies in R development:
+
+1. **R package dependencies**: Other R packages your code needs (handled beautifully by {renv})
+2. **System dependencies**: External libraries and tools that R packages compile against (like GDAL for {sf}, or libudunits2 for {units})
+
+While {renv} excels at managing R package dependencies and ensuring reproducibility, it stops at the R boundary. System dependencies require a different approach—and that's where Docker strategies come in.
+
+You might wonder about {pak}, which can detect and even install system dependencies. Unfortunately, {pak} and {renv} don't play nicely together yet, making it impractical for reproducible environments.
+
+## The Rocker Project: Your First Line of Defense
+
+Before diving into manual dependency management, let me introduce you to the best-kept secret in R containerization: the [Rocker Project](https://rocker-project.org/). Rocker provides expertly crafted Docker images with R pre-installed and, crucially, many common system dependencies already baked in.
+
+### Why Rocker Should Be Your Default Choice
+
+Rocker images solve most system dependency issues out of the box. Here's a simple Dockerfile using Rocker for a spatial analysis project:
+
+```dockerfile
+# Use a specific R version with Rocker
+FROM rocker/r-ver:4.3.1
+
+# Install additional R packages
+RUN R -e "install.packages(c('sf', 'terra', 'tidyverse', 'shiny'), repos='https://cloud.r-project.org')"
+
+# Copy your project files
+COPY . /app
+WORKDIR /app
+
+# Run your application
+CMD ["R", "-e", "shiny::runApp(port=3838, host='0.0.0.0')"]
+```
+
+That's it! The `rocker/r-ver` image includes the system libraries needed for {sf} and many other packages. No manual `apt-get` commands needed.
+
+### Rocker Image Variants
+
+Choose the right Rocker image for your needs:
+
+- **`rocker/r-ver`**: Base R with versioning (recommended starting point)
+- **`rocker/tidyverse`**: Includes tidyverse and common dependencies
+- **`rocker/geospatial`**: Pre-configured for spatial packages like {sf}, {terra}, {raster}
+- **`rocker/ml`**: Machine learning focused with TensorFlow/Keras support
+- **`rocker/shiny`**: Optimized for Shiny applications
+
+For our spatial analysis example, `rocker/geospatial` would be even better:
+
+```dockerfile
+FROM rocker/geospatial:4.3.1
+
+# Your packages are likely already installed!
+# Just add any additional ones you need
+RUN R -e "install.packages('plotly')"
+
+COPY . /app
+WORKDIR /app
+```
+
+## Manual Dependency Management: When Rocker Isn't Enough
+
+Sometimes you need packages that require system dependencies not included in Rocker images, or you're working with internal packages with unique requirements. That's when you need manual dependency management.
+
+### Understanding System Requirements with {remotes}
+
+The {remotes} package provides a helpful function to discover what system dependencies your R packages need:
+
+```r
+# Check what system packages are needed
 os <- "ubuntu"
 os_release <- "20.04"
+packages <- c("sf", "units", "lwgeom")
 
-packages <- c("xml2", "systemfonts")
-
-cli_deps <- remotes::system_requirements(os, os_release, package = packages)
-
-cli_deps |>
-  paste(collapse = "; ")
+sys_reqs <- remotes::system_requirements(os, os_release, package = packages)
+sys_reqs
+#> [1] "apt-get install -y libudunits2-dev"
+#> [2] "apt-get install -y libgdal-dev"
+#> [3] "apt-get install -y gdal-bin"
+#> [4] "apt-get install -y libgeos-dev"
+#> [5] "apt-get install -y libproj-dev"
 ```
+
+Note: This is a *diagnostic* tool—it tells you what you need, not how to install it in your Docker workflow.
+
+### Strategy 1: Direct Dockerfile Modification
+
+The most straightforward approach is adding system dependencies directly to your Dockerfile:
+
+```dockerfile
+FROM r-base:4.3.1
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libudunits2-dev \
+    libgdal-dev \
+    gdal-bin \
+    libgeos-dev \
+    libproj-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install R packages
+RUN R -e "install.packages(c('sf', 'units', 'renv'), repos='https://cloud.r-project.org')"
+
+# Copy renv files
+COPY renv.lock renv.lock
+COPY .Rprofile .Rprofile
+COPY renv/activate.R renv/activate.R
+
+# Restore packages from renv
+RUN R -e "renv::restore()"
+
+COPY . /app
+WORKDIR /app
+```
+
+**Pros**: Simple, explicit, version-controlled
+**Cons**: Requires manual updates, can lead to large images
+
+### Strategy 2: Script-Based Installation
+
+For more complex setups, use a separate installation script:
+
+```bash
+# install-deps.sh
+#!/bin/bash
+set -e
+
+echo "Installing system dependencies..."
+
+# Update package list
+apt-get update
+
+# Install dependencies with error handling
+DEPS="libudunits2-dev libgdal-dev gdal-bin libgeos-dev libproj-dev"
+
+for dep in $DEPS; do
+    echo "Installing $dep..."
+    apt-get install -y $dep || {
+        echo "Failed to install $dep"
+        exit 1
+    }
+done
+
+# Clean up
+rm -rf /var/lib/apt/lists/*
+echo "System dependencies installed successfully!"
+```
+
+Then in your Dockerfile:
+
+```dockerfile
+FROM r-base:4.3.1
+
+# Copy and run installation script
+COPY install-deps.sh /tmp/
+RUN chmod +x /tmp/install-deps.sh && /tmp/install-deps.sh
+
+# Continue with R package installation...
+```
+
+**Pros**: Reusable, better error handling, easier to maintain
+**Cons**: Additional file to manage
+
+### Strategy 3: Multi-Stage Builds for Optimization
+
+For production environments, use multi-stage builds to minimize image size:
+
+```dockerfile
+# Build stage
+FROM r-base:4.3.1 AS builder
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y \
+    libudunits2-dev \
+    libgdal-dev \
+    gdal-bin \
+    libgeos-dev \
+    libproj-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install R packages
+COPY renv.lock /tmp/
+RUN R -e "install.packages('renv')" && \
+    R -e "renv::restore(lockfile = '/tmp/renv.lock', library = '/usr/local/lib/R/site-library')"
+
+# Runtime stage
+FROM r-base:4.3.1
+
+# Install only runtime dependencies (smaller subset)
+RUN apt-get update && apt-get install -y \
+    libudunits2-0 \
+    libgdal30 \
+    libgeos-c1v5 \
+    libproj22 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy installed R packages from builder
+COPY --from=builder /usr/local/lib/R/site-library /usr/local/lib/R/site-library
+
+COPY . /app
+WORKDIR /app
+```
+
+**Pros**: Smaller final image, separates build and runtime dependencies
+**Cons**: More complex, requires understanding of package dependencies
+
+## Comparing Approaches: Making the Right Choice
+
+Here's a detailed comparison to help you choose the right approach:
+
+| Aspect | Rocker Images | Manual (Direct) | Manual (Script) | Manual (Multi-stage) |
+|--------|--------------|-----------------|-----------------|---------------------|
+| **Setup Time** | ⚡ Fastest | 🕐 Moderate | 🕐 Moderate | 🕑 Slower |
+| **Image Size** | 📦 ~1-2GB | 📦 ~1.5-3GB | 📦 ~1.5-3GB | 📦 ~0.8-1.5GB |
+| **Maintenance** | ✅ Low | ⚠️ High | 🟡 Medium | ⚠️ High |
+| **Flexibility** | 🟡 Medium | ✅ High | ✅ High | ✅ High |
+| **Build Time** | ⚡ 2-5 min | 🕐 5-10 min | 🕐 5-10 min | 🕑 10-15 min |
+| **Best For** | Standard packages | Custom needs | Complex setups | Production |
+| **Reproducibility** | ✅ Excellent | ✅ Good | ✅ Good | ✅ Excellent |
+
+### Decision Tree
+
+```
+Do you need packages covered by Rocker images?
+├─ Yes → Use Rocker (90% of cases)
+│   └─ rocker/geospatial for spatial
+│   └─ rocker/tidyverse for data science
+│   └─ rocker/ml for machine learning
+└─ No → Manual approach needed
+    ├─ Simple dependencies? → Direct Dockerfile
+    ├─ Complex setup? → Script-based
+    └─ Production deployment? → Multi-stage
+```
+
+## Complete Working Example: Spatial Analysis Dashboard
+
+Let's put it all together with a real-world example—a Shiny dashboard that visualizes spatial data using {sf} and {plotly}.
+
+### Project Structure
+
+```
+spatial-dashboard/
+├── app.R
+├── Dockerfile
+├── docker-compose.yml
+├── renv.lock
+├── .Rprofile
+└── renv/
+    └── activate.R
+```
+
+### The Shiny Application (app.R)
+
+```r
+library(shiny)
+library(sf)
+library(plotly)
+library(dplyr)
+
+# Load sample spatial data
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
+
+ui <- fluidPage(
+  titlePanel("North Carolina Counties Analysis"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("variable", "Select Variable:",
+                  choices = c("Area" = "AREA", "Population (1974)" = "BIR74", "SIDS (1974)" = "SID74"),
+                  selected = "AREA")
+    ),
+    mainPanel(
+      plotlyOutput("map", height = "600px")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$map <- renderPlotly({
+    # Create the plot
+    p <- plot_ly(
+      data = nc,
+      split = ~NAME,
+      color = ~get(input$variable),
+      colors = "Blues",
+      type = "scatter",
+      mode = "lines",
+      fill = "toself",
+      hoveron = "fills",
+      hovertemplate = paste0(
+        "<b>%{fullData.name}</b><br>",
+        input$variable, ": %{marker.color}<br>",
+        "<extra></extra>"
+      )
+    )
+    
+    p %>% layout(
+      title = paste("North Carolina Counties by", input$variable),
+      showlegend = FALSE,
+      xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
+    )
+  })
+}
+
+shinyApp(ui, server)
+```
+
+### Option 1: Using Rocker (Recommended)
+
+```dockerfile
+# Dockerfile.rocker
+FROM rocker/geospatial:4.3.1
+
+# Install additional packages
+RUN R -e "install.packages(c('plotly', 'shiny'), repos='https://cloud.r-project.org')"
+
+# Copy app files
+COPY app.R /srv/shiny-server/
+WORKDIR /srv/shiny-server/
+
+# Expose port
+EXPOSE 3838
+
+# Run app
+CMD ["R", "-e", "shiny::runApp(host='0.0.0.0', port=3838)"]
+```
+
+### Option 2: Manual Approach with renv
+
+```dockerfile
+# Dockerfile.manual
+FROM r-base:4.3.1
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libudunits2-dev \
+    libgdal-dev \
+    gdal-bin \
+    libgeos-dev \
+    libproj-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install renv
+RUN R -e "install.packages('renv', repos='https://cloud.r-project.org')"
+
+# Copy renv files first (better caching)
+COPY renv.lock renv.lock
+COPY .Rprofile .Rprofile
+COPY renv/activate.R renv/activate.R
+
+# Restore R packages
+RUN R -e "renv::restore()"
+
+# Copy application
+COPY app.R /srv/shiny-server/
+WORKDIR /srv/shiny-server/
+
+EXPOSE 3838
+CMD ["R", "-e", "shiny::runApp(host='0.0.0.0', port=3838)"]
+```
+
+### Docker Compose for Easy Deployment
+
+```yaml
+# docker-compose.yml
+version: '3.8'
+
+services:
+  shiny:
+    build: 
+      context: .
+      dockerfile: Dockerfile.rocker  # or Dockerfile.manual
+    ports:
+      - "3838:3838"
+    restart: unless-stopped
+    environment:
+      - SHINY_LOG_LEVEL=INFO
+    volumes:
+      - ./app.R:/srv/shiny-server/app.R  # For development only
+```
+
+### Running the Application
+
+```bash
+# Using Docker Compose
+docker-compose up -d
+
+# Or directly with Docker
+docker build -t spatial-dashboard .
+docker run -p 3838:3838 spatial-dashboard
+
+# Access at http://localhost:3838
+```
+
+## Best Practices and Recommendations
+
+Based on experience managing R environments in Docker, here are key practices to follow:
+
+### 1. Always Use Versioned Base Images
+
+```dockerfile
+# ✅ Good: Specific, reproducible
+FROM rocker/r-ver:4.3.1
+
+# ❌ Bad: Unpredictable, breaks over time
+FROM rocker/r-ver:latest
+```
+
+### 2. Layer Your Dependencies Strategically
+
+```dockerfile
+# System dependencies first (rarely change)
+RUN apt-get update && apt-get install -y \
+    libgdal-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# renv setup next (changes occasionally)
+COPY renv.lock renv.lock
+COPY .Rprofile .Rprofile
+COPY renv/activate.R renv/activate.R
+RUN R -e "renv::restore()"
+
+# Application code last (changes frequently)
+COPY . /app
+```
+
+### 3. Use .dockerignore for Efficiency
+
+```dockerignore
+# .dockerignore
+.git
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+*.Rproj
+README.md
+docs/
+```
+
+### 4. Document System Dependencies
+
+Create a clear dependency manifest in your README:
+
+```markdown
+## System Dependencies
+
+This project requires the following system libraries:
+- GDAL 3.0+ (for spatial operations)
+- PROJ 6.0+ (for coordinate transformations)
+- GEOS 3.8+ (for geometric operations)
+
+Using `rocker/geospatial:4.3.1` includes all required dependencies.
+```
+
+### 5. Optimize for Production
+
+```dockerfile
+# Multi-stage build for production
+FROM rocker/geospatial:4.3.1 AS base
+
+# Development stage
+FROM base AS development
+RUN R -e "install.packages('devtools')"
+COPY . /app
+
+# Production stage
+FROM base AS production
+COPY renv.lock /tmp/
+RUN R -e "renv::restore(lockfile='/tmp/renv.lock')"
+COPY app/ /srv/shiny-server/
+```
+
+### 6. Health Checks and Monitoring
+
+```dockerfile
+# Add health check for web apps
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:3838/ || exit 1
+```
+
+## Conclusion: Start with Rocker, Fall Back to Manual
+
+Managing system dependencies in Docker doesn't have to be painful. Here's your action plan:
+
+### The 90% Solution: Use Rocker
+
+For most R containerization needs, the Rocker Project provides the fastest path to success:
+
+1. **Start with `rocker/r-ver`** for basic R applications
+2. **Use `rocker/geospatial`** for spatial analysis ({sf}, {terra}, {raster})
+3. **Try `rocker/tidyverse`** for data science workflows
+4. **Consider `rocker/ml`** for machine learning applications
+
+### When to Go Manual
+
+Resort to manual dependency management only when:
+- You need packages with dependencies not covered by Rocker
+- You're working with proprietary or internal packages
+- You need specific versions of system libraries
+- You're optimizing for minimal image size in production
+
+### Key Takeaways
+
+1. **Rocker images solve 90% of system dependency problems** out of the box
+2. **Use `remotes::system_requirements()`** as a diagnostic tool when going manual
+3. **Always use versioned base images** for reproducibility
+4. **Layer your Dockerfile strategically** for better caching
+5. **Document your system dependencies** for future you and your team
+
+### Resources and Next Steps
+
+- **[Rocker Project Documentation](https://rocker-project.org/)**: Comprehensive guide to available images
+- **[renv Documentation](https://rstudio.github.io/renv/)**: Best practices for R package management
+- **[Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)**: General Docker optimization techniques
+
+Have questions or run into dependency issues not covered here? The R community is incredibly helpful—consider reaching out on [RStudio Community](https://community.rstudio.com/) or [Stack Overflow](https://stackoverflow.com/questions/tagged/r+docker) with your specific use case.
+
+What system dependency challenges have you encountered in your R Docker workflows? I'd love to hear about your experiences and solutions in the comments below.
