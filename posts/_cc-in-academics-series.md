@@ -86,6 +86,7 @@ What is agentic AI, why terminal-based interfaces matter for academics
 
 ### Foundation Concepts
 
+
 - **What makes Claude "agentic":** Proactive suggestions, tool use, multi-step reasoning
 - **Terminal vs. web interface:** Benefits of CLI for academic workflows
 - **Privacy and data handling:** How conversations are processed and stored
@@ -96,9 +97,11 @@ What is agentic AI, why terminal-based interfaces matter for academics
 
 ### Foundation Focus
 
+
 Installation, configuration, memory basics
 
 ### Value Anchor Options
+
 
 **Option A: Personal Research Memory Bank**
 
@@ -114,18 +117,21 @@ Installation, configuration, memory basics
 - *Win:* Consistent academic writing process automation
 
 ### Claude Code Skills
+
 - **Configuration management:** `CLAUDE.md` setup for project-specific behavior
 - **Environment variables:** Setting up API keys, default preferences
 - **File system navigation:** Understanding working directories, file paths
 - **Memory management:** Creating persistent research contexts across sessions
 
 ### Agentic AI Practices
+
 - **Workspace customization:** Tailoring AI behavior to research needs
 - **Template creation:** Reusable prompt structures for common tasks
 - **Workflow automation:** Setting up repeatable research processes
 - **Context persistence:** Maintaining research state across multiple sessions
 
 ### Technical Foundations
+
 - **CLI basics:** Command structure, flags, help systems
 - **File operations:** Reading, writing, organizing research files
 - **Project organization:** Structuring academic work for AI collaboration
@@ -135,9 +141,11 @@ Installation, configuration, memory basics
 ## Post 3: "Commands and Conversations"
 
 ### Foundation Focus
+
 Core commands, prompt engineering, file operations
 
 ### Value Anchor Options
+
 
 **Option A: Bibliography Management Workflow**
 - Use file operations to organize citations, format references, and identify missing sources
@@ -152,18 +160,21 @@ Core commands, prompt engineering, file operations
 - *Win:* Clean, organized research data pipeline
 
 ### Claude Code Skills
+
 - **Core commands:** `/help`, `/clear`, `/save`, `/load`, `/edit`
 - **File manipulation:** Reading, editing, creating documents through Claude
 - **Batch operations:** Processing multiple files or tasks efficiently
 - **Conversation management:** Saving, loading, and organizing chat histories
 
 ### Agentic AI Practices
+
 - **Task decomposition:** Breaking complex academic tasks into AI-manageable steps
 - **Quality control:** Reviewing and refining AI outputs
 - **Iterative improvement:** Using feedback loops to enhance results
 - **Process documentation:** Creating reproducible academic workflows
 
 ### Advanced Interactions
+
 - **Multi-modal input:** Text, files, and structured data
 - **Chain of thought:** Following AI reasoning through complex tasks
 - **Error handling:** Troubleshooting and refining when AI misunderstands
@@ -173,9 +184,11 @@ Core commands, prompt engineering, file operations
 ## Post 4: "Extending Your Assistant's Capabilities"
 
 ### Foundation Focus
+
 MCP servers, tools, integrations
 
 ### Value Anchor Options
+
 
 **Option A: Zotero Integration for Literature Reviews**
 - Connect Claude to your Zotero library → Automated citation pulling, thematic analysis, and research gap identification
@@ -190,18 +203,21 @@ MCP servers, tools, integrations
 - *Win:* Streamlined academic research pipeline
 
 ### Claude Code Skills
+
 - **MCP (Model Context Protocol) setup:** Installing and configuring servers
 - **Tool integration:** Connecting external services (Zotero, GitHub, databases)
 - **Custom commands:** Creating domain-specific shortcuts and workflows
 - **API management:** Understanding tokens, rate limits, cost optimization
 
 ### Agentic AI Practices
+
 - **Ecosystem thinking:** Building connected research toolchains
 - **Automation design:** Creating self-executing research processes
 - **Integration strategy:** Connecting AI to existing academic workflows
 - **Scalability planning:** Building systems that grow with research needs
 
 ### Advanced Concepts
+
 - **Tool use:** How Claude decides when and how to use external tools
 - **Security considerations:** API keys, data access, institutional compliance
 - **Troubleshooting:** Debugging integration issues and conflicts
