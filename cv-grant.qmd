@@ -1,10 +1,10 @@
 ---
 title: Curriculum Vitae
-date: today 
+date: today
 date-format: "MMM. d, YYYY"
 updated: true
 # UPDATE this date when you update the CV
-rdateformat: "Jun. 30, 2025"
+rdateformat: "Feb. 13, 2025"
 
 author: "Jerid C. Francom"
 address: "Winston-Salem, NC"
