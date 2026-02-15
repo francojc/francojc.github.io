@@ -235,69 +235,41 @@
     "href": "CLAUDE.html",
     "title": "CLAUDE.md",
     "section": "",
-    "text": "This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.\n\n\nThis is Dr. Jerid Francom’s academic website built with Quarto. It serves as a personal homepage, blog, and CV for a linguistics professor specializing in corpus linguistics, computational linguistics, and Hispanic linguistics.\n\n\n\nWebsite Type: Quarto website project with academic focus Core Structure:\n\nindex.qmd - Homepage with tabbed layout (Education, Experience, Teaching, Research, Contact)\ncv.qmd - Academic CV with multiple bibliography sources and PDF generation\nposts/ - Blog posts directory with individual post folders\n_extensions/ - Quarto extensions for CV formatting and FontAwesome icons\nBibliography files: main.bib, books.bib, chapters.bib, talks.bib\n\nKey Features:\n\nMulti-format CV generation (HTML + PDF via LaTeX)\nBlog posts with academic citations\nCustom CSS styling\nFontAwesome icon integration\nGoogle Analytics tracking\nHypothesis commenting system\n\n\n\n\nPrimary Setup: Nix flake-based development environment\n\nR with Quarto for content creation and rendering\nTeX Live for PDF generation\nRadian wrapper for enhanced R console\n\nEnvironment Activation:\ndirenv allow\n\n\n\nDevelopment Server:\nquarto preview\n# Runs on port 4200 as configured in _quarto.yml\nBuild Website:\nquarto render\nRender Specific Document:\nquarto render index.qmd\nquarto render cv.qmd\nCV PDF Generation:\nquarto render cv.qmd --to quarto-cv-pdf\n\n\n\nHomepage (index.qmd):\n\nUses Solana template with personal photo\nTabbed content sections (Education, Experience, Teaching, Research, Contact)\nSocial media and academic profile links\n\nCV (cv.qmd):\n\nMultiple bibliography sources using multibib extension\nCustom LaTeX formatting via quarto-cv extension\nDate floats for chronological information\nDual output formats (HTML + PDF)\n\nBlog Posts (posts/):\n\nIndividual folders per post with index.qmd\nShared metadata in _metadata.yml\nAcademic citations enabled\nCode execution with caching\nFediverse creator attribution\n\nBibliography Management:\n\nmain.bib - Primary academic publications\nbooks.bib - Book publications\nchapters.bib - Book chapters\ntalks.bib - Conference presentations\nUsed with nocite: '@*' to include all references\n\n\n\n\nQuarto Extensions:\n\nmps9506/quarto-cv - Academic CV formatting\npandoc-ext/multibib - Multiple bibliography support\nquarto-ext/fontawesome - Icon support\n\nR Packages (from flake.nix):\n\ntidyverse, knitr, rmarkdown - Core R workflow\ncranlogs, scholar - Academic metrics\ndevtools, pak, renv - Development tools\n\nTeX Packages:\n\nCustom scheme with academic fonts (EB Garamond)\nFontAwesome support for icons\nORCID integration\n\n\n\n\nThemes:\n\nHTML: Bootstrap “journal” theme with custom CSS (styles.css, cv.css)\nFont size: 1.1em for improved readability\n\nAcademic Features:\n\nCitation support throughout\nCode syntax highlighting and copy buttons\nTable of contents for longer documents\nCreative Commons licensing footer\n\n\n\n\nPosts: Academic blog posts with R code examples, package announcements, and methodological discussions CV: Comprehensive academic record with automatic bibliography inclusion Homepage: Professional presentation with research focus and contact information\n\n\n\n\nRoot-level .qmd files for main pages\nposts/ directory with subdirectories per post\n_extensions/ for Quarto extensions\nBibliography files in root directory\nAssets (images, CSS) in root or alongside content"
+    "text": "Academic website for Dr. Jerid Francom, built with Quarto. Homepage, blog, and CV for a linguistics professor (corpus linguistics, computational linguistics, Hispanic linguistics).\n\n\n# Environment setup (Nix flake — .envrc is gitignored)\necho \"use flake .\" &gt; .envrc && direnv allow\n\n# Development server (port 4200, configured in _quarto.yml)\nquarto preview\n\n# Build full site\nquarto render\n\n# CV PDF generation (uses lualatex)\nquarto render cv.qmd --to quarto-cv-pdf\n\n\n\nindex.qmd                  # Homepage — Solana template, tabbed layout\ncv.qmd                     # Academic CV — HTML + PDF via quarto-cv\ncv-grant.qmd               # Grants-focused CV variant\nposts.qmd                  # Blog listing page\nposts/                     # Blog posts — one folder per post with index.qmd\n  _metadata.yml            # Shared post metadata (citations, caching, fediverse)\n_quarto.yml                # Site config (theme, navbar, analytics, hypothesis)\n_extensions/               # Quarto extensions\nassets/\n  bibliography/            # main.bib, books.bib, chapters.bib, talks.bib\n  css/                     # styles.css, cv.css\n  images/                  # Site images\napa-cv.csl                 # Custom APA citation style (descending date order)\nflake.nix                  # Nix dev environment (R packages, TeX Live, tools)\n\n\n\n\nmps9506/quarto-cv — Academic CV formatting (HTML + PDF)\npandoc-ext/multibib — Multiple bibliography support; renders into divs with id=\"refs-&lt;name&gt;\" pattern (e.g., refs-main, refs-books)\nquarto-ext/fontawesome — Icon shortcodes: \n\n\n\n\nBibliography files live in assets/bibliography/. The CV uses nocite: '@*' to include all entries. Citation style is apa-cv.csl (APA format, sorted by descending date). The multibib filter produces separate reference divs per .bib file — place a div with the matching id=\"refs-&lt;name&gt;\" where each section should render.\n\n\n\n\ncv.qmd — Full academic CV with sections for publications, books, chapters, talks\ncv-grant.qmd — Grants-focused variant\nPDF output uses lualatex engine via the quarto-cv extension\nDate floats for chronological positioning in LaTeX output"
   },
   {
-    "objectID": "CLAUDE.html#project-overview",
-    "href": "CLAUDE.html#project-overview",
+    "objectID": "CLAUDE.html#commands",
+    "href": "CLAUDE.html#commands",
     "title": "CLAUDE.md",
     "section": "",
-    "text": "This is Dr. Jerid Francom’s academic website built with Quarto. It serves as a personal homepage, blog, and CV for a linguistics professor specializing in corpus linguistics, computational linguistics, and Hispanic linguistics."
+    "text": "# Environment setup (Nix flake — .envrc is gitignored)\necho \"use flake .\" &gt; .envrc && direnv allow\n\n# Development server (port 4200, configured in _quarto.yml)\nquarto preview\n\n# Build full site\nquarto render\n\n# CV PDF generation (uses lualatex)\nquarto render cv.qmd --to quarto-cv-pdf"
   },
   {
     "objectID": "CLAUDE.html#architecture",
     "href": "CLAUDE.html#architecture",
     "title": "CLAUDE.md",
     "section": "",
-    "text": "Website Type: Quarto website project with academic focus Core Structure:\n\nindex.qmd - Homepage with tabbed layout (Education, Experience, Teaching, Research, Contact)\ncv.qmd - Academic CV with multiple bibliography sources and PDF generation\nposts/ - Blog posts directory with individual post folders\n_extensions/ - Quarto extensions for CV formatting and FontAwesome icons\nBibliography files: main.bib, books.bib, chapters.bib, talks.bib\n\nKey Features:\n\nMulti-format CV generation (HTML + PDF via LaTeX)\nBlog posts with academic citations\nCustom CSS styling\nFontAwesome icon integration\nGoogle Analytics tracking\nHypothesis commenting system"
+    "text": "index.qmd                  # Homepage — Solana template, tabbed layout\ncv.qmd                     # Academic CV — HTML + PDF via quarto-cv\ncv-grant.qmd               # Grants-focused CV variant\nposts.qmd                  # Blog listing page\nposts/                     # Blog posts — one folder per post with index.qmd\n  _metadata.yml            # Shared post metadata (citations, caching, fediverse)\n_quarto.yml                # Site config (theme, navbar, analytics, hypothesis)\n_extensions/               # Quarto extensions\nassets/\n  bibliography/            # main.bib, books.bib, chapters.bib, talks.bib\n  css/                     # styles.css, cv.css\n  images/                  # Site images\napa-cv.csl                 # Custom APA citation style (descending date order)\nflake.nix                  # Nix dev environment (R packages, TeX Live, tools)"
   },
   {
-    "objectID": "CLAUDE.html#development-environment",
-    "href": "CLAUDE.html#development-environment",
+    "objectID": "CLAUDE.html#extensions",
+    "href": "CLAUDE.html#extensions",
     "title": "CLAUDE.md",
     "section": "",
-    "text": "Primary Setup: Nix flake-based development environment\n\nR with Quarto for content creation and rendering\nTeX Live for PDF generation\nRadian wrapper for enhanced R console\n\nEnvironment Activation:\ndirenv allow"
+    "text": "mps9506/quarto-cv — Academic CV formatting (HTML + PDF)\npandoc-ext/multibib — Multiple bibliography support; renders into divs with id=\"refs-&lt;name&gt;\" pattern (e.g., refs-main, refs-books)\nquarto-ext/fontawesome — Icon shortcodes:"
   },
   {
-    "objectID": "CLAUDE.html#common-commands",
-    "href": "CLAUDE.html#common-commands",
+    "objectID": "CLAUDE.html#bibliography",
+    "href": "CLAUDE.html#bibliography",
     "title": "CLAUDE.md",
     "section": "",
-    "text": "Development Server:\nquarto preview\n# Runs on port 4200 as configured in _quarto.yml\nBuild Website:\nquarto render\nRender Specific Document:\nquarto render index.qmd\nquarto render cv.qmd\nCV PDF Generation:\nquarto render cv.qmd --to quarto-cv-pdf"
+    "text": "Bibliography files live in assets/bibliography/. The CV uses nocite: '@*' to include all entries. Citation style is apa-cv.csl (APA format, sorted by descending date). The multibib filter produces separate reference divs per .bib file — place a div with the matching id=\"refs-&lt;name&gt;\" where each section should render."
   },
   {
-    "objectID": "CLAUDE.html#content-structure",
-    "href": "CLAUDE.html#content-structure",
+    "objectID": "CLAUDE.html#cv-specifics",
+    "href": "CLAUDE.html#cv-specifics",
     "title": "CLAUDE.md",
     "section": "",
-    "text": "Homepage (index.qmd):\n\nUses Solana template with personal photo\nTabbed content sections (Education, Experience, Teaching, Research, Contact)\nSocial media and academic profile links\n\nCV (cv.qmd):\n\nMultiple bibliography sources using multibib extension\nCustom LaTeX formatting via quarto-cv extension\nDate floats for chronological information\nDual output formats (HTML + PDF)\n\nBlog Posts (posts/):\n\nIndividual folders per post with index.qmd\nShared metadata in _metadata.yml\nAcademic citations enabled\nCode execution with caching\nFediverse creator attribution\n\nBibliography Management:\n\nmain.bib - Primary academic publications\nbooks.bib - Book publications\nchapters.bib - Book chapters\ntalks.bib - Conference presentations\nUsed with nocite: '@*' to include all references"
-  },
-  {
-    "objectID": "CLAUDE.html#extensions-and-dependencies",
-    "href": "CLAUDE.html#extensions-and-dependencies",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "Quarto Extensions:\n\nmps9506/quarto-cv - Academic CV formatting\npandoc-ext/multibib - Multiple bibliography support\nquarto-ext/fontawesome - Icon support\n\nR Packages (from flake.nix):\n\ntidyverse, knitr, rmarkdown - Core R workflow\ncranlogs, scholar - Academic metrics\ndevtools, pak, renv - Development tools\n\nTeX Packages:\n\nCustom scheme with academic fonts (EB Garamond)\nFontAwesome support for icons\nORCID integration"
-  },
-  {
-    "objectID": "CLAUDE.html#styling-and-customization",
-    "href": "CLAUDE.html#styling-and-customization",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "Themes:\n\nHTML: Bootstrap “journal” theme with custom CSS (styles.css, cv.css)\nFont size: 1.1em for improved readability\n\nAcademic Features:\n\nCitation support throughout\nCode syntax highlighting and copy buttons\nTable of contents for longer documents\nCreative Commons licensing footer"
-  },
-  {
-    "objectID": "CLAUDE.html#content-guidelines",
-    "href": "CLAUDE.html#content-guidelines",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "Posts: Academic blog posts with R code examples, package announcements, and methodological discussions CV: Comprehensive academic record with automatic bibliography inclusion Homepage: Professional presentation with research focus and contact information"
-  },
-  {
-    "objectID": "CLAUDE.html#file-organization",
-    "href": "CLAUDE.html#file-organization",
-    "title": "CLAUDE.md",
-    "section": "",
-    "text": "Root-level .qmd files for main pages\nposts/ directory with subdirectories per post\n_extensions/ for Quarto extensions\nBibliography files in root directory\nAssets (images, CSS) in root or alongside content"
+    "text": "cv.qmd — Full academic CV with sections for publications, books, chapters, talks\ncv-grant.qmd — Grants-focused variant\nPDF output uses lualatex engine via the quarto-cv extension\nDate floats for chronological positioning in LaTeX output"
   }
 ]

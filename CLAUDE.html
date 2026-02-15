@@ -76,6 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-50d1171c2578c1293445aa0b4d7f7d5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,15 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-C6T0ESR1RW"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
-</script>
 <script type="application/json" class="js-hypothesis-config">
 {
   "theme": "clean",
@@ -123,6 +116,7 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
     document.body.classList.add('hypothesis-enabled');
   });
 </script>
+<script data-goatcounter="https://underline.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
 
 
 <link rel="stylesheet" href="assets/css/styles.css">
@@ -175,15 +169,11 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
   <ul>
   <li><a href="#claude.md" id="toc-claude.md" class="nav-link active" data-scroll-target="#claude.md">CLAUDE.md</a>
   <ul class="collapse">
-  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview">Project Overview</a></li>
+  <li><a href="#commands" id="toc-commands" class="nav-link" data-scroll-target="#commands">Commands</a></li>
   <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a></li>
-  <li><a href="#development-environment" id="toc-development-environment" class="nav-link" data-scroll-target="#development-environment">Development Environment</a></li>
-  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands">Common Commands</a></li>
-  <li><a href="#content-structure" id="toc-content-structure" class="nav-link" data-scroll-target="#content-structure">Content Structure</a></li>
-  <li><a href="#extensions-and-dependencies" id="toc-extensions-and-dependencies" class="nav-link" data-scroll-target="#extensions-and-dependencies">Extensions and Dependencies</a></li>
-  <li><a href="#styling-and-customization" id="toc-styling-and-customization" class="nav-link" data-scroll-target="#styling-and-customization">Styling and Customization</a></li>
-  <li><a href="#content-guidelines" id="toc-content-guidelines" class="nav-link" data-scroll-target="#content-guidelines">Content Guidelines</a></li>
-  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization">File Organization</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography">Bibliography</a></li>
+  <li><a href="#cv-specifics" id="toc-cv-specifics" class="nav-link" data-scroll-target="#cv-specifics">CV specifics</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -196,135 +186,57 @@ gtag('config', 'G-C6T0ESR1RW', { 'anonymize_ip': true});
 
 <section id="claude.md" class="level1">
 <h1>CLAUDE.md</h1>
-<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
-<section id="project-overview" class="level2">
-<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
-<p>This is Dr.&nbsp;Jerid Francom’s academic website built with Quarto. It serves as a personal homepage, blog, and CV for a linguistics professor specializing in corpus linguistics, computational linguistics, and Hispanic linguistics.</p>
+<p>Academic website for Dr.&nbsp;Jerid Francom, built with Quarto. Homepage, blog, and CV for a linguistics professor (corpus linguistics, computational linguistics, Hispanic linguistics).</p>
+<section id="commands" class="level2">
+<h2 class="anchored" data-anchor-id="commands">Commands</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Environment setup (Nix flake — .envrc is gitignored)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"use flake ."</span> <span class="op">&gt;</span> .envrc <span class="kw">&amp;&amp;</span> <span class="ex">direnv</span> allow</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Development server (port 4200, configured in _quarto.yml)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Build full site</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># CV PDF generation (uses lualatex)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render cv.qmd <span class="at">--to</span> quarto-cv-pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="architecture" class="level2">
 <h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
-<p><strong>Website Type</strong>: Quarto website project with academic focus <strong>Core Structure</strong>:</p>
+<pre><code>index.qmd                  # Homepage — Solana template, tabbed layout
+cv.qmd                     # Academic CV — HTML + PDF via quarto-cv
+cv-grant.qmd               # Grants-focused CV variant
+posts.qmd                  # Blog listing page
+posts/                     # Blog posts — one folder per post with index.qmd
+  _metadata.yml            # Shared post metadata (citations, caching, fediverse)
+_quarto.yml                # Site config (theme, navbar, analytics, hypothesis)
+_extensions/               # Quarto extensions
+assets/
+  bibliography/            # main.bib, books.bib, chapters.bib, talks.bib
+  css/                     # styles.css, cv.css
+  images/                  # Site images
+apa-cv.csl                 # Custom APA citation style (descending date order)
+flake.nix                  # Nix dev environment (R packages, TeX Live, tools)</code></pre>
+</section>
+<section id="extensions" class="level2">
+<h2 class="anchored" data-anchor-id="extensions">Extensions</h2>
 <ul>
-<li><code>index.qmd</code> - Homepage with tabbed layout (Education, Experience, Teaching, Research, Contact)</li>
-<li><code>cv.qmd</code> - Academic CV with multiple bibliography sources and PDF generation</li>
-<li><code>posts/</code> - Blog posts directory with individual post folders</li>
-<li><code>_extensions/</code> - Quarto extensions for CV formatting and FontAwesome icons</li>
-<li>Bibliography files: <code>main.bib</code>, <code>books.bib</code>, <code>chapters.bib</code>, <code>talks.bib</code></li>
-</ul>
-<p><strong>Key Features</strong>:</p>
-<ul>
-<li>Multi-format CV generation (HTML + PDF via LaTeX)</li>
-<li>Blog posts with academic citations</li>
-<li>Custom CSS styling</li>
-<li>FontAwesome icon integration</li>
-<li>Google Analytics tracking</li>
-<li>Hypothesis commenting system</li>
+<li><code>mps9506/quarto-cv</code> — Academic CV formatting (HTML + PDF)</li>
+<li><code>pandoc-ext/multibib</code> — Multiple bibliography support; renders into divs with <code>id="refs-&lt;name&gt;"</code> pattern (e.g., <code>refs-main</code>, <code>refs-books</code>)</li>
+<li><code>quarto-ext/fontawesome</code> — Icon shortcodes: <code></code></li>
 </ul>
 </section>
-<section id="development-environment" class="level2">
-<h2 class="anchored" data-anchor-id="development-environment">Development Environment</h2>
-<p><strong>Primary Setup</strong>: Nix flake-based development environment</p>
-<ul>
-<li>R with Quarto for content creation and rendering</li>
-<li>TeX Live for PDF generation</li>
-<li>Radian wrapper for enhanced R console</li>
-</ul>
-<p><strong>Environment Activation</strong>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">direnv</span> allow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">Bibliography</h2>
+<p>Bibliography files live in <code>assets/bibliography/</code>. The CV uses <code>nocite: '@*'</code> to include all entries. Citation style is <code>apa-cv.csl</code> (APA format, sorted by descending date). The multibib filter produces separate reference divs per <code>.bib</code> file — place a div with the matching <code>id="refs-&lt;name&gt;"</code> where each section should render.</p>
 </section>
-<section id="common-commands" class="level2">
-<h2 class="anchored" data-anchor-id="common-commands">Common Commands</h2>
-<p><strong>Development Server</strong>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Runs on port 4200 as configured in _quarto.yml</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Build Website</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Render Specific Document</strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render index.qmd</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render cv.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>CV PDF Generation</strong>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render cv.qmd <span class="at">--to</span> quarto-cv-pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="content-structure" class="level2">
-<h2 class="anchored" data-anchor-id="content-structure">Content Structure</h2>
-<p><strong>Homepage (<code>index.qmd</code>)</strong>:</p>
+<section id="cv-specifics" class="level2">
+<h2 class="anchored" data-anchor-id="cv-specifics">CV specifics</h2>
 <ul>
-<li>Uses Solana template with personal photo</li>
-<li>Tabbed content sections (Education, Experience, Teaching, Research, Contact)</li>
-<li>Social media and academic profile links</li>
-</ul>
-<p><strong>CV (<code>cv.qmd</code>)</strong>:</p>
-<ul>
-<li>Multiple bibliography sources using multibib extension</li>
-<li>Custom LaTeX formatting via quarto-cv extension</li>
-<li>Date floats for chronological information</li>
-<li>Dual output formats (HTML + PDF)</li>
-</ul>
-<p><strong>Blog Posts (<code>posts/</code>)</strong>:</p>
-<ul>
-<li>Individual folders per post with <code>index.qmd</code></li>
-<li>Shared metadata in <code>_metadata.yml</code></li>
-<li>Academic citations enabled</li>
-<li>Code execution with caching</li>
-<li>Fediverse creator attribution</li>
-</ul>
-<p><strong>Bibliography Management</strong>:</p>
-<ul>
-<li><code>main.bib</code> - Primary academic publications</li>
-<li><code>books.bib</code> - Book publications</li>
-<li><code>chapters.bib</code> - Book chapters</li>
-<li><code>talks.bib</code> - Conference presentations</li>
-<li>Used with <code>nocite: '@*'</code> to include all references</li>
-</ul>
-</section>
-<section id="extensions-and-dependencies" class="level2">
-<h2 class="anchored" data-anchor-id="extensions-and-dependencies">Extensions and Dependencies</h2>
-<p><strong>Quarto Extensions</strong>:</p>
-<ul>
-<li><code>mps9506/quarto-cv</code> - Academic CV formatting</li>
-<li><code>pandoc-ext/multibib</code> - Multiple bibliography support</li>
-<li><code>quarto-ext/fontawesome</code> - Icon support</li>
-</ul>
-<p><strong>R Packages</strong> (from flake.nix):</p>
-<ul>
-<li>tidyverse, knitr, rmarkdown - Core R workflow</li>
-<li>cranlogs, scholar - Academic metrics</li>
-<li>devtools, pak, renv - Development tools</li>
-</ul>
-<p><strong>TeX Packages</strong>:</p>
-<ul>
-<li>Custom scheme with academic fonts (EB Garamond)</li>
-<li>FontAwesome support for icons</li>
-<li>ORCID integration</li>
-</ul>
-</section>
-<section id="styling-and-customization" class="level2">
-<h2 class="anchored" data-anchor-id="styling-and-customization">Styling and Customization</h2>
-<p><strong>Themes</strong>:</p>
-<ul>
-<li>HTML: Bootstrap “journal” theme with custom CSS (<code>styles.css</code>, <code>cv.css</code>)</li>
-<li>Font size: 1.1em for improved readability</li>
-</ul>
-<p><strong>Academic Features</strong>:</p>
-<ul>
-<li>Citation support throughout</li>
-<li>Code syntax highlighting and copy buttons</li>
-<li>Table of contents for longer documents</li>
-<li>Creative Commons licensing footer</li>
-</ul>
-</section>
-<section id="content-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="content-guidelines">Content Guidelines</h2>
-<p><strong>Posts</strong>: Academic blog posts with R code examples, package announcements, and methodological discussions <strong>CV</strong>: Comprehensive academic record with automatic bibliography inclusion <strong>Homepage</strong>: Professional presentation with research focus and contact information</p>
-</section>
-<section id="file-organization" class="level2">
-<h2 class="anchored" data-anchor-id="file-organization">File Organization</h2>
-<ul>
-<li>Root-level <code>.qmd</code> files for main pages</li>
-<li><code>posts/</code> directory with subdirectories per post</li>
-<li><code>_extensions/</code> for Quarto extensions</li>
-<li>Bibliography files in root directory</li>
-<li>Assets (images, CSS) in root or alongside content</li>
+<li><code>cv.qmd</code> — Full academic CV with sections for publications, books, chapters, talks</li>
+<li><code>cv-grant.qmd</code> — Grants-focused variant</li>
+<li>PDF output uses <code>lualatex</code> engine via the <code>quarto-cv</code> extension</li>
+<li>Date floats for chronological positioning in LaTeX output</li>
 </ul>
 
 
