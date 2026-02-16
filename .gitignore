@@ -11,3 +11,5 @@
 .aider*
 .env
 .credentials/*
+
+**/*.quarto_ipynb

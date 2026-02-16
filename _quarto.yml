@@ -5,7 +5,7 @@ project:
 website:
   title: '⟲ francojc'
   favicon: 'assets/images/favicon.png'
-  google-analytics: 'G-C6T0ESR1RW'
+  # google-analytics: 'G-C6T0ESR1RW'
   site-url: https://francojc.github.io/
   search:
     location: navbar
@@ -29,6 +29,7 @@ website:
     Jerid Francom
 format:
   html:
+    include-in-header: assets/js/analytics.js
     theme: journal
     fontsize: 1.1em
     css: assets/css/styles.css
