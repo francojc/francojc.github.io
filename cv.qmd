@@ -1,6 +1,6 @@
 ---
 title: Curriculum Vitae
-date: today 
+date: today
 date-format: "MMM. d, YYYY"
 updated: true
 rdateformat: "Jun. 21, 2025"
@@ -197,9 +197,9 @@ h-index `r h.index`
 
 ## External
 
-- 2017. National Science Foundation (NSF). *Improving Scientific Writing In Undergraduate STEM Classrooms: A Training Program for Students and Teaching Assistants Aided By Information Extraction Technology* Co-Primary Investigator. ([1712423](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1712423&HistoricalAwards=false))
+- 2017. National Science Foundation (NSF). *Improving Scientific Writing In Undergraduate STEM Classrooms: A Training Program for Students and Teaching Assistants Aided By Information Extraction Technology* Co-Primary Investigator. ([1712423](https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1712423))
 
-- 2011. National Endowment for the Humanities (NEH). *ACTIV-ES: a novel Spanish language corpus for linguistic and cultural comparisons between communities of the Hispanic world* Primary Investigator. ([HD 51432-11](https://securegrants.neh.gov/publicquery/main.aspx?f=1&gn=HD-51432-11))
+- 2011. National Endowment for the Humanities (NEH). *ACTIV-ES: a novel Spanish language corpus for linguistic and cultural comparisons between communities of the Hispanic world* Primary Investigator. ([HD 51432-11](https://apps.neh.gov/publicquery/AwardDetail.aspx?gn=HD-51432-11))
 
 - 2003.	Tinker Foundation Incorporated (TFI). Field Research Grant. Research in Barcelona, Spain. Primary Investigator. *The Role of Community in Language Maintenance and Shift in Barcelona, Spain*
 
@@ -252,4 +252,4 @@ English (native), Spanish (near-native), Portuguese (beginner)
 
 ## Programming
 
-R, Bash, Nix, Python, Lua 
+R, Bash, Nix, Python, Lua
