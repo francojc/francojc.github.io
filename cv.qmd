@@ -3,7 +3,7 @@ title: Curriculum Vitae
 date: today
 date-format: "MMM. d, YYYY"
 updated: true
-rdateformat: "Jun. 21, 2025"
+rdateformat: "Jun. 1, 2026"
 
 author: "Jerid C. Francom"
 address: "Winston-Salem, NC"
@@ -206,6 +206,8 @@ h-index `r h.index`
 - 2002.	U.S. Department of Education. Foreign Language and Area Studies (FLAS) Fellow. Universidade Federal de Ceará, Fortaleza, Brazil.
 
 ## Internal
+
+- 2026. Pilot Research Grant. Office of the Provost. *AI-Scaffolded Writing Center Session Preparation* (Co-PIs: Fan Yang, Ryan Shirey, and Sean Andersen). Wake Forest University.
 
 - 2016. Reynolds Research Leave. Office of the Dean. *Data Science for Linguists: concepts through code in R* Wake Forest University.
 
