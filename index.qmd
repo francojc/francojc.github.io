@@ -5,7 +5,7 @@ description: |
 about:
   template: solana
   image: assets/images/francom.jpg
-  image-width: 10em 
+  image-width: 10em
   image-shape: rounded
   links:
       - text: '{{< fa brands bluesky >}} Bluesky'
@@ -20,9 +20,9 @@ about:
         href: https://orcid.org/0000-0001-5972-6330
 ---
 
-Jerid Francom's research focuses on the use of large-scale language archives (corpora) from a variety of sources (news, social media, and other internet sources) to better understand the linguistic and cultural similarities and differences between language varieties for both scholarly and pedagogical projects.
+ My work connects language research, language teaching, and computational methods. As Associate Professor of Spanish and Linguistics at Wake Forest University, I teach courses in Spanish language, Hispanic linguistics, psycholinguistics, quantitative text analysis, and language technologies.
 
-He has published on topics including the development, annotation, and evaluation of linguistic corpora and analyzed corpora through corpus, psycholinguistic, and computational methodologies. He also has experience working with and teaching statistical programming with R.
+ My research uses corpora, experimental evidence, and statistical programming to study how language varies across communities and contexts. Pedagogically, I am interested in helping students work with authentic language data: asking better questions, building reproducible analyses, and understanding how language technologies shape what we can see. Current projects extend this agenda to human-centered LLM workflows that enhance interaction, learning, and collaboration. My recent book, An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R, was published by Routledge in 2025.
 
 ::: panel-tabset
 ## Education
@@ -50,24 +50,32 @@ Department of Romance Languages, Wake Forest University\
 
 Recent courses:
 
-- Spanish 111: Elementary Spanish I
-- Spanish 212: Exploring the Hispanic World
-- Spanish 309: Spanish Grammar and Composition
-- Spanish 322: Spanish Pronunciation and Dialect Variation
-- Linguistics 150: Intro to Linguistics
-- Linguistics 330: Intro to Psycholinguistics and Language Acquisition
-- Linguistics 380/680: [Quantitative Text Analysis](https://lin-380-s24.github.io/)
+*Spanish*
+
+- SPA 101: Elementary Spanish I
+- SPA 203: [Exploring the Hispanic World](https://francojc.github.io/spa203/)
+- SPA 282: [Advanced Spanish Language and Grammar](https://francojc.github.io/spa282/)
+- SPA 320: Introduction to Hispanic Linguistics
+- SPA 322: Spanish Pronunciation and Dialect Variation
+
+*Linguistics*
+
+- LIN 150: Intro to Linguistics
+- LIN 330: Intro to Psycholinguistics and Language Acquisition
+- LIN 380/680: [Quantitative Text Analysis](https://lin-380-s24.github.io/)
 
 ## Research
 
 Recent publications:
 
-- Francom, J. (2024). [An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R](https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265). Routledge.
+- Francom, J. (2025). [An Introduction to Quantitative Text Analysis for Linguistics: Reproducible Research Using R](https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265). Routledge.
 - Francom, J. (2022). [Corpus Studies of Syntax](https://www.cambridge.org/us/academic/subjects/languages-linguistics/grammar-and-syntax/cambridge-handbook-experimental-syntax). In *G. Goodall (Ed.), The Cambridge Handbook of Experimental Syntax (pp. 687--713).* Cambridge University Press.
 
 Current projects:
 
-- `qtkit`: An R package for quantitative text analysis. [CRAN](https://cran.r-project.org/package=qtkit), [R-Universe](https://qtalr.r-universe.dev/qtkit), [GitHub](https://github.com/qtalr/qtkit), [nixpkgs](https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=qtkit)
+- 2026-207: *AI-Scaffolded Writing Center Session Preparation* (Co-PIs: Fan Yang, Ryan Shirey, and Sean Andersen).\
+  Developing and evaluating locally deployed AI tools that help students articulate writing support needs before tutoring sessions.\
+  Project builds tutor and staff understanding of LLM-based technologies through participatory design while improving tutor preparation and preserving institutional data control. Also creates shared vocabulary, knowledge bases, and design frameworks that can connect writing centers and academic support programs around common goals and practices.
 
 ## Contact
 

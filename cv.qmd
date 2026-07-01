@@ -134,25 +134,35 @@ h-index `r h.index`
 ::: {#refs-talks}
 :::
 
+## Software
+
+
+- `qtkit`: An R package for quantitative text analysis. [CRAN](https://cran.r-project.org/package=qtkit), [R-Universe](https://qtalr.r-universe.dev/qtkit), [GitHub](https://github.com/qtalr/qtkit), [nixpkgs](https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=qtkit)
+
 # Teaching
 
 ## Undergraduate
 
 ### Courses
 
-- Spanish 111. Elementary Spanish I
-- Spanish 113. Intensive Elementary Spanish
-- Spanish 153. Intermediate Spanish
-- Spanish 154. Accelerated Intermediate Spanish
-- Spanish 212. Exploring the Hispanic World
-- Spanish 309. Spanish Grammar and Composition
-- Spanish 322. Spanish Pronunciation and Dialect Variation
-- Spanish 320. Introduction to Hispanic Linguistics
+*Spanish*
 
-- Linguistics 150. Introduction to Linguistics
-- Linguistics 330. Psycholinguistics and Language Acquisition
-- Linguistics 380. Quantitative Text Analysis
-- Linguistics 383. Language Engineering: Localization and Terminology
+- SPA 101: Elementary Spanish I
+- SPA 203: [Exploring the Hispanic World](https://francojc.github.io/spa203/)
+- SPA 282: [Advanced Spanish Language and Grammar](https://francojc.github.io/spa282/)
+- SPA 320: Introduction to Hispanic Linguistics
+- SPA 322: Spanish Pronunciation and Dialect Variation
+
+*Linguistics*
+
+- LIN 150: Intro to Linguistics
+- LIN 330: Intro to Psycholinguistics and Language Acquisition
+- LIN 380/680: [Quantitative Text Analysis](https://lin-380-s24.github.io/)
+
+- LIN 150. Introduction to Linguistics
+- LIN 330. Psycholinguistics and Language Acquisition
+- LIN 380. Quantitative Text Analysis
+- LIN 383. Language Engineering: Localization and Terminology
 
 ### Advising
 
