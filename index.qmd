@@ -73,15 +73,18 @@ Recent publications:
 
 Current projects:
 
-- 2026-207: *AI-Scaffolded Writing Center Session Preparation* (Co-PIs: Fan Yang, Ryan Shirey, and Sean Andersen).\
+- 2026- : *AI-Scaffolded Writing Center Session Preparation* (Co-PIs: Fan Yang, Ryan Shirey, and Sean Andersen).\
   Developing and evaluating locally deployed AI tools that help students articulate writing support needs before tutoring sessions.\
   Project builds tutor and staff understanding of LLM-based technologies through participatory design while improving tutor preparation and preserving institutional data control. Also creates shared vocabulary, knowledge bases, and design frameworks that can connect writing centers and academic support programs around common goals and practices.
 
 ## Contact
 
-Email: francojc\@wfu.edu\
-Phone: +1-336-758-4868\
-Mail: 323 Greene Hall \| Wake Forest University \| Winston-Salem, NC, 27103
+Email: [francojc\@wfu.edu](mailto:francojc@wfu.edu) \
+Phone: +1 (336) 758-4868 \
+Mail: \
+323 Greene Hall \
+Wake Forest University \
+Winston-Salem, NC, 27103
 :::
 
 <a rel="me" href="https://fosstodon.org/@jeridfrancom" class="hidden-link">Mastodon</a>
