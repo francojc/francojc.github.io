@@ -1,9 +1,9 @@
 ---
 title: "Understanding Your AI Research Partner"
 description: |
-  What is agentic AI, why terminal-based interfaces matter for academics, and how to build a foundation for AI-assisted research workflows.
-date: "2025-01-01"
-categories: [ai, claude-code, research, academic-tools]
+  What makes AI "agentic," why agent runtimes matter for higher education, and how to build a foundation for AI-assisted academic work — regardless of which tool you choose.
+date: "2026-07-02"
+categories: [ai, agentic-ai, research, academic-tools, higher-ed]
 draft: true
 ---
 
@@ -11,33 +11,39 @@ draft: true
 
 As academics, we're constantly juggling research, teaching, and administrative tasks while trying to stay current with rapidly evolving fields. The promise of AI assistance is compelling, but the reality often feels like yet another tool to learn rather than a genuine research partner.
 
-This post introduces a different approach: understanding AI as an *agentic* assistant that can engage in collaborative thinking, maintain context across complex projects, and adapt to your specific research needs. We'll explore why terminal-based interfaces like Claude Code offer unique advantages for academic workflows and establish the foundation for building an AI research partnership that grows with your needs.
+This post takes a different approach. Rather than recommending a specific tool, I want to frame what "agentic AI" means for higher education work — what it can do, where it falls short, and how to think about integrating it into your existing workflows whether you're an instructor, researcher, or administrator. The specific tools will come and go, but the concepts and practices will serve you regardless of which platform you adopt.
 
 ## What Makes AI "Agentic"?
 
 ### Beyond Search and Generate
 
-Traditional AI interactions follow a simple pattern: you ask, it answers. Agentic AI, however, operates more like a research collaborator:
+Traditional AI interactions follow a simple pattern: you ask, it answers. If you've used a web-based chat interface — Claude, ChatGPT, Gemini — you've experienced this. It's useful, but it's fundamentally a sophisticated search-and-generate loop.
 
-- **Proactive suggestions**: It anticipates next steps and offers relevant extensions to your work
-- **Tool use**: It can interact with your files, databases, and research tools directly
-- **Multi-step reasoning**: It breaks down complex academic tasks into manageable components
-- **Context awareness**: It maintains understanding of your research focus across sessions
+Agentic AI operates differently. Rather than just generating text, an agent can:
 
-### The Academic Advantage
+- **Use tools**: Read and write files, execute shell commands, search the web, call APIs, and interact with your actual computing environment
+- **Plan multi-step tasks**: Break down a complex request ("analyze my corpus and generate a report") into a sequence of steps and execute them in order
+- **Maintain context**: Carry understanding of your project, preferences, and ongoing work across interactions — not just within a single conversation
+- **Self-correct**: When something fails (a script errors, a file isn't found), diagnose the problem and try a different approach
 
-For researchers, this means AI that can:
+The key distinction is **action**. A chatbot tells you what to do; an agent does it — or at least does a first pass you can review and refine.
 
-- **Understand methodological constraints**: Recognizing when statistical assumptions matter or when sample sizes affect generalizability
-- **Maintain research context**: Remembering your theoretical framework, key citations, and ongoing projects
-- **Adapt to disciplinary norms**: Learning the difference between MLA and APA, or understanding corpus linguistics conventions
-- **Scale with complexity**: Growing from simple tasks to comprehensive research support
+### Why This Matters for Academics
 
-## Why Terminal Interfaces Matter for Academics
+For researchers and instructors, this shift is significant. Consider the difference between:
 
-### Integration with Research Workflows
+- **Chat AI**: "To analyze your corpus, you'll need to tokenize the text, then run a frequency analysis..." (you do the rest)
+- **Agentic AI**: "I've tokenized your corpus, ran the frequency analysis, and saved the results to `results/frequency.csv`. I also noticed some encoding issues in files 3 and 7 — want me to clean those up?"
 
-Academic work is inherently file-based: manuscripts, data files, code scripts, bibliographies. Terminal interfaces like Claude Code integrate seamlessly with this ecosystem:
+The second scenario is what agentic AI enables. It doesn't replace your expertise — you still decide what to analyze, how to interpret results, and what the findings mean. But it removes the mechanical friction between "I have an idea" and "I have a result."
+
+## Why Agent Runtimes Matter
+
+### Working in Your Environment
+
+Academic work is inherently file-based: manuscripts, datasets, code scripts, bibliographies, course materials. Web-based AI tools require you to manually upload files, copy-paste content, and then manually transfer results back.
+
+Agent runtimes — sometimes called "harnesses" or "CLI agents" — flip this model. The agent operates directly in your computing environment:
 
 ```bash
 # Your existing workflow
@@ -47,141 +53,134 @@ quarto render manuscript.qmd
 ```
 
 ```bash
-# With AI integration
-claude code review analysis.R
-claude help revise manuscript.qmd
-claude generate citations from data/sources.bib
+# With an agent partner
+# "Review my analysis script, check for statistical assumptions,
+#  and suggest improvements to the visualization"
 ```
+
+The agent reads your files, understands the project structure, and writes changes in place. Your existing tools — R, Python, Quarto, LaTeX, Git — remain the same. The agent just works alongside them.
+
+::: {.callout-note}
+**A note on tools.** Several agent runtimes have emerged: Claude Code (Anthropic), Codex (OpenAI), Gemini CLI (Google), Hermes (Nous Research), and open-source options like Aider and OpenCode. The specific choice matters less than you might think — they share the same core capabilities (tool use, file access, multi-step reasoning). What matters is finding one that fits your workflow and comfort level. The concepts in this post apply to all of them.
+:::
 
 ### Reproducible Research Practices
 
-Terminal interactions create natural documentation of your research process:
+One of the underappreciated advantages of agent-based workflows is that they naturally support reproducibility:
 
-- **Command history**: Every AI interaction is logged and repeatable
-- **Version control**: Git integration tracks changes to AI-assisted work
-- **Environment consistency**: Your AI setup travels with your project configuration
+- **Command history**: Agent interactions are logged and reviewable — you can see exactly what was done and in what order
+- **Version control**: When an agent makes changes to your files, those changes flow through your existing Git workflow. Every edit is tracked, diffable, and revertable
+- **Environment consistency**: Your agent setup travels with your project configuration. If a colleague clones your repo, they can reproduce not just your analysis but your AI-assisted workflow
+
+This is particularly valuable for methods courses where you want students to understand not just the final result, but the process of getting there.
 
 ### Privacy and Data Control
 
-Academic research often involves sensitive data, preliminary findings, or confidential collaborations. Terminal interfaces offer:
+Academic work often involves sensitive data: student records, preliminary findings, human-subjects research, confidential peer reviews. Web-based AI tools require uploading this content to external servers.
 
-- **Local processing**: No need to paste sensitive content into web browsers
-- **Controlled access**: You decide what files and data the AI can access
-- **Institutional compliance**: Easier to align with university data policies
+Agent runtimes offer better control:
 
-## Building Your AI Research Context
+- **Local execution**: The agent runs on your machine. Sensitive files don't leave your environment unless you explicitly send them to a model API
+- **Controlled access**: You decide which directories and files the agent can access
+- **Institutional compliance**: Easier to align with university data policies when you control the data flow
 
-### Value Anchor: Research Focus Configuration
+This doesn't eliminate all privacy considerations — model API calls still send data to providers — but it gives you granular control over what's shared and what stays local.
 
-Let's start with a practical example that demonstrates the power of agentic AI for academic work.
+## Building Your AI Context
 
-**Scenario**: You want Claude to understand your research focus so it can provide contextually relevant assistance across all your projects.
+### The Power of Persistent Context
 
-**Setup Process**:
+One of the most transformative aspects of agentic AI is the ability to build a persistent context that shapes every interaction. Rather than re-explaining your field, methods, and preferences each time, you configure the agent once and it carries that understanding forward.
 
-1. **Install and configure Claude Code** (we'll cover this in detail in Post 2)
-2. **Create a research profile** using Claude's memory system
-3. **Test the configuration** with a real research task
+This is different from simple "system prompts" or "custom instructions." A well-configured agent context includes:
 
-**Example Configuration Session**:
+- **Your research focus and methodological approach**
+- **Project-specific details** (data sources, coding decisions, theoretical framework)
+- **Practical preferences** (citation style, coding conventions, writing register)
+- **Ongoing task state** (what you're working on right now, what's blocked, what's next)
 
-```bash
-claude remember "I am a linguistics professor specializing in:
-- Corpus linguistics with focus on Spanish-English bilingual discourse
-- Computational methods for analyzing language variation
-- Hispanic linguistics, particularly Mexican Spanish
-- Academic writing and pedagogy in linguistics
+### A Practical Example
 
-My current projects include:
-- Analyzing code-switching patterns in social media data
-- Developing corpus tools for undergraduate linguistics courses
-- Studying pragmatic variation in Mexican Spanish
+**Scenario**: You want your agent to understand your research focus so it can provide contextually relevant assistance across all your projects.
 
-When helping with research tasks, please:
-- Assume familiarity with linguistic terminology and methodology
-- Prioritize reproducible, well-documented approaches
-- Consider both theoretical implications and practical applications
-- Suggest appropriate statistical methods for linguistic data"
-```
+Rather than a one-time configuration, think of this as an ongoing conversation. You might start with a broad description:
 
-**Immediate Benefits**:
+> I'm a linguistics professor specializing in corpus linguistics and Spanish-English bilingual discourse. My current projects include analyzing code-switching patterns in social media data and developing corpus tools for undergraduate courses. When helping with research tasks, assume familiarity with linguistic terminology, prioritize reproducible approaches, and consider both theoretical and practical implications.
 
-- **Relevant suggestions**: AI recommendations align with your field's conventions
-- **Appropriate complexity**: Explanations match your expertise level
-- **Methodological awareness**: Suggestions respect linguistic research standards
-- **Consistent context**: Every session builds on your established research focus
+Then refine it over time as the agent learns your workflows. The best agent runtimes support some form of persistent memory — whether through configuration files, memory systems, or learned skills — that evolves with your work.
 
-### Testing Your Research Context
+### Testing Your Context
 
-Try asking Claude to help with a typical research task:
+Try asking your agent to help with a typical task:
 
-```bash
-claude "I have a corpus of 50,000 Spanish tweets. 
-What's the best approach for identifying code-switching events?"
-```
+> I have a corpus of 50,000 Spanish tweets. What's the best approach for identifying code-switching events?
 
-With your research context established, Claude should provide linguistically sophisticated suggestions about annotation schemes, inter-rater reliability, and corpus-appropriate methodologies.
+With good context established, the response should reflect understanding of corpus linguistics conventions, appropriate annotation schemes, and inter-rater reliability concerns — rather than generic advice that ignores your disciplinary expertise.
 
-## Understanding AI Capabilities and Limitations
+## What Agentic AI Excels At (and Where It Doesn't)
 
-### What Agentic AI Excels At
+### Strengths for Academic Work
 
-**Analytical Tasks**:
+**Analytical tasks**:
 - Literature review synthesis and gap identification
 - Data preprocessing and cleaning workflows
-- Statistical analysis interpretation and visualization
-- Writing structure and argumentation support
+- Statistical analysis and visualization
+- Code review and debugging
+- Format conversion (e.g., restructuring data from wide to long)
 
-**Research Management**:
+**Research management**:
 - Project organization and file management
-- Citation formatting and bibliography creation
-- Deadline tracking and milestone planning
-- Collaboration workflow optimization
+- Citation formatting and bibliography maintenance
+- Drafting and revising across multiple document formats
+- Scheduling recurring tasks (reports, backups, reminders)
 
-### Recognizing the Boundaries
+**Teaching support**:
+- Generating exercise sets and quiz questions from course materials
+- Creating differentiated reading guides for varying skill levels
+- Developing rubric frameworks for assignment types
+- Drafting syllabus language and policy documents
 
-**Where Human Expertise Remains Essential**:
-- **Theoretical interpretation**: AI can identify patterns but not theoretical significance
-- **Methodological decisions**: Statistical approaches require disciplinary knowledge
-- **Ethical considerations**: Research ethics and IRB compliance need human judgment
-- **Original argumentation**: Novel theoretical contributions remain human territory
+### Where Human Expertise Remains Essential
 
-**Quality Control Practices**:
-- **Verify citations**: Always check AI-generated references
-- **Review methodology**: Ensure statistical approaches match your data and research questions  
-- **Maintain authorship**: AI assists but doesn't author your work
-- **Document AI contributions**: Be transparent about AI-assisted portions
+**Theoretical interpretation**: An agent can identify patterns in your data, but determining the theoretical significance of those patterns requires disciplinary judgment. The agent doesn't know what the finding *means* in the context of your field's debates.
+
+**Methodological decisions**: An agent can suggest statistical approaches, but choosing the right method requires understanding your research questions, data structure, and the assumptions behind each technique. Use the agent as a sounding board, not a decision-maker.
+
+**Ethical considerations**: Research ethics, IRB compliance, and responsible AI use all require human judgment. An agent can flag potential issues, but the responsibility remains yours.
+
+**Original argumentation**: Novel theoretical contributions, interpretive insights, and the creative intellectual work that makes scholarship scholarship — these remain human territory. The agent assists, synthesizes, and refines, but it doesn't author your ideas.
+
+### Quality Control Practices
+
+- **Verify citations**: Always check AI-generated references against original sources
+- **Review all code**: Run it, test it, understand what it does before incorporating it
+- **Maintain authorship**: Be transparent about AI-assisted portions of your work, following your discipline's emerging norms for AI use disclosure
+- **Document the workflow**: Keep track of what the agent did, what you changed, and why — this supports both reproducibility and honest reporting
 
 ## Practical Next Steps
 
-### Immediate Actions
+### If You're New to Agentic AI
 
-1. **Reflect on your research workflow**: Identify repetitive tasks that could benefit from AI assistance
-2. **Consider your data privacy needs**: Determine what types of projects are appropriate for AI collaboration
-3. **Prepare your research context**: Gather key information about your specializations and current projects
+1. **Identify repetitive tasks**: Look at your weekly workflow and find tasks that feel mechanical — formatting, data cleaning, boilerplate drafting, file organization. These are your first candidates for AI assistance.
 
-### Preparing for Post 2: Setup and Configuration
+2. **Start small**: Pick one task and work with an agent on it. Don't try to overhaul your entire workflow at once. The goal is to build confidence and understanding gradually.
 
-Our next post will walk through:
-- Installing and configuring Claude Code for academic use
-- Creating persistent research contexts and memory systems
-- Setting up project-specific AI behaviors
-- Integrating with your existing research tools
+3. **Choose a runtime**: Explore the available options. Most have free tiers or trial periods. The right choice is the one that fits your existing tools and comfort level — not the one with the most features.
 
-### Questions for Reflection
+### If You're Already Experimenting
 
-- What aspects of your research workflow feel most repetitive or time-consuming?
-- How comfortable are you with AI assistance for different types of academic tasks?
-- What would an ideal AI research partner be able to help you accomplish?
+1. **Build your context**: Invest time in configuring your agent's understanding of your work. The upfront effort pays dividends in every subsequent interaction.
+
+2. **Establish guardrails**: Set up workflow practices that protect your work — version control, branch protection, review processes. Treat AI-assisted work with the same rigor you'd apply to any collaborative project.
+
+3. **Share practices**: Talk with colleagues about what's working and what isn't. The academic community is still developing norms for AI-assisted scholarship, and your experiences contribute to that conversation.
 
 ## Conclusion
 
-Understanding AI as an agentic research partner rather than a simple tool transforms how we approach academic work. By establishing clear contexts, respecting appropriate boundaries, and integrating AI into existing workflows, we can create powerful research collaborations that enhance rather than replace human expertise.
+Understanding AI as an agentic partner rather than a search tool transforms how we approach academic work. The specific tools will continue to evolve — today's popular runtime may be tomorrow's footnote — but the underlying concepts are durable: agents that can act in your environment, maintain context across sessions, and handle multi-step tasks create real opportunities to reduce friction in research, teaching, and administration.
 
-The foundation we've established here—understanding agentic capabilities, recognizing the advantages of terminal interfaces, and building research context—prepares us for the practical implementation steps in our next post.
-
-Ready to set up your AI research environment? [Post 2: Your Research Environment Setup] will guide you through the technical configuration that makes this partnership possible.
+The foundation is straightforward: understand what agentic means, recognize both capabilities and boundaries, integrate with your existing tools, and build context that makes the agent a genuine partner in your work. The rest is practice.
 
 ---
 
-*This post is part of the "Claude Code for Academics" series. Each post builds foundational understanding while delivering immediate research value, creating confident, capable users who can adapt AI tools to their unique academic needs.*
+*This post is part of an exploration of agentic AI in higher education. I'll continue to share what works (and what doesn't) as these tools and practices evolve.*
