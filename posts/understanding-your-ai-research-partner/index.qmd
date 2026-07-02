@@ -4,7 +4,7 @@ description: |
   What makes AI "agentic," why agent runtimes matter for higher education, and how to build a foundation for AI-assisted academic work — regardless of which tool you choose.
 date: "2026-07-02"
 categories: [ai, agentic-ai, research, academic-tools, higher-ed]
-draft: true
+draft: false
 ---
 
 ## Introduction
@@ -247,11 +247,11 @@ An agent can help with all of this: it can scaffold directories, draft scripts, 
 
 ### Quality Control Practices
 
-- **Verify citations**: Always check AI-generated references against original sources
+- **Verify citations**: Always check AI-generated references against original sources (better yet, use bibliographic reference management tools like Zotero or Mendeley, make your agent add to or draw from this source of truth)
 - **Review all code**: Run it, test it, understand what it does before incorporating it
 - **Maintain authorship**: Be transparent about AI-assisted portions of your work, following your discipline's emerging norms for AI use disclosure
 - **Document the workflow**: Keep track of what the agent did, what you changed, and why — this supports both reproducibility and honest reporting
-- **Maintain codebooks and data dictionaries**: Codebooks, data dictionaries, and clear variable documentation are not special "AI practices"; they are part-and-parcel with good reproducible research. They leave a breadcrumb trail for you, your collaborators, and perhaps an LLM to trace the work and verify its integrity. Informative, incremental version control extends that trail further: small commits with clear messages make it easier to see how a project developed, where decisions entered the workflow, and what changed over time. These practices should not be forgotten, and in some cases they should be introduced to researchers who have not yet adopted them. I discuss these principles in my book [*An Introduction to Quantitative Text Analysis: Reproducible Research using R*](https://routledge.com/9781036272332) (Routledge, 2025).
+- **Maintain codebooks and data dictionaries**: Codebooks, data dictionaries, and clear variable documentation are not special "AI practices"; they are part-and-parcel with good reproducible research. They leave a breadcrumb trail for you, your collaborators, and perhaps an LLM to trace the work and verify its integrity. Informative, incremental version control extends that trail further: small commits with clear messages make it easier to see how a project developed, where decisions entered the workflow, and what changed over time. These practices should not be forgotten, and in some cases they should be introduced to researchers who have not yet adopted them. I discuss these principles in my book [*An Introduction to Quantitative Text Analysis: Reproducible Research using R*](https://www.routledge.com/An-Introduction-to-Quantitative-Text-Analysis-for-Linguistics-Reproducible-Research-Using-R/Francom/p/book/9781032494265) (Routledge, 2025).
 
 ## Practical Next Steps
 
