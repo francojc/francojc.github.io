@@ -82,9 +82,6 @@ cat notes/2025-04-20-methodology-refinements.md
 # Manually identify themes, track contradictions,
 # note gaps — perhaps in a separate document
 
-# Or write a script to help:
-R --vanilla < analyze-notes.R
-
 # Render your findings
 quarto render research-notes-review.qmd
 ```
@@ -94,6 +91,8 @@ quarto render research-notes-review.qmd
 ```bash
 # Navigate to the same project
 cd ~/research/code-switching-project
+
+# Start up your agent harness (`claude`, `pi`, etc.)
 
 # Describe what you need:
 # "Review my research notes and generate a report
@@ -113,7 +112,7 @@ To make this concrete, here's what the agent actually does behind that single pr
 6. **Write**: Save the report to a file in your project directory
 7. **Report back**: Summarize what it found and ask for your input on next steps
 
-Now consider what that same process looks like manually: you'd open each file, read it carefully, take notes on key claims, then go back through your notes looking for patterns and contradictions, then draft a synthesis document. The agent doesn't do anything you wouldn't do — it does the same work, just faster, and you get to focus on the part that matters most: evaluating whether the patterns it found are meaningful.
+Now consider what that same process looks like manually: you'd open each file, read it carefully, take notes on key claims, then go back through your notes looking for patterns and contradictions, then draft a synthesis document. The agent doesn't do anything you wouldn't do — it does the same work, just faster, and you get to focus on the part that matters most: evaluating whether the patterns it found are meaningful. It's worth noting that human oversight and critical analysis is paramount throughout this process. But even with this oversight step, much of the time-consuming, paper-pushing component is reduced; freeing you up to do the big picture thinking.
 
 ::: {.callout-note}
 **The Future is Terminal.** If you're not comfortable with the command line, the examples above can feel intimidating. That's understandable — but learning basic terminal skills pays dividends that go far beyond AI tools. The terminal gives you control, transparency, and independence over your computing environment in ways that GUI-only tools can't match. *I'm planning a dedicated post, "The Future is Terminal," on why this skill is worth investing in — especially for academics who want to maintain agency over their digital work.*
@@ -182,7 +181,7 @@ As you work with an agent over time, you'll hit a recurring tension: the agent n
 
 **Retrieval-augmented generation (RAG)**: For larger knowledge bases, vector databases can index your papers, notes, and data documentation, retrieving relevant chunks on demand. This scales further than a single file but adds infrastructure complexity. A key drawback: the retrieval process is opaque — you can't easily inspect *why* the system surfaced certain context and not others.
 
-**LLM-curated knowledge bases**: An emerging approach where the LLM curates its own knowledge base as human-readable markdown files — an "LLM-Wiki." Rather than embedding knowledge in a vector database, the agent writes and organizes what it learns into files you can read, edit, and audit. Andrej Karpathy [described this pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) as a shift from RAG's "rediscovering knowledge from scratch on every question" to a persistent, compounding artifact where cross-references are already built, contradictions are already flagged, and the synthesis reflects everything you've read. The knowledge base keeps getting richer with every source you add. Crucially, unlike a vector database, the knowledge is stored in plain markdown — fully transparent and auditable by humans.
+**LLM-curated knowledge bases**: An emerging approach where the LLM curates its own knowledge base as human-readable markdown files — an "LLM-Wiki." Rather than embedding knowledge in a vector database, the agent writes and organizes what it learns into files you can read, edit, and audit. Andrej Karpathy [described this pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) as a shift from RAG's "rediscovering knowledge from scratch on every question" to a persistent, compounding artifact where cross-references are already built, contradictions are already flagged, and the synthesis reflects everything you have read or have ingested into the LLM-managed wiki knowledge system. The knowledge base keeps getting richer with every source you add. Crucially, unlike a vector database, the knowledge is stored in plain markdown — fully transparent and auditable by humans.
 
 ::: {.callout-note}
 **Architectural bottleneck: memory persistence.** Most agent runtimes don't truly "remember" across sessions by default — each conversation starts fresh unless you've set up a context strategy. The approaches above are all attempts to solve this problem, each with different trade-offs between simplicity, scalability, and auditability. *I plan to write more about my experiences with these strategies in future posts.*
@@ -233,7 +232,7 @@ With good context established, the response should reflect understanding of corp
 
 ### Where Human Expertise Remains Essential
 
-**Strategizing your codebase**: Before delegating processing, cleaning, or analysis work to an agent, you need to strategize a codebase structure relevant to your task objectives. The agent can help build it, but you need to understand the inputs and outputs. At the end of the day, it is you who applies your domain knowledge to critically evaluate these inputs and outputs and interpret them in the context of your field and research goals.
+**Strategizing your codebase**: Before delegating processing, cleaning, or analysis work to an agent, you need to strategize a codebase structure relevant to your task objectives. This applies to processing, cleaning, and analysis alike. The agent can help build it, but you need to understand the inputs and outputs. At the end of the day, it is you who applies your domain knowledge to critically evaluate these inputs and outputs and interpret them in the context of your field and research goals. The agent is a capable collaborator here — it can scaffold directory structures, draft initial scripts, and suggest workflows — but the intellectual responsibility for understanding what the code does, why it produces the outputs it does, and whether those outputs make sense for your research questions remains squarely with you.
 
 **Theoretical interpretation**: An agent can identify patterns in your data, but determining the theoretical significance of those patterns requires disciplinary judgment. The agent doesn't know what the finding *means* in the context of your field's debates.
 
@@ -249,7 +248,7 @@ With good context established, the response should reflect understanding of corp
 - **Review all code**: Run it, test it, understand what it does before incorporating it
 - **Maintain authorship**: Be transparent about AI-assisted portions of your work, following your discipline's emerging norms for AI use disclosure
 - **Document the workflow**: Keep track of what the agent did, what you changed, and why — this supports both reproducibility and honest reporting
-- **Maintain codebooks and data dictionaries**: Documenting your variables, coding decisions, and data structure goes a very long way to leaving a breadcrumb trail for you (and perhaps an LLM) to trace the work and verify its integrity. Informative and incremental version control — committing often with clear messages — extends that trail further.
+- **Maintain codebooks and data dictionaries**: Documenting your variables, coding decisions, and data structure goes a very long way to leaving a breadcrumb trail for you (and perhaps an LLM) to trace the work and verify its integrity. Informative and incremental version control — committing often with clear messages — extends that trail further. These are just part-and-parcel with good reproducible practices and should not be forgotten, or in some cases, they should be introduced to those that have not adopted them. I speak to these in my book [*An Introduction to Quantitative Text Analysis: Reproducible Research using R*](https://routledge.com/9781036272332) (Routledge, 2025).
 
 ## Practical Next Steps
 
@@ -263,7 +262,7 @@ With good context established, the response should reflect understanding of corp
 
 ### If You're Already Experimenting
 
-1. **Build your context**: Invest time in configuring your agent's understanding of your work. The upfront effort pays dividends in every subsequent interaction.
+1. **Build your context**: Invest time in configuring your agent's understanding of your work. The upfront effort pays dividends in every subsequent interaction. Consider adopting an LLM-curated knowledge base (see [Karpathy's LLM-Wiki proposal](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)) as a way to make that context compound over time.
 
 2. **Establish guardrails**: Set up workflow practices that protect your work — version control, branch protection, review processes. Treat AI-assisted work with the same rigor you'd apply to any collaborative project. An `AGENTS.md` or `CLAUDE.md` file can define behavioral guidelines for the agent — what to touch, what to leave alone, what conventions to follow. It's worth noting, however, that the non-deterministic nature of LLMs cannot guarantee adherence to these guardrails. For more stringent control, system-level, file-level, and process-level permissions can be asserted on agent behavior — these are harder guardrails that cannot be overlooked, though they are more advanced to set up.
 
@@ -273,7 +272,7 @@ With good context established, the response should reflect understanding of corp
 
 Understanding AI as an agentic partner rather than a search tool transforms how we approach academic work. The specific tools will continue to evolve — today's popular runtime may be tomorrow's footnote — but the underlying concepts are durable: agents that can act in your environment, maintain context across sessions, and handle multi-step tasks create real opportunities to reduce friction in research, teaching, and administration.
 
-The foundation is straightforward: understand what agentic means, recognize both capabilities and boundaries, integrate with your existing tools, and build context that makes the agent a genuine partner in your work. The aim throughout is to facilitate, not replace — your expertise, judgment, and authorship remain central. The rest is trial and error. Therefore: ensure backups and version-controlled repositories synced to a version control hosting service (e.g., GitHub, Codeberg, Gitea, etc.) so that every experiment is recoverable.
+The foundation is straightforward: understand what agentic means, recognize both capabilities and boundaries, integrate with your existing tools, and build context that makes the agent a genuine partner in your work. The aim throughout is not to off-load the work; rather, it is to reduce the busy work and surface knowledge more efficiently — your expertise, judgment, and authorship remain central. The rest is trial and error. Therefore: ensure backups and version-controlled repositories synced to a version control hosting service (e.g., GitHub, Codeberg, Gitea, etc.) so that every experiment is recoverable.
 
 ---
 
