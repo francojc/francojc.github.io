@@ -1,9 +1,9 @@
 ---
 title: "Understanding Your AI Research Partner"
 description: |
-  What is agentic AI, why terminal-based interfaces matter for academics, and how to build a foundation for AI-assisted research workflows.
-date: "2025-01-01"
-categories: [ai, claude-code, research, academic-tools]
+  What makes AI "agentic," why agent runtimes matter for higher education, and how to build a foundation for AI-assisted academic work — regardless of which tool you choose.
+date: "2026-07-02"
+categories: [ai, agentic-ai, research, academic-tools, higher-ed]
 draft: true
 ---
 
@@ -11,177 +11,272 @@ draft: true
 
 As academics, we're constantly juggling research, teaching, and administrative tasks while trying to stay current with rapidly evolving fields. The promise of AI assistance is compelling, but the reality often feels like yet another tool to learn rather than a genuine research partner.
 
-This post introduces a different approach: understanding AI as an *agentic* assistant that can engage in collaborative thinking, maintain context across complex projects, and adapt to your specific research needs. We'll explore why terminal-based interfaces like Claude Code offer unique advantages for academic workflows and establish the foundation for building an AI research partnership that grows with your needs.
+This post takes a different approach. Rather than recommending a specific tool, I want to frame what "agentic AI" means for higher education work — what it can do, where it falls short, and how to think about integrating it into your existing workflows whether you're an instructor, researcher, or administrator. The specific tools will come and go, but the concepts and practices will serve you regardless of which platform you adopt.
+
+Along the way, I'll point to some architectural bottlenecks and open challenges — memory persistence, context window limits, the non-deterministic nature of LLMs — not as dealbreakers, but as gotchas that can strike if you are not looking for them. These are the edges where the technology is still evolving, and each one is a worthy topic for deeper exploration in future posts.
 
 ## What Makes AI "Agentic"?
 
 ### Beyond Search and Generate
 
-Traditional AI interactions follow a simple pattern: you ask, it answers. Agentic AI, however, operates more like a research collaborator:
+Traditional AI interactions follow a simple pattern: you ask, it answers. If you've used a web-based chat interface — Claude, ChatGPT, Gemini — you've experienced this. It's useful, but it's fundamentally a sophisticated search-and-generate loop.
 
-- **Proactive suggestions**: It anticipates next steps and offers relevant extensions to your work
-- **Tool use**: It can interact with your files, databases, and research tools directly
-- **Multi-step reasoning**: It breaks down complex academic tasks into manageable components
-- **Context awareness**: It maintains understanding of your research focus across sessions
+Agentic AI operates differently. Rather than just generating text, an agent can:
 
-### The Academic Advantage
+- **Use tools**: Read and write files, execute shell commands, search the web, call APIs, and interact with your actual computing environment
+- **Plan multi-step tasks**: Break down a complex request ("analyze my research notes and generate a report highlighting consistencies, inconsistencies, and potential gaps that require more research") into a sequence of steps and execute them in order
+- **Maintain context**: Carry understanding of your project, preferences, and ongoing work across interactions — not just within a single conversation
+- **Self-correct**: When something fails (a script errors, a file isn't found), diagnose the problem and try a different approach
 
-For researchers, this means AI that can:
+The key distinction is **action**. A chatbot tells you what to do; an agent does it — or at least does a first pass you can review and refine.
 
-- **Understand methodological constraints**: Recognizing when statistical assumptions matter or when sample sizes affect generalizability
-- **Maintain research context**: Remembering your theoretical framework, key citations, and ongoing projects
-- **Adapt to disciplinary norms**: Learning the difference between MLA and APA, or understanding corpus linguistics conventions
-- **Scale with complexity**: Growing from simple tasks to comprehensive research support
+::: {.callout-note}
+**Architectural bottleneck: non-determinism.** LLMs are probabilistic by nature — the same input can produce different outputs on different runs. This is fundamentally different from traditional software, where the same input always yields the same result. For academic work, this means an agent's analysis of your research notes today might differ subtly from yesterday's. Mitigations exist (temperature settings, seed values, structured outputs), but non-determinism remains a core challenge to understand before relying on agents for reproducible work. *A deeper dive on this topic is planned for a future post.*
+:::
 
-## Why Terminal Interfaces Matter for Academics
+### Why This Matters for Academics
 
-### Integration with Research Workflows
+For researchers and instructors, this shift is significant. Consider the difference between:
 
-Academic work is inherently file-based: manuscripts, data files, code scripts, bibliographies. Terminal interfaces like Claude Code integrate seamlessly with this ecosystem:
+- **Chat AI**: "To analyze your research notes, you'll want to look for recurring themes, check for contradictory claims, and identify gaps..." (you do the rest)
+- **Agentic AI**: "I've read through your research notes, identified three recurring themes, flagged two claims that appear contradictory across notes, and saved a report to `research-notes-review.md`. Want me to expand on any of the gaps I found?"
+
+The second scenario is what agentic AI enables. It doesn't replace your expertise — you still decide what to analyze, how to interpret results, and what the findings mean. But it removes the mechanical friction between "I have an idea" and "I have a result."
+
+## Harnesses vs. Agent Frameworks
+
+### Two Categories of Tools
+
+Before going further, it's worth clarifying a distinction that often gets blurred. The tools in this space fall into two broad categories:
+
+**Agent harnesses** (or runtimes — the terms are used interchangeably across different communities) are thin wrappers around an LLM that give it access to your terminal, file system, and tools. They're designed to be picked up quickly and directed conversationally. Examples include `claude` (Claude Code), `codex-cli` (OpenAI Codex), `opencode`, and `pi`. Think of these as power tools — you pick one up, point it at a task, and it goes to work.
+
+**Agent frameworks** go further. They add persistent memory, scheduled tasks, multi-surface delivery (chat, voice, mobile), skill creation, and orchestration of sub-agents. `hermes agent` (Nous Research) is an example. These are more like research infrastructure — they're designed to grow with you over time, learning your workflows and maintaining context across projects.
+
+Both have their place. A harness is the right choice for quick, project-specific work — "help me refactor this analysis script." A framework makes sense when you want ongoing, cross-project support — "keep track of my research agenda, remind me to follow up on that gap in the literature, and draft a progress report each Friday." Many academics will benefit from both: a harness for ad-hoc tasks, a framework for sustained collaboration.
+
+::: {.callout-note}
+**A note on terminology.** "Runtime," "harness," and "CLI agent" are used interchangeably across different communities and documentation. Don't let the terminology trip you up — what matters is the capability set, not the label. *There is a lot of jargon in this space, and I may put together a glossary of terms with examples in a future post to help define what these terms mean.*
+:::
+
+## Why Agent Runtimes Matter
+
+### Working in Your Environment
+
+Academic work is inherently file-based: manuscripts, datasets, code scripts, bibliographies, course materials. Web-based AI tools require you to manually upload files, copy-paste content, and then manually transfer results back.
+
+Agent runtimes — also called harnesses — flip this model. The agent operates directly in your computing environment. But the work itself has not changed as much as the channel through which it happens. Consider a familiar task: reviewing your research notes for themes, contradictions, and gaps. Below, the same intellectual task is modeled in two parallel ways: first as a manual workflow, then as an agent-assisted workflow.
+
+**Manual workflow:**
 
 ```bash
-# Your existing workflow
-cd ~/research/current-project
-R --vanilla < analysis.R
-quarto render manuscript.qmd
+# Navigate to your project folder
+cd ~/research/code-switching-project
+
+# Open the notes one at a time in whatever tool you prefer
+# (a text editor, file browser, or terminal command)
+cat notes/2025-03-15-fieldwork-observations.md
+cat notes/2025-04-02-literature-review.md
+cat notes/2025-04-20-methodology-refinements.md
+# ...and continue through the rest of the folder
+
+# As you read, keep a separate document with:
+# - recurring themes
+# - claims that seem to contradict one another
+# - questions or gaps that need more research
 ```
 
+**Agent-assisted workflow:**
+
 ```bash
-# With AI integration
-claude code review analysis.R
-claude help revise manuscript.qmd
-claude generate citations from data/sources.bib
+# Navigate to the same project folder
+cd ~/research/code-switching-project
+
+# Start up your agent harness (`claude`, `pi`, etc.)
+claude
+
+# Then describe what you need:
+# "Review my research notes and generate a report
+#  highlighting consistencies, inconsistencies, and
+#  potential gaps that require more research."
 ```
+
+The task is the same. The intellectual work — understanding what the notes say, identifying patterns, evaluating their significance — is still yours. The difference is where the mechanical labor falls. In the manual workflow, you do the opening, reading, sorting, cross-referencing, and drafting yourself. In the agent-assisted workflow, the agent produces a mechanical first pass that you can inspect, challenge, revise, or reject.
+
+To make this concrete, here's what the agent actually does behind that single prompt — a step-by-step sketch of the small moves that have traditionally made this kind of review time-consuming:
+
+1. **Discover**: Scan the project directory for note files (`.md`, `.txt`, `.docx`)
+2. **Read**: Parse each file, extracting key claims, themes, and references
+3. **Cross-reference**: Compare claims across notes — where do they agree? Where do they contradict?
+4. **Identify gaps**: Flag topics mentioned in some notes but absent in others, or questions raised but never answered
+5. **Synthesize**: Draft a structured report organized by theme, with contradictions and gaps called out
+6. **Write**: Save the report to a file in your project directory
+7. **Report back**: Summarize what it found and ask for your input on next steps
+
+Now consider what that same process looks like manually: you'd open each file, read it carefully, take notes on key claims, then go back through your notes looking for patterns and contradictions, then draft a synthesis document. The agent doesn't do anything you wouldn't do — it does the same kind of work through a different channel, faster, and with an artifact you can evaluate. Human oversight and critical analysis are paramount at every step. But even with that oversight, much of the time-consuming, paper-pushing work is reduced, freeing you to focus on the big-picture thinking: whether the patterns are meaningful, whether the contradictions matter, and what should happen next.
+
+::: {.callout-note}
+**The Future is Terminal.** If you're not comfortable with the command line, the examples above can feel intimidating. That's understandable — but learning basic terminal skills pays dividends that go far beyond AI tools. The terminal gives you control, transparency, and independence over your computing environment in ways that GUI-only tools can't match. *I'm planning a dedicated post, "The Future is Terminal," on why this skill is worth investing in — especially for academics who want to maintain agency over their digital work.*
+:::
+
+### LLMs as Code Generators: A Reproducibility Advantage
+
+Here's a trade-off worth thinking carefully about. LLMs are often praised for their ability to analyze text, summarize literature, and draft prose. All true. But for academic work that aspires to reproducibility, their most valuable capability may be something different: **writing code**.
+
+Code is deterministic. Code can be tested. Code can be verified, shared, audited, and augmented by others. When an LLM writes you a script that processes your research notes — even if the LLM itself is non-deterministic — the *output of that script* is perfectly reproducible. Your colleague can run it and get the same result.
+
+So choosing *how* the LLM assists is key:
+
+- **LLM as analyzer**: "Read my research notes and tell me what themes you find" — the analysis is bound to that specific LLM call, non-reproducible, and difficult to audit
+- **LLM as code generator**: "Write me a script that identifies themes in my research notes" — the analysis becomes a reproducible, auditable artifact that anyone can run and verify
+
+Both approaches have their place. Quick exploratory analysis? Let the LLM read and summarize directly. Building a research pipeline you'll use repeatedly? Have the LLM write you code. The more we can channel LLM assistance into deterministic, verifiable code, the more we benefit from their capabilities without importing their non-determinism into our research outputs.
+
+::: {.callout-note}
+**Architectural bottleneck: context window limits.** An LLM can only "see" a finite amount of text at once — its context window. Feed it too many research notes and it will silently drop or misremember earlier content. This is why the "LLM as code generator" approach matters: code processes data deterministically regardless of context size, while direct analysis hits the wall of what the model can hold in memory at once. *More on managing context in future posts.*
+:::
 
 ### Reproducible Research Practices
 
-Terminal interactions create natural documentation of your research process:
+One of the underappreciated advantages of agent-based workflows is that they naturally support reproducibility:
 
-- **Command history**: Every AI interaction is logged and repeatable
-- **Version control**: Git integration tracks changes to AI-assisted work
-- **Environment consistency**: Your AI setup travels with your project configuration
+- **Command history**: Agent interactions are logged and reviewable — you can see exactly what was done and in what order
+- **Version control**: When an agent makes changes to your files, those changes flow through your existing Git workflow. Every edit is tracked, diffable, and revertable
+- **Environment consistency**: Your agent setup travels with your project configuration. If a colleague clones your repo, they can reproduce not just your analysis but your AI-assisted workflow
 
-### Privacy and Data Control
+This is particularly valuable for methods courses where you want students to understand not just the final result, but the process of getting there.
 
-Academic research often involves sensitive data, preliminary findings, or confidential collaborations. Terminal interfaces offer:
+### Privacy and Data Control: Cloud vs. Local
 
-- **Local processing**: No need to paste sensitive content into web browsers
-- **Controlled access**: You decide what files and data the AI can access
-- **Institutional compliance**: Easier to align with university data policies
+Academic work often involves sensitive data: student records, preliminary findings, human-subjects research, confidential peer reviews. Using cloud-based AI providers for this kind of data is not recommendable — once data leaves your machine, you've lost control over it.
 
-## Building Your AI Research Context
+But cloud-based providers are fantastic for the *setup* phase. They're great for scaffolding architecture, simulating real data to smoke-test a system, and writing the code that will eventually process your sensitive data. The pattern:
 
-### Value Anchor: Research Focus Configuration
+1. **Use cloud LLMs** to design your pipeline, write scripts, and test with simulated or publicly available data
+2. **Switch to local, open-weight LLMs** when it's time to process the real, sensitive data
 
-Let's start with a practical example that demonstrates the power of agentic AI for academic work.
+Local models running on your own hardware eliminate data exfiltration and privacy concerns entirely. They may be smaller and less capable than frontier cloud models, but for many tasks — especially once the code is written and tested — they're more than sufficient. And the privacy trade-off is clear: no data leaves your machine, full stop.
 
-**Scenario**: You want Claude to understand your research focus so it can provide contextually relevant assistance across all your projects.
+::: {.callout-note}
+**Architectural bottleneck: local model capability.** Local open-weight models have improved enormously, but they still lag behind frontier cloud models on complex reasoning and long-context tasks. The art is knowing when a local model is "good enough" for your task and when you need the frontier model's capabilities. *This is another topic worth a deeper dive in a future post.*
+:::
 
-**Setup Process**:
+## Building Your AI Context
 
-1. **Install and configure Claude Code** (we'll cover this in detail in Post 2)
-2. **Create a research profile** using Claude's memory system
-3. **Test the configuration** with a real research task
+### The Power of Persistent Context
 
-**Example Configuration Session**:
+One of the most transformative aspects of agentic AI is the ability to build a persistent context that shapes every interaction. Rather than re-explaining your field, methods, and preferences each time, you configure the agent once and it carries that understanding forward.
 
-```bash
-claude remember "I am a linguistics professor specializing in:
-- Corpus linguistics with focus on Spanish-English bilingual discourse
-- Computational methods for analyzing language variation
-- Hispanic linguistics, particularly Mexican Spanish
-- Academic writing and pedagogy in linguistics
+This is different from simple "system prompts" or "custom instructions." A well-configured agent context includes:
 
-My current projects include:
-- Analyzing code-switching patterns in social media data
-- Developing corpus tools for undergraduate linguistics courses
-- Studying pragmatic variation in Mexican Spanish
+- **Your research focus and methodological approach**
+- **Project-specific details** (data sources, coding decisions, theoretical framework)
+- **Practical preferences** (citation style, coding conventions, writing register)
+- **Ongoing task state** (what you're working on right now, what's blocked, what's next)
 
-When helping with research tasks, please:
-- Assume familiarity with linguistic terminology and methodology
-- Prioritize reproducible, well-documented approaches
-- Consider both theoretical implications and practical applications
-- Suggest appropriate statistical methods for linguistic data"
-```
+### Strategies for Managing Context
 
-**Immediate Benefits**:
+As you work with an agent over time, you'll hit a recurring tension: the agent needs context to be useful, but too much context overloads the LLM's memory. Several strategies have emerged for managing this, ranging from simple to sophisticated:
 
-- **Relevant suggestions**: AI recommendations align with your field's conventions
-- **Appropriate complexity**: Explanations match your expertise level
-- **Methodological awareness**: Suggestions respect linguistic research standards
-- **Consistent context**: Every session builds on your established research focus
+**Project documentation files**: The simplest approach. A detailed `README.md`, or an `AGENTS.md` / `CLAUDE.md` file in your project root, gives the agent a human-readable overview of your project, conventions, and current state. The agent reads it at the start of each session. Easy to set up, easy to audit, and version-controlled alongside your code.
 
-### Testing Your Research Context
+**Retrieval-augmented generation (RAG)**: For larger knowledge bases, vector databases can index your papers, notes, and data documentation, retrieving relevant chunks on demand. This scales further than a single file but adds infrastructure complexity. A key drawback: the retrieval process is opaque — you can't easily inspect *why* the system surfaced certain context and not others.
 
-Try asking Claude to help with a typical research task:
+**LLM-curated knowledge bases**: An emerging approach where the LLM curates its own knowledge base as human-readable markdown files — an "LLM-Wiki." Rather than embedding knowledge in a vector database, the agent writes and organizes what it learns into files you can read, edit, and audit. Andrej Karpathy [described this pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) as a shift from RAG's "rediscovering knowledge from scratch on every question" to a persistent, compounding artifact where cross-references are already built, contradictions are already flagged, and the synthesis reflects everything you have read or have ingested into the LLM-managed wiki knowledge system. The knowledge base keeps getting richer with every source you add. Crucially, unlike a vector database, the knowledge is stored in plain markdown — fully transparent and auditable by humans.
 
-```bash
-claude "I have a corpus of 50,000 Spanish tweets. 
-What's the best approach for identifying code-switching events?"
-```
+::: {.callout-note}
+**Architectural bottleneck: memory persistence.** Most agent runtimes don't truly "remember" across sessions by default — each conversation starts fresh unless you've set up a context strategy. The approaches above are all attempts to solve this problem, each with different trade-offs between simplicity, scalability, and auditability. *I plan to write more about my experiences with these strategies in future posts.*
+:::
 
-With your research context established, Claude should provide linguistically sophisticated suggestions about annotation schemes, inter-rater reliability, and corpus-appropriate methodologies.
+This is where a knowledge capturing system proves its worth. As conversations and interactions grow, an LLM nestled in a harness with instructions to extract and archive relevant knowledge for future reference — and subsequently retrieve, consult, and inject task-relevant knowledge from the knowledge store to enhance the context — significantly increases the likelihood of a more relevant response. The agent doesn't just accumulate files; it builds a working memory that compounds over time.
 
-## Understanding AI Capabilities and Limitations
+### A Practical Example
 
-### What Agentic AI Excels At
+**Scenario**: You want your agent to understand your research focus so it can provide contextually relevant assistance across all your projects.
 
-**Analytical Tasks**:
+Rather than a one-time configuration, think of this as an ongoing conversation. You might start with a broad description — which can also serve as a good starting point for an `AGENTS.md` or `CLAUDE.md` file in your project root:
+
+> I'm a linguistics professor specializing in corpus linguistics and Spanish-English bilingual discourse. My current projects include analyzing code-switching patterns in social media data and developing corpus tools for undergraduate courses. When helping with research tasks, assume familiarity with linguistic terminology, prioritize reproducible approaches, and consider both theoretical and practical implications.
+
+Then refine it over time as the agent learns your workflows. The best agent runtimes support some form of persistent memory — whether through documentation files, memory systems, or self-curated knowledge bases — that evolves with your work.
+
+### Testing Your Context
+
+Try asking your agent to help with a task that builds on the same example case:
+
+> I have a folder of research notes from my code-switching project. Analyze them and generate a report highlighting consistencies, inconsistencies, and potential gaps that require more research.
+
+With good context established, the response should reflect understanding of corpus linguistics conventions, appropriate methodological awareness, and familiarity with your specific project — rather than generic advice that ignores your disciplinary expertise.
+
+## What Agentic AI Excels At (and Where It Doesn't)
+
+### Strengths for Academic Work
+
+**Analytical tasks**:
 - Literature review synthesis and gap identification
 - Data preprocessing and cleaning workflows
-- Statistical analysis interpretation and visualization
-- Writing structure and argumentation support
+- Statistical analysis and visualization
+- Code review and debugging
+- Format conversion (e.g., restructuring data from wide to long)
 
-**Research Management**:
+**Research management**:
 - Project organization and file management
-- Citation formatting and bibliography creation
-- Deadline tracking and milestone planning
-- Collaboration workflow optimization
+- Citation formatting and bibliography maintenance
+- Drafting and revising across multiple document formats
+- Scheduling recurring tasks (reports, backups, reminders)
 
-### Recognizing the Boundaries
+**Teaching support**:
+- Generating exercise sets and quiz questions from course materials
+- Creating differentiated reading guides for varying skill levels
+- Developing rubric frameworks for assignment types
+- Drafting syllabus language and policy documents
 
-**Where Human Expertise Remains Essential**:
-- **Theoretical interpretation**: AI can identify patterns but not theoretical significance
-- **Methodological decisions**: Statistical approaches require disciplinary knowledge
-- **Ethical considerations**: Research ethics and IRB compliance need human judgment
-- **Original argumentation**: Novel theoretical contributions remain human territory
+### Where Human Expertise Remains Essential
 
-**Quality Control Practices**:
-- **Verify citations**: Always check AI-generated references
-- **Review methodology**: Ensure statistical approaches match your data and research questions  
-- **Maintain authorship**: AI assists but doesn't author your work
-- **Document AI contributions**: Be transparent about AI-assisted portions
+**Strategizing your codebase**: For any agent-assisted research task, the first scholarly decision is not "what should the model do?" but "what structure will make this work inspectable, reproducible, and relevant to my research objectives?" That means thinking through the codebase or project architecture before delegating processing, cleaning, or analysis. What counts as an input? What should be produced as an output? Where should intermediate files live? What needs to be documented so that you — or a colleague — can understand the workflow later?
+
+An agent can help with all of this: it can scaffold directories, draft scripts, suggest file names, propose data-cleaning steps, and even critique a workflow. But it cannot take over the disciplinary judgment that makes those choices meaningful. You still need to understand the inputs, the outputs, and the transformations between them. You still need to apply domain knowledge to evaluate whether those outputs make sense in the context of your field and research goals. The agent is a collaborator for scaffolding, drafting, and suggesting; the intellectual responsibility for understanding the code, the results, and their relevance to the research question remains with you.
+
+**Theoretical interpretation**: An agent can identify patterns in your data, but determining the theoretical significance of those patterns requires disciplinary judgment. The agent doesn't know what the finding *means* in the context of your field's debates.
+
+**Methodological decisions**: An agent can suggest statistical approaches, but choosing the right method requires understanding your research questions, data structure, and the assumptions behind each technique. Use the agent as a sounding board, not a decision-maker.
+
+**Ethical considerations**: Research ethics, IRB compliance, and responsible AI use all require human judgment — specifically, informed and discerning human involvement. An agent can flag potential issues, but the responsibility remains yours.
+
+**Original argumentation**: Novel theoretical contributions, interpretive insights, and the creative intellectual work that makes scholarship scholarship — these remain human territory. The agent assists, synthesizes, and refines, but it doesn't author your ideas.
+
+### Quality Control Practices
+
+- **Verify citations**: Always check AI-generated references against original sources
+- **Review all code**: Run it, test it, understand what it does before incorporating it
+- **Maintain authorship**: Be transparent about AI-assisted portions of your work, following your discipline's emerging norms for AI use disclosure
+- **Document the workflow**: Keep track of what the agent did, what you changed, and why — this supports both reproducibility and honest reporting
+- **Maintain codebooks and data dictionaries**: Codebooks, data dictionaries, and clear variable documentation are not special "AI practices"; they are part-and-parcel with good reproducible research. They leave a breadcrumb trail for you, your collaborators, and perhaps an LLM to trace the work and verify its integrity. Informative, incremental version control extends that trail further: small commits with clear messages make it easier to see how a project developed, where decisions entered the workflow, and what changed over time. These practices should not be forgotten, and in some cases they should be introduced to researchers who have not yet adopted them. I discuss these principles in my book [*An Introduction to Quantitative Text Analysis: Reproducible Research using R*](https://routledge.com/9781036272332) (Routledge, 2025).
 
 ## Practical Next Steps
 
-### Immediate Actions
+### If You're New to Agentic AI
 
-1. **Reflect on your research workflow**: Identify repetitive tasks that could benefit from AI assistance
-2. **Consider your data privacy needs**: Determine what types of projects are appropriate for AI collaboration
-3. **Prepare your research context**: Gather key information about your specializations and current projects
+1. **Identify repetitive tasks**: Look at your weekly workflow and find tasks that feel mechanical — formatting, data cleaning, boilerplate drafting, file organization. These are your first candidates for AI assistance.
 
-### Preparing for Post 2: Setup and Configuration
+2. **Start small**: Pick one task and work with an agent on it. Don't try to overhaul your entire workflow at once. The goal is to build confidence and understanding gradually.
 
-Our next post will walk through:
-- Installing and configuring Claude Code for academic use
-- Creating persistent research contexts and memory systems
-- Setting up project-specific AI behaviors
-- Integrating with your existing research tools
+3. **Choose a runtime/harness**: Explore the available options. Most have free tiers or trial periods. The right choice is the one that fits your existing tools and comfort level — not the one with the most features.
 
-### Questions for Reflection
+### If You're Already Experimenting
 
-- What aspects of your research workflow feel most repetitive or time-consuming?
-- How comfortable are you with AI assistance for different types of academic tasks?
-- What would an ideal AI research partner be able to help you accomplish?
+1. **Build your context**: Invest time in configuring your agent's understanding of your work. The upfront effort pays dividends in every subsequent interaction. Consider adopting an LLM-curated knowledge base (see [Karpathy's LLM-Wiki proposal](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)) as a way to make that context compound over time.
+
+2. **Establish guardrails**: Set up workflow practices that protect your work — version control, branch protection, review processes. Treat AI-assisted work with the same rigor you'd apply to any collaborative project. An `AGENTS.md` or `CLAUDE.md` file can define behavioral guidelines for the agent — what to touch, what to leave alone, what conventions to follow. It's worth noting, however, that the non-deterministic nature of LLMs cannot guarantee adherence to these guardrails. For more stringent control, system-level, file-level, and process-level permissions can be asserted on agent behavior — these are harder guardrails that cannot be overlooked, though they are more advanced to set up.
+
+3. **Share practices**: Talk with colleagues about what's working and what isn't. The academic community is still developing norms for AI-assisted scholarship, and your experiences contribute to that conversation.
 
 ## Conclusion
 
-Understanding AI as an agentic research partner rather than a simple tool transforms how we approach academic work. By establishing clear contexts, respecting appropriate boundaries, and integrating AI into existing workflows, we can create powerful research collaborations that enhance rather than replace human expertise.
+Understanding AI as an agentic partner rather than a search tool transforms how we approach academic work. The specific tools will continue to evolve — today's popular runtime may be tomorrow's footnote — but the underlying concepts are durable: agents that can act in your environment, maintain context across sessions, and handle multi-step tasks create real opportunities to reduce friction in research, teaching, and administration.
 
-The foundation we've established here—understanding agentic capabilities, recognizing the advantages of terminal interfaces, and building research context—prepares us for the practical implementation steps in our next post.
-
-Ready to set up your AI research environment? [Post 2: Your Research Environment Setup] will guide you through the technical configuration that makes this partnership possible.
+The foundation is straightforward: understand what agentic means, recognize both capabilities and boundaries, integrate with your existing tools, and build context that makes the agent a useful partner in your work. The aim is not to off-load the work; rather, it is to reduce the busy work and surface knowledge more efficiently so that your expertise, judgment, and authorship can remain central. The rest is trial and error. Therefore: ensure backups and version-controlled repositories synced to a version control hosting service (e.g., GitHub, Codeberg, Gitea, etc.) so that every experiment is recoverable.
 
 ---
 
-*This post is part of the "Claude Code for Academics" series. Each post builds foundational understanding while delivering immediate research value, creating confident, capable users who can adapt AI tools to their unique academic needs.*
+*This post is part of an exploration of agentic AI in higher education. I'll continue to share what works (and what doesn't) as these tools and practices evolve. Topics flagged for future posts include: the non-determinism problem, managing context windows, local vs. cloud model selection, LLM-curated knowledge bases (Karpathy's LLM-Wiki), a glossary of agent terminology, and why terminal literacy matters for academic independence.*
