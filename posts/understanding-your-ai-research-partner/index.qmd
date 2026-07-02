@@ -65,44 +65,45 @@ Both have their place. A harness is the right choice for quick, project-specific
 
 Academic work is inherently file-based: manuscripts, datasets, code scripts, bibliographies, course materials. Web-based AI tools require you to manually upload files, copy-paste content, and then manually transfer results back.
 
-Agent runtimes — also called harnesses — flip this model. The agent operates directly in your computing environment. But it's worth understanding that the work itself hasn't changed — just the channel through which it flows. Consider a familiar task: reviewing your research notes for themes, contradictions, and gaps. Here's how that same work looks through two different channels:
+Agent runtimes — also called harnesses — flip this model. The agent operates directly in your computing environment. But the work itself has not changed as much as the channel through which it happens. Consider a familiar task: reviewing your research notes for themes, contradictions, and gaps. Below, the same intellectual task is modeled in two parallel ways: first as a manual workflow, then as an agent-assisted workflow.
 
-**Manual/code-style workflow:**
+**Manual workflow:**
 
 ```bash
-# Navigate to your project
+# Navigate to your project folder
 cd ~/research/code-switching-project
 
-# Open and read through each note file
+# Open the notes one at a time in whatever tool you prefer
+# (a text editor, file browser, or terminal command)
 cat notes/2025-03-15-fieldwork-observations.md
 cat notes/2025-04-02-literature-review.md
 cat notes/2025-04-20-methodology-refinements.md
-# ... and so on for each note
+# ...and continue through the rest of the folder
 
-# Manually identify themes, track contradictions,
-# note gaps — perhaps in a separate document
-
-# Render your findings
-quarto render research-notes-review.qmd
+# As you read, keep a separate document with:
+# - recurring themes
+# - claims that seem to contradict one another
+# - questions or gaps that need more research
 ```
 
-**Agent-driven workflow:**
+**Agent-assisted workflow:**
 
 ```bash
-# Navigate to the same project
+# Navigate to the same project folder
 cd ~/research/code-switching-project
 
 # Start up your agent harness (`claude`, `pi`, etc.)
+claude
 
-# Describe what you need:
+# Then describe what you need:
 # "Review my research notes and generate a report
 #  highlighting consistencies, inconsistencies, and
-#  potential gaps that require more research"
+#  potential gaps that require more research."
 ```
 
-The task is the same. The intellectual work — understanding what the notes say, identifying patterns, evaluating their significance — is identical in both channels. The difference is where the mechanical labor falls. In the manual workflow, you do the reading, the sorting, the cross-referencing, and the writing. In the agent-driven workflow, the agent handles the mechanical first pass and you focus on evaluation and interpretation.
+The task is the same. The intellectual work — understanding what the notes say, identifying patterns, evaluating their significance — is still yours. The difference is where the mechanical labor falls. In the manual workflow, you do the opening, reading, sorting, cross-referencing, and drafting yourself. In the agent-assisted workflow, the agent produces a mechanical first pass that you can inspect, challenge, revise, or reject.
 
-To make this concrete, here's what the agent actually does behind that single prompt — a step-by-step sketch of the process:
+To make this concrete, here's what the agent actually does behind that single prompt — a step-by-step sketch of the small moves that have traditionally made this kind of review time-consuming:
 
 1. **Discover**: Scan the project directory for note files (`.md`, `.txt`, `.docx`)
 2. **Read**: Parse each file, extracting key claims, themes, and references
@@ -112,7 +113,7 @@ To make this concrete, here's what the agent actually does behind that single pr
 6. **Write**: Save the report to a file in your project directory
 7. **Report back**: Summarize what it found and ask for your input on next steps
 
-Now consider what that same process looks like manually: you'd open each file, read it carefully, take notes on key claims, then go back through your notes looking for patterns and contradictions, then draft a synthesis document. The agent doesn't do anything you wouldn't do — it does the same work, just faster, and you get to focus on the part that matters most: evaluating whether the patterns it found are meaningful. It's worth noting that human oversight and critical analysis is paramount throughout this process. But even with this oversight step, much of the time-consuming, paper-pushing component is reduced; freeing you up to do the big picture thinking.
+Now consider what that same process looks like manually: you'd open each file, read it carefully, take notes on key claims, then go back through your notes looking for patterns and contradictions, then draft a synthesis document. The agent doesn't do anything you wouldn't do — it does the same kind of work through a different channel, faster, and with an artifact you can evaluate. Human oversight and critical analysis are paramount at every step. But even with that oversight, much of the time-consuming, paper-pushing work is reduced, freeing you to focus on the big-picture thinking: whether the patterns are meaningful, whether the contradictions matter, and what should happen next.
 
 ::: {.callout-note}
 **The Future is Terminal.** If you're not comfortable with the command line, the examples above can feel intimidating. That's understandable — but learning basic terminal skills pays dividends that go far beyond AI tools. The terminal gives you control, transparency, and independence over your computing environment in ways that GUI-only tools can't match. *I'm planning a dedicated post, "The Future is Terminal," on why this skill is worth investing in — especially for academics who want to maintain agency over their digital work.*
@@ -232,7 +233,9 @@ With good context established, the response should reflect understanding of corp
 
 ### Where Human Expertise Remains Essential
 
-**Strategizing your codebase**: Before delegating processing, cleaning, or analysis work to an agent, you need to strategize a codebase structure relevant to your task objectives. This applies to processing, cleaning, and analysis alike. The agent can help build it, but you need to understand the inputs and outputs. At the end of the day, it is you who applies your domain knowledge to critically evaluate these inputs and outputs and interpret them in the context of your field and research goals. The agent is a capable collaborator here — it can scaffold directory structures, draft initial scripts, and suggest workflows — but the intellectual responsibility for understanding what the code does, why it produces the outputs it does, and whether those outputs make sense for your research questions remains squarely with you.
+**Strategizing your codebase**: For any agent-assisted research task, the first scholarly decision is not "what should the model do?" but "what structure will make this work inspectable, reproducible, and relevant to my research objectives?" That means thinking through the codebase or project architecture before delegating processing, cleaning, or analysis. What counts as an input? What should be produced as an output? Where should intermediate files live? What needs to be documented so that you — or a colleague — can understand the workflow later?
+
+An agent can help with all of this: it can scaffold directories, draft scripts, suggest file names, propose data-cleaning steps, and even critique a workflow. But it cannot take over the disciplinary judgment that makes those choices meaningful. You still need to understand the inputs, the outputs, and the transformations between them. You still need to apply domain knowledge to evaluate whether those outputs make sense in the context of your field and research goals. The agent is a collaborator for scaffolding, drafting, and suggesting; the intellectual responsibility for understanding the code, the results, and their relevance to the research question remains with you.
 
 **Theoretical interpretation**: An agent can identify patterns in your data, but determining the theoretical significance of those patterns requires disciplinary judgment. The agent doesn't know what the finding *means* in the context of your field's debates.
 
@@ -248,7 +251,7 @@ With good context established, the response should reflect understanding of corp
 - **Review all code**: Run it, test it, understand what it does before incorporating it
 - **Maintain authorship**: Be transparent about AI-assisted portions of your work, following your discipline's emerging norms for AI use disclosure
 - **Document the workflow**: Keep track of what the agent did, what you changed, and why — this supports both reproducibility and honest reporting
-- **Maintain codebooks and data dictionaries**: Documenting your variables, coding decisions, and data structure goes a very long way to leaving a breadcrumb trail for you (and perhaps an LLM) to trace the work and verify its integrity. Informative and incremental version control — committing often with clear messages — extends that trail further. These are just part-and-parcel with good reproducible practices and should not be forgotten, or in some cases, they should be introduced to those that have not adopted them. I speak to these in my book [*An Introduction to Quantitative Text Analysis: Reproducible Research using R*](https://routledge.com/9781036272332) (Routledge, 2025).
+- **Maintain codebooks and data dictionaries**: Codebooks, data dictionaries, and clear variable documentation are not special "AI practices"; they are part-and-parcel with good reproducible research. They leave a breadcrumb trail for you, your collaborators, and perhaps an LLM to trace the work and verify its integrity. Informative, incremental version control extends that trail further: small commits with clear messages make it easier to see how a project developed, where decisions entered the workflow, and what changed over time. These practices should not be forgotten, and in some cases they should be introduced to researchers who have not yet adopted them. I discuss these principles in my book [*An Introduction to Quantitative Text Analysis: Reproducible Research using R*](https://routledge.com/9781036272332) (Routledge, 2025).
 
 ## Practical Next Steps
 
@@ -272,7 +275,7 @@ With good context established, the response should reflect understanding of corp
 
 Understanding AI as an agentic partner rather than a search tool transforms how we approach academic work. The specific tools will continue to evolve — today's popular runtime may be tomorrow's footnote — but the underlying concepts are durable: agents that can act in your environment, maintain context across sessions, and handle multi-step tasks create real opportunities to reduce friction in research, teaching, and administration.
 
-The foundation is straightforward: understand what agentic means, recognize both capabilities and boundaries, integrate with your existing tools, and build context that makes the agent a genuine partner in your work. The aim throughout is not to off-load the work; rather, it is to reduce the busy work and surface knowledge more efficiently — your expertise, judgment, and authorship remain central. The rest is trial and error. Therefore: ensure backups and version-controlled repositories synced to a version control hosting service (e.g., GitHub, Codeberg, Gitea, etc.) so that every experiment is recoverable.
+The foundation is straightforward: understand what agentic means, recognize both capabilities and boundaries, integrate with your existing tools, and build context that makes the agent a useful partner in your work. The aim is not to off-load the work; rather, it is to reduce the busy work and surface knowledge more efficiently so that your expertise, judgment, and authorship can remain central. The rest is trial and error. Therefore: ensure backups and version-controlled repositories synced to a version control hosting service (e.g., GitHub, Codeberg, Gitea, etc.) so that every experiment is recoverable.
 
 ---
 
