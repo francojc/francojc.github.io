@@ -301,43 +301,43 @@
     "text": "Understanding Your AI Research Partner\n\n\n\nai\n\nagentic-ai\n\nresearch\n\nacademic-tools\n\nhigher-ed\n\n\n\nWhat makes AI “agentic,” why agent runtimes matter for higher education, and how to build a foundation for AI-assisted academic work, regardless of which tool you choose.\n\n\n\n\n\nJul 2, 2026\n\n\nJerid Francom\n\n\n\n\n\n\n\n\n\n\n\n\nTextbook and companion resources released\n\n\n\nr\n\nqtalr\n\nqtkit\n\n\n\nThis posts announces the release of my textbook including the companion website and the qtkit R package.\n\n\n\n\n\nDec 22, 2024\n\n\nJerid Francom\n\n\n\n\n\n\n\n\n\n\n\n\nR in Visual Studio Code\n\n\n\nr\n\nvscode\n\ncoding\n\npackages\n\n\n\nThis article describes how to set up R in Visual Studio Code.\n\n\n\n\n\nAug 27, 2023\n\n\nJerid Francom\n\n\n\n\n\n\n\n\n\n\n\n\nACTIV-ES corpus: initial release\n\n\n\ncorpora\n\nspanish\n\nprojects\n\n\n\nACTIV-ES: a comparable, cross-dialect corpus of ‘everyday’ Spanish from Argentina, Mexico, and Spain\n\n\n\n\n\nMay 24, 2014\n\n\nJerid Francom\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "CLAUDE.html",
-    "href": "CLAUDE.html",
+    "objectID": "AGENTS.html",
+    "href": "AGENTS.html",
     "title": "CLAUDE.md",
     "section": "",
     "text": "Academic website for Dr. Jerid Francom, built with Quarto. Homepage, blog, and CV for a linguistics professor (corpus linguistics, computational linguistics, Hispanic linguistics).\n\n\n# Environment setup (Nix flake — .envrc is gitignored)\necho \"use flake .\" &gt; .envrc && direnv allow\n\n# Development server (port 4200, configured in _quarto.yml)\nquarto preview\n\n# Build full site\nquarto render\n\n# CV PDF generation (uses lualatex)\nquarto render cv.qmd --to quarto-cv-pdf\n\n\n\nindex.qmd                  # Homepage — Solana template, tabbed layout\ncv.qmd                     # Academic CV — HTML + PDF via quarto-cv\ncv-grant.qmd               # Grants-focused CV variant\nposts.qmd                  # Blog listing page\nposts/                     # Blog posts — one folder per post with index.qmd\n  _metadata.yml            # Shared post metadata (citations, caching, fediverse)\n_quarto.yml                # Site config (theme, navbar, analytics, hypothesis)\n_extensions/               # Quarto extensions\nassets/\n  bibliography/            # main.bib, books.bib, chapters.bib, talks.bib\n  css/                     # styles.css, cv.css\n  images/                  # Site images\napa-cv.csl                 # Custom APA citation style (descending date order)\nflake.nix                  # Nix dev environment (R packages, TeX Live, tools)\n\n\n\n\nmps9506/quarto-cv — Academic CV formatting (HTML + PDF)\npandoc-ext/multibib — Multiple bibliography support; renders into divs with id=\"refs-&lt;name&gt;\" pattern (e.g., refs-main, refs-books)\nquarto-ext/fontawesome — Icon shortcodes: \n\n\n\n\nBibliography files live in assets/bibliography/. The CV uses nocite: '@*' to include all entries. Citation style is apa-cv.csl (APA format, sorted by descending date). The multibib filter produces separate reference divs per .bib file — place a div with the matching id=\"refs-&lt;name&gt;\" where each section should render.\n\n\n\n\ncv.qmd — Full academic CV with sections for publications, books, chapters, talks\ncv-grant.qmd — Grants-focused variant\nPDF output uses lualatex engine via the quarto-cv extension\nDate floats for chronological positioning in LaTeX output"
   },
   {
-    "objectID": "CLAUDE.html#commands",
-    "href": "CLAUDE.html#commands",
+    "objectID": "AGENTS.html#commands",
+    "href": "AGENTS.html#commands",
     "title": "CLAUDE.md",
     "section": "",
     "text": "# Environment setup (Nix flake — .envrc is gitignored)\necho \"use flake .\" &gt; .envrc && direnv allow\n\n# Development server (port 4200, configured in _quarto.yml)\nquarto preview\n\n# Build full site\nquarto render\n\n# CV PDF generation (uses lualatex)\nquarto render cv.qmd --to quarto-cv-pdf"
   },
   {
-    "objectID": "CLAUDE.html#architecture",
-    "href": "CLAUDE.html#architecture",
+    "objectID": "AGENTS.html#architecture",
+    "href": "AGENTS.html#architecture",
     "title": "CLAUDE.md",
     "section": "",
     "text": "index.qmd                  # Homepage — Solana template, tabbed layout\ncv.qmd                     # Academic CV — HTML + PDF via quarto-cv\ncv-grant.qmd               # Grants-focused CV variant\nposts.qmd                  # Blog listing page\nposts/                     # Blog posts — one folder per post with index.qmd\n  _metadata.yml            # Shared post metadata (citations, caching, fediverse)\n_quarto.yml                # Site config (theme, navbar, analytics, hypothesis)\n_extensions/               # Quarto extensions\nassets/\n  bibliography/            # main.bib, books.bib, chapters.bib, talks.bib\n  css/                     # styles.css, cv.css\n  images/                  # Site images\napa-cv.csl                 # Custom APA citation style (descending date order)\nflake.nix                  # Nix dev environment (R packages, TeX Live, tools)"
   },
   {
-    "objectID": "CLAUDE.html#extensions",
-    "href": "CLAUDE.html#extensions",
+    "objectID": "AGENTS.html#extensions",
+    "href": "AGENTS.html#extensions",
     "title": "CLAUDE.md",
     "section": "",
     "text": "mps9506/quarto-cv — Academic CV formatting (HTML + PDF)\npandoc-ext/multibib — Multiple bibliography support; renders into divs with id=\"refs-&lt;name&gt;\" pattern (e.g., refs-main, refs-books)\nquarto-ext/fontawesome — Icon shortcodes:"
   },
   {
-    "objectID": "CLAUDE.html#bibliography",
-    "href": "CLAUDE.html#bibliography",
+    "objectID": "AGENTS.html#bibliography",
+    "href": "AGENTS.html#bibliography",
     "title": "CLAUDE.md",
     "section": "",
     "text": "Bibliography files live in assets/bibliography/. The CV uses nocite: '@*' to include all entries. Citation style is apa-cv.csl (APA format, sorted by descending date). The multibib filter produces separate reference divs per .bib file — place a div with the matching id=\"refs-&lt;name&gt;\" where each section should render."
   },
   {
-    "objectID": "CLAUDE.html#cv-specifics",
-    "href": "CLAUDE.html#cv-specifics",
+    "objectID": "AGENTS.html#cv-specifics",
+    "href": "AGENTS.html#cv-specifics",
     "title": "CLAUDE.md",
     "section": "",
     "text": "cv.qmd — Full academic CV with sections for publications, books, chapters, talks\ncv-grant.qmd — Grants-focused variant\nPDF output uses lualatex engine via the quarto-cv extension\nDate floats for chronological positioning in LaTeX output"
