@@ -20,7 +20,6 @@
         R
         pandoc
         quarto
-        radianWrapper
       ];
 
       # R packages
