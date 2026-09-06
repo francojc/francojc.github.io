@@ -3,7 +3,6 @@ title: "Superintelligence or mediocre engineering?"
 description: |
   A security breach at HuggingFace by an OpenAI model occurred in July 2026. Sam Altman warns that LLMs are nearing a point where they cannot be controlled. However, a post-mortem suggests otherwise.
 date: 2026-09-04
-author: "Jerid Francom"
 categories: ["LLM", "LLM Safety", "LLM Security", "AI Hype"]
 draft: true
 ---
