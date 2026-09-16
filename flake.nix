@@ -18,8 +18,6 @@
       # Base packages
       basePackages = with pkgs; [
         R
-        pandoc
-        quarto
       ];
 
       # R packages
@@ -38,10 +36,10 @@
         usethis
       ];
 
-      # Texlive packages
-      texlivePackages = with pkgs.texlive; [
-        (combine {
-          inherit
+      # TeX Live packages
+      texlivePackages = [
+        (pkgs.texliveSmall.withPackages (ps:
+          with ps; [
             scheme-medium
             datetime
             ebgaramond
@@ -53,8 +51,7 @@
             orcidlink
             sectsty
             svn-prov
-            ;
-        })
+          ]))
       ];
 
       allPackages = basePackages ++ rPackages ++ texlivePackages;
